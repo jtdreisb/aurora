@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E7D616C2D0BD00B72422 /* Cocoa.framework */; };
+		3368E7E116C2D0BD00B72422 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */; };
+		3368E7E316C2D0BD00B72422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E216C2D0BD00B72422 /* main.m */; };
+		3368E7E716C2D0BD00B72422 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7E516C2D0BD00B72422 /* Credits.rtf */; };
+		3368E7EA16C2D0BD00B72422 /* AUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */; };
+		3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7EB16C2D0BD00B72422 /* MainMenu.xib */; };
+		3368E7FE16C2D2F500B72422 /* AUSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */; };
+		3368E80016C2DB3500B72422 /* HueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7FF16C2DB3500B72422 /* HueLight.icns */; };
+		3368E80316C2DD1F00B72422 /* NSView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80216C2DD1F00B72422 /* NSView+Animations.m */; };
+		3368E80916C2DE5C00B72422 /* AULightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80716C2DE5C00B72422 /* AULightsViewController.m */; };
+		3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E80816C2DE5C00B72422 /* AULightsViewController.xib */; };
+		3368E81A16C2E16D00B72422 /* NSViewController+PushPopAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */; };
+		3368E81E16C2E7E800B72422 /* AULightEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E81C16C2E7E700B72422 /* AULightEditViewController.m */; };
+		3368E81F16C2E7E800B72422 /* AULightEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */; };
+		3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */; };
+		3368E83D16C30EC700B72422 /* AUSpotifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E83B16C30EC700B72422 /* AUSpotifyViewController.xib */; };
+		3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E84116C316B800B72422 /* ScriptingBridge.framework */; };
+		3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E84416C31CDF00B72422 /* AUDraggableView.m */; };
+		3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84616C322CC00B72422 /* AUDraggableLight.xib */; };
+		3368E84916C328CF00B72422 /* spectrum_chart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84816C328CF00B72422 /* spectrum_chart.jpg */; };
+		337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F200D16C5F4AE0051A899 /* AUWindowController.m */; };
+		337F201016C5F4AE0051A899 /* AUWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337F200E16C5F4AE0051A899 /* AUWindowController.xib */; };
+		E214F79C31C549EFAED73C0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D411E00FBADA4C948F64487F /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3368E7D216C2D0BD00B72422 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3368E7D616C2D0BD00B72422 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3368E7D916C2D0BD00B72422 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3368E7DA16C2D0BD00B72422 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3368E7DB16C2D0BD00B72422 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "aurora-Info.plist"; sourceTree = "<group>"; };
+		3368E7E016C2D0BD00B72422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3368E7E216C2D0BD00B72422 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3368E7E416C2D0BD00B72422 /* aurora-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aurora-Prefix.pch"; sourceTree = "<group>"; };
+		3368E7E616C2D0BD00B72422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUAppDelegate.h; sourceTree = "<group>"; };
+		3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUAppDelegate.m; sourceTree = "<group>"; };
+		3368E7EC16C2D0BD00B72422 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3368E7FC16C2D2F500B72422 /* AUSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSetupViewController.h; sourceTree = "<group>"; };
+		3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSetupViewController.m; sourceTree = "<group>"; };
+		3368E7FF16C2DB3500B72422 /* HueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HueLight.icns; sourceTree = "<group>"; };
+		3368E80116C2DD1F00B72422 /* NSView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Animations.h"; sourceTree = "<group>"; };
+		3368E80216C2DD1F00B72422 /* NSView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Animations.m"; sourceTree = "<group>"; };
+		3368E80616C2DE5C00B72422 /* AULightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightsViewController.h; sourceTree = "<group>"; };
+		3368E80716C2DE5C00B72422 /* AULightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightsViewController.m; sourceTree = "<group>"; };
+		3368E80816C2DE5C00B72422 /* AULightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULightsViewController.xib; sourceTree = "<group>"; };
+		3368E81816C2E16D00B72422 /* NSViewController+PushPopAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSViewController+PushPopAnimations.h"; sourceTree = "<group>"; };
+		3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSViewController+PushPopAnimations.m"; sourceTree = "<group>"; };
+		3368E81B16C2E7E700B72422 /* AULightEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightEditViewController.h; sourceTree = "<group>"; };
+		3368E81C16C2E7E700B72422 /* AULightEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightEditViewController.m; sourceTree = "<group>"; };
+		3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULightEditViewController.xib; sourceTree = "<group>"; };
+		3368E83916C30EC700B72422 /* AUSpotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyViewController.h; sourceTree = "<group>"; };
+		3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyViewController.m; sourceTree = "<group>"; };
+		3368E83B16C30EC700B72422 /* AUSpotifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyViewController.xib; sourceTree = "<group>"; };
+		3368E84016C30F8700B72422 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		3368E84116C316B800B72422 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		3368E84316C31CDF00B72422 /* AUDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDraggableView.h; sourceTree = "<group>"; };
+		3368E84416C31CDF00B72422 /* AUDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDraggableView.m; sourceTree = "<group>"; };
+		3368E84616C322CC00B72422 /* AUDraggableLight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDraggableLight.xib; sourceTree = "<group>"; };
+		3368E84816C328CF00B72422 /* spectrum_chart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spectrum_chart.jpg; sourceTree = "<group>"; };
+		337F200C16C5F4AE0051A899 /* AUWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindowController.h; sourceTree = "<group>"; };
+		337F200D16C5F4AE0051A899 /* AUWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindowController.m; sourceTree = "<group>"; };
+		337F200E16C5F4AE0051A899 /* AUWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUWindowController.xib; sourceTree = "<group>"; };
+		D411E00FBADA4C948F64487F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3AD588A81D4ED0909972DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3368E7CF16C2D0BD00B72422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */,
+				3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */,
+				E214F79C31C549EFAED73C0E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3368E7C716C2D0BD00B72422 = {
+			isa = PBXGroup;
+			children = (
+				3368E7DC16C2D0BD00B72422 /* aurora */,
+				3368E7D516C2D0BD00B72422 /* Frameworks */,
+				3368E7D316C2D0BD00B72422 /* Products */,
+				FC3AD588A81D4ED0909972DD /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		3368E7D316C2D0BD00B72422 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7D216C2D0BD00B72422 /* Aurora.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3368E7D516C2D0BD00B72422 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3368E84116C316B800B72422 /* ScriptingBridge.framework */,
+				3368E7D616C2D0BD00B72422 /* Cocoa.framework */,
+				3368E7D816C2D0BD00B72422 /* Other Frameworks */,
+				D411E00FBADA4C948F64487F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3368E7D816C2D0BD00B72422 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7D916C2D0BD00B72422 /* AppKit.framework */,
+				3368E7DA16C2D0BD00B72422 /* CoreData.framework */,
+				3368E7DB16C2D0BD00B72422 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3368E7DC16C2D0BD00B72422 /* aurora */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */,
+				3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */,
+				337F201216C5F4B90051A899 /* AU Window Controller */,
+				3368E80516C2DD3F00B72422 /* Categories */,
+				3368E82016C2E7F400B72422 /* Light Edit */,
+				3368E81616C2E0C700B72422 /* Lights View */,
+				3368E82116C2E82E00B72422 /* Setup View */,
+				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
+				3368E7DD16C2D0BD00B72422 /* Supporting Files */,
+			);
+			path = aurora;
+			sourceTree = "<group>";
+		};
+		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
+				3368E84816C328CF00B72422 /* spectrum_chart.jpg */,
+				3368E7FF16C2DB3500B72422 /* HueLight.icns */,
+				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
+				3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */,
+				3368E7E216C2D0BD00B72422 /* main.m */,
+				3368E7E416C2D0BD00B72422 /* aurora-Prefix.pch */,
+				3368E7E516C2D0BD00B72422 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3368E80516C2DD3F00B72422 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3368E81816C2E16D00B72422 /* NSViewController+PushPopAnimations.h */,
+				3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */,
+				3368E80116C2DD1F00B72422 /* NSView+Animations.h */,
+				3368E80216C2DD1F00B72422 /* NSView+Animations.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		3368E81616C2E0C700B72422 /* Lights View */ = {
+			isa = PBXGroup;
+			children = (
+				3368E80616C2DE5C00B72422 /* AULightsViewController.h */,
+				3368E80716C2DE5C00B72422 /* AULightsViewController.m */,
+				3368E80816C2DE5C00B72422 /* AULightsViewController.xib */,
+			);
+			name = "Lights View";
+			sourceTree = "<group>";
+		};
+		3368E82016C2E7F400B72422 /* Light Edit */ = {
+			isa = PBXGroup;
+			children = (
+				3368E81B16C2E7E700B72422 /* AULightEditViewController.h */,
+				3368E81C16C2E7E700B72422 /* AULightEditViewController.m */,
+				3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */,
+			);
+			name = "Light Edit";
+			sourceTree = "<group>";
+		};
+		3368E82116C2E82E00B72422 /* Setup View */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7FC16C2D2F500B72422 /* AUSetupViewController.h */,
+				3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */,
+			);
+			name = "Setup View";
+			sourceTree = "<group>";
+		};
+		3368E83F16C30ECB00B72422 /* Spotify View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3368E84016C30F8700B72422 /* Spotify.h */,
+				3368E83916C30EC700B72422 /* AUSpotifyViewController.h */,
+				3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */,
+				3368E83B16C30EC700B72422 /* AUSpotifyViewController.xib */,
+				3368E84316C31CDF00B72422 /* AUDraggableView.h */,
+				3368E84416C31CDF00B72422 /* AUDraggableView.m */,
+				3368E84616C322CC00B72422 /* AUDraggableLight.xib */,
+			);
+			name = "Spotify View Controller";
+			sourceTree = "<group>";
+		};
+		337F201216C5F4B90051A899 /* AU Window Controller */ = {
+			isa = PBXGroup;
+			children = (
+				337F200C16C5F4AE0051A899 /* AUWindowController.h */,
+				337F200D16C5F4AE0051A899 /* AUWindowController.m */,
+				337F200E16C5F4AE0051A899 /* AUWindowController.xib */,
+			);
+			name = "AU Window Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3368E7D116C2D0BD00B72422 /* Aurora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3368E7F016C2D0BD00B72422 /* Build configuration list for PBXNativeTarget "Aurora" */;
+			buildPhases = (
+				3368E7CE16C2D0BD00B72422 /* Sources */,
+				3368E7CF16C2D0BD00B72422 /* Frameworks */,
+				3368E7D016C2D0BD00B72422 /* Resources */,
+				C8111859CFF64617A85D2D8B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aurora;
+			productName = aurora;
+			productReference = 3368E7D216C2D0BD00B72422 /* Aurora.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3368E7C916C2D0BD00B72422 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AU;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Jason Dreisbach";
+			};
+			buildConfigurationList = 3368E7CC16C2D0BD00B72422 /* Build configuration list for PBXProject "Aurora" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3368E7C716C2D0BD00B72422;
+			productRefGroup = 3368E7D316C2D0BD00B72422 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3368E7D116C2D0BD00B72422 /* Aurora */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3368E7D016C2D0BD00B72422 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3368E7E116C2D0BD00B72422 /* InfoPlist.strings in Resources */,
+				3368E7E716C2D0BD00B72422 /* Credits.rtf in Resources */,
+				3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */,
+				3368E80016C2DB3500B72422 /* HueLight.icns in Resources */,
+				3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */,
+				3368E81F16C2E7E800B72422 /* AULightEditViewController.xib in Resources */,
+				3368E83D16C30EC700B72422 /* AUSpotifyViewController.xib in Resources */,
+				3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */,
+				3368E84916C328CF00B72422 /* spectrum_chart.jpg in Resources */,
+				337F201016C5F4AE0051A899 /* AUWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C8111859CFF64617A85D2D8B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3368E7CE16C2D0BD00B72422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3368E7E316C2D0BD00B72422 /* main.m in Sources */,
+				3368E7EA16C2D0BD00B72422 /* AUAppDelegate.m in Sources */,
+				3368E7FE16C2D2F500B72422 /* AUSetupViewController.m in Sources */,
+				3368E80316C2DD1F00B72422 /* NSView+Animations.m in Sources */,
+				3368E80916C2DE5C00B72422 /* AULightsViewController.m in Sources */,
+				3368E81A16C2E16D00B72422 /* NSViewController+PushPopAnimations.m in Sources */,
+				3368E81E16C2E7E800B72422 /* AULightEditViewController.m in Sources */,
+				3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */,
+				3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */,
+				337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3368E7E016C2D0BD00B72422 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3368E7E516C2D0BD00B72422 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3368E7E616C2D0BD00B72422 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		3368E7EB16C2D0BD00B72422 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3368E7EC16C2D0BD00B72422 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3368E7EE16C2D0BD00B72422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3368E7EF16C2D0BD00B72422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3368E7F116C2D0BD00B72422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
+				INFOPLIST_FILE = "aurora/aurora-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3368E7F216C2D0BD00B72422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
+				INFOPLIST_FILE = "aurora/aurora-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3368E7CC16C2D0BD00B72422 /* Build configuration list for PBXProject "Aurora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3368E7EE16C2D0BD00B72422 /* Debug */,
+				3368E7EF16C2D0BD00B72422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3368E7F016C2D0BD00B72422 /* Build configuration list for PBXNativeTarget "Aurora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3368E7F116C2D0BD00B72422 /* Debug */,
+				3368E7F216C2D0BD00B72422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3368E7C916C2D0BD00B72422 /* Project object */;
+}
