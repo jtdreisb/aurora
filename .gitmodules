@@ -1,0 +1,3 @@
+[submodule "submodule/INAppStoreWindow"]
+	path = submodule/INAppStoreWindow
+	url = git@github.com:indragiek/INAppStoreWindow.git
