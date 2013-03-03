@@ -30,7 +30,8 @@ open aurora.xcworkspace
 
 6. Click Run.
 
-*** Working on a locally checked out version 
+Working on a locally checked out version 
+====
 ```
 pod 'DPHue', :local => '~/src/DPHue'
 ```

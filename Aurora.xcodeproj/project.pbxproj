@@ -14,7 +14,7 @@
 		3368E7EA16C2D0BD00B72422 /* AUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */; };
 		3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7EB16C2D0BD00B72422 /* MainMenu.xib */; };
 		3368E7FE16C2D2F500B72422 /* AUSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */; };
-		3368E80016C2DB3500B72422 /* HueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7FF16C2DB3500B72422 /* HueLight.icns */; };
+		3368E80016C2DB3500B72422 /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7FF16C2DB3500B72422 /* AUHueLight.icns */; };
 		3368E80316C2DD1F00B72422 /* NSView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80216C2DD1F00B72422 /* NSView+Animations.m */; };
 		3368E80916C2DE5C00B72422 /* AULightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80716C2DE5C00B72422 /* AULightsViewController.m */; };
 		3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E80816C2DE5C00B72422 /* AULightsViewController.xib */; };
@@ -26,9 +26,53 @@
 		3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E84116C316B800B72422 /* ScriptingBridge.framework */; };
 		3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E84416C31CDF00B72422 /* AUDraggableView.m */; };
 		3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84616C322CC00B72422 /* AUDraggableLight.xib */; };
-		3368E84916C328CF00B72422 /* spectrum_chart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84816C328CF00B72422 /* spectrum_chart.jpg */; };
+		3368E84916C328CF00B72422 /* AUSpectrumChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */; };
 		337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F200D16C5F4AE0051A899 /* AUWindowController.m */; };
 		337F201016C5F4AE0051A899 /* AUWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337F200E16C5F4AE0051A899 /* AUWindowController.xib */; };
+		33F0CEC516E2A7E600B93E57 /* UIMockup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEC416E2A7E600B93E57 /* UIMockup.xib */; };
+		33F0CECC16E2A8B100B93E57 /* AULinenLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEC816E2A8B100B93E57 /* AULinenLight.png */; };
+		33F0CECD16E2A8B100B93E57 /* AULinenLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEC916E2A8B100B93E57 /* AULinenLight@2x.png */; };
+		33F0CECE16E2A8B100B93E57 /* AULinenDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CECA16E2A8B100B93E57 /* AULinenDark.png */; };
+		33F0CECF16E2A8B100B93E57 /* AULinenDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CECB16E2A8B100B93E57 /* AULinenDark@2x.png */; };
+		33F0CEE216E2AE8200B93E57 /* AULineQuadTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CED516E2AE8200B93E57 /* AULineQuadTemplate.pdf */; };
+		33F0CEE316E2AE8200B93E57 /* AUShelfArrowDown.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CED616E2AE8200B93E57 /* AUShelfArrowDown.pdf */; };
+		33F0CEE416E2AE8200B93E57 /* AUPause.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CED716E2AE8200B93E57 /* AUPause.pdf */; };
+		33F0CEE516E2AE8200B93E57 /* AUPlayCircle.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CED816E2AE8200B93E57 /* AUPlayCircle.pdf */; };
+		33F0CEE616E2AE8200B93E57 /* AUResume.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CED916E2AE8200B93E57 /* AUResume.pdf */; };
+		33F0CEE716E2AE8200B93E57 /* AUPlay.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEDA16E2AE8200B93E57 /* AUPlay.pdf */; };
+		33F0CEE816E2AE8200B93E57 /* AUShelfArrowUp.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEDB16E2AE8200B93E57 /* AUShelfArrowUp.pdf */; };
+		33F0CEE916E2AE8200B93E57 /* AUShelfArrowUpSelected.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEDC16E2AE8200B93E57 /* AUShelfArrowUpSelected.pdf */; };
+		33F0CEEB16E2AEE900B93E57 /* AULineTripleTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEEA16E2AEE900B93E57 /* AULineTripleTemplate.pdf */; };
+		33F0CEEE16E2AEF900B93E57 /* AUInfoRound.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEEC16E2AEF900B93E57 /* AUInfoRound.tiff */; };
+		33F0CEEF16E2AEF900B93E57 /* AUInfoRoundDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEED16E2AEF900B93E57 /* AUInfoRoundDown.tiff */; };
+		33F0CEF116E2AF0300B93E57 /* AUScheduleClock.icns in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF016E2AF0300B93E57 /* AUScheduleClock.icns */; };
+		33F0CEF316E2AF2F00B93E57 /* AUSnapshot.icns in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF216E2AF2F00B93E57 /* AUSnapshot.icns */; };
+		33F0CF0016E2AF7C00B93E57 /* AUDisclosureTriangleDiagonal.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF616E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal.png */; };
+		33F0CF0116E2AF7C00B93E57 /* AUDisclosureTriangleDiagonal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF716E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal@2x.png */; };
+		33F0CF0216E2AF7C00B93E57 /* AUDisclosureTriangleDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF816E2AF7B00B93E57 /* AUDisclosureTriangleDown.png */; };
+		33F0CF0316E2AF7C00B93E57 /* AUDisclosureTriangleDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEF916E2AF7B00B93E57 /* AUDisclosureTriangleDown@2x.png */; };
+		33F0CF0416E2AF7C00B93E57 /* AUDisclosureTriangleDownPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFA16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed.png */; };
+		33F0CF0516E2AF7C00B93E57 /* AUDisclosureTriangleDownPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFB16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed@2x.png */; };
+		33F0CF0616E2AF7C00B93E57 /* AUDisclosureTriangleRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFC16E2AF7B00B93E57 /* AUDisclosureTriangleRight.png */; };
+		33F0CF0716E2AF7C00B93E57 /* AUDisclosureTriangleRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFD16E2AF7B00B93E57 /* AUDisclosureTriangleRight@2x.png */; };
+		33F0CF0816E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFE16E2AF7B00B93E57 /* AUDisclosureTriangleRightPressed.png */; };
+		33F0CF0916E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CEFF16E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed@2x.png */; };
+		33F0CF0C16E2AF8F00B93E57 /* AUAddWithArrowTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF0A16E2AF8F00B93E57 /* AUAddWithArrowTemplate.png */; };
+		33F0CF0D16E2AF8F00B93E57 /* AUAddWithArrowTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF0B16E2AF8F00B93E57 /* AUAddWithArrowTemplate@2x.png */; };
+		33F0CF1016E2AF9B00B93E57 /* AUBlueStatusBead.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF0E16E2AF9B00B93E57 /* AUBlueStatusBead.png */; };
+		33F0CF1116E2AF9B00B93E57 /* AUBlueStatusBead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF0F16E2AF9B00B93E57 /* AUBlueStatusBead@2x.png */; };
+		33F0CF1516E2AFB200B93E57 /* AUGrayStatusBead.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1216E2AFB200B93E57 /* AUGrayStatusBead.png */; };
+		33F0CF1616E2AFB200B93E57 /* AUGrayStatusBead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1316E2AFB200B93E57 /* AUGrayStatusBead@2x.png */; };
+		33F0CF1716E2AFB200B93E57 /* AUGreenCircleShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1416E2AFB200B93E57 /* AUGreenCircleShape.png */; };
+		33F0CF1C16E2AFC000B93E57 /* AULighterGreenStatusBead.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1816E2AFBF00B93E57 /* AULighterGreenStatusBead.png */; };
+		33F0CF1D16E2AFC000B93E57 /* AULighterGreenStatusBead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1916E2AFC000B93E57 /* AULighterGreenStatusBead@2x.png */; };
+		33F0CF1E16E2AFC000B93E57 /* AULightGreenStatusBead.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1A16E2AFC000B93E57 /* AULightGreenStatusBead.png */; };
+		33F0CF1F16E2AFC000B93E57 /* AULightGreenStatusBead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF1B16E2AFC000B93E57 /* AULightGreenStatusBead@2x.png */; };
+		33F0CF2216E2AFCC00B93E57 /* AUNewRecord.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2016E2AFCC00B93E57 /* AUNewRecord.png */; };
+		33F0CF2316E2AFCC00B93E57 /* AUNewRecord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2116E2AFCC00B93E57 /* AUNewRecord@2x.png */; };
+		33F0CF2616E2AFDD00B93E57 /* AUSplitterHandle.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2416E2AFDD00B93E57 /* AUSplitterHandle.png */; };
+		33F0CF2716E2AFDD00B93E57 /* AUSplitterHandle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2516E2AFDD00B93E57 /* AUSplitterHandle@2x.png */; };
+		33F0CF2916E2AFE500B93E57 /* AUSuccess.icns in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2816E2AFE500B93E57 /* AUSuccess.icns */; };
 		E214F79C31C549EFAED73C0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D411E00FBADA4C948F64487F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +92,7 @@
 		3368E7EC16C2D0BD00B72422 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3368E7FC16C2D2F500B72422 /* AUSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSetupViewController.h; sourceTree = "<group>"; };
 		3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSetupViewController.m; sourceTree = "<group>"; };
-		3368E7FF16C2DB3500B72422 /* HueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HueLight.icns; sourceTree = "<group>"; };
+		3368E7FF16C2DB3500B72422 /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUHueLight.icns; sourceTree = "<group>"; };
 		3368E80116C2DD1F00B72422 /* NSView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Animations.h"; sourceTree = "<group>"; };
 		3368E80216C2DD1F00B72422 /* NSView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Animations.m"; sourceTree = "<group>"; };
 		3368E80616C2DE5C00B72422 /* AULightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightsViewController.h; sourceTree = "<group>"; };
@@ -67,10 +111,54 @@
 		3368E84316C31CDF00B72422 /* AUDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDraggableView.h; sourceTree = "<group>"; };
 		3368E84416C31CDF00B72422 /* AUDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDraggableView.m; sourceTree = "<group>"; };
 		3368E84616C322CC00B72422 /* AUDraggableLight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDraggableLight.xib; sourceTree = "<group>"; };
-		3368E84816C328CF00B72422 /* spectrum_chart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spectrum_chart.jpg; sourceTree = "<group>"; };
+		3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AUSpectrumChart.jpg; sourceTree = "<group>"; };
 		337F200C16C5F4AE0051A899 /* AUWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindowController.h; sourceTree = "<group>"; };
 		337F200D16C5F4AE0051A899 /* AUWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindowController.m; sourceTree = "<group>"; };
 		337F200E16C5F4AE0051A899 /* AUWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUWindowController.xib; sourceTree = "<group>"; };
+		33F0CEC416E2A7E600B93E57 /* UIMockup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMockup.xib; sourceTree = "<group>"; };
+		33F0CEC816E2A8B100B93E57 /* AULinenLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULinenLight.png; sourceTree = "<group>"; };
+		33F0CEC916E2A8B100B93E57 /* AULinenLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AULinenLight@2x.png"; sourceTree = "<group>"; };
+		33F0CECA16E2A8B100B93E57 /* AULinenDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULinenDark.png; sourceTree = "<group>"; };
+		33F0CECB16E2A8B100B93E57 /* AULinenDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AULinenDark@2x.png"; sourceTree = "<group>"; };
+		33F0CED516E2AE8200B93E57 /* AULineQuadTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AULineQuadTemplate.pdf; sourceTree = "<group>"; };
+		33F0CED616E2AE8200B93E57 /* AUShelfArrowDown.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUShelfArrowDown.pdf; sourceTree = "<group>"; };
+		33F0CED716E2AE8200B93E57 /* AUPause.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUPause.pdf; sourceTree = "<group>"; };
+		33F0CED816E2AE8200B93E57 /* AUPlayCircle.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUPlayCircle.pdf; sourceTree = "<group>"; };
+		33F0CED916E2AE8200B93E57 /* AUResume.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUResume.pdf; sourceTree = "<group>"; };
+		33F0CEDA16E2AE8200B93E57 /* AUPlay.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUPlay.pdf; sourceTree = "<group>"; };
+		33F0CEDB16E2AE8200B93E57 /* AUShelfArrowUp.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUShelfArrowUp.pdf; sourceTree = "<group>"; };
+		33F0CEDC16E2AE8200B93E57 /* AUShelfArrowUpSelected.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUShelfArrowUpSelected.pdf; sourceTree = "<group>"; };
+		33F0CEEA16E2AEE900B93E57 /* AULineTripleTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AULineTripleTemplate.pdf; sourceTree = "<group>"; };
+		33F0CEEC16E2AEF900B93E57 /* AUInfoRound.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AUInfoRound.tiff; sourceTree = "<group>"; };
+		33F0CEED16E2AEF900B93E57 /* AUInfoRoundDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AUInfoRoundDown.tiff; sourceTree = "<group>"; };
+		33F0CEF016E2AF0300B93E57 /* AUScheduleClock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUScheduleClock.icns; sourceTree = "<group>"; };
+		33F0CEF216E2AF2F00B93E57 /* AUSnapshot.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSnapshot.icns; sourceTree = "<group>"; };
+		33F0CEF616E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUDisclosureTriangleDiagonal.png; sourceTree = "<group>"; };
+		33F0CEF716E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUDisclosureTriangleDiagonal@2x.png"; sourceTree = "<group>"; };
+		33F0CEF816E2AF7B00B93E57 /* AUDisclosureTriangleDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUDisclosureTriangleDown.png; sourceTree = "<group>"; };
+		33F0CEF916E2AF7B00B93E57 /* AUDisclosureTriangleDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUDisclosureTriangleDown@2x.png"; sourceTree = "<group>"; };
+		33F0CEFA16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUDisclosureTriangleDownPressed.png; sourceTree = "<group>"; };
+		33F0CEFB16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUDisclosureTriangleDownPressed@2x.png"; sourceTree = "<group>"; };
+		33F0CEFC16E2AF7B00B93E57 /* AUDisclosureTriangleRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUDisclosureTriangleRight.png; sourceTree = "<group>"; };
+		33F0CEFD16E2AF7B00B93E57 /* AUDisclosureTriangleRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUDisclosureTriangleRight@2x.png"; sourceTree = "<group>"; };
+		33F0CEFE16E2AF7B00B93E57 /* AUDisclosureTriangleRightPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUDisclosureTriangleRightPressed.png; sourceTree = "<group>"; };
+		33F0CEFF16E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUDisclosureTriangleRightPressed@2x.png"; sourceTree = "<group>"; };
+		33F0CF0A16E2AF8F00B93E57 /* AUAddWithArrowTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUAddWithArrowTemplate.png; sourceTree = "<group>"; };
+		33F0CF0B16E2AF8F00B93E57 /* AUAddWithArrowTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUAddWithArrowTemplate@2x.png"; sourceTree = "<group>"; };
+		33F0CF0E16E2AF9B00B93E57 /* AUBlueStatusBead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUBlueStatusBead.png; sourceTree = "<group>"; };
+		33F0CF0F16E2AF9B00B93E57 /* AUBlueStatusBead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUBlueStatusBead@2x.png"; sourceTree = "<group>"; };
+		33F0CF1216E2AFB200B93E57 /* AUGrayStatusBead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUGrayStatusBead.png; sourceTree = "<group>"; };
+		33F0CF1316E2AFB200B93E57 /* AUGrayStatusBead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUGrayStatusBead@2x.png"; sourceTree = "<group>"; };
+		33F0CF1416E2AFB200B93E57 /* AUGreenCircleShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUGreenCircleShape.png; sourceTree = "<group>"; };
+		33F0CF1816E2AFBF00B93E57 /* AULighterGreenStatusBead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULighterGreenStatusBead.png; sourceTree = "<group>"; };
+		33F0CF1916E2AFC000B93E57 /* AULighterGreenStatusBead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AULighterGreenStatusBead@2x.png"; sourceTree = "<group>"; };
+		33F0CF1A16E2AFC000B93E57 /* AULightGreenStatusBead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULightGreenStatusBead.png; sourceTree = "<group>"; };
+		33F0CF1B16E2AFC000B93E57 /* AULightGreenStatusBead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AULightGreenStatusBead@2x.png"; sourceTree = "<group>"; };
+		33F0CF2016E2AFCC00B93E57 /* AUNewRecord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUNewRecord.png; sourceTree = "<group>"; };
+		33F0CF2116E2AFCC00B93E57 /* AUNewRecord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUNewRecord@2x.png"; sourceTree = "<group>"; };
+		33F0CF2416E2AFDD00B93E57 /* AUSplitterHandle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUSplitterHandle.png; sourceTree = "<group>"; };
+		33F0CF2516E2AFDD00B93E57 /* AUSplitterHandle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUSplitterHandle@2x.png"; sourceTree = "<group>"; };
+		33F0CF2816E2AFE500B93E57 /* AUSuccess.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSuccess.icns; sourceTree = "<group>"; };
 		D411E00FBADA4C948F64487F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3AD588A81D4ED0909972DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -139,6 +227,7 @@
 				3368E81616C2E0C700B72422 /* Lights View */,
 				3368E82116C2E82E00B72422 /* Setup View */,
 				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
+				33F0CEC616E2A88D00B93E57 /* Mockup */,
 				3368E7DD16C2D0BD00B72422 /* Supporting Files */,
 			);
 			path = aurora;
@@ -147,9 +236,8 @@
 		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33F0CEC716E2A89600B93E57 /* Images */,
 				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
-				3368E84816C328CF00B72422 /* spectrum_chart.jpg */,
-				3368E7FF16C2DB3500B72422 /* HueLight.icns */,
 				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
 				3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */,
 				3368E7E216C2D0BD00B72422 /* main.m */,
@@ -223,6 +311,66 @@
 			name = "AU Window Controller";
 			sourceTree = "<group>";
 		};
+		33F0CEC616E2A88D00B93E57 /* Mockup */ = {
+			isa = PBXGroup;
+			children = (
+				33F0CEC416E2A7E600B93E57 /* UIMockup.xib */,
+			);
+			name = Mockup;
+			sourceTree = "<group>";
+		};
+		33F0CEC716E2A89600B93E57 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				33F0CF2816E2AFE500B93E57 /* AUSuccess.icns */,
+				33F0CF2416E2AFDD00B93E57 /* AUSplitterHandle.png */,
+				33F0CF2516E2AFDD00B93E57 /* AUSplitterHandle@2x.png */,
+				33F0CF2016E2AFCC00B93E57 /* AUNewRecord.png */,
+				33F0CF2116E2AFCC00B93E57 /* AUNewRecord@2x.png */,
+				33F0CF1816E2AFBF00B93E57 /* AULighterGreenStatusBead.png */,
+				33F0CF1916E2AFC000B93E57 /* AULighterGreenStatusBead@2x.png */,
+				33F0CF1A16E2AFC000B93E57 /* AULightGreenStatusBead.png */,
+				33F0CF1B16E2AFC000B93E57 /* AULightGreenStatusBead@2x.png */,
+				33F0CF1216E2AFB200B93E57 /* AUGrayStatusBead.png */,
+				33F0CF1316E2AFB200B93E57 /* AUGrayStatusBead@2x.png */,
+				33F0CF1416E2AFB200B93E57 /* AUGreenCircleShape.png */,
+				33F0CF0E16E2AF9B00B93E57 /* AUBlueStatusBead.png */,
+				33F0CF0F16E2AF9B00B93E57 /* AUBlueStatusBead@2x.png */,
+				33F0CF0A16E2AF8F00B93E57 /* AUAddWithArrowTemplate.png */,
+				33F0CF0B16E2AF8F00B93E57 /* AUAddWithArrowTemplate@2x.png */,
+				33F0CEF616E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal.png */,
+				33F0CEF716E2AF7B00B93E57 /* AUDisclosureTriangleDiagonal@2x.png */,
+				33F0CEF816E2AF7B00B93E57 /* AUDisclosureTriangleDown.png */,
+				33F0CEF916E2AF7B00B93E57 /* AUDisclosureTriangleDown@2x.png */,
+				33F0CEFA16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed.png */,
+				33F0CEFB16E2AF7B00B93E57 /* AUDisclosureTriangleDownPressed@2x.png */,
+				33F0CEFC16E2AF7B00B93E57 /* AUDisclosureTriangleRight.png */,
+				33F0CEFD16E2AF7B00B93E57 /* AUDisclosureTriangleRight@2x.png */,
+				33F0CEFE16E2AF7B00B93E57 /* AUDisclosureTriangleRightPressed.png */,
+				33F0CEFF16E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed@2x.png */,
+				33F0CEF216E2AF2F00B93E57 /* AUSnapshot.icns */,
+				33F0CEF016E2AF0300B93E57 /* AUScheduleClock.icns */,
+				33F0CEEC16E2AEF900B93E57 /* AUInfoRound.tiff */,
+				33F0CEED16E2AEF900B93E57 /* AUInfoRoundDown.tiff */,
+				33F0CEEA16E2AEE900B93E57 /* AULineTripleTemplate.pdf */,
+				33F0CED516E2AE8200B93E57 /* AULineQuadTemplate.pdf */,
+				33F0CED616E2AE8200B93E57 /* AUShelfArrowDown.pdf */,
+				33F0CEDB16E2AE8200B93E57 /* AUShelfArrowUp.pdf */,
+				33F0CEDC16E2AE8200B93E57 /* AUShelfArrowUpSelected.pdf */,
+				33F0CED716E2AE8200B93E57 /* AUPause.pdf */,
+				33F0CED816E2AE8200B93E57 /* AUPlayCircle.pdf */,
+				33F0CED916E2AE8200B93E57 /* AUResume.pdf */,
+				33F0CEDA16E2AE8200B93E57 /* AUPlay.pdf */,
+				33F0CEC816E2A8B100B93E57 /* AULinenLight.png */,
+				33F0CEC916E2A8B100B93E57 /* AULinenLight@2x.png */,
+				33F0CECA16E2A8B100B93E57 /* AULinenDark.png */,
+				33F0CECB16E2A8B100B93E57 /* AULinenDark@2x.png */,
+				3368E7FF16C2DB3500B72422 /* AUHueLight.icns */,
+				3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,13 +427,57 @@
 				3368E7E116C2D0BD00B72422 /* InfoPlist.strings in Resources */,
 				3368E7E716C2D0BD00B72422 /* Credits.rtf in Resources */,
 				3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */,
-				3368E80016C2DB3500B72422 /* HueLight.icns in Resources */,
+				3368E80016C2DB3500B72422 /* AUHueLight.icns in Resources */,
 				3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */,
 				3368E81F16C2E7E800B72422 /* AULightEditViewController.xib in Resources */,
 				3368E83D16C30EC700B72422 /* AUSpotifyViewController.xib in Resources */,
 				3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */,
-				3368E84916C328CF00B72422 /* spectrum_chart.jpg in Resources */,
+				3368E84916C328CF00B72422 /* AUSpectrumChart.jpg in Resources */,
 				337F201016C5F4AE0051A899 /* AUWindowController.xib in Resources */,
+				33F0CEC516E2A7E600B93E57 /* UIMockup.xib in Resources */,
+				33F0CECC16E2A8B100B93E57 /* AULinenLight.png in Resources */,
+				33F0CECD16E2A8B100B93E57 /* AULinenLight@2x.png in Resources */,
+				33F0CECE16E2A8B100B93E57 /* AULinenDark.png in Resources */,
+				33F0CECF16E2A8B100B93E57 /* AULinenDark@2x.png in Resources */,
+				33F0CEE216E2AE8200B93E57 /* AULineQuadTemplate.pdf in Resources */,
+				33F0CEE316E2AE8200B93E57 /* AUShelfArrowDown.pdf in Resources */,
+				33F0CEE416E2AE8200B93E57 /* AUPause.pdf in Resources */,
+				33F0CEE516E2AE8200B93E57 /* AUPlayCircle.pdf in Resources */,
+				33F0CEE616E2AE8200B93E57 /* AUResume.pdf in Resources */,
+				33F0CEE716E2AE8200B93E57 /* AUPlay.pdf in Resources */,
+				33F0CEE816E2AE8200B93E57 /* AUShelfArrowUp.pdf in Resources */,
+				33F0CEE916E2AE8200B93E57 /* AUShelfArrowUpSelected.pdf in Resources */,
+				33F0CEEB16E2AEE900B93E57 /* AULineTripleTemplate.pdf in Resources */,
+				33F0CEEE16E2AEF900B93E57 /* AUInfoRound.tiff in Resources */,
+				33F0CEEF16E2AEF900B93E57 /* AUInfoRoundDown.tiff in Resources */,
+				33F0CEF116E2AF0300B93E57 /* AUScheduleClock.icns in Resources */,
+				33F0CEF316E2AF2F00B93E57 /* AUSnapshot.icns in Resources */,
+				33F0CF0016E2AF7C00B93E57 /* AUDisclosureTriangleDiagonal.png in Resources */,
+				33F0CF0116E2AF7C00B93E57 /* AUDisclosureTriangleDiagonal@2x.png in Resources */,
+				33F0CF0216E2AF7C00B93E57 /* AUDisclosureTriangleDown.png in Resources */,
+				33F0CF0316E2AF7C00B93E57 /* AUDisclosureTriangleDown@2x.png in Resources */,
+				33F0CF0416E2AF7C00B93E57 /* AUDisclosureTriangleDownPressed.png in Resources */,
+				33F0CF0516E2AF7C00B93E57 /* AUDisclosureTriangleDownPressed@2x.png in Resources */,
+				33F0CF0616E2AF7C00B93E57 /* AUDisclosureTriangleRight.png in Resources */,
+				33F0CF0716E2AF7C00B93E57 /* AUDisclosureTriangleRight@2x.png in Resources */,
+				33F0CF0816E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed.png in Resources */,
+				33F0CF0916E2AF7C00B93E57 /* AUDisclosureTriangleRightPressed@2x.png in Resources */,
+				33F0CF0C16E2AF8F00B93E57 /* AUAddWithArrowTemplate.png in Resources */,
+				33F0CF0D16E2AF8F00B93E57 /* AUAddWithArrowTemplate@2x.png in Resources */,
+				33F0CF1016E2AF9B00B93E57 /* AUBlueStatusBead.png in Resources */,
+				33F0CF1116E2AF9B00B93E57 /* AUBlueStatusBead@2x.png in Resources */,
+				33F0CF1516E2AFB200B93E57 /* AUGrayStatusBead.png in Resources */,
+				33F0CF1616E2AFB200B93E57 /* AUGrayStatusBead@2x.png in Resources */,
+				33F0CF1716E2AFB200B93E57 /* AUGreenCircleShape.png in Resources */,
+				33F0CF1C16E2AFC000B93E57 /* AULighterGreenStatusBead.png in Resources */,
+				33F0CF1D16E2AFC000B93E57 /* AULighterGreenStatusBead@2x.png in Resources */,
+				33F0CF1E16E2AFC000B93E57 /* AULightGreenStatusBead.png in Resources */,
+				33F0CF1F16E2AFC000B93E57 /* AULightGreenStatusBead@2x.png in Resources */,
+				33F0CF2216E2AFCC00B93E57 /* AUNewRecord.png in Resources */,
+				33F0CF2316E2AFCC00B93E57 /* AUNewRecord@2x.png in Resources */,
+				33F0CF2616E2AFDD00B93E57 /* AUSplitterHandle.png in Resources */,
+				33F0CF2716E2AFDD00B93E57 /* AUSplitterHandle@2x.png in Resources */,
+				33F0CF2916E2AFE500B93E57 /* AUSuccess.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
