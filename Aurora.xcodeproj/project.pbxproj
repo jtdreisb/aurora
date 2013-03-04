@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334B825F16E2EAEA006CB8F2 /* AUWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B825E16E2EAEA006CB8F2 /* AUWindow.m */; };
 		3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E7D616C2D0BD00B72422 /* Cocoa.framework */; };
 		3368E7E116C2D0BD00B72422 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */; };
 		3368E7E316C2D0BD00B72422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E216C2D0BD00B72422 /* main.m */; };
@@ -77,6 +78,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		334B825D16E2EAEA006CB8F2 /* AUWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindow.h; sourceTree = "<group>"; };
+		334B825E16E2EAEA006CB8F2 /* AUWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindow.m; sourceTree = "<group>"; };
 		3368E7D216C2D0BD00B72422 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3368E7D616C2D0BD00B72422 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3368E7D916C2D0BD00B72422 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		334B825C16E2E73A006CB8F2 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Submodules;
+			sourceTree = "<group>";
+		};
 		3368E7C716C2D0BD00B72422 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,9 @@
 			children = (
 				3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */,
 				3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */,
+				334B825D16E2EAEA006CB8F2 /* AUWindow.h */,
+				334B825E16E2EAEA006CB8F2 /* AUWindow.m */,
+				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
 				337F201216C5F4B90051A899 /* AU Window Controller */,
 				3368E80516C2DD3F00B72422 /* Categories */,
 				3368E82016C2E7F400B72422 /* Light Edit */,
@@ -236,8 +249,8 @@
 		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				334B825C16E2E73A006CB8F2 /* Submodules */,
 				33F0CEC716E2A89600B93E57 /* Images */,
-				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
 				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
 				3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */,
 				3368E7E216C2D0BD00B72422 /* main.m */,
@@ -515,6 +528,7 @@
 				3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */,
 				3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */,
 				337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */,
+				334B825F16E2EAEA006CB8F2 /* AUWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

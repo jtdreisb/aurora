@@ -1435,10 +1435,10 @@
 				<string key="95.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="96.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="98.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<array class="NSMutableArray" key="99.IBNSViewMetadataConstraints">
-					<reference ref="933897926"/>
-					<reference ref="217580161"/>
+				<array key="99.IBNSViewMetadataConstraints">
 					<reference ref="1028181038"/>
+					<reference ref="217580161"/>
+					<reference ref="933897926"/>
 				</array>
 				<string key="99.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>

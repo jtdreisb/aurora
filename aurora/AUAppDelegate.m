@@ -7,6 +7,7 @@
 //
 
 #import "AUAppDelegate.h"
+#import "AUWindow.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -24,6 +25,9 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
         [prefs synchronize];
     }
     [self startDiscovery:self];
+
+//    [self.window makeKeyAndOrderFront:self];
+    
     
 }
 
@@ -79,6 +83,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
         light.name = @"Floor Lamp";
         [light write];
         NSLog(@"after: %@", light);
+        
 //        hue.name = @"bar";
         
 //        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(createUsernameAt:) userInfo:host repeats:YES];
