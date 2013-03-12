@@ -1,16 +1,13 @@
 //
-//  AUWindow.h
+//  AUPerformanceEditViewController.h
 //  Aurora
 //
 //  Created by Jason Dreisbach on 3/7/13.
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "INAppStoreWindow.h"
+#import <Cocoa/Cocoa.h>
 
-@interface AUWindow : INAppStoreWindow
-
-- (void)collapse;
-- (void)expand;
+@interface AUPerformanceEditViewController : NSViewController
 
 @end

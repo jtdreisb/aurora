@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		334B825F16E2EAEA006CB8F2 /* AUWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B825E16E2EAEA006CB8F2 /* AUWindow.m */; };
 		3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E7D616C2D0BD00B72422 /* Cocoa.framework */; };
 		3368E7E116C2D0BD00B72422 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */; };
 		3368E7E316C2D0BD00B72422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E216C2D0BD00B72422 /* main.m */; };
@@ -74,12 +73,13 @@
 		33F0CF2616E2AFDD00B93E57 /* AUSplitterHandle.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2416E2AFDD00B93E57 /* AUSplitterHandle.png */; };
 		33F0CF2716E2AFDD00B93E57 /* AUSplitterHandle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2516E2AFDD00B93E57 /* AUSplitterHandle@2x.png */; };
 		33F0CF2916E2AFE500B93E57 /* AUSuccess.icns in Resources */ = {isa = PBXBuildFile; fileRef = 33F0CF2816E2AFE500B93E57 /* AUSuccess.icns */; };
+		33F7332416E981A800346B0A /* AUPerformanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7332216E981A800346B0A /* AUPerformanceEditViewController.m */; };
+		33F7332516E981A800346B0A /* AUPerformanceEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F7332316E981A800346B0A /* AUPerformanceEditViewController.xib */; };
+		33F7332A16E9932500346B0A /* AUWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7332916E9932500346B0A /* AUWindow.m */; };
 		E214F79C31C549EFAED73C0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D411E00FBADA4C948F64487F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		334B825D16E2EAEA006CB8F2 /* AUWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindow.h; sourceTree = "<group>"; };
-		334B825E16E2EAEA006CB8F2 /* AUWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindow.m; sourceTree = "<group>"; };
 		3368E7D216C2D0BD00B72422 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3368E7D616C2D0BD00B72422 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3368E7D916C2D0BD00B72422 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +162,11 @@
 		33F0CF2416E2AFDD00B93E57 /* AUSplitterHandle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUSplitterHandle.png; sourceTree = "<group>"; };
 		33F0CF2516E2AFDD00B93E57 /* AUSplitterHandle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUSplitterHandle@2x.png"; sourceTree = "<group>"; };
 		33F0CF2816E2AFE500B93E57 /* AUSuccess.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSuccess.icns; sourceTree = "<group>"; };
+		33F7332116E981A800346B0A /* AUPerformanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPerformanceEditViewController.h; sourceTree = "<group>"; };
+		33F7332216E981A800346B0A /* AUPerformanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUPerformanceEditViewController.m; sourceTree = "<group>"; };
+		33F7332316E981A800346B0A /* AUPerformanceEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUPerformanceEditViewController.xib; sourceTree = "<group>"; };
+		33F7332816E9932500346B0A /* AUWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindow.h; sourceTree = "<group>"; };
+		33F7332916E9932500346B0A /* AUWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindow.m; sourceTree = "<group>"; };
 		D411E00FBADA4C948F64487F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3AD588A81D4ED0909972DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -180,13 +185,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		334B825C16E2E73A006CB8F2 /* Submodules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Submodules;
-			sourceTree = "<group>";
-		};
 		3368E7C716C2D0BD00B72422 = {
 			isa = PBXGroup;
 			children = (
@@ -229,12 +227,9 @@
 		3368E7DC16C2D0BD00B72422 /* aurora */ = {
 			isa = PBXGroup;
 			children = (
-				3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */,
-				3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */,
-				334B825D16E2EAEA006CB8F2 /* AUWindow.h */,
-				334B825E16E2EAEA006CB8F2 /* AUWindow.m */,
-				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
-				337F201216C5F4B90051A899 /* AU Window Controller */,
+				33F7332616E988FB00346B0A /* Performance Editor */,
+				337F201216C5F4B90051A899 /* Main Window Controller */,
+				33F7332716E98C6400346B0A /* App Delegate */,
 				3368E80516C2DD3F00B72422 /* Categories */,
 				3368E82016C2E7F400B72422 /* Light Edit */,
 				3368E81616C2E0C700B72422 /* Lights View */,
@@ -249,7 +244,7 @@
 		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				334B825C16E2E73A006CB8F2 /* Submodules */,
+				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
 				33F0CEC716E2A89600B93E57 /* Images */,
 				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
 				3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */,
@@ -314,14 +309,16 @@
 			name = "Spotify View Controller";
 			sourceTree = "<group>";
 		};
-		337F201216C5F4B90051A899 /* AU Window Controller */ = {
+		337F201216C5F4B90051A899 /* Main Window Controller */ = {
 			isa = PBXGroup;
 			children = (
+				33F7332816E9932500346B0A /* AUWindow.h */,
+				33F7332916E9932500346B0A /* AUWindow.m */,
 				337F200C16C5F4AE0051A899 /* AUWindowController.h */,
 				337F200D16C5F4AE0051A899 /* AUWindowController.m */,
 				337F200E16C5F4AE0051A899 /* AUWindowController.xib */,
 			);
-			name = "AU Window Controller";
+			name = "Main Window Controller";
 			sourceTree = "<group>";
 		};
 		33F0CEC616E2A88D00B93E57 /* Mockup */ = {
@@ -382,6 +379,25 @@
 				3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		33F7332616E988FB00346B0A /* Performance Editor */ = {
+			isa = PBXGroup;
+			children = (
+				33F7332116E981A800346B0A /* AUPerformanceEditViewController.h */,
+				33F7332216E981A800346B0A /* AUPerformanceEditViewController.m */,
+				33F7332316E981A800346B0A /* AUPerformanceEditViewController.xib */,
+			);
+			name = "Performance Editor";
+			sourceTree = "<group>";
+		};
+		33F7332716E98C6400346B0A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */,
+				3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */,
+			);
+			name = "App Delegate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +507,7 @@
 				33F0CF2616E2AFDD00B93E57 /* AUSplitterHandle.png in Resources */,
 				33F0CF2716E2AFDD00B93E57 /* AUSplitterHandle@2x.png in Resources */,
 				33F0CF2916E2AFE500B93E57 /* AUSuccess.icns in Resources */,
+				33F7332516E981A800346B0A /* AUPerformanceEditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +545,8 @@
 				3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */,
 				3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */,
 				337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */,
-				334B825F16E2EAEA006CB8F2 /* AUWindow.m in Sources */,
+				33F7332416E981A800346B0A /* AUPerformanceEditViewController.m in Sources */,
+				33F7332A16E9932500346B0A /* AUWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

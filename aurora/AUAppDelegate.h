@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <DPHue/DPHue.h>
 
-@class AUWindow;
-@interface AUAppDelegate : NSObject <NSApplicationDelegate, DPHueDiscoverDelegate>
+@class AUWindowController;
 
-@property (strong, nonatomic) IBOutlet AUWindow *window;
+@interface AUAppDelegate : NSObject <NSApplicationDelegate>
+
+@property (strong, nonatomic) AUWindowController *windowController;
 
 @end

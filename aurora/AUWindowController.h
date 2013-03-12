@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <DPHue/DPHue.h>
 
-@interface AUWindowController : NSWindowController
+@interface AUWindowController : NSWindowController <DPHueDiscoverDelegate>
 
+@property (strong, readonly) NSMutableArray *hueBridgeArray;
+
+@property (strong, nonatomic) IBOutlet NSViewController *performanceViewController;
 
 @end
