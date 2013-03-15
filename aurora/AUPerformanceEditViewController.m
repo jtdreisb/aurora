@@ -24,4 +24,14 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    self.view.layer.backgroundColor = [[NSColor greenColor] CGColor];
+}
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"mouseDown!");
+}
+
 @end

@@ -10,35 +10,86 @@
 
 @implementation AUWindow
 {
-    CGFloat _contentHeight;
+    CAAnimation *_animation;
 }
 
-- (void)awakeFromNib
+@synthesize view = _view;
+
+
+- (void)setView:(NSView *)aView
 {
-    _contentHeight = 0.0f;
+    @synchronized(self) {
+        NSRect collapsedFrame = self.frame;
+        collapsedFrame.origin.y += self.frame.size.height - self.titleBarHeight;
+        collapsedFrame.size.height = self.titleBarHeight;
+        NSRect viewFrame = _view.frame;
+        
+        [self.animator setFrame:collapsedFrame display:YES animate:YES];
+        
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            
+            [context setDuration:[self animationResizeTime:collapsedFrame]];
+            [[(NSView *)self.contentView animator] setAlphaValue:0.0];
+            
+            
+        } completionHandler:^{
+            
+            [_view removeFromSuperview];
+            [_view setFrame:viewFrame];
+            
+            _view = aView;
+            
+            if (_view != nil) {
+                
+                NSRect expandedFrame = self.frame;
+                expandedFrame.origin.y -= aView.frame.size.height;
+                expandedFrame.size.height = aView.frame.size.height + self.titleBarHeight;
+                
+                [aView setTranslatesAutoresizingMaskIntoConstraints:NO];
+                
+                [self.contentView addSubview:aView];
+                
+                NSDictionary *views = NSDictionaryOfVariableBindings(aView);
+                
+                [self.contentView addConstraints:
+                 [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[aView]|"
+                                                         options:0
+                                                         metrics:nil
+                                                           views:views]];
+                
+                [self.contentView addConstraints:
+                 [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[aView]|"
+                                                         options:0
+                                                         metrics:nil
+                                                           views:views]];
+                
+                [self.animator setFrame:expandedFrame display:YES animate:YES];
+                
+                [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+                    
+                    [context setDuration:[self animationResizeTime:expandedFrame]];
+                    [[(NSView *)self.contentView animator] setAlphaValue:1.0];
+
+                } completionHandler:nil];
+            }
+            
+         }];
+        
+        
+    }
 }
 
-- (void)expand
+- (id)view
 {
-    NSRect expandedFrame = self.frame;
-    expandedFrame.origin.y  -= _contentHeight;
-    expandedFrame.size.height += _contentHeight;
-    self.showsBaselineSeparator = YES;
-    [self setFrame:expandedFrame display:YES animate:YES];
+    @synchronized(self) {
+        return _view;
+    }
+}
+
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
     
- 
 }
-
-- (void)collapse
-{
-    _contentHeight = self.frame.size.height - self.titleBarHeight;
-    
-    NSRect collapsedFrame = self.frame;
-    collapsedFrame.origin.y  += _contentHeight;
-    collapsedFrame.size.height = self.titleBarHeight;
-    [self setFrame:collapsedFrame display:YES animate:YES];
-    self.showsBaselineSeparator = NO;
-}
-
 
 @end

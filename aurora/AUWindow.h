@@ -10,7 +10,6 @@
 
 @interface AUWindow : INAppStoreWindow
 
-- (void)collapse;
-- (void)expand;
+@property (strong) NSView *view;
 
 @end

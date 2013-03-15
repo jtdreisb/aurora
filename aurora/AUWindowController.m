@@ -34,8 +34,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 {
     [super windowDidLoad];
     
-    [(AUWindow *)self.window collapse];
-    
+    [self showViewController:self.performanceViewController];
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:kHueUsernamePrefKey] == nil) {
         NSString *username = [DPHueBridge generateUsername];
@@ -45,19 +44,32 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     [self startDiscovery:self];
 }
 
+- (void)showViewController:(NSViewController *)viewController
+{
+    [(AUWindow *)self.window setView:viewController.view];
+}
+
 
 #pragma mark - Actions
 
 - (IBAction)expand:(id)sender
 {
-    [self.window setContentView:self.performanceViewController.view];
-    [(AUWindow *)self.window expand];
+//    NSImageView *imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(200, 157, 100, 100)];
+//    imageView.image = [NSImage imageNamed:@"AUSuccess"];
+//    [(AUWindow *)self.window setView:imageView];
+//    NSButton *button2 = [[NSButton alloc] initWithFrame:NSMakeRect(200, 300, 50, 20)];
+//    [self.window.contentView addSubview:button2];
+    [self showViewController:self.performanceViewController];
+//    [(AUWindow *)self.window setView:self.performanceViewController.view];
+//    self.window  =  self.performanceViewController.view;
+//    [(AUWindow *)self.window expand];
 
 }
 
 - (IBAction)collapse:(id)sender
 {
-    [(AUWindow *)self.window collapse];
+    [(AUWindow *)self.window setView:nil];
+//    [(AUWindow *)self.window collapse];
 }
 
 // Try to connect to any know hues
