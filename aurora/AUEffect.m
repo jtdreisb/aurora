@@ -10,20 +10,35 @@
 
 @implementation AUEffect
 
-- (void)start
-{
-    
-}
+#pragma mark - Readonly
 
-- (void)stop
+// For subclasses to override
+- (NSString *)name
 {
-    
+    return @"Blank Effect";
+}
+- (NSString *)toolTip
+{
+    return @"Description of the effect";
 }
 
 - (NSImage *)image;
 {
     return [NSImage imageNamed:@"editing-done"];
 }
+
+#pragma mark - Actions
+
+- (void)start
+{
+    NSLog(@"start");
+}
+
+- (void)stop
+{
+    NSLog(@"stop");
+}
+
 
 
 @end

@@ -12,6 +12,9 @@
 
 @interface AUEffectViewController : NSViewController
 
+@property (strong, nonatomic) IBOutlet NSTextField *titleLabel;
+@property (strong, nonatomic) IBOutlet NSImageView *imageView;
+
 @property (strong, nonatomic) AUEffect *effect;
 
 - (IBAction)showEditPopover:(id)sender;

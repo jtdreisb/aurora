@@ -14,6 +14,27 @@
 
 @implementation AUEffectViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        [self addObserver:self forKeyPath:@"effect" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"effect"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    if (object == self && [keyPath isEqualToString:@"effect"]) {
+        NSLog(@"object %@", object);
+    }
+}
 
 - (IBAction)showEditPopover:(id)sender
 {

@@ -9,10 +9,6 @@
 #import "AUEffectTestViewController.h"
 #import "AUEffect.h"
 
-@interface AUEffectTestViewController ()
-
-@end
-
 @implementation AUEffectTestViewController
 
 - (void)awakeFromNib
@@ -23,15 +19,14 @@
     
     
     NSCollectionView *collectionView = (NSCollectionView *)[self view];
-	
 	[collectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
-	[collectionView setSelectable:NO];
+	[collectionView setSelectable:NO]; // not selectable
     
-//	[collectionView setAllowsMultipleSelection:NO];	// as a menu we only allow one choice
 
-    
     if ([self.effectsArrayController.arrangedObjects count] == 0) {
         AUEffect *effect = [[AUEffect alloc] init];
+        [self.effectsArrayController addObject:effect];
+        effect = [[AUEffect alloc] init];
         [self.effectsArrayController addObject:effect];
     }
 }

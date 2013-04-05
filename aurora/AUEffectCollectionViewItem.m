@@ -15,16 +15,9 @@
 @end
 
 @implementation AUEffectCollectionViewItem
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self != nil) {
-        
-    }
-    return self;
+    BOOL setup;
 }
-
 - (IBAction)startStopButton:(id)sender
 {
     
@@ -33,7 +26,9 @@
 - (void)setRepresentedObject:(id)representedObject
 {
     [super setRepresentedObject:representedObject];
-    
+    if ([representedObject isKindOfClass:[AUEffect class]]) {
+        [self.effectViewController setEffect:representedObject];
+    }
 }
 
 @end

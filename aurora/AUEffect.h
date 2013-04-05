@@ -12,9 +12,9 @@
 
 #pragma mark - Readonly properties
 
-- (NSString *)name;
-- (NSString *)toolTip;
-- (NSImage *)image;
+@property (readonly) NSString *name;
+@property (readonly) NSString *toolTip;
+@property (readonly) NSImage *image;
 
 #pragma mark - Settable Properties
 

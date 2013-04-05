@@ -12,6 +12,6 @@
 
 @interface AUEffectCollectionViewItem : NSCollectionViewItem
 
-@property (strong, nonatomic) AUEffectViewController *effectViewController;
+@property (strong, nonatomic) IBOutlet AUEffectViewController *effectViewController;
 
 @end
