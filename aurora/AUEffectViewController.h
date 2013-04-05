@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) AUEffect *effect;
 
+- (IBAction)showEditPopover:(id)sender;
+
 @end

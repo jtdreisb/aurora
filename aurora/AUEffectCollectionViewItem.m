@@ -7,6 +7,8 @@
 //
 
 #import "AUEffectCollectionViewItem.h"
+#import "AUEffectViewController.h"
+#import "AUEffect.h"
 
 @interface AUEffectCollectionViewItem ()
 
@@ -17,11 +19,21 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
+    if (self != nil) {
+        
     }
-    
     return self;
+}
+
+- (IBAction)startStopButton:(id)sender
+{
+    
+}
+
+- (void)setRepresentedObject:(id)representedObject
+{
+    [super setRepresentedObject:representedObject];
+    
 }
 
 @end

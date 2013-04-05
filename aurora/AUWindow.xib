@@ -50,7 +50,6 @@
 					<string key="NSFrameSize">{550, 508}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 					<string key="NSReuseIdentifierKey">_NS:20</string>
 				</object>
@@ -66,14 +65,13 @@
 				<string key="NSFrameSize">{655, 101}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">INTitlebarView</string>
 			</object>
 			<object class="NSViewController" id="733968945">
 				<string key="NSNibName">AUPerformanceEditView</string>
 			</object>
-			<object class="NSViewController" id="157382665">
+			<object class="NSViewController" id="921013049">
 				<string key="NSNibName">AUEffectTestView</string>
 			</object>
 		</array>
@@ -99,7 +97,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">effectTestViewController</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="157382665"/>
+						<reference key="destination" ref="921013049"/>
 					</object>
 					<int key="connectionID">60</int>
 				</object>
@@ -165,7 +163,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="157382665"/>
+						<reference key="object" ref="921013049"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>

@@ -7,6 +7,7 @@
 //
 
 #import "AUEffectTestViewController.h"
+#import "AUEffect.h"
 
 @interface AUEffectTestViewController ()
 
@@ -14,14 +15,28 @@
 
 @implementation AUEffectTestViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)awakeFromNib
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
+    // bind our collection view's contents and selection to our array controller
+	[[self view] bind:@"content" toObject:self.effectsArrayController withKeyPath:@"arrangedObjects" options:nil];
+	[[self view] bind:@"selectionIndexes" toObject:self.effectsArrayController withKeyPath:@"selectionIndexes" options:nil];
     
-    return self;
+    
+    NSCollectionView *collectionView = (NSCollectionView *)[self view];
+	
+	[collectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
+	[collectionView setSelectable:NO];
+    
+//	[collectionView setAllowsMultipleSelection:NO];	// as a menu we only allow one choice
+
+    
+    if ([self.effectsArrayController.arrangedObjects count] == 0) {
+        AUEffect *effect = [[AUEffect alloc] init];
+        [self.effectsArrayController addObject:effect];
+    }
 }
+
+
+
 
 @end

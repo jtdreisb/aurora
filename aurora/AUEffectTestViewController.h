@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AUEffectTestViewController : NSViewController
+@interface AUEffectTestViewController : NSViewController <NSCollectionViewDelegate>
+
+@property (strong, nonatomic) IBOutlet NSArrayController *effectsArrayController;
 
 @end

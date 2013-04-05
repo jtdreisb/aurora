@@ -14,14 +14,10 @@
 
 @implementation AUEffectViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (IBAction)showEditPopover:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+    NSLog(@"Note implemented");
 }
 
 @end

@@ -10,4 +10,20 @@
 
 @implementation AUEffect
 
+- (void)start
+{
+    
+}
+
+- (void)stop
+{
+    
+}
+
+- (NSImage *)image;
+{
+    return [NSImage imageNamed:@"editing-done"];
+}
+
+
 @end

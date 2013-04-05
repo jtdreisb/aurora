@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class  AUEffectViewController;
+
 @interface AUEffectCollectionViewItem : NSCollectionViewItem
+
+@property (strong, nonatomic) AUEffectViewController *effectViewController;
 
 @end

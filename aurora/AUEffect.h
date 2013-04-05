@@ -10,11 +10,19 @@
 
 @interface AUEffect : NSObject
 
+#pragma mark - Readonly properties
+
+- (NSString *)name;
+- (NSString *)toolTip;
+- (NSImage *)image;
+
+#pragma mark - Settable Properties
+
 @property (strong) NSNumber *duration;
+
+#pragma mark - Actions
 
 - (void)start;
 - (void)stop;
-
-- (NSImage *)image;
 
 @end
