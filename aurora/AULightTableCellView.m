@@ -7,22 +7,24 @@
 //
 
 #import "AULightTableCellView.h"
+#import "AULightColorView.h"
 
 @implementation AULightTableCellView
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
 
 - (void)drawRect:(NSRect)dirtyRect
 {
     // Drawing code here.
+    [super drawRect:dirtyRect];
+    
+}
+
+- (void)setObjectValue:(id)objectValue
+{
+    [super setObjectValue:objectValue];
+    NSColor *color = (NSColor *)[objectValue valueForKey:@"color"];
+    if ([color isKindOfClass:[NSColor class]]) {
+        self.colorView.color = color;
+    }
 }
 
 @end

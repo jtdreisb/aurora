@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AUPerformanceEditViewController : NSViewController
+@interface AUPerformanceEditViewController : NSViewController <NSTableViewDataSource>
 
 @end

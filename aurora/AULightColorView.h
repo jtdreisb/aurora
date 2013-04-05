@@ -8,6 +8,9 @@
 
 #import "DPHueBridge.h"
 
-@interface AULightColorView : DPHueBridge
+@interface AULightColorView : NSView
+
+@property (strong, nonatomic) NSColor *color;
+@property (strong, nonatomic) NSColor *strokeColor;
 
 @end

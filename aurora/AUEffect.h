@@ -10,4 +10,11 @@
 
 @interface AUEffect : NSObject
 
+@property (strong) NSNumber *duration;
+
+- (void)start;
+- (void)stop;
+
+- (NSImage *)image;
+
 @end

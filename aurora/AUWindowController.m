@@ -7,7 +7,6 @@
 //
 
 #import "AUWindowController.h"
-#import "AUWindow.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -34,7 +33,8 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 {
     [super windowDidLoad];
     
-    [self showViewController:self.performanceViewController];
+    [self showViewController:self.effectTestViewController];
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:kHueUsernamePrefKey] == nil) {
         NSString *username = [DPHueBridge generateUsername];
@@ -46,31 +46,13 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
 - (void)showViewController:(NSViewController *)viewController
 {
-    [(AUWindow *)self.window setView:viewController.view];
+    NSRect contentRect = [self.window.contentView frame];
+    viewController.view.frame = contentRect;
+    self.window.contentView = viewController.view;
 }
-
 
 #pragma mark - Actions
 
-- (IBAction)expand:(id)sender
-{
-//    NSImageView *imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(200, 157, 100, 100)];
-//    imageView.image = [NSImage imageNamed:@"AUSuccess"];
-//    [(AUWindow *)self.window setView:imageView];
-//    NSButton *button2 = [[NSButton alloc] initWithFrame:NSMakeRect(200, 300, 50, 20)];
-//    [self.window.contentView addSubview:button2];
-    [self showViewController:self.performanceViewController];
-//    [(AUWindow *)self.window setView:self.performanceViewController.view];
-//    self.window  =  self.performanceViewController.view;
-//    [(AUWindow *)self.window expand];
-
-}
-
-- (IBAction)collapse:(id)sender
-{
-    [(AUWindow *)self.window setView:nil];
-//    [(AUWindow *)self.window collapse];
-}
 
 // Try to connect to any know hues
 // if that doesn't work bring up a dialog.
@@ -95,26 +77,12 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 #pragma mark - DPHueDiscover delegate
 
 - (void)foundHueAt:(NSString *)host discoveryLog:(NSMutableString *)log {
-    //    NSLog(@"%s: %@\n%@", __PRETTY_FUNCTION__, host, log);
     DPHueBridge *someHue = [[DPHueBridge alloc] initWithHueHost:host username:[[NSUserDefaults standardUserDefaults] objectForKey:kHueUsernamePrefKey]];
-    
-    [self.hueBridgeArray addObject:someHue];
-    
-    //    [someHue readWithCompletion:^(DPHueBridge *hue, NSError *err) {
-    //        //        NSLog(@"%@", hue.name);
-    //
-    //
-    //        DPHueLight *light = hue.lights[0];
-    //        NSLog(@"light: %@", light);
-    //        light.brightness = @255;
-    //        light.name = @"Floor Lamp";
-    //        [light write];
-    //        NSLog(@"after: %@", light);
-    //
-    //        //        hue.name = @"bar";
-    //
-    //        //        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(createUsernameAt:) userInfo:host repeats:YES];
-    //    }];
+    [someHue readWithCompletion:^(DPHueBridge *hue, NSError *err) {
+        if (err == nil) {
+            [self.hueBridgeArray addObject:someHue];
+        }
+    }];
 }
 
 @end

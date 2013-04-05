@@ -15,4 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet NSViewController *performanceViewController;
 
+// TODO: delete after debugging
+@property (strong, nonatomic) IBOutlet NSViewController *effectTestViewController;
+
 @end
