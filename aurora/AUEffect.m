@@ -24,7 +24,14 @@
 
 - (NSImage *)image;
 {
-    return [NSImage imageNamed:@"editing-done"];
+    NSImage *image = [NSImage imageNamed:@"editing-done"];
+    [image setTemplate:YES];
+    return image;
+}
+
+- (NSString *)editViewNibName
+{
+    return @"AUEffectEditView";
 }
 
 #pragma mark - Actions

@@ -7,38 +7,30 @@
 //
 
 #import "AUEffectViewController.h"
-
-@interface AUEffectViewController ()
-
-@end
+#import "AUEffect.h"
 
 @implementation AUEffectViewController
-
-- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:aDecoder];
-    if (self != nil) {
-        [self addObserver:self forKeyPath:@"effect" options:NSKeyValueObservingOptionNew context:nil];
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:@"effect"];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    
-    if (object == self && [keyPath isEqualToString:@"effect"]) {
-        NSLog(@"object %@", object);
-    }
+    NSPopover *_editPopover;
 }
 
 - (IBAction)showEditPopover:(id)sender
 {
-    NSLog(@"Note implemented");
+    if (_editPopover == nil) {
+        _editPopover = [[NSPopover alloc] init];
+    }
+    if ([_editPopover isShown]) {
+        [_editPopover close];
+        _editPopover = nil;
+    }
+    else {
+        NSViewController *popoverViewController = [[NSViewController alloc] initWithNibName:self.effect.editViewNibName bundle:nil];
+        _editPopover.contentViewController = popoverViewController;
+        
+        [_editPopover showRelativeToRect:[sender bounds]
+                                      ofView:sender
+                               preferredEdge:NSMaxYEdge];
+    }
 }
 
 @end

@@ -107,8 +107,8 @@
 		3373D24316F2FC000027B303 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3373D24216F2FC000027B303 /* QuartzCore.framework */; };
 		337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F200D16C5F4AE0051A899 /* AUWindowController.m */; };
 		337F201016C5F4AE0051A899 /* AUWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337F200E16C5F4AE0051A899 /* AUWindow.xib */; };
+		33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B10488170F914000A523DC /* AUEffectEditView.xib */; };
 		33E95E14170F53A9002BEDA7 /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E12170F53A9002BEDA7 /* AUEffectViewController.m */; };
-		33E95E15170F53A9002BEDA7 /* AUEffectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E95E13170F53A9002BEDA7 /* AUEffectView.xib */; };
 		33E95E19170F53CC002BEDA7 /* AUEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E18170F53CC002BEDA7 /* AUEffect.m */; };
 		33E95E21170F6C1E002BEDA7 /* AUEffectTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E1F170F6C1E002BEDA7 /* AUEffectTestViewController.m */; };
 		33E95E22170F6C1E002BEDA7 /* AUEffectTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E95E20170F6C1E002BEDA7 /* AUEffectTestView.xib */; };
@@ -283,9 +283,9 @@
 		337F200C16C5F4AE0051A899 /* AUWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindowController.h; sourceTree = "<group>"; };
 		337F200D16C5F4AE0051A899 /* AUWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindowController.m; sourceTree = "<group>"; };
 		337F200E16C5F4AE0051A899 /* AUWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUWindow.xib; sourceTree = "<group>"; };
+		33B10488170F914000A523DC /* AUEffectEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectEditView.xib; sourceTree = "<group>"; };
 		33E95E11170F53A9002BEDA7 /* AUEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectViewController.h; sourceTree = "<group>"; };
 		33E95E12170F53A9002BEDA7 /* AUEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectViewController.m; sourceTree = "<group>"; };
-		33E95E13170F53A9002BEDA7 /* AUEffectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectView.xib; sourceTree = "<group>"; };
 		33E95E17170F53CC002BEDA7 /* AUEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffect.h; sourceTree = "<group>"; };
 		33E95E18170F53CC002BEDA7 /* AUEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffect.m; sourceTree = "<group>"; };
 		33E95E1E170F6C1E002BEDA7 /* AUEffectTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectTestViewController.h; sourceTree = "<group>"; };
@@ -519,12 +519,21 @@
 			name = "Aurora Window";
 			sourceTree = "<group>";
 		};
+		33B1048A170F936300A523DC /* AUEffect */ = {
+			isa = PBXGroup;
+			children = (
+				33E95E17170F53CC002BEDA7 /* AUEffect.h */,
+				33E95E18170F53CC002BEDA7 /* AUEffect.m */,
+				33B10488170F914000A523DC /* AUEffectEditView.xib */,
+			);
+			name = AUEffect;
+			sourceTree = "<group>";
+		};
 		33E95E10170F5393002BEDA7 /* Effect View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				33E95E11170F53A9002BEDA7 /* AUEffectViewController.h */,
 				33E95E12170F53A9002BEDA7 /* AUEffectViewController.m */,
-				33E95E13170F53A9002BEDA7 /* AUEffectView.xib */,
 			);
 			name = "Effect View Controller";
 			sourceTree = "<group>";
@@ -534,8 +543,7 @@
 			children = (
 				33E95E24170F6F2C002BEDA7 /* AUEffectManager.h */,
 				33E95E25170F6F2C002BEDA7 /* AUEffectManager.m */,
-				33E95E17170F53CC002BEDA7 /* AUEffect.h */,
-				33E95E18170F53CC002BEDA7 /* AUEffect.m */,
+				33B1048A170F936300A523DC /* AUEffect */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -888,9 +896,9 @@
 				3350115E1706A15D00F0E0E4 /* sync@2x.png in Resources */,
 				3350115F1706A15D00F0E0E4 /* volume.png in Resources */,
 				335011601706A15D00F0E0E4 /* volume@2x.png in Resources */,
-				33E95E15170F53A9002BEDA7 /* AUEffectView.xib in Resources */,
 				33E95E22170F6C1E002BEDA7 /* AUEffectTestView.xib in Resources */,
 				33E95E2B170F75C2002BEDA7 /* AUEffectCollectionViewItem.xib in Resources */,
+				33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

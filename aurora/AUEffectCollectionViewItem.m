@@ -10,24 +10,31 @@
 #import "AUEffectViewController.h"
 #import "AUEffect.h"
 
-@interface AUEffectCollectionViewItem ()
 
-@end
 
 @implementation AUEffectCollectionViewItem
+
+- (void)awakeFromNib
 {
-    BOOL setup;
+        NSLog(@"awakefromnib: %@", [self.effectViewController valueForKey:@"editPopover"]);
 }
+
 - (IBAction)startStopButton:(id)sender
 {
-    
+        NSLog(@"%@", self.effectViewController);
+        NSLog(@"%@", [self.effectViewController valueForKey:@"editPopover"]);
 }
 
 - (void)setRepresentedObject:(id)representedObject
 {
     [super setRepresentedObject:representedObject];
+    
+    // HACK: this is to load the effectviewcontroller property
+    // otherwise it will be nil
+    [self view];
+    
     if ([representedObject isKindOfClass:[AUEffect class]]) {
-        [self.effectViewController setEffect:representedObject];
+        self.effectViewController.effect = (AUEffect *)representedObject;
     }
 }
 

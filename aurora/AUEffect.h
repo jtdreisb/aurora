@@ -15,6 +15,7 @@
 @property (readonly) NSString *name;
 @property (readonly) NSString *toolTip;
 @property (readonly) NSImage *image;
+@property (readonly) NSString *editViewNibName;
 
 #pragma mark - Settable Properties
 
