@@ -1,5 +1,5 @@
 //
-//  AUEffectView.h
+//  AUEffectCollectionViewItem.h
 //  Aurora
 //
 //  Created by Jason Dreisbach on 4/5/13.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AUEffectView : NSView
+@interface AUEffectCollectionViewItem : NSCollectionViewItem
 
 @end
