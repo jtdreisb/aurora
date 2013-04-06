@@ -14,13 +14,12 @@
 - (void)awakeFromNib
 {
     // bind our collection view's contents and selection to our array controller
-	[[self view] bind:@"content" toObject:self.effectsArrayController withKeyPath:@"arrangedObjects" options:nil];
-	[[self view] bind:@"selectionIndexes" toObject:self.effectsArrayController withKeyPath:@"selectionIndexes" options:nil];
+	[self.effectCollectionView bind:@"content" toObject:self.effectsArrayController withKeyPath:@"arrangedObjects" options:nil];
+	[self.effectCollectionView bind:@"selectionIndexes" toObject:self.effectsArrayController withKeyPath:@"selectionIndexes" options:nil];
     
     
-    NSCollectionView *collectionView = (NSCollectionView *)[self view];
-	[collectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
-	[collectionView setSelectable:NO]; // not selectable
+	[self.effectCollectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
+	[self.effectCollectionView setSelectable:NO]; // not selectable
 
     if ([self.effectsArrayController.arrangedObjects count] == 0) {
         AUEffect *effect = [[AUEffect alloc] init];
@@ -39,6 +38,13 @@
         [lightDictionary setObject:light forKey:@"light"];
         [self.lightsArrayController addObject:lightDictionary];
     }
+}
+
+#pragma mark - NSTableViewDelegate
+
+- (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView
+{
+    return NO;
 }
 
 
