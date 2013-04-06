@@ -7,6 +7,7 @@
 //
 
 #import "AUWindowController.h"
+#import "AUEffectTestViewController.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -81,6 +82,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     [someHue readWithCompletion:^(DPHueBridge *hue, NSError *err) {
         if (err == nil) {
             [self.hueBridgeArray addObject:someHue];
+            [(AUEffectTestViewController *)self.effectTestViewController addLights:someHue.lights];
         }
     }];
 }

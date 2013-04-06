@@ -11,5 +11,8 @@
 @interface AUEffectTestViewController : NSViewController <NSCollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet NSArrayController *effectsArrayController;
+@property (strong, nonatomic) IBOutlet NSArrayController *lightsArrayController;
+
+- (void)addLights:(NSArray *)lights;
 
 @end

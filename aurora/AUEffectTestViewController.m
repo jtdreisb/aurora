@@ -21,7 +21,6 @@
     NSCollectionView *collectionView = (NSCollectionView *)[self view];
 	[collectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
 	[collectionView setSelectable:NO]; // not selectable
-    
 
     if ([self.effectsArrayController.arrangedObjects count] == 0) {
         AUEffect *effect = [[AUEffect alloc] init];
@@ -32,6 +31,15 @@
 }
 
 
+- (void)addLights:(NSArray *)lights
+{
+    for (id light in lights) {
+        NSMutableDictionary *lightDictionary = [NSMutableDictionary dictionary];
+        [lightDictionary setObject:@NO forKey:@"enabled"];
+        [lightDictionary setObject:light forKey:@"light"];
+        [self.lightsArrayController addObject:lightDictionary];
+    }
+}
 
 
 @end

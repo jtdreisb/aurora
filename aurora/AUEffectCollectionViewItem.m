@@ -10,14 +10,7 @@
 #import "AUEffectViewController.h"
 #import "AUEffect.h"
 
-
-
 @implementation AUEffectCollectionViewItem
-
-- (void)awakeFromNib
-{
-        NSLog(@"awakefromnib: %@", [self.effectViewController valueForKey:@"editPopover"]);
-}
 
 - (IBAction)startStopButton:(id)sender
 {
