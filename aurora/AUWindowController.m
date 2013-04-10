@@ -19,22 +19,11 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     DPHueDiscover *_dhd;
 }
 
-- (id)initWithWindow:(NSWindow *)window
-{
-    self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-        _hueBridgeArray = [NSMutableArray array];
-    }
-    
-    return self;
-}
-
 - (void)windowDidLoad
 {
     [super windowDidLoad];
     
-    [self showViewController:self.effectTestViewController];
+    [self loadViewControllers];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:kHueUsernamePrefKey] == nil) {
@@ -43,6 +32,23 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
         [prefs synchronize];
     }
     [self startDiscovery:self];
+}
+
+- (void)loadViewControllers
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSTabViewItem *effectsItem = [[NSTabViewItem alloc] initWithIdentifier:@"effects"];
+        [effectsItem setLabel:@"Effects"];
+        [effectsItem setView:self.effectTestViewController.view];
+        [self.tabView addTabViewItem:effectsItem];
+        
+        NSTabViewItem *spotifyItem = [[NSTabViewItem alloc] initWithIdentifier:@"spotify"];
+        [spotifyItem setLabel:@"Spotify"];
+        [spotifyItem setView:self.spotifyViewController.view];
+        [self.tabView addTabViewItem:spotifyItem];
+        
+    });
 }
 
 - (void)showViewController:(NSViewController *)viewController
@@ -81,8 +87,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     DPHueBridge *someHue = [[DPHueBridge alloc] initWithHueHost:host username:[[NSUserDefaults standardUserDefaults] objectForKey:kHueUsernamePrefKey]];
     [someHue readWithCompletion:^(DPHueBridge *hue, NSError *err) {
         if (err == nil) {
-            [self.hueBridgeArray addObject:someHue];
-            [(AUEffectTestViewController *)self.effectTestViewController addLights:someHue.lights];
+
         }
     }];
 }

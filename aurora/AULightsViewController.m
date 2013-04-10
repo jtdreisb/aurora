@@ -37,7 +37,6 @@
 
 - (IBAction)launchSpotify:(id)sender
 {
-    self.spotifyViewController.hue = self.hue;
     [self.spotifyViewController showView];
 }
 

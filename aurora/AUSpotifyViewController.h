@@ -8,14 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class DPHueBridge;
 @interface AUSpotifyViewController : NSViewController
 
-@property (strong) DPHueBridge *hue;
+@property (strong) IBOutlet NSArrayController *lightsArrayController;
 @property (weak) IBOutlet NSImageView *albumImageView;
 @property (weak) IBOutlet NSTextField *artistNameLabel;
 @property (weak) IBOutlet NSTextField *trackNameLabel;
 @property (weak) IBOutlet NSView *colorView;
+@property (weak) IBOutlet NSButton *playPauseButton;
+
 - (void)showView;
 
 @end

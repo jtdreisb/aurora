@@ -10,11 +10,11 @@
 
 @interface AUEffectTestViewController : NSViewController <NSTableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet NSArrayController *effectsArrayController;
-@property (strong, nonatomic) IBOutlet NSCollectionView *effectCollectionView;
+@property (strong) IBOutlet NSArrayController *effectsArrayController;
+@property (strong) IBOutlet NSCollectionView *effectCollectionView;
 
-@property (strong, nonatomic) IBOutlet NSArrayController *lightsArrayController;
-@property (strong, nonatomic) IBOutlet NSTableView *lightTableView;
+@property (strong) IBOutlet NSArrayController *lightsArrayController;
+@property (strong) IBOutlet NSTableView *lightTableView;
 
 
 - (void)addLights:(NSArray *)lights;

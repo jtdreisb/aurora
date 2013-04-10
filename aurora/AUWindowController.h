@@ -9,13 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import <DPHue/DPHue.h>
 
+
 @interface AUWindowController : NSWindowController <DPHueDiscoverDelegate>
 
-@property (strong, readonly) NSMutableArray *hueBridgeArray;
+@property (strong) IBOutlet NSArrayController *lightArrayController;
 
-@property (strong, nonatomic) IBOutlet NSViewController *performanceViewController;
+@property (strong) IBOutlet NSTabView *tabView;
+
+@property (strong) IBOutlet NSViewController *performanceViewController;
 
 // TODO: delete after debugging
-@property (strong, nonatomic) IBOutlet NSViewController *effectTestViewController;
+@property (strong) IBOutlet NSViewController *effectTestViewController;
+@property (strong) IBOutlet NSViewController *spotifyViewController;
 
 @end

@@ -1,21 +1,21 @@
 //
-//  AUEffect.m
+//  AUStrobeEffect.m
 //  Aurora
 //
 //  Created by Jason Dreisbach on 4/5/13.
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUEffect.h"
+#import "AUStrobeEffect.h"
 
-@implementation AUEffect
+@implementation AUStrobeEffect
 
 #pragma mark - Readonly
 
 // For subclasses to override
 - (NSString *)name
 {
-    return @"Strobe";
+    return @"Blank Effect";
 }
 - (NSString *)toolTip
 {
@@ -33,19 +33,6 @@
 {
     return @"AUEffectEditView";
 }
-
-#pragma mark - Actions
-
-- (void)start
-{
-    NSLog(@"start");
-}
-
-- (void)stop
-{
-    NSLog(@"stop");
-}
-
 
 
 @end

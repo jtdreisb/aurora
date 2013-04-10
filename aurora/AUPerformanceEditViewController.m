@@ -24,13 +24,13 @@
 //    self.view.layer.backgroundColor = [[NSColor greenColor] CGColor];
     if (_lightArray == nil) {
         _lightArray = [NSMutableArray array];
-#if DEBUG
-        DBG_DPHueBridge *dbgBridge = [[DBG_DPHueBridge alloc] initWithHueHost:@"localhost" username:@"48564E5BC8EE70125CE8DDFCF57EC681"];
-        [dbgBridge readWithCompletion:^(DPHueBridge *hue, NSError *err) {
-            _bridge = hue;
-            [_lightArray addObjectsFromArray:_bridge.lights];
-        }];
-#endif
+//#if DEBUG
+//        DBG_DPHueBridge *dbgBridge = [[DBG_DPHueBridge alloc] initWithHueHost:@"localhost" username:@"48564E5BC8EE70125CE8DDFCF57EC681"];
+//        [dbgBridge readWithCompletion:^(DPHueBridge *hue, NSError *err) {
+//            _bridge = hue;
+//            [_lightArray addObjectsFromArray:_bridge.lights];
+//        }];
+//#endif
     }
     
 

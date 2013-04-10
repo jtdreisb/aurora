@@ -19,15 +19,6 @@
 
 @implementation AUSpotifyViewController
 
-- (void)keyDown:(NSEvent *)theEvent
-{
-    NSLog(@"%@" ,theEvent);
-}
-
-- (BOOL)acceptsFirstResponder
-{
-    return YES;
-}
 
 - (void)update:(NSTimer *)timer
 {
@@ -65,39 +56,48 @@
             [light write];
         }
     }
-}
-
-- (void)showView
-{
-    self.view.layer.backgroundColor = [[NSColor blackColor] CGColor];
-    self.spotifyApp = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-    if (self.spotifyApp.isRunning == NO) {
-        NSLog(@"Spotify must be running");
-        return;
-    }
-
-    NSMutableArray *lights = [NSMutableArray array];
-    for (DPHueLight *light in self.hue.lights) {
-        NSArray *topLevelObject = nil;
-        [[NSBundle mainBundle] loadNibNamed:@"AUDraggableLight" owner:nil topLevelObjects:&topLevelObject];
-        
-        AUDraggableView *draggableView = nil;
-        for (NSObject *object in topLevelObject) {
-            if ([object isKindOfClass:[AUDraggableView class]]) {
-                draggableView = (AUDraggableView *)object;
-                draggableView.representedObject = light;
-                draggableView.label.stringValue = light.name;
-                [self.view addSubview:draggableView];
-                [lights addObject:draggableView];
-            }
-        }
-    }
-    self.lightImageViews = lights;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lightDidMove:) name:DraggableImageDidDragNotification object:nil];
-    [self.view enterFullScreenMode:[NSScreen mainScreen] withOptions:nil];
-    [self update:nil];
+    if (self.spotifyApp.playerState == SpotifyEPlSPlaying) {
+//        self.
+    }
 }
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        self.view.layer.backgroundColor = [[NSColor colorWithPatternImage:[NSImage imageNamed:@"AULinenDark"]] CGColor];
+        //[[NSColor blackColor] CGColor];
+        self.spotifyApp = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+        if (self.spotifyApp.isRunning == NO) {
+            NSLog(@"Spotify must be running");
+        }
+        
+//        NSMutableArray *lights = [NSMutableArray array];
+//        for (DPHueLight *light in self.lightsArrayController.arrangedObjects) {
+//            NSArray *topLevelObject = nil;
+//            [[NSBundle mainBundle] loadNibNamed:@"AUDraggableLight" owner:nil topLevelObjects:&topLevelObject];
+//            
+//            AUDraggableView *draggableView = nil;
+//            for (NSObject *object in topLevelObject) {
+//                if ([object isKindOfClass:[AUDraggableView class]]) {
+//                    draggableView = (AUDraggableView *)object;
+//                    draggableView.representedObject = light;
+//                    draggableView.label.stringValue = light.name;
+//                    [self.view addSubview:draggableView];
+//                    [lights addObject:draggableView];
+//                }
+//            }
+//        }
+//        self.lightImageViews = lights;
+        
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lightDidMove:) name:DraggableImageDidDragNotification object:nil];
+        [self update:nil];
+    }
+    return self;
+}
+
 
 - (void)lightDidMove:(NSNotification *)notification
 {
@@ -122,6 +122,7 @@
         else {
             [self.spotifyApp play];
         }
+        [self update:nil];
     }
 }
 
