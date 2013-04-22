@@ -6,16 +6,25 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUStrobeEffect.h"
+#import "AUStrobe.h"
 
-@implementation AUStrobeEffect
+@implementation AUStrobe
+
+- (id)initWithFrequency:(NSNumber *)frequency
+{
+    self = [super init];
+    if (self != nil) {
+        _frequency = frequency;
+    }
+    return self;
+}
 
 #pragma mark - Readonly
 
 // For subclasses to override
 - (NSString *)name
 {
-    return @"Blank Effect";
+    return @"Strobe";
 }
 - (NSString *)toolTip
 {

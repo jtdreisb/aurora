@@ -8,6 +8,8 @@
 
 #import "AUEffectTestViewController.h"
 #import "AUEffect.h"
+#import "AUStrobe.h"
+#import "AUColorPulse.h"
 
 @implementation AUEffectTestViewController
 
@@ -24,7 +26,9 @@
     if ([self.effectsArrayController.arrangedObjects count] == 0) {
         AUEffect *effect = [[AUEffect alloc] init];
         [self.effectsArrayController addObject:effect];
-        effect = [[AUEffect alloc] init];
+        effect = [[AUStrobe alloc] init];
+        [self.effectsArrayController addObject:effect];
+        effect = [[AUColorPulse alloc] init];
         [self.effectsArrayController addObject:effect];
     }
 }

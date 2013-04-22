@@ -8,6 +8,10 @@
 
 #import "AUEffect.h"
 
-@interface AUStrobeEffect : AUEffect
+@interface AUStrobe : AUEffect
+
+@property (strong) NSNumber *frequency;
+
+- (id)initWithFrequency:(NSNumber *)frequency;
 
 @end

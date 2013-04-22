@@ -11,18 +11,19 @@
 
 @implementation AULightTableCellView
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
-    [super drawRect:dirtyRect];
-    
-}
+//- (void)drawRect:(NSRect)dirtyRect
+//{
+//    // Drawing code here.
+//    [super drawRect:dirtyRect];
+//    
+//}
 
 - (void)setObjectValue:(id)objectValue
 {
     [super setObjectValue:objectValue];
     NSColor *color = (NSColor *)[objectValue valueForKey:@"color"];
     if ([color isKindOfClass:[NSColor class]]) {
+        NSLog(@"%@", color);
         self.colorView.color = color;
     }
 }

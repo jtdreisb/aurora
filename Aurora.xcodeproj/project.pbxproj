@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330ED402171531AC002B7246 /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 330ED401171531AC002B7246 /* AUColorPulse.m */; };
 		333531F817061E6B0007E65D /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333531F717061E6B0007E65D /* AULightTableCellView.m */; };
 		335010C5170620DB00F0E0E4 /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 335010C4170620DB00F0E0E4 /* DBG_DPHueBridge.m */; };
 		335010C817062F6600F0E0E4 /* AULightColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 335010C717062F6600F0E0E4 /* AULightColorView.m */; };
@@ -105,7 +106,7 @@
 		3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84616C322CC00B72422 /* AUDraggableLight.xib */; };
 		3368E84916C328CF00B72422 /* AUSpectrumChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */; };
 		3373D24316F2FC000027B303 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3373D24216F2FC000027B303 /* QuartzCore.framework */; };
-		33771A32170FF0D10051E880 /* AUStrobeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 33771A31170FF0D10051E880 /* AUStrobeEffect.m */; };
+		33771A32170FF0D10051E880 /* AUStrobe.m in Sources */ = {isa = PBXBuildFile; fileRef = 33771A31170FF0D10051E880 /* AUStrobe.m */; };
 		337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F200D16C5F4AE0051A899 /* AUWindowController.m */; };
 		337F201016C5F4AE0051A899 /* AUWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337F200E16C5F4AE0051A899 /* AUWindow.xib */; };
 		33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B10488170F914000A523DC /* AUEffectEditView.xib */; };
@@ -165,6 +166,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330ED400171531AC002B7246 /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
+		330ED401171531AC002B7246 /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
 		333531F617061E6B0007E65D /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
 		333531F717061E6B0007E65D /* AULightTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightTableCellView.m; sourceTree = "<group>"; };
 		335010C3170620DB00F0E0E4 /* DBG_DPHueBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBG_DPHueBridge.h; sourceTree = "<group>"; };
@@ -281,8 +284,8 @@
 		3368E84616C322CC00B72422 /* AUDraggableLight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDraggableLight.xib; sourceTree = "<group>"; };
 		3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AUSpectrumChart.jpg; sourceTree = "<group>"; };
 		3373D24216F2FC000027B303 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		33771A30170FF0D10051E880 /* AUStrobeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUStrobeEffect.h; sourceTree = "<group>"; };
-		33771A31170FF0D10051E880 /* AUStrobeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUStrobeEffect.m; sourceTree = "<group>"; };
+		33771A30170FF0D10051E880 /* AUStrobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUStrobe.h; sourceTree = "<group>"; };
+		33771A31170FF0D10051E880 /* AUStrobe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUStrobe.m; sourceTree = "<group>"; };
 		337F200C16C5F4AE0051A899 /* AUWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUWindowController.h; sourceTree = "<group>"; };
 		337F200D16C5F4AE0051A899 /* AUWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindowController.m; sourceTree = "<group>"; };
 		337F200E16C5F4AE0051A899 /* AUWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUWindow.xib; sourceTree = "<group>"; };
@@ -364,6 +367,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330ED403171531B8002B7246 /* Color Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				330ED400171531AC002B7246 /* AUColorPulse.h */,
+				330ED401171531AC002B7246 /* AUColorPulse.m */,
+			);
+			name = "Color Pulse";
+			sourceTree = "<group>";
+		};
 		335010C2170620AB00F0E0E4 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +439,7 @@
 		3368E7DC16C2D0BD00B72422 /* aurora */ = {
 			isa = PBXGroup;
 			children = (
+				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
 				33E95E23170F6C2B002BEDA7 /* Effects Test */,
 				33E95E16170F53BE002BEDA7 /* Effects */,
 				33E95E10170F5393002BEDA7 /* Effect View Controller */,
@@ -438,7 +451,6 @@
 				3368E82016C2E7F400B72422 /* Light Edit */,
 				3368E81616C2E0C700B72422 /* Lights View */,
 				3368E82116C2E82E00B72422 /* Setup View */,
-				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
 				3368E7DD16C2D0BD00B72422 /* Supporting Files */,
 			);
 			path = aurora;
@@ -515,8 +527,8 @@
 		33771A33170FF0D70051E880 /* Strobe */ = {
 			isa = PBXGroup;
 			children = (
-				33771A30170FF0D10051E880 /* AUStrobeEffect.h */,
-				33771A31170FF0D10051E880 /* AUStrobeEffect.m */,
+				33771A30170FF0D10051E880 /* AUStrobe.h */,
+				33771A31170FF0D10051E880 /* AUStrobe.m */,
 			);
 			name = Strobe;
 			sourceTree = "<group>";
@@ -555,8 +567,9 @@
 			children = (
 				33E95E24170F6F2C002BEDA7 /* AUEffectManager.h */,
 				33E95E25170F6F2C002BEDA7 /* AUEffectManager.m */,
-				33B1048A170F936300A523DC /* AUEffect */,
+				330ED403171531B8002B7246 /* Color Pulse */,
 				33771A33170FF0D70051E880 /* Strobe */,
+				33B1048A170F936300A523DC /* AUEffect */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -958,7 +971,8 @@
 				33E95E21170F6C1E002BEDA7 /* AUEffectTestViewController.m in Sources */,
 				33E95E26170F6F2C002BEDA7 /* AUEffectManager.m in Sources */,
 				33E95E2A170F75C2002BEDA7 /* AUEffectCollectionViewItem.m in Sources */,
-				33771A32170FF0D10051E880 /* AUStrobeEffect.m in Sources */,
+				33771A32170FF0D10051E880 /* AUStrobe.m in Sources */,
+				330ED402171531AC002B7246 /* AUColorPulse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

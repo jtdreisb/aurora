@@ -8,6 +8,7 @@
 
 #import "AUWindowController.h"
 #import "AUEffectTestViewController.h"
+#import "DBG_DPHueBridge.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -24,6 +25,14 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     [super windowDidLoad];
     
     [self loadViewControllers];
+    
+    
+//    DBG_DPHueBridge *bridge = [[DBG_DPHueBridge alloc] initWithHueHost:@"localhost" username:@"33bf7ba02ee74a8f1e9397f03b09fa7f"];
+//    
+//    [bridge readWithCompletion:^(DPHueBridge *hue, NSError *err) {
+//        [self.lightArrayController addObjects:bridge.lights];
+//    }];
+    
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:kHueUsernamePrefKey] == nil) {
@@ -87,7 +96,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     DPHueBridge *someHue = [[DPHueBridge alloc] initWithHueHost:host username:[[NSUserDefaults standardUserDefaults] objectForKey:kHueUsernamePrefKey]];
     [someHue readWithCompletion:^(DPHueBridge *hue, NSError *err) {
         if (err == nil) {
-
+            [(AUEffectTestViewController *)self.effectTestViewController addLights:someHue.lights];
         }
     }];
 }

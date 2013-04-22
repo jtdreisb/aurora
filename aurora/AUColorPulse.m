@@ -1,21 +1,19 @@
 //
-//  AUEffect.m
+//  AUColorPulse.m
 //  Aurora
 //
-//  Created by Jason Dreisbach on 4/5/13.
+//  Created by Jason Dreisbach on 4/9/13.
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUEffect.h"
+#import "AUColorPulse.h"
 
-@implementation AUEffect
-
-#pragma mark - Readonly
+@implementation AUColorPulse
 
 // For subclasses to override
 - (NSString *)name
 {
-    return @"Effect";
+    return @"Color Pulse";
 }
 - (NSString *)toolTip
 {
@@ -33,19 +31,5 @@
 {
     return @"AUEffectEditView";
 }
-
-#pragma mark - Actions
-
-- (void)start
-{
-    NSLog(@"start");
-}
-
-- (void)stop
-{
-    NSLog(@"stop");
-}
-
-
 
 @end

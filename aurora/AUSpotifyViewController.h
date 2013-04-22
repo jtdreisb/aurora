@@ -17,6 +17,4 @@
 @property (weak) IBOutlet NSView *colorView;
 @property (weak) IBOutlet NSButton *playPauseButton;
 
-- (void)showView;
-
 @end

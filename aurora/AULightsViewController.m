@@ -37,7 +37,7 @@
 
 - (IBAction)launchSpotify:(id)sender
 {
-    [self.spotifyViewController showView];
+//    [self.spotifyViewController showView];
 }
 
 @end
