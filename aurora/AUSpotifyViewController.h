@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <SNRMusicKitMac/SMKSpotifyContentSource.h>
 
-@interface AUSpotifyViewController : NSViewController <SPSessionDelegate>
+
+@interface AUSpotifyViewController : NSViewController
 
 @property (strong) IBOutlet NSArrayController *lightsArrayController;
 @property (weak) IBOutlet NSImageView *albumImageView;
@@ -18,7 +18,5 @@
 @property (weak) IBOutlet NSView *colorView;
 @property (weak) IBOutlet NSButton *playPauseButton;
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil contentSource:(SMKSpotifyContentSource *)source;
 
 @end

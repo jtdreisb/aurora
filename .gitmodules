@@ -1,6 +1,3 @@
-[submodule "submodule/SNRMusicKit"]
-	path = submodule/SNRMusicKit
-	url = git@github.com:jtdreisb/SNRMusicKit.git
 [submodule "submodule/cocoalibspotify"]
 	path = submodule/cocoalibspotify
 	url = git@github.com:spotify/cocoalibspotify.git

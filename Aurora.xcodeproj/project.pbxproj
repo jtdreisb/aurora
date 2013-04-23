@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3305E2421725F359004631F7 /* spotify.appkey in Resources */ = {isa = PBXBuildFile; fileRef = 3305E2411725F359004631F7 /* spotify.appkey */; };
-		3305E25B1725F3F2004631F7 /* SNRMusicKitMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */; };
-		3305E25F1725F5C9004631F7 /* SNRMusicKitMac.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */; };
 		3305E28617260255004631F7 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28517260255004631F7 /* BFNavigationController.m */; };
 		3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28917260261004631F7 /* NSView+BFUtilities.m */; };
 		3305E28E172604B6004631F7 /* AULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28C172604B6004631F7 /* AULoginViewController.m */; };
@@ -98,25 +96,19 @@
 		3368E7E716C2D0BD00B72422 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7E516C2D0BD00B72422 /* Credits.rtf */; };
 		3368E7EA16C2D0BD00B72422 /* AUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */; };
 		3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7EB16C2D0BD00B72422 /* MainMenu.xib */; };
-		3368E7FE16C2D2F500B72422 /* AUSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */; };
 		3368E80016C2DB3500B72422 /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3368E7FF16C2DB3500B72422 /* AUHueLight.icns */; };
 		3368E80316C2DD1F00B72422 /* NSView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80216C2DD1F00B72422 /* NSView+Animations.m */; };
-		3368E80916C2DE5C00B72422 /* AULightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E80716C2DE5C00B72422 /* AULightsViewController.m */; };
-		3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E80816C2DE5C00B72422 /* AULightsViewController.xib */; };
 		3368E81A16C2E16D00B72422 /* NSViewController+PushPopAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */; };
-		3368E81E16C2E7E800B72422 /* AULightEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E81C16C2E7E700B72422 /* AULightEditViewController.m */; };
-		3368E81F16C2E7E800B72422 /* AULightEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */; };
 		3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */; };
 		3368E83D16C30EC700B72422 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E83B16C30EC700B72422 /* AUSpotifyView.xib */; };
 		3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368E84116C316B800B72422 /* ScriptingBridge.framework */; };
-		3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3368E84416C31CDF00B72422 /* AUDraggableView.m */; };
-		3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84616C322CC00B72422 /* AUDraggableLight.xib */; };
 		3368E84916C328CF00B72422 /* AUSpectrumChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */; };
 		3373D24316F2FC000027B303 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3373D24216F2FC000027B303 /* QuartzCore.framework */; };
 		33771A32170FF0D10051E880 /* AUStrobe.m in Sources */ = {isa = PBXBuildFile; fileRef = 33771A31170FF0D10051E880 /* AUStrobe.m */; };
 		337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F200D16C5F4AE0051A899 /* AUWindowController.m */; };
 		337F201016C5F4AE0051A899 /* AUWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337F200E16C5F4AE0051A899 /* AUWindow.xib */; };
 		33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B10488170F914000A523DC /* AUEffectEditView.xib */; };
+		33B72FBA17270E0900120F38 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B72FB517270DF300120F38 /* CocoaLibSpotify.framework */; };
 		33E95E14170F53A9002BEDA7 /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E12170F53A9002BEDA7 /* AUEffectViewController.m */; };
 		33E95E19170F53CC002BEDA7 /* AUEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E18170F53CC002BEDA7 /* AUEffect.m */; };
 		33E95E21170F6C1E002BEDA7 /* AUEffectTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E95E1F170F6C1E002BEDA7 /* AUEffectTestViewController.m */; };
@@ -173,54 +165,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3305E24F1725F3D6004631F7 /* PBXContainerItemProxy */ = {
+		33B72FB417270DF300120F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			containerPortal = 33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0369921715E3EB0B003BCCBE;
-			remoteInfo = SNRMusicKitMac;
+			remoteGlobalIDString = 503D630F13258041007772CA;
+			remoteInfo = CocoaLibSpotify;
 		};
-		3305E2511725F3D6004631F7 /* PBXContainerItemProxy */ = {
+		33B72FB617270DF300120F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			containerPortal = 33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0369923915E3EB44003BCCBE;
-			remoteInfo = SNRMusicKitiOS;
+			remoteGlobalIDString = 504E4934155AA85400E1C0F7;
+			remoteInfo = CocoaLSTests;
 		};
-		3305E2531725F3D6004631F7 /* PBXContainerItemProxy */ = {
+		33B72FB817270E0000120F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03927E0015E69ED700E6483E;
-			remoteInfo = iTunesExample;
-		};
-		3305E2551725F3D6004631F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03FBED3B15E70FA400A67DEE;
-			remoteInfo = 8tracksExample;
-		};
-		3305E2571725F3D6004631F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03576BBA15E9695E00316930;
-			remoteInfo = SpotifyExampleMac;
-		};
-		3305E2591725F3D6004631F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03157B2F15EBE3AC0048DB65;
-			remoteInfo = MPMediaLibraryExample;
-		};
-		3305E25C1725F429004631F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			containerPortal = 33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0369921615E3EB0B003BCCBE;
-			remoteInfo = SNRMusicKitMac;
+			remoteGlobalIDString = 503D630E13258041007772CA;
+			remoteInfo = CocoaLibSpotify;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -231,7 +195,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3305E25F1725F5C9004631F7 /* SNRMusicKitMac.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +202,6 @@
 
 /* Begin PBXFileReference section */
 		3305E2411725F359004631F7 /* spotify.appkey */ = {isa = PBXFileReference; lastKnownFileType = file; path = spotify.appkey; sourceTree = "<group>"; };
-		3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SNRMusicKit.xcodeproj; path = submodule/SNRMusicKit/SNRMusicKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3305E28417260255004631F7 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		3305E28517260255004631F7 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		3305E28717260261004631F7 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -343,26 +305,15 @@
 		3368E7E816C2D0BD00B72422 /* AUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUAppDelegate.h; sourceTree = "<group>"; };
 		3368E7E916C2D0BD00B72422 /* AUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUAppDelegate.m; sourceTree = "<group>"; };
 		3368E7EC16C2D0BD00B72422 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		3368E7FC16C2D2F500B72422 /* AUSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSetupViewController.h; sourceTree = "<group>"; };
-		3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSetupViewController.m; sourceTree = "<group>"; };
 		3368E7FF16C2DB3500B72422 /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUHueLight.icns; sourceTree = "<group>"; };
 		3368E80116C2DD1F00B72422 /* NSView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Animations.h"; sourceTree = "<group>"; };
 		3368E80216C2DD1F00B72422 /* NSView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Animations.m"; sourceTree = "<group>"; };
-		3368E80616C2DE5C00B72422 /* AULightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightsViewController.h; sourceTree = "<group>"; };
-		3368E80716C2DE5C00B72422 /* AULightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightsViewController.m; sourceTree = "<group>"; };
-		3368E80816C2DE5C00B72422 /* AULightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULightsViewController.xib; sourceTree = "<group>"; };
 		3368E81816C2E16D00B72422 /* NSViewController+PushPopAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSViewController+PushPopAnimations.h"; sourceTree = "<group>"; };
 		3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSViewController+PushPopAnimations.m"; sourceTree = "<group>"; };
-		3368E81B16C2E7E700B72422 /* AULightEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightEditViewController.h; sourceTree = "<group>"; };
-		3368E81C16C2E7E700B72422 /* AULightEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightEditViewController.m; sourceTree = "<group>"; };
-		3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULightEditViewController.xib; sourceTree = "<group>"; };
 		3368E83916C30EC700B72422 /* AUSpotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyViewController.h; sourceTree = "<group>"; };
 		3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyViewController.m; sourceTree = "<group>"; };
 		3368E83B16C30EC700B72422 /* AUSpotifyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyView.xib; sourceTree = "<group>"; };
 		3368E84116C316B800B72422 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		3368E84316C31CDF00B72422 /* AUDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDraggableView.h; sourceTree = "<group>"; };
-		3368E84416C31CDF00B72422 /* AUDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDraggableView.m; sourceTree = "<group>"; };
-		3368E84616C322CC00B72422 /* AUDraggableLight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUDraggableLight.xib; sourceTree = "<group>"; };
 		3368E84816C328CF00B72422 /* AUSpectrumChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AUSpectrumChart.jpg; sourceTree = "<group>"; };
 		3373D24216F2FC000027B303 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		33771A30170FF0D10051E880 /* AUStrobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUStrobe.h; sourceTree = "<group>"; };
@@ -371,6 +322,7 @@
 		337F200D16C5F4AE0051A899 /* AUWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUWindowController.m; sourceTree = "<group>"; };
 		337F200E16C5F4AE0051A899 /* AUWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUWindow.xib; sourceTree = "<group>"; };
 		33B10488170F914000A523DC /* AUEffectEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectEditView.xib; sourceTree = "<group>"; };
+		33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "submodule/cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
 		33E95E11170F53A9002BEDA7 /* AUEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectViewController.h; sourceTree = "<group>"; };
 		33E95E12170F53A9002BEDA7 /* AUEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectViewController.m; sourceTree = "<group>"; };
 		33E95E17170F53CC002BEDA7 /* AUEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffect.h; sourceTree = "<group>"; };
@@ -438,7 +390,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3305E25B1725F3F2004631F7 /* SNRMusicKitMac.framework in Frameworks */,
+				33B72FBA17270E0900120F38 /* CocoaLibSpotify.framework in Frameworks */,
 				3373D24316F2FC000027B303 /* QuartzCore.framework in Frameworks */,
 				3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */,
 				3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */,
@@ -449,19 +401,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3305E2441725F3D5004631F7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */,
-				3305E2521725F3D6004631F7 /* libSNRMusicKitiOS.a */,
-				3305E2541725F3D6004631F7 /* iTunesExample.app */,
-				3305E2561725F3D6004631F7 /* 8tracksExample.app */,
-				3305E2581725F3D6004631F7 /* SpotifyExampleMac.app */,
-				3305E25A1725F3D6004631F7 /* MPMediaLibraryExample.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3305E28317260246004631F7 /* BFNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,7 +473,7 @@
 		3368E7D516C2D0BD00B72422 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */,
+				33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */,
 				3373D24216F2FC000027B303 /* QuartzCore.framework */,
 				3368E84116C316B800B72422 /* ScriptingBridge.framework */,
 				3368E7D616C2D0BD00B72422 /* Cocoa.framework */,
@@ -557,20 +496,15 @@
 		3368E7DC16C2D0BD00B72422 /* aurora */ = {
 			isa = PBXGroup;
 			children = (
-				3305E290172604BA004631F7 /* Log in */,
-				3305E28317260246004631F7 /* BFNavigationController */,
 				335010C2170620AB00F0E0E4 /* Debug */,
+				3305E290172604BA004631F7 /* Log in */,
 				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
-				33E95E23170F6C2B002BEDA7 /* Effects Test */,
 				33E95E16170F53BE002BEDA7 /* Effects */,
 				33E95E10170F5393002BEDA7 /* Effect View Controller */,
 				33F7332616E988FB00346B0A /* Performance Editor */,
 				337F201216C5F4B90051A899 /* Aurora Window */,
 				33F7332716E98C6400346B0A /* App Delegate */,
 				3368E80516C2DD3F00B72422 /* Categories */,
-				3368E82016C2E7F400B72422 /* Light Edit */,
-				3368E81616C2E0C700B72422 /* Lights View */,
-				3368E82116C2E82E00B72422 /* Setup View */,
 				3368E7DD16C2D0BD00B72422 /* Supporting Files */,
 			);
 			path = aurora;
@@ -594,6 +528,7 @@
 		3368E80516C2DD3F00B72422 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3305E28317260246004631F7 /* BFNavigationController */,
 				3368E81816C2E16D00B72422 /* NSViewController+PushPopAnimations.h */,
 				3368E81916C2E16D00B72422 /* NSViewController+PushPopAnimations.m */,
 				3368E80116C2DD1F00B72422 /* NSView+Animations.h */,
@@ -602,44 +537,12 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		3368E81616C2E0C700B72422 /* Lights View */ = {
-			isa = PBXGroup;
-			children = (
-				3368E80616C2DE5C00B72422 /* AULightsViewController.h */,
-				3368E80716C2DE5C00B72422 /* AULightsViewController.m */,
-				3368E80816C2DE5C00B72422 /* AULightsViewController.xib */,
-			);
-			name = "Lights View";
-			sourceTree = "<group>";
-		};
-		3368E82016C2E7F400B72422 /* Light Edit */ = {
-			isa = PBXGroup;
-			children = (
-				3368E81B16C2E7E700B72422 /* AULightEditViewController.h */,
-				3368E81C16C2E7E700B72422 /* AULightEditViewController.m */,
-				3368E81D16C2E7E700B72422 /* AULightEditViewController.xib */,
-			);
-			name = "Light Edit";
-			sourceTree = "<group>";
-		};
-		3368E82116C2E82E00B72422 /* Setup View */ = {
-			isa = PBXGroup;
-			children = (
-				3368E7FC16C2D2F500B72422 /* AUSetupViewController.h */,
-				3368E7FD16C2D2F500B72422 /* AUSetupViewController.m */,
-			);
-			name = "Setup View";
-			sourceTree = "<group>";
-		};
 		3368E83F16C30ECB00B72422 /* Spotify View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				3368E83916C30EC700B72422 /* AUSpotifyViewController.h */,
 				3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */,
 				3368E83B16C30EC700B72422 /* AUSpotifyView.xib */,
-				3368E84316C31CDF00B72422 /* AUDraggableView.h */,
-				3368E84416C31CDF00B72422 /* AUDraggableView.m */,
-				3368E84616C322CC00B72422 /* AUDraggableLight.xib */,
 			);
 			name = "Spotify View Controller";
 			sourceTree = "<group>";
@@ -673,6 +576,15 @@
 			name = AUEffect;
 			sourceTree = "<group>";
 		};
+		33B72FB017270DF200120F38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33B72FB517270DF300120F38 /* CocoaLibSpotify.framework */,
+				33B72FB717270DF300120F38 /* CocoaLSTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		33E95E10170F5393002BEDA7 /* Effect View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +597,7 @@
 		33E95E16170F53BE002BEDA7 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				33E95E23170F6C2B002BEDA7 /* Effects Test */,
 				33E95E24170F6F2C002BEDA7 /* AUEffectManager.h */,
 				33E95E25170F6F2C002BEDA7 /* AUEffectManager.m */,
 				330ED403171531B8002B7246 /* Color Pulse */,
@@ -877,7 +790,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3305E25D1725F429004631F7 /* PBXTargetDependency */,
+				33B72FB917270E0000120F38 /* PBXTargetDependency */,
 			);
 			name = Aurora;
 			productName = aurora;
@@ -906,8 +819,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3305E2441725F3D5004631F7 /* Products */;
-					ProjectRef = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+					ProductGroup = 33B72FB017270DF200120F38 /* Products */;
+					ProjectRef = 33B72FAF17270DF200120F38 /* CocoaLibSpotify Mac Framework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -918,46 +831,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */ = {
+		33B72FB517270DF300120F38 /* CocoaLibSpotify.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = SNRMusicKitMac.framework;
-			remoteRef = 3305E24F1725F3D6004631F7 /* PBXContainerItemProxy */;
+			path = CocoaLibSpotify.framework;
+			remoteRef = 33B72FB417270DF300120F38 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3305E2521725F3D6004631F7 /* libSNRMusicKitiOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSNRMusicKitiOS.a;
-			remoteRef = 3305E2511725F3D6004631F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3305E2541725F3D6004631F7 /* iTunesExample.app */ = {
+		33B72FB717270DF300120F38 /* CocoaLSTests.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = iTunesExample.app;
-			remoteRef = 3305E2531725F3D6004631F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3305E2561725F3D6004631F7 /* 8tracksExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = 8tracksExample.app;
-			remoteRef = 3305E2551725F3D6004631F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3305E2581725F3D6004631F7 /* SpotifyExampleMac.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SpotifyExampleMac.app;
-			remoteRef = 3305E2571725F3D6004631F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3305E25A1725F3D6004631F7 /* MPMediaLibraryExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MPMediaLibraryExample.app;
-			remoteRef = 3305E2591725F3D6004631F7 /* PBXContainerItemProxy */;
+			path = CocoaLSTests.app;
+			remoteRef = 33B72FB617270DF300120F38 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -971,10 +856,7 @@
 				3368E7E716C2D0BD00B72422 /* Credits.rtf in Resources */,
 				3368E7ED16C2D0BD00B72422 /* MainMenu.xib in Resources */,
 				3368E80016C2DB3500B72422 /* AUHueLight.icns in Resources */,
-				3368E80A16C2DE5C00B72422 /* AULightsViewController.xib in Resources */,
-				3368E81F16C2E7E800B72422 /* AULightEditViewController.xib in Resources */,
 				3368E83D16C30EC700B72422 /* AUSpotifyView.xib in Resources */,
-				3368E84716C322CD00B72422 /* AUDraggableLight.xib in Resources */,
 				3368E84916C328CF00B72422 /* AUSpectrumChart.jpg in Resources */,
 				337F201016C5F4AE0051A899 /* AUWindow.xib in Resources */,
 				33F0CECC16E2A8B100B93E57 /* AULinenLight.png in Resources */,
@@ -1129,13 +1011,9 @@
 			files = (
 				3368E7E316C2D0BD00B72422 /* main.m in Sources */,
 				3368E7EA16C2D0BD00B72422 /* AUAppDelegate.m in Sources */,
-				3368E7FE16C2D2F500B72422 /* AUSetupViewController.m in Sources */,
 				3368E80316C2DD1F00B72422 /* NSView+Animations.m in Sources */,
-				3368E80916C2DE5C00B72422 /* AULightsViewController.m in Sources */,
 				3368E81A16C2E16D00B72422 /* NSViewController+PushPopAnimations.m in Sources */,
-				3368E81E16C2E7E800B72422 /* AULightEditViewController.m in Sources */,
 				3368E83C16C30EC700B72422 /* AUSpotifyViewController.m in Sources */,
-				3368E84516C31CDF00B72422 /* AUDraggableView.m in Sources */,
 				337F200F16C5F4AE0051A899 /* AUWindowController.m in Sources */,
 				33F7332416E981A800346B0A /* AUPerformanceEditViewController.m in Sources */,
 				333531F817061E6B0007E65D /* AULightTableCellView.m in Sources */,
@@ -1157,10 +1035,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3305E25D1725F429004631F7 /* PBXTargetDependency */ = {
+		33B72FB917270E0000120F38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SNRMusicKitMac;
-			targetProxy = 3305E25C1725F429004631F7 /* PBXContainerItemProxy */;
+			name = CocoaLibSpotify;
+			targetProxy = 33B72FB817270E0000120F38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1251,7 +1129,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks;
+				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
 				INFOPLIST_FILE = "aurora/aurora-Info.plist";
@@ -1268,7 +1146,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks;
+				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
 				INFOPLIST_FILE = "aurora/aurora-Info.plist";
