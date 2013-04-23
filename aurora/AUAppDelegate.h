@@ -8,10 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class AUWindowController;
 
 @interface AUAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong, nonatomic) AUWindowController *windowController;
+@property (strong) NSWindowController *loginWindowController;
 
 @end

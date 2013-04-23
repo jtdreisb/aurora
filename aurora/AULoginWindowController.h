@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <SNRMusicKitMac/SMKSpotifyContentSource.h>
+#import <CocoaLibSpotify/CocoaLibSpotify.h>
 
-@interface AULoginViewController : NSViewController <BFViewController, SPSessionDelegate, NSControlTextEditingDelegate>
+@interface AULoginWindowController : NSWindowController <SPSessionDelegate, NSControlTextEditingDelegate>
 
 @property (weak) IBOutlet NSTextField *usernameField;
 @property (weak) IBOutlet NSTextField *passwordField;

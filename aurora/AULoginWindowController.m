@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AULoginViewController.h"
-#import "AUSpotifyViewController.h"
-
+#import "AULoginWindowController.h"
+#import "AUWindowController.h"
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -37,16 +36,14 @@ const uint8_t g_appkey[] = {
 };
 const size_t g_appkey_size = sizeof(g_appkey);
 
-@implementation AULoginViewController
+@implementation AULoginWindowController
 
 - (BOOL)hasValidValues
 {
     return (self.usernameField.stringValue.length > 0) && (self.passwordField.stringValue.length > 0);
 }
 
-#pragma mark - BFViewController additions
-
-- (void)viewWillAppear: (BOOL)animated
+- (void)windowDidLoad
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.usernameField.stringValue = [defaults objectForKey:@"spotify_username"] ?: @"";
@@ -58,21 +55,6 @@ const size_t g_appkey_size = sizeof(g_appkey);
         [self.signInButton setEnabled:NO];
         [self.progressIndicator setHidden:YES];
     }
-}
-
-- (void)viewDidAppear: (BOOL)animated
-{
-//    NSLog(@"%@ - viewDidAppear: %i", self, animated);
-}
-
-- (void)viewWillDisappear: (BOOL)animated
-{
-//    NSLog(@"%@ - viewWillDisappear: %i", self, animated);
-}
-
-- (void)viewDidDisappear: (BOOL)animated
-{
-//    NSLog(@"%@ - viewDidDisappear: %i", self, animated);
 }
 
 #pragma mark - Actions
@@ -103,14 +85,32 @@ const size_t g_appkey_size = sizeof(g_appkey);
     }
 }
 
+- (void)shake
+{
+    //Gets the window rect
+    NSRect rect = [self.window frame];
+    //Shake offset amount
+    int amount = -10;
+    //Shake the window 5 times
+    for(int i = 0; i < 5; i++){
+        //Changes the frame origin
+        [self.window setFrameOrigin:NSMakePoint((rect.origin.x + amount), rect.origin.y)];
+        //Pause the thread for 0.04 seconds
+        usleep((useconds_t)40000);
+        //Inverts the offset amount
+        amount *= -1;
+    }
+    //Restore the window’s original position
+    [self.window setFrame:rect display:NO];
+}
 #pragma mark - SPSessionDelegate
 -(void)sessionDidLoginSuccessfully:(SPSession *)aSession
 {
     [self.progressIndicator stopAnimation:self];
     [self.progressIndicator setHidden:YES];
-    
-    
-//    [self pushViewController:spotifyViewController animated:YES];
+    NSWindowController *windowController = [[AUWindowController alloc] initWithWindowNibName:@"AUWindow"];
+    [windowController showWindow:self];
+    [self close];
 }
 
 - (void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error
@@ -120,6 +120,7 @@ const size_t g_appkey_size = sizeof(g_appkey);
     [self.usernameField setEnabled:YES];
     [self.passwordField setEnabled:YES];
     NSLog(@"Failed login: %@ %@", error, [error userInfo]);
+    [self shake];
 }
 
 #pragma mark - NSControlTextEditingDelegate

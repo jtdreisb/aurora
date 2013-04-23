@@ -7,17 +7,15 @@
 //
 
 #import "AUAppDelegate.h"
-#import "AUWindowController.h"
-
-
+#import "AULoginWindowController.h"
+#import <CocoaLibSpotify/CocoaLibSpotify.h>
 
 @implementation AUAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-
-    self.windowController = [[AUWindowController alloc] initWithWindowNibName:@"AUWindow"];
-    [self.windowController showWindow:self];
+    self.loginWindowController = [[AULoginWindowController alloc] initWithWindowNibName:@"AULoginWindow"];
+    [self.loginWindowController showWindow:self];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -25,6 +23,16 @@
     return YES;
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+	if ([SPSession sharedSession].connectionState == SP_CONNECTION_STATE_LOGGED_OUT ||
+		[SPSession sharedSession].connectionState == SP_CONNECTION_STATE_UNDEFINED)
+		return NSTerminateNow;
+	
+	[[SPSession sharedSession] logout:^{
+		[[NSApplication sharedApplication] replyToApplicationShouldTerminate:YES];
+	}];
+	return NSTerminateLater;
+}
 
 // ********************************************************************************
 // App Delegate Callbacks

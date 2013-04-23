@@ -10,8 +10,8 @@
 		3305E2421725F359004631F7 /* spotify.appkey in Resources */ = {isa = PBXBuildFile; fileRef = 3305E2411725F359004631F7 /* spotify.appkey */; };
 		3305E28617260255004631F7 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28517260255004631F7 /* BFNavigationController.m */; };
 		3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28917260261004631F7 /* NSView+BFUtilities.m */; };
-		3305E28E172604B6004631F7 /* AULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28C172604B6004631F7 /* AULoginViewController.m */; };
-		3305E28F172604B6004631F7 /* AULoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3305E28D172604B6004631F7 /* AULoginView.xib */; };
+		3305E28E172604B6004631F7 /* AULoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28C172604B6004631F7 /* AULoginWindowController.m */; };
+		3305E28F172604B6004631F7 /* AULoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3305E28D172604B6004631F7 /* AULoginWindow.xib */; };
 		330ED402171531AC002B7246 /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 330ED401171531AC002B7246 /* AUColorPulse.m */; };
 		333531F817061E6B0007E65D /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333531F717061E6B0007E65D /* AULightTableCellView.m */; };
 		335010C5170620DB00F0E0E4 /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 335010C4170620DB00F0E0E4 /* DBG_DPHueBridge.m */; };
@@ -207,9 +207,9 @@
 		3305E28717260261004631F7 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
 		3305E28817260261004631F7 /* NSView+BFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+BFUtilities.h"; sourceTree = "<group>"; };
 		3305E28917260261004631F7 /* NSView+BFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+BFUtilities.m"; sourceTree = "<group>"; };
-		3305E28B172604B6004631F7 /* AULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULoginViewController.h; sourceTree = "<group>"; };
-		3305E28C172604B6004631F7 /* AULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULoginViewController.m; sourceTree = "<group>"; };
-		3305E28D172604B6004631F7 /* AULoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULoginView.xib; sourceTree = "<group>"; };
+		3305E28B172604B6004631F7 /* AULoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULoginWindowController.h; sourceTree = "<group>"; };
+		3305E28C172604B6004631F7 /* AULoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULoginWindowController.m; sourceTree = "<group>"; };
+		3305E28D172604B6004631F7 /* AULoginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULoginWindow.xib; sourceTree = "<group>"; };
 		330ED400171531AC002B7246 /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
 		330ED401171531AC002B7246 /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
 		333531F617061E6B0007E65D /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
@@ -416,9 +416,9 @@
 		3305E290172604BA004631F7 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
-				3305E28B172604B6004631F7 /* AULoginViewController.h */,
-				3305E28C172604B6004631F7 /* AULoginViewController.m */,
-				3305E28D172604B6004631F7 /* AULoginView.xib */,
+				3305E28B172604B6004631F7 /* AULoginWindowController.h */,
+				3305E28C172604B6004631F7 /* AULoginWindowController.m */,
+				3305E28D172604B6004631F7 /* AULoginWindow.xib */,
 			);
 			name = "Log in";
 			sourceTree = "<group>";
@@ -981,7 +981,7 @@
 				33E95E2B170F75C2002BEDA7 /* AUEffectCollectionViewItem.xib in Resources */,
 				33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */,
 				3305E2421725F359004631F7 /* spotify.appkey in Resources */,
-				3305E28F172604B6004631F7 /* AULoginView.xib in Resources */,
+				3305E28F172604B6004631F7 /* AULoginWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,7 +1028,7 @@
 				330ED402171531AC002B7246 /* AUColorPulse.m in Sources */,
 				3305E28617260255004631F7 /* BFNavigationController.m in Sources */,
 				3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */,
-				3305E28E172604B6004631F7 /* AULoginViewController.m in Sources */,
+				3305E28E172604B6004631F7 /* AULoginWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import "AUWindowController.h"
 #import "AUEffectTestViewController.h"
 #import "DBG_DPHueBridge.h"
-#import "AULoginViewController.h"
+#import "AUSpotifyViewController.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -41,8 +41,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        AULoginViewController *loginViewController = [[AULoginViewController alloc] initWithNibName:@"AULoginView" bundle:nil];
-        _navController = [[BFNavigationController alloc] initWithFrame:NSMakeRect(0, 0, self.window.frame.size.width, self.window.frame.size.height) rootViewController:loginViewController];
+        _navController = [[BFNavigationController alloc] initWithFrame:NSMakeRect(0, 0, self.window.frame.size.width, self.window.frame.size.height) rootViewController:self.spotifyViewController];
         NSTabViewItem *appItem = [[NSTabViewItem alloc] initWithIdentifier:@"App"];
         [appItem setLabel:@"App"];
         
