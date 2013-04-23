@@ -58,6 +58,7 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
             controller = [[NSViewController alloc] init];
             controller.view = [[NSView alloc] initWithFrame: aFrame];
         }
+        controller.navigationController = self;
         
         _viewControllers = [NSMutableArray array];
         [_viewControllers addObject: controller];
@@ -226,6 +227,7 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
 {
     NSViewController *visibleController = self.visibleViewController;
     [_viewControllers addObject: viewController];
+    viewController.navigationController = self;
     
     // Navigate
     [self _navigateFromViewController: visibleController toViewController: [_viewControllers lastObject] animated: animated push: YES];

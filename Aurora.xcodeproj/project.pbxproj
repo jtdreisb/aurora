@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3305E2421725F359004631F7 /* spotify.appkey in Resources */ = {isa = PBXBuildFile; fileRef = 3305E2411725F359004631F7 /* spotify.appkey */; };
+		3305E25B1725F3F2004631F7 /* SNRMusicKitMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */; };
+		3305E25F1725F5C9004631F7 /* SNRMusicKitMac.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */; };
+		3305E28617260255004631F7 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28517260255004631F7 /* BFNavigationController.m */; };
+		3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28917260261004631F7 /* NSView+BFUtilities.m */; };
+		3305E28E172604B6004631F7 /* AULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28C172604B6004631F7 /* AULoginViewController.m */; };
+		3305E28F172604B6004631F7 /* AULoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3305E28D172604B6004631F7 /* AULoginView.xib */; };
 		330ED402171531AC002B7246 /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 330ED401171531AC002B7246 /* AUColorPulse.m */; };
 		333531F817061E6B0007E65D /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333531F717061E6B0007E65D /* AULightTableCellView.m */; };
 		335010C5170620DB00F0E0E4 /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 335010C4170620DB00F0E0E4 /* DBG_DPHueBridge.m */; };
@@ -165,7 +172,82 @@
 		E214F79C31C549EFAED73C0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D411E00FBADA4C948F64487F /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3305E24F1725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0369921715E3EB0B003BCCBE;
+			remoteInfo = SNRMusicKitMac;
+		};
+		3305E2511725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0369923915E3EB44003BCCBE;
+			remoteInfo = SNRMusicKitiOS;
+		};
+		3305E2531725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03927E0015E69ED700E6483E;
+			remoteInfo = iTunesExample;
+		};
+		3305E2551725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03FBED3B15E70FA400A67DEE;
+			remoteInfo = 8tracksExample;
+		};
+		3305E2571725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03576BBA15E9695E00316930;
+			remoteInfo = SpotifyExampleMac;
+		};
+		3305E2591725F3D6004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03157B2F15EBE3AC0048DB65;
+			remoteInfo = MPMediaLibraryExample;
+		};
+		3305E25C1725F429004631F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0369921615E3EB0B003BCCBE;
+			remoteInfo = SNRMusicKitMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3305E25E1725F5A9004631F7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3305E25F1725F5C9004631F7 /* SNRMusicKitMac.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3305E2411725F359004631F7 /* spotify.appkey */ = {isa = PBXFileReference; lastKnownFileType = file; path = spotify.appkey; sourceTree = "<group>"; };
+		3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SNRMusicKit.xcodeproj; path = submodule/SNRMusicKit/SNRMusicKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3305E28417260255004631F7 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
+		3305E28517260255004631F7 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
+		3305E28717260261004631F7 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
+		3305E28817260261004631F7 /* NSView+BFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+BFUtilities.h"; sourceTree = "<group>"; };
+		3305E28917260261004631F7 /* NSView+BFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+BFUtilities.m"; sourceTree = "<group>"; };
+		3305E28B172604B6004631F7 /* AULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULoginViewController.h; sourceTree = "<group>"; };
+		3305E28C172604B6004631F7 /* AULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULoginViewController.m; sourceTree = "<group>"; };
+		3305E28D172604B6004631F7 /* AULoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AULoginView.xib; sourceTree = "<group>"; };
 		330ED400171531AC002B7246 /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
 		330ED401171531AC002B7246 /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
 		333531F617061E6B0007E65D /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
@@ -277,7 +359,6 @@
 		3368E83916C30EC700B72422 /* AUSpotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyViewController.h; sourceTree = "<group>"; };
 		3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyViewController.m; sourceTree = "<group>"; };
 		3368E83B16C30EC700B72422 /* AUSpotifyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyView.xib; sourceTree = "<group>"; };
-		3368E84016C30F8700B72422 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		3368E84116C316B800B72422 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		3368E84316C31CDF00B72422 /* AUDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDraggableView.h; sourceTree = "<group>"; };
 		3368E84416C31CDF00B72422 /* AUDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDraggableView.m; sourceTree = "<group>"; };
@@ -357,6 +438,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3305E25B1725F3F2004631F7 /* SNRMusicKitMac.framework in Frameworks */,
 				3373D24316F2FC000027B303 /* QuartzCore.framework in Frameworks */,
 				3368E84216C316B800B72422 /* ScriptingBridge.framework in Frameworks */,
 				3368E7D716C2D0BD00B72422 /* Cocoa.framework in Frameworks */,
@@ -367,6 +449,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3305E2441725F3D5004631F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */,
+				3305E2521725F3D6004631F7 /* libSNRMusicKitiOS.a */,
+				3305E2541725F3D6004631F7 /* iTunesExample.app */,
+				3305E2561725F3D6004631F7 /* 8tracksExample.app */,
+				3305E2581725F3D6004631F7 /* SpotifyExampleMac.app */,
+				3305E25A1725F3D6004631F7 /* MPMediaLibraryExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3305E28317260246004631F7 /* BFNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				3305E28717260261004631F7 /* BFViewController.h */,
+				3305E28817260261004631F7 /* NSView+BFUtilities.h */,
+				3305E28917260261004631F7 /* NSView+BFUtilities.m */,
+				3305E28417260255004631F7 /* BFNavigationController.h */,
+				3305E28517260255004631F7 /* BFNavigationController.m */,
+			);
+			name = BFNavigationController;
+			sourceTree = "<group>";
+		};
+		3305E290172604BA004631F7 /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				3305E28B172604B6004631F7 /* AULoginViewController.h */,
+				3305E28C172604B6004631F7 /* AULoginViewController.m */,
+				3305E28D172604B6004631F7 /* AULoginView.xib */,
+			);
+			name = "Log in";
+			sourceTree = "<group>";
+		};
 		330ED403171531B8002B7246 /* Color Pulse */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +534,7 @@
 		3368E7D516C2D0BD00B72422 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */,
 				3373D24216F2FC000027B303 /* QuartzCore.framework */,
 				3368E84116C316B800B72422 /* ScriptingBridge.framework */,
 				3368E7D616C2D0BD00B72422 /* Cocoa.framework */,
@@ -439,11 +557,13 @@
 		3368E7DC16C2D0BD00B72422 /* aurora */ = {
 			isa = PBXGroup;
 			children = (
+				3305E290172604BA004631F7 /* Log in */,
+				3305E28317260246004631F7 /* BFNavigationController */,
+				335010C2170620AB00F0E0E4 /* Debug */,
 				3368E83F16C30ECB00B72422 /* Spotify View Controller */,
 				33E95E23170F6C2B002BEDA7 /* Effects Test */,
 				33E95E16170F53BE002BEDA7 /* Effects */,
 				33E95E10170F5393002BEDA7 /* Effect View Controller */,
-				335010C2170620AB00F0E0E4 /* Debug */,
 				33F7332616E988FB00346B0A /* Performance Editor */,
 				337F201216C5F4B90051A899 /* Aurora Window */,
 				33F7332716E98C6400346B0A /* App Delegate */,
@@ -459,6 +579,7 @@
 		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3305E2411725F359004631F7 /* spotify.appkey */,
 				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
 				33F0CEC716E2A89600B93E57 /* Images */,
 				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
@@ -513,7 +634,6 @@
 		3368E83F16C30ECB00B72422 /* Spotify View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3368E84016C30F8700B72422 /* Spotify.h */,
 				3368E83916C30EC700B72422 /* AUSpotifyViewController.h */,
 				3368E83A16C30EC700B72422 /* AUSpotifyViewController.m */,
 				3368E83B16C30EC700B72422 /* AUSpotifyView.xib */,
@@ -752,10 +872,12 @@
 				3368E7CF16C2D0BD00B72422 /* Frameworks */,
 				3368E7D016C2D0BD00B72422 /* Resources */,
 				C8111859CFF64617A85D2D8B /* Copy Pods Resources */,
+				3305E25E1725F5A9004631F7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3305E25D1725F429004631F7 /* PBXTargetDependency */,
 			);
 			name = Aurora;
 			productName = aurora;
@@ -782,12 +904,63 @@
 			mainGroup = 3368E7C716C2D0BD00B72422;
 			productRefGroup = 3368E7D316C2D0BD00B72422 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3305E2441725F3D5004631F7 /* Products */;
+					ProjectRef = 3305E2431725F3D5004631F7 /* SNRMusicKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3368E7D116C2D0BD00B72422 /* Aurora */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3305E2501725F3D6004631F7 /* SNRMusicKitMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SNRMusicKitMac.framework;
+			remoteRef = 3305E24F1725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3305E2521725F3D6004631F7 /* libSNRMusicKitiOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSNRMusicKitiOS.a;
+			remoteRef = 3305E2511725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3305E2541725F3D6004631F7 /* iTunesExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iTunesExample.app;
+			remoteRef = 3305E2531725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3305E2561725F3D6004631F7 /* 8tracksExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = 8tracksExample.app;
+			remoteRef = 3305E2551725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3305E2581725F3D6004631F7 /* SpotifyExampleMac.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SpotifyExampleMac.app;
+			remoteRef = 3305E2571725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3305E25A1725F3D6004631F7 /* MPMediaLibraryExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MPMediaLibraryExample.app;
+			remoteRef = 3305E2591725F3D6004631F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3368E7D016C2D0BD00B72422 /* Resources */ = {
@@ -925,6 +1098,8 @@
 				33E95E22170F6C1E002BEDA7 /* AUEffectTestView.xib in Resources */,
 				33E95E2B170F75C2002BEDA7 /* AUEffectCollectionViewItem.xib in Resources */,
 				33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */,
+				3305E2421725F359004631F7 /* spotify.appkey in Resources */,
+				3305E28F172604B6004631F7 /* AULoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,10 +1148,21 @@
 				33E95E2A170F75C2002BEDA7 /* AUEffectCollectionViewItem.m in Sources */,
 				33771A32170FF0D10051E880 /* AUStrobe.m in Sources */,
 				330ED402171531AC002B7246 /* AUColorPulse.m in Sources */,
+				3305E28617260255004631F7 /* BFNavigationController.m in Sources */,
+				3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */,
+				3305E28E172604B6004631F7 /* AULoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3305E25D1725F429004631F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SNRMusicKitMac;
+			targetProxy = 3305E25C1725F429004631F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3368E7DF16C2D0BD00B72422 /* InfoPlist.strings */ = {
@@ -1063,11 +1249,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
 				INFOPLIST_FILE = "aurora/aurora-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1076,11 +1266,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aurora/aurora-Prefix.pch";
 				INFOPLIST_FILE = "aurora/aurora-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

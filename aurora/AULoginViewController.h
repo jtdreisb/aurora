@@ -7,7 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <SNRMusicKitMac/SMKSpotifyContentSource.h>
 
-@interface AULoginViewController : NSViewController
+@interface AULoginViewController : NSViewController <BFViewController, SPSessionDelegate, NSControlTextEditingDelegate>
+
+@property (weak) IBOutlet NSTextField *usernameField;
+@property (weak) IBOutlet NSTextField *passwordField;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (weak) IBOutlet NSButton *signInButton;
+
+
+- (IBAction)signIn:(id)sender;
 
 @end

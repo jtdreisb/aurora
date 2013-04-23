@@ -88,17 +88,15 @@
 				<string key="NSFrameSize">{655, 101}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">INTitlebarView</string>
-			</object>
-			<object class="NSViewController" id="733968945">
-				<string key="NSNibName">AUPerformanceEditView</string>
 			</object>
 			<object class="NSViewController" id="921013049">
 				<string key="NSNibName">AUEffectTestView</string>
 			</object>
-			<object class="NSViewController" id="516683665">
-				<string key="NSNibName">AUSpotifyView</string>
+			<object class="NSViewController" id="289910419">
+				<string key="NSNibName">AULoginView</string>
 			</object>
 			<object class="NSArrayController" id="475510630">
 				<bool key="NSEditable">YES</bool>
@@ -122,14 +120,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">performanceViewController</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="733968945"/>
-					</object>
-					<int key="connectionID">51</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">effectTestViewController</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="921013049"/>
@@ -146,14 +136,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">spotifyViewController</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="516683665"/>
-					</object>
-					<int key="connectionID">76</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">lightArrayController</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="475510630"/>
@@ -167,14 +149,6 @@
 						<reference key="destination" ref="392823550"/>
 					</object>
 					<int key="connectionID">21</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">lightsArrayController</string>
-						<reference key="source" ref="516683665"/>
-						<reference key="destination" ref="475510630"/>
-					</object>
-					<int key="connectionID">80</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -290,11 +264,6 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">50</int>
-						<reference key="object" ref="733968945"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
 						<reference key="object" ref="921013049"/>
 						<reference key="parent" ref="0"/>
@@ -326,15 +295,15 @@
 						<reference key="parent" ref="1025393742"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">75</int>
-						<reference key="object" ref="516683665"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">77</int>
 						<reference key="object" ref="475510630"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Lights Array Controller</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">82</int>
+						<reference key="object" ref="289910419"/>
+						<reference key="parent" ref="0"/>
 					</object>
 				</array>
 			</object>
@@ -370,8 +339,6 @@
 				<boolean value="YES" key="5.IBNSWindowAutoPositionCentersVertical"/>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="5.NSWindowTemplate.visibleAtLaunch"/>
-				<string key="50.CustomClassName">AUPerformanceEditViewController</string>
-				<string key="50.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="59.CustomClassName">AUEffectTestViewController</string>
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<array class="NSMutableArray" key="6.IBNSViewMetadataConstraints">
@@ -388,15 +355,15 @@
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="75.CustomClassName">AUSpotifyViewController</string>
-				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="82.CustomClassName">AULoginViewController</string>
+				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">81</int>
+			<int key="maxID">82</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -433,53 +400,36 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">AUPerformanceEditViewController</string>
+					<string key="className">AULoginViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AUPerformanceEditViewController.h</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">signIn:</string>
+						<string key="NS.object.0">id</string>
 					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">AUSpotifyViewController</string>
-					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">signIn:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">signIn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="albumImageView">NSImageView</string>
-						<string key="artistNameLabel">NSTextField</string>
-						<string key="colorView">NSView</string>
-						<string key="lightsArrayController">NSArrayController</string>
-						<string key="playPauseButton">NSButton</string>
-						<string key="trackNameLabel">NSTextField</string>
+						<string key="passwordField">NSTextField</string>
+						<string key="usernameField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="albumImageView">
-							<string key="name">albumImageView</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="artistNameLabel">
-							<string key="name">artistNameLabel</string>
+						<object class="IBToOneOutletInfo" key="passwordField">
+							<string key="name">passwordField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="colorView">
-							<string key="name">colorView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="lightsArrayController">
-							<string key="name">lightsArrayController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playPauseButton">
-							<string key="name">playPauseButton</string>
-							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="trackNameLabel">
-							<string key="name">trackNameLabel</string>
+						<object class="IBToOneOutletInfo" key="usernameField">
+							<string key="name">usernameField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AUSpotifyViewController.h</string>
+						<string key="minorKey">./Classes/AULoginViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

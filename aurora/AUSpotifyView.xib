@@ -48,7 +48,6 @@
 						<string key="NSFrame">{{146, -331}, {289, 44}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSViewIsLayerTreeHost">YES</bool>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">NSView</string>
@@ -746,9 +745,9 @@
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">227</int>
-						<reference key="object" ref="986716469"/>
-						<reference key="parent" ref="819501901"/>
+						<int key="objectID">260</int>
+						<reference key="object" ref="474206978"/>
+						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">256</int>
@@ -766,9 +765,9 @@
 						<reference key="parent" ref="819501901"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">260</int>
-						<reference key="object" ref="474206978"/>
-						<reference key="parent" ref="1005"/>
+						<int key="objectID">227</int>
+						<reference key="object" ref="986716469"/>
+						<reference key="parent" ref="819501901"/>
 					</object>
 				</array>
 			</object>

@@ -2,7 +2,7 @@
 Building
 ==================
 
-1. Install CocoaPods if you haven't already 
+1. Install CocoaPods if you haven't already
 
 ```
 sudo gem install cocoapods; pod setup
@@ -27,7 +27,7 @@ git clone https://github.com/jtdreisb/Aurora
 cd Aurora; pod install
 ```
 
-5. Open the Xcode Workspace document (NOT the Xcode project) 
+5. Open the Xcode Workspace document (NOT the Xcode project)
 
 ```
 open aurora.xcworkspace
@@ -37,7 +37,7 @@ open aurora.xcworkspace
 
 7. Click Run.
 
-Working on a locally checked out version 
+Working on a locally checked out version
 ====
 ```
 pod 'DPHue', :local => '~/src/DPHue'

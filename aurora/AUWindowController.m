@@ -9,6 +9,7 @@
 #import "AUWindowController.h"
 #import "AUEffectTestViewController.h"
 #import "DBG_DPHueBridge.h"
+#import "AULoginViewController.h"
 
 NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 
@@ -26,14 +27,6 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     
     [self loadViewControllers];
     
-    
-//    DBG_DPHueBridge *bridge = [[DBG_DPHueBridge alloc] initWithHueHost:@"localhost" username:@"33bf7ba02ee74a8f1e9397f03b09fa7f"];
-//    
-//    [bridge readWithCompletion:^(DPHueBridge *hue, NSError *err) {
-//        [self.lightArrayController addObjects:bridge.lights];
-//    }];
-    
-    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:kHueUsernamePrefKey] == nil) {
         NSString *username = [DPHueBridge generateUsername];
@@ -47,16 +40,21 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        
+        AULoginViewController *loginViewController = [[AULoginViewController alloc] initWithNibName:@"AULoginView" bundle:nil];
+        _navController = [[BFNavigationController alloc] initWithFrame:NSMakeRect(0, 0, self.window.frame.size.width, self.window.frame.size.height) rootViewController:loginViewController];
+        NSTabViewItem *appItem = [[NSTabViewItem alloc] initWithIdentifier:@"App"];
+        [appItem setLabel:@"App"];
+        
+        [appItem setView:_navController.view];
+        [self.tabView addTabViewItem:appItem];
+        
         NSTabViewItem *effectsItem = [[NSTabViewItem alloc] initWithIdentifier:@"effects"];
         [effectsItem setLabel:@"Effects"];
         [effectsItem setView:self.effectTestViewController.view];
         [self.tabView addTabViewItem:effectsItem];
         
-        NSTabViewItem *spotifyItem = [[NSTabViewItem alloc] initWithIdentifier:@"spotify"];
-        [spotifyItem setLabel:@"Spotify"];
-        [spotifyItem setView:self.spotifyViewController.view];
-        [self.tabView addTabViewItem:spotifyItem];
-        
+        [self.tabView selectFirstTabViewItem:self];
     });
 }
 
