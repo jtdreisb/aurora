@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3305E2421725F359004631F7 /* spotify.appkey in Resources */ = {isa = PBXBuildFile; fileRef = 3305E2411725F359004631F7 /* spotify.appkey */; };
 		3305E28617260255004631F7 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28517260255004631F7 /* BFNavigationController.m */; };
 		3305E28A17260261004631F7 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28917260261004631F7 /* NSView+BFUtilities.m */; };
 		3305E28E172604B6004631F7 /* AULoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3305E28C172604B6004631F7 /* AULoginWindowController.m */; };
@@ -201,7 +200,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3305E2411725F359004631F7 /* spotify.appkey */ = {isa = PBXFileReference; lastKnownFileType = file; path = spotify.appkey; sourceTree = "<group>"; };
 		3305E28417260255004631F7 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		3305E28517260255004631F7 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		3305E28717260261004631F7 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 		3368E7DD16C2D0BD00B72422 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3305E2411725F359004631F7 /* spotify.appkey */,
 				3368E7EB16C2D0BD00B72422 /* MainMenu.xib */,
 				33F0CEC716E2A89600B93E57 /* Images */,
 				3368E7DE16C2D0BD00B72422 /* aurora-Info.plist */,
@@ -980,7 +977,6 @@
 				33E95E22170F6C1E002BEDA7 /* AUEffectTestView.xib in Resources */,
 				33E95E2B170F75C2002BEDA7 /* AUEffectCollectionViewItem.xib in Resources */,
 				33B10489170F914000A523DC /* AUEffectEditView.xib in Resources */,
-				3305E2421725F359004631F7 /* spotify.appkey in Resources */,
 				3305E28F172604B6004631F7 /* AULoginWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1127,6 +1123,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks/**";
@@ -1136,6 +1133,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1144,6 +1142,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC3AD588A81D4ED0909972DD /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks/**";
@@ -1153,6 +1152,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

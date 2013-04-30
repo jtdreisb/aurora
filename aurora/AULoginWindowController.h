@@ -9,14 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
 
-@interface AULoginWindowController : NSWindowController <SPSessionDelegate, NSControlTextEditingDelegate>
+@interface AULoginWindowController : NSWindowController <NSControlTextEditingDelegate>
 
 @property (weak) IBOutlet NSTextField *usernameField;
 @property (weak) IBOutlet NSTextField *passwordField;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 @property (weak) IBOutlet NSButton *signInButton;
 
-
 - (IBAction)signIn:(id)sender;
+- (void)failReset;
 
 @end

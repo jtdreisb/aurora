@@ -33,7 +33,7 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
         [prefs setObject:username forKey:kHueUsernamePrefKey];
         [prefs synchronize];
     }
-    [self startDiscovery:self];
+//    [self startDiscovery:self];
 }
 
 - (void)loadViewControllers
@@ -57,12 +57,12 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     });
 }
 
-- (void)showViewController:(NSViewController *)viewController
-{
-    NSRect contentRect = [self.window.contentView frame];
-    viewController.view.frame = contentRect;
-    self.window.contentView = viewController.view;
-}
+//- (void)showViewController:(NSViewController *)viewController
+//{
+//    NSRect contentRect = [self.window.contentView frame];
+//    viewController.view.frame = contentRect;
+//    self.window.contentView = viewController.view;
+//}
 
 #pragma mark - Actions
 
@@ -86,6 +86,15 @@ NSString *const kHueUsernamePrefKey = @"HueAPIUsernamePrefKey";
     [_dhd stopDiscovery];
     _dhd = nil;
 }
+
+- (IBAction)logoutOfSpotify:(id)sender
+{
+    [[SPSession sharedSession] logout:^{
+        NSLog(@"Successful Logout");
+        [NSApp terminate:self];
+    }];
+}
+
 
 #pragma mark - DPHueDiscover delegate
 
