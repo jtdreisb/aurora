@@ -26,6 +26,15 @@
 		336BE112173321580069C92C /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE106173321580069C92C /* AUEffectViewController.m */; };
 		336BE113173321580069C92C /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE107173321580069C92C /* AUHueLight.icns */; };
 		336BE114173321580069C92C /* AULightColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE109173321580069C92C /* AULightColorView.m */; };
+		336BE11D173323CA0069C92C /* AUPerformanceEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */; };
+		336BE11E173323CA0069C92C /* AUPerformanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */; };
+		336BE123173324330069C92C /* AUScheduleClock.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE120173324320069C92C /* AUScheduleClock.icns */; };
+		336BE124173324330069C92C /* AUSnapshot.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE121173324330069C92C /* AUSnapshot.icns */; };
+		336BE125173324330069C92C /* AUSpectrumChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 336BE122173324330069C92C /* AUSpectrumChart.jpg */; };
+		336BE1291733244E0069C92C /* AUStrobe.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE1271733244E0069C92C /* AUStrobe.m */; };
+		336BE12A1733244E0069C92C /* AUSuccess.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE1281733244E0069C92C /* AUSuccess.icns */; };
+		336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12D173324BB0069C92C /* AULightTableCellView.m */; };
+		336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */; };
 		339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F11731F7D200E30409 /* BFNavigationController.m */; };
 		339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F71731F82200E30409 /* NSView+BFUtilities.m */; };
 		339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */; };
@@ -206,6 +215,19 @@
 		336BE107173321580069C92C /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUHueLight.icns; sourceTree = "<group>"; };
 		336BE108173321580069C92C /* AULightColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightColorView.h; sourceTree = "<group>"; };
 		336BE109173321580069C92C /* AULightColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightColorView.m; sourceTree = "<group>"; };
+		336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUPerformanceEditView.xib; sourceTree = "<group>"; };
+		336BE11B173323CA0069C92C /* AUPerformanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPerformanceEditViewController.h; sourceTree = "<group>"; };
+		336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUPerformanceEditViewController.m; sourceTree = "<group>"; };
+		336BE120173324320069C92C /* AUScheduleClock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUScheduleClock.icns; sourceTree = "<group>"; };
+		336BE121173324330069C92C /* AUSnapshot.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSnapshot.icns; sourceTree = "<group>"; };
+		336BE122173324330069C92C /* AUSpectrumChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AUSpectrumChart.jpg; sourceTree = "<group>"; };
+		336BE1261733244E0069C92C /* AUStrobe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUStrobe.h; sourceTree = "<group>"; };
+		336BE1271733244E0069C92C /* AUStrobe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUStrobe.m; sourceTree = "<group>"; };
+		336BE1281733244E0069C92C /* AUSuccess.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSuccess.icns; sourceTree = "<group>"; };
+		336BE12C173324BB0069C92C /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
+		336BE12D173324BB0069C92C /* AULightTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightTableCellView.m; sourceTree = "<group>"; };
+		336BE12E173324BB0069C92C /* DBG_DPHueBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBG_DPHueBridge.h; sourceTree = "<group>"; };
+		336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBG_DPHueBridge.m; sourceTree = "<group>"; };
 		339DD8F01731F7D200E30409 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		339DD8F11731F7D200E30409 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		339DD8F21731F7D200E30409 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -391,19 +413,16 @@
 		332E61D31731D964008C8025 /* Aurora */ = {
 			isa = PBXGroup;
 			children = (
-				336BE1161733216D0069C92C /* Effects */,
-				336BE118173321A30069C92C /* Effect Test */,
-				336BE119173321F40069C92C /* New Group */,
-				336BE105173321580069C92C /* AUEffectViewController.h */,
-				336BE106173321580069C92C /* AUEffectViewController.m */,
-				336BE108173321580069C92C /* AULightColorView.h */,
-				336BE109173321580069C92C /* AULightColorView.m */,
-				339DD8FE1731FA6200E30409 /* SpotifyView */,
-				339DD8F51731F7D500E30409 /* Navigation Controller */,
-				33DA0CD31731E985008C2004 /* Login Sheet */,
 				332E61DF1731D964008C8025 /* AUAppDelegate.h */,
 				332E61E01731D964008C8025 /* AUAppDelegate.m */,
 				332E61E21731D964008C8025 /* MainMenu.xib */,
+				33DA0CD31731E985008C2004 /* Login Sheet */,
+				339DD8FE1731FA6200E30409 /* Spotify View */,
+				336BE11F173323D30069C92C /* Song Editor */,
+				336BE132173324CA0069C92C /* Hue */,
+				336BE1161733216D0069C92C /* Effects */,
+				336BE118173321A30069C92C /* Effect Test */,
+				339DD8F51731F7D500E30409 /* Navigation Controller */,
 				332E61D41731D964008C8025 /* Supporting Files */,
 			);
 			path = Aurora;
@@ -436,11 +455,13 @@
 		336BE1161733216D0069C92C /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				336BE119173321F40069C92C /* Effects Views */,
 				336BE0FA173321580069C92C /* AUEffect.h */,
 				336BE0FB173321580069C92C /* AUEffect.m */,
 				336BE100173321580069C92C /* AUEffectManager.h */,
 				336BE101173321580069C92C /* AUEffectManager.m */,
 				336BE0FF173321580069C92C /* AUEffectEditView.xib */,
+				336BE12B1733245A0069C92C /* Strobe */,
 				336BE117173321750069C92C /* Color Pulse */,
 			);
 			name = Effects;
@@ -468,11 +489,45 @@
 			name = "Effect Test";
 			sourceTree = "<group>";
 		};
-		336BE119173321F40069C92C /* New Group */ = {
+		336BE119173321F40069C92C /* Effects Views */ = {
 			isa = PBXGroup;
 			children = (
+				336BE105173321580069C92C /* AUEffectViewController.h */,
+				336BE106173321580069C92C /* AUEffectViewController.m */,
+				336BE108173321580069C92C /* AULightColorView.h */,
+				336BE109173321580069C92C /* AULightColorView.m */,
 			);
-			name = "New Group";
+			name = "Effects Views";
+			sourceTree = "<group>";
+		};
+		336BE11F173323D30069C92C /* Song Editor */ = {
+			isa = PBXGroup;
+			children = (
+				336BE11B173323CA0069C92C /* AUPerformanceEditViewController.h */,
+				336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */,
+				336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */,
+			);
+			name = "Song Editor";
+			sourceTree = "<group>";
+		};
+		336BE12B1733245A0069C92C /* Strobe */ = {
+			isa = PBXGroup;
+			children = (
+				336BE1261733244E0069C92C /* AUStrobe.h */,
+				336BE1271733244E0069C92C /* AUStrobe.m */,
+			);
+			name = Strobe;
+			sourceTree = "<group>";
+		};
+		336BE132173324CA0069C92C /* Hue */ = {
+			isa = PBXGroup;
+			children = (
+				336BE12E173324BB0069C92C /* DBG_DPHueBridge.h */,
+				336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */,
+				336BE12C173324BB0069C92C /* AULightTableCellView.h */,
+				336BE12D173324BB0069C92C /* AULightTableCellView.m */,
+			);
+			name = Hue;
 			sourceTree = "<group>";
 		};
 		339DD8F51731F7D500E30409 /* Navigation Controller */ = {
@@ -487,28 +542,19 @@
 			name = "Navigation Controller";
 			sourceTree = "<group>";
 		};
-		339DD8FE1731FA6200E30409 /* SpotifyView */ = {
+		339DD8FE1731FA6200E30409 /* Spotify View */ = {
 			isa = PBXGroup;
 			children = (
 				339DD8FA1731FA5B00E30409 /* AUSpotifyViewController.h */,
 				339DD8FB1731FA5B00E30409 /* AUSpotifyViewController.m */,
 				339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */,
 			);
-			name = SpotifyView;
+			name = "Spotify View";
 			sourceTree = "<group>";
 		};
 		33DA0BED1731E716008C2004 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				33DA0BEF1731E74D008C2004 /* AULineQuadTemplate.pdf */,
-				33DA0BF01731E74D008C2004 /* AULineTripleTemplate.pdf */,
-				33DA0BF11731E74D008C2004 /* AUPause.pdf */,
-				33DA0BF21731E74D008C2004 /* AUPlay.pdf */,
-				33DA0BF31731E74D008C2004 /* AUPlayCircle.pdf */,
-				33DA0BF41731E74D008C2004 /* AUResume.pdf */,
-				33DA0BF51731E74D008C2004 /* AUShelfArrowDown.pdf */,
-				33DA0BF61731E74D008C2004 /* AUShelfArrowUp.pdf */,
-				33DA0BF71731E74D008C2004 /* AUShelfArrowUpSelected.pdf */,
 				33DA0BF81731E74D008C2004 /* album-Template.png */,
 				33DA0BF91731E74D008C2004 /* album-Template@2x.png */,
 				33DA0BFA1731E74D008C2004 /* artist-Template.png */,
@@ -530,6 +576,8 @@
 				33DA0C0A1731E74D008C2004 /* AUGrayStatusBead.png */,
 				33DA0C0B1731E74D008C2004 /* AUGrayStatusBead@2x.png */,
 				33DA0C0C1731E74D008C2004 /* AUGreenCircleShape.png */,
+				33DA0C5F1731E74D008C2004 /* AUInfoRound.tiff */,
+				33DA0C601731E74D008C2004 /* AUInfoRoundDown.tiff */,
 				33DA0C0D1731E74D008C2004 /* AULighterGreenStatusBead.png */,
 				33DA0C0E1731E74D008C2004 /* AULighterGreenStatusBead@2x.png */,
 				33DA0C0F1731E74D008C2004 /* AULightGreenStatusBead.png */,
@@ -538,10 +586,23 @@
 				33DA0C121731E74D008C2004 /* AULinenDark@2x.png */,
 				33DA0C131731E74D008C2004 /* AULinenLight.png */,
 				33DA0C141731E74D008C2004 /* AULinenLight@2x.png */,
+				33DA0BEF1731E74D008C2004 /* AULineQuadTemplate.pdf */,
+				33DA0BF01731E74D008C2004 /* AULineTripleTemplate.pdf */,
 				33DA0C151731E74D008C2004 /* AUNewRecord.png */,
 				33DA0C161731E74D008C2004 /* AUNewRecord@2x.png */,
+				33DA0BF11731E74D008C2004 /* AUPause.pdf */,
+				33DA0BF21731E74D008C2004 /* AUPlay.pdf */,
+				33DA0BF31731E74D008C2004 /* AUPlayCircle.pdf */,
+				33DA0BF41731E74D008C2004 /* AUResume.pdf */,
+				336BE120173324320069C92C /* AUScheduleClock.icns */,
+				33DA0BF51731E74D008C2004 /* AUShelfArrowDown.pdf */,
+				33DA0BF61731E74D008C2004 /* AUShelfArrowUp.pdf */,
+				33DA0BF71731E74D008C2004 /* AUShelfArrowUpSelected.pdf */,
+				336BE121173324330069C92C /* AUSnapshot.icns */,
+				336BE122173324330069C92C /* AUSpectrumChart.jpg */,
 				33DA0C171731E74D008C2004 /* AUSplitterHandle.png */,
 				33DA0C181731E74D008C2004 /* AUSplitterHandle@2x.png */,
+				336BE1281733244E0069C92C /* AUSuccess.icns */,
 				33DA0C191731E74D008C2004 /* clear-icon.png */,
 				33DA0C1A1731E74D008C2004 /* clear-icon@2x.png */,
 				33DA0C1B1731E74D008C2004 /* crosshatch-bg-inactive.png */,
@@ -612,8 +673,6 @@
 				33DA0C5C1731E74D008C2004 /* sync@2x.png */,
 				33DA0C5D1731E74D008C2004 /* volume.png */,
 				33DA0C5E1731E74D008C2004 /* volume@2x.png */,
-				33DA0C5F1731E74D008C2004 /* AUInfoRound.tiff */,
-				33DA0C601731E74D008C2004 /* AUInfoRoundDown.tiff */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -828,6 +887,11 @@
 				336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */,
 				336BE110173321580069C92C /* AUEffectTestView.xib in Resources */,
 				336BE113173321580069C92C /* AUHueLight.icns in Resources */,
+				336BE11D173323CA0069C92C /* AUPerformanceEditView.xib in Resources */,
+				336BE123173324330069C92C /* AUScheduleClock.icns in Resources */,
+				336BE124173324330069C92C /* AUSnapshot.icns in Resources */,
+				336BE125173324330069C92C /* AUSpectrumChart.jpg in Resources */,
+				336BE12A1733244E0069C92C /* AUSuccess.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +932,10 @@
 				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,
 				336BE112173321580069C92C /* AUEffectViewController.m in Sources */,
 				336BE114173321580069C92C /* AULightColorView.m in Sources */,
+				336BE11E173323CA0069C92C /* AUPerformanceEditViewController.m in Sources */,
+				336BE1291733244E0069C92C /* AUStrobe.m in Sources */,
+				336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */,
+				336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
