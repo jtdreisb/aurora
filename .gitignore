@@ -18,3 +18,4 @@ DerivedData
 Pods/
 Podfile.lock
 *.xcworkspace
+Aurora/appkey.h

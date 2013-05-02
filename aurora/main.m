@@ -1,8 +1,8 @@
 //
 //  main.m
-//  aurora
+//  Aurora
 //
-//  Created by Jason Dreisbach on 2/6/13.
+//  Created by Jason Dreisbach on 5/1/13.
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 

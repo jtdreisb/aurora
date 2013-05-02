@@ -10,7 +10,14 @@
 #import <DPHue/DPHueBridge.h>
 #import <DPHue/DPHueLight.h>
 
+
 @interface AUSpotifyViewController ()
+{
+    IBOutlet NSTableView *_playlistTableView;
+    IBOutlet NSArrayController *_playlistArrayController;
+    IBOutlet NSTableView *_trackTableView;
+    IBOutlet NSArrayController *_trackArrayController;
+}
 @end
 
 @implementation AUSpotifyViewController
@@ -20,12 +27,33 @@
     self = [super initWithCoder:aDecoder];
     if (self != nil) {
         self.view.layer.backgroundColor = [[NSColor colorWithPatternImage:[NSImage imageNamed:@"AULinenDark"]] CGColor];
-//        self.view.layer.sublayerTransform = CATransform3DMakeScale(1.0f, -1.0f, 1.0f);
-        
     }
     return self;
 }
 
+
+#pragma mark - NSTableViewDelegate
+//- (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView
+//{
+//    
+//}
+
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
+{
+    if (tableView == _playlistTableView) {
+        SPPlaylist *playlist = [_playlistArrayController.arrangedObjects objectAtIndex:row];
+        [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylist, NSArray *notLoadedPlaylist) {
+            NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
+            [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+            [_trackArrayController setContent:loadedTracks];
+                if ([notLoadedTracks count] > 0) {
+                    NSLog(@"Unloaded tracks from playlist: %@", notLoadedTracks);
+                }
+            }];
+        }];
+    }
+    return YES;
+}
 
 #pragma mark - BFViewController additions
 
@@ -42,17 +70,13 @@
             [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
                 
                 NSMutableArray *playlists = [NSMutableArray array];
-                [playlists addObject:[SPSession sharedSession].starredPlaylist];
-                [playlists addObject:[SPSession sharedSession].inboxPlaylist];
                 [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
                 
                 [SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
-                    [self.playlistArrayController setContent:loadedPlaylists];
-                    SPPlaylist *playlist = [loadedPlaylists lastObject];
-                    
-                    NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
-                    [self startPlaybackOfTrack:[tracks objectAtIndex:0]];
-
+                    [_playlistArrayController setContent:loadedPlaylists];
+//                    SPPlaylist *playlist = [loadedPlaylists lastObject];
+//                    NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
+//                    [self startPlaybackOfTrack:[tracks objectAtIndex:0]];
                 }];
                 
             }];
@@ -62,7 +86,7 @@
 
 - (void)viewDidAppear: (BOOL)animated
 {
-    //    NSLog(@"%@ - viewDidAppear: %i", self, animated);
+//    NSLog(@"%@ - viewDidAppear: %i", self, animated);
 }
 
 - (void)viewWillDisappear: (BOOL)animated
@@ -90,7 +114,7 @@
     
 }
 
--(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
+- (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
 	
 	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
 	
