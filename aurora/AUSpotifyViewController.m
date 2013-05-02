@@ -33,10 +33,6 @@
 
 
 #pragma mark - NSTableViewDelegate
-//- (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView
-//{
-//    
-//}
 
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
 {
@@ -45,6 +41,7 @@
         [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylist, NSArray *notLoadedPlaylist) {
             NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
             [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+                NSLog(@"Loaded: %@", loadedTracks);
             [_trackArrayController setContent:loadedTracks];
                 if ([notLoadedTracks count] > 0) {
                     NSLog(@"Unloaded tracks from playlist: %@", notLoadedTracks);
@@ -66,9 +63,11 @@
         self.playbackManager.delegate = self;
         
         [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+            NSLog(@"Loaded: %@", loadedItems);
             
             [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
                 
+                NSLog(@"Loaded: %@", loadedContainers);
                 NSMutableArray *playlists = [NSMutableArray array];
                 [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
                 
@@ -99,9 +98,9 @@
     //    NSLog(@"%@ - viewDidDisappear: %i", self, animated);
 }
 
-- (IBAction)playPause:(id)sender
+- (void)editSong:(id)sender
 {
-    
+    NSLog(@"%@", sender);
 }
 
 - (IBAction)nextSong:(id)sender

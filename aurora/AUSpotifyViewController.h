@@ -13,5 +13,7 @@
 
 @property (strong) SPPlaybackManager *playbackManager;
 
+- (void)editSong:(id)sender;
+
 
 @end

@@ -15,6 +15,17 @@
 		332E61E11731D964008C8025 /* AUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61E01731D964008C8025 /* AUAppDelegate.m */; };
 		332E61E41731D964008C8025 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E61E21731D964008C8025 /* MainMenu.xib */; };
 		332E62001731DADB008C8025 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61FB1731DACE008C8025 /* CocoaLibSpotify.framework */; };
+		336BE10A173321580069C92C /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0F9173321580069C92C /* AUColorPulse.m */; };
+		336BE10B173321580069C92C /* AUEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FB173321580069C92C /* AUEffect.m */; };
+		336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */; };
+		336BE10D173321580069C92C /* AUEffectCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */; };
+		336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FF173321580069C92C /* AUEffectEditView.xib */; };
+		336BE10F173321580069C92C /* AUEffectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE101173321580069C92C /* AUEffectManager.m */; };
+		336BE110173321580069C92C /* AUEffectTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE102173321580069C92C /* AUEffectTestView.xib */; };
+		336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE104173321580069C92C /* AUEffectTestViewController.m */; };
+		336BE112173321580069C92C /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE106173321580069C92C /* AUEffectViewController.m */; };
+		336BE113173321580069C92C /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE107173321580069C92C /* AUHueLight.icns */; };
+		336BE114173321580069C92C /* AULightColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE109173321580069C92C /* AULightColorView.m */; };
 		339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F11731F7D200E30409 /* BFNavigationController.m */; };
 		339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F71731F82200E30409 /* NSView+BFUtilities.m */; };
 		339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */; };
@@ -177,6 +188,24 @@
 		332E61E31731D964008C8025 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		332E61F51731DACD008C8025 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "submodule/cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
 		332E62011731DB2C008C8025 /* appkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appkey.h; sourceTree = "<group>"; };
+		336BE0F8173321580069C92C /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
+		336BE0F9173321580069C92C /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
+		336BE0FA173321580069C92C /* AUEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffect.h; sourceTree = "<group>"; };
+		336BE0FB173321580069C92C /* AUEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffect.m; sourceTree = "<group>"; };
+		336BE0FC173321580069C92C /* AUEffectCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectCollectionViewItem.h; sourceTree = "<group>"; };
+		336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectCollectionViewItem.m; sourceTree = "<group>"; };
+		336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectCollectionViewItem.xib; sourceTree = "<group>"; };
+		336BE0FF173321580069C92C /* AUEffectEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectEditView.xib; sourceTree = "<group>"; };
+		336BE100173321580069C92C /* AUEffectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectManager.h; sourceTree = "<group>"; };
+		336BE101173321580069C92C /* AUEffectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectManager.m; sourceTree = "<group>"; };
+		336BE102173321580069C92C /* AUEffectTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectTestView.xib; sourceTree = "<group>"; };
+		336BE103173321580069C92C /* AUEffectTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectTestViewController.h; sourceTree = "<group>"; };
+		336BE104173321580069C92C /* AUEffectTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectTestViewController.m; sourceTree = "<group>"; };
+		336BE105173321580069C92C /* AUEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectViewController.h; sourceTree = "<group>"; };
+		336BE106173321580069C92C /* AUEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectViewController.m; sourceTree = "<group>"; };
+		336BE107173321580069C92C /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUHueLight.icns; sourceTree = "<group>"; };
+		336BE108173321580069C92C /* AULightColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightColorView.h; sourceTree = "<group>"; };
+		336BE109173321580069C92C /* AULightColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightColorView.m; sourceTree = "<group>"; };
 		339DD8F01731F7D200E30409 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		339DD8F11731F7D200E30409 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		339DD8F21731F7D200E30409 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -362,6 +391,13 @@
 		332E61D31731D964008C8025 /* Aurora */ = {
 			isa = PBXGroup;
 			children = (
+				336BE1161733216D0069C92C /* Effects */,
+				336BE118173321A30069C92C /* Effect Test */,
+				336BE119173321F40069C92C /* New Group */,
+				336BE105173321580069C92C /* AUEffectViewController.h */,
+				336BE106173321580069C92C /* AUEffectViewController.m */,
+				336BE108173321580069C92C /* AULightColorView.h */,
+				336BE109173321580069C92C /* AULightColorView.m */,
 				339DD8FE1731FA6200E30409 /* SpotifyView */,
 				339DD8F51731F7D500E30409 /* Navigation Controller */,
 				33DA0CD31731E985008C2004 /* Login Sheet */,
@@ -377,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				332E62011731DB2C008C8025 /* appkey.h */,
+				336BE107173321580069C92C /* AUHueLight.icns */,
 				33DA0BED1731E716008C2004 /* Images */,
 				332E61D51731D964008C8025 /* Aurora-Info.plist */,
 				332E61D61731D964008C8025 /* InfoPlist.strings */,
@@ -394,6 +431,48 @@
 				332E61FD1731DACE008C8025 /* CocoaLSTests.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		336BE1161733216D0069C92C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				336BE0FA173321580069C92C /* AUEffect.h */,
+				336BE0FB173321580069C92C /* AUEffect.m */,
+				336BE100173321580069C92C /* AUEffectManager.h */,
+				336BE101173321580069C92C /* AUEffectManager.m */,
+				336BE0FF173321580069C92C /* AUEffectEditView.xib */,
+				336BE117173321750069C92C /* Color Pulse */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		336BE117173321750069C92C /* Color Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				336BE0F8173321580069C92C /* AUColorPulse.h */,
+				336BE0F9173321580069C92C /* AUColorPulse.m */,
+			);
+			name = "Color Pulse";
+			sourceTree = "<group>";
+		};
+		336BE118173321A30069C92C /* Effect Test */ = {
+			isa = PBXGroup;
+			children = (
+				336BE103173321580069C92C /* AUEffectTestViewController.h */,
+				336BE104173321580069C92C /* AUEffectTestViewController.m */,
+				336BE102173321580069C92C /* AUEffectTestView.xib */,
+				336BE0FC173321580069C92C /* AUEffectCollectionViewItem.h */,
+				336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */,
+				336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */,
+			);
+			name = "Effect Test";
+			sourceTree = "<group>";
+		};
+		336BE119173321F40069C92C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		339DD8F51731F7D500E30409 /* Navigation Controller */ = {
@@ -745,6 +824,10 @@
 				33DA0CD21731E74D008C2004 /* AUInfoRoundDown.tiff in Resources */,
 				33DA0CD51731E994008C2004 /* AUSpotifyLoginPanel.xib in Resources */,
 				339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */,
+				336BE10D173321580069C92C /* AUEffectCollectionViewItem.xib in Resources */,
+				336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */,
+				336BE110173321580069C92C /* AUEffectTestView.xib in Resources */,
+				336BE113173321580069C92C /* AUHueLight.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +861,13 @@
 				339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */,
 				339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */,
 				339DD8FD1731FA5B00E30409 /* AUSpotifyViewController.m in Sources */,
+				336BE10A173321580069C92C /* AUColorPulse.m in Sources */,
+				336BE10B173321580069C92C /* AUEffect.m in Sources */,
+				336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */,
+				336BE10F173321580069C92C /* AUEffectManager.m in Sources */,
+				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,
+				336BE112173321580069C92C /* AUEffectViewController.m in Sources */,
+				336BE114173321580069C92C /* AULightColorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
