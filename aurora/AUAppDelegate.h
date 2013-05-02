@@ -15,14 +15,13 @@
 @class AUSpotifyLoginPanelController;
 @class BFNavigationController;
 
-@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate>
+@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate>
 {
     AUSpotifyLoginPanelController *_spotifyLoginPanelController;
     BFNavigationController *_navController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (strong) SPPlaybackManager *playbackManager;
 
 
 - (IBAction)showLoginSheet:(id)sender;

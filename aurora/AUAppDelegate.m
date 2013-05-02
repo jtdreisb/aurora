@@ -26,8 +26,6 @@
 	}
     
 	[[SPSession sharedSession] setDelegate:self];
-	self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
-	self.playbackManager.delegate = self;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
@@ -37,7 +35,15 @@
     
     self.window.contentView = _navController.view;
     
-    [self showLoginSheet:self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"spotify_username"];
+    NSString *credential =  [defaults objectForKey:@"spotify_credential"];
+    if ([credential length] > 0) {
+        [[SPSession sharedSession] attemptLoginWithUserName:username existingCredential:credential];
+    }
+    else {
+        [self showLoginSheet:self];
+    }
 }
 
 - (IBAction)showLoginSheet:(id)sender
@@ -46,11 +52,15 @@
     if (_spotifyLoginPanelController == nil) {
         _spotifyLoginPanelController = [[AUSpotifyLoginPanelController alloc] initWithWindowNibName:@"AUSpotifyLoginPanel"];
     }
-    [NSApp beginSheet:_spotifyLoginPanelController.window
-       modalForWindow:self.window
-        modalDelegate:self
-       didEndSelector:@selector(loginSheetDidEnd:returnCode:contextInfo:)
-          contextInfo:nil];
+    [_spotifyLoginPanelController reset];
+    
+    if([_spotifyLoginPanelController.window isModalPanel] == NO) {
+        [NSApp beginSheet:_spotifyLoginPanelController.window
+           modalForWindow:self.window
+            modalDelegate:self
+           didEndSelector:@selector(loginSheetDidEnd:returnCode:contextInfo:)
+              contextInfo:nil];
+    }
 }
 
 - (void)loginSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
@@ -63,9 +73,6 @@
         [_spotifyLoginPanelController save];
         [_spotifyLoginPanelController.window orderOut:self];
         _spotifyLoginPanelController = nil;
-        
-        AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-        [_navController pushViewController:spotifyViewController animated:NO];
     }
 }
 
@@ -74,26 +81,52 @@
 
 - (void)sessionDidLoginSuccessfully:(SPSession *)aSession
 {
-    NSLog(@"did login");
-    [NSApp endSheet:_spotifyLoginPanelController.window returnCode:NSOKButton];
+    if ([_spotifyLoginPanelController.window isModalPanel])
+        [NSApp endSheet:_spotifyLoginPanelController.window returnCode:NSOKButton];
+    
+    AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
+    [_navController pushViewController:spotifyViewController animated:NO];
+    
+}
 
+- (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
+{
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, userName);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userName forKey:@"spotify_username"];
+    [defaults setObject:credential forKey:@"spotify_credential"];
+    [defaults synchronize];
 }
 
 - (void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error
 {
 	// Invoked by SPSession after a failed login.
-    [NSApp stopModal];
     NSLog(@"%@", error);
-    [_spotifyLoginPanelController reset];
     
 }
 
--(void)sessionDidLogOut:(SPSession *)aSession; {}
--(void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error; {}
--(void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage; {}
--(void)sessionDidChangeMetadata:(SPSession *)aSession; {}
+- (void)sessionDidLogOut:(SPSession *)aSession
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
 
--(void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
+- (void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error
+{
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
+}
+
+- (void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage
+{
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
+}
+
+- (void)sessionDidChangeMetadata:(SPSession *)aSession
+{
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aSession);
+}
+
+- (void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
     
 	[[NSAlert alertWithMessageText:aMessage
 					 defaultButton:@"OK"
@@ -103,14 +136,7 @@
 }
 
 
--(void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager
-{
-    
-    
-    
-}
-
--(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
+- (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
 	
 	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
 	
@@ -121,21 +147,6 @@
 	}
 	
 	return [NSArray arrayWithArray:tracks];
-}
-
-- (void)startPlaybackOfTrack:(SPTrack *)aTrack {
-	
-	[SPAsyncLoading waitUntilLoaded:aTrack timeout:5.0 then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-		[self.playbackManager playTrack:aTrack callback:^(NSError *error) {
-			if (error) [self.window presentError:error];
-		}];
-	}];
-}
-
-
--(void)sessionDidEndPlayback:(id <SPSessionPlaybackProvider>)aSession
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 
