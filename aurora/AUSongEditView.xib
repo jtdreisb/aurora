@@ -30,7 +30,7 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<object class="NSCustomObject" id="1001">
-				<string key="NSClassName">AUPerformanceEditViewController</string>
+				<string key="NSClassName">AUSongEditorViewController</string>
 			</object>
 			<object class="NSCustomObject" id="1003">
 				<string key="NSClassName">FirstResponder</string>
@@ -673,11 +673,33 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">AUPerformanceEditViewController</string>
+					<string key="className">AULightTableCellView</string>
+					<string key="superclassName">NSTableCellView</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="colorView">AULightColorView</string>
+						<string key="lightName">NSTextField</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="colorView">
+							<string key="name">colorView</string>
+							<string key="candidateClassName">AULightColorView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="lightName">
+							<string key="name">lightName</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AULightTableCellView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">AUSongEditorViewController</string>
 					<string key="superclassName">NSViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AUPerformanceEditViewController.h</string>
+						<string key="minorKey">./Classes/AUSongEditorViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

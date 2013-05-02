@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUPerformanceEditViewController.h"
+#import "AUSongEditorViewController.h"
 #import "DBG_DPHueBridge.h"
 
-@interface AUPerformanceEditViewController ()
+@interface AUSongEditorViewController ()
 @property (strong, nonatomic) DPHueBridge *bridge;
 
 @property (strong, nonatomic) NSMutableArray *lightArray;
 
 @end
 
-@implementation AUPerformanceEditViewController
+@implementation AUSongEditorViewController
 
 
 - (void)awakeFromNib

@@ -26,8 +26,8 @@
 		336BE112173321580069C92C /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE106173321580069C92C /* AUEffectViewController.m */; };
 		336BE113173321580069C92C /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE107173321580069C92C /* AUHueLight.icns */; };
 		336BE114173321580069C92C /* AULightColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE109173321580069C92C /* AULightColorView.m */; };
-		336BE11D173323CA0069C92C /* AUPerformanceEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */; };
-		336BE11E173323CA0069C92C /* AUPerformanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */; };
+		336BE11D173323CA0069C92C /* AUSongEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE11A173323CA0069C92C /* AUSongEditView.xib */; };
+		336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE11C173323CA0069C92C /* AUSongEditorViewController.m */; };
 		336BE123173324330069C92C /* AUScheduleClock.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE120173324320069C92C /* AUScheduleClock.icns */; };
 		336BE124173324330069C92C /* AUSnapshot.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE121173324330069C92C /* AUSnapshot.icns */; };
 		336BE125173324330069C92C /* AUSpectrumChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 336BE122173324330069C92C /* AUSpectrumChart.jpg */; };
@@ -215,9 +215,9 @@
 		336BE107173321580069C92C /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUHueLight.icns; sourceTree = "<group>"; };
 		336BE108173321580069C92C /* AULightColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightColorView.h; sourceTree = "<group>"; };
 		336BE109173321580069C92C /* AULightColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightColorView.m; sourceTree = "<group>"; };
-		336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUPerformanceEditView.xib; sourceTree = "<group>"; };
-		336BE11B173323CA0069C92C /* AUPerformanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPerformanceEditViewController.h; sourceTree = "<group>"; };
-		336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUPerformanceEditViewController.m; sourceTree = "<group>"; };
+		336BE11A173323CA0069C92C /* AUSongEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSongEditView.xib; sourceTree = "<group>"; };
+		336BE11B173323CA0069C92C /* AUSongEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSongEditorViewController.h; sourceTree = "<group>"; };
+		336BE11C173323CA0069C92C /* AUSongEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSongEditorViewController.m; sourceTree = "<group>"; };
 		336BE120173324320069C92C /* AUScheduleClock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUScheduleClock.icns; sourceTree = "<group>"; };
 		336BE121173324330069C92C /* AUSnapshot.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSnapshot.icns; sourceTree = "<group>"; };
 		336BE122173324330069C92C /* AUSpectrumChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AUSpectrumChart.jpg; sourceTree = "<group>"; };
@@ -503,9 +503,9 @@
 		336BE11F173323D30069C92C /* Song Editor */ = {
 			isa = PBXGroup;
 			children = (
-				336BE11B173323CA0069C92C /* AUPerformanceEditViewController.h */,
-				336BE11C173323CA0069C92C /* AUPerformanceEditViewController.m */,
-				336BE11A173323CA0069C92C /* AUPerformanceEditView.xib */,
+				336BE11B173323CA0069C92C /* AUSongEditorViewController.h */,
+				336BE11C173323CA0069C92C /* AUSongEditorViewController.m */,
+				336BE11A173323CA0069C92C /* AUSongEditView.xib */,
 			);
 			name = "Song Editor";
 			sourceTree = "<group>";
@@ -887,7 +887,7 @@
 				336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */,
 				336BE110173321580069C92C /* AUEffectTestView.xib in Resources */,
 				336BE113173321580069C92C /* AUHueLight.icns in Resources */,
-				336BE11D173323CA0069C92C /* AUPerformanceEditView.xib in Resources */,
+				336BE11D173323CA0069C92C /* AUSongEditView.xib in Resources */,
 				336BE123173324330069C92C /* AUScheduleClock.icns in Resources */,
 				336BE124173324330069C92C /* AUSnapshot.icns in Resources */,
 				336BE125173324330069C92C /* AUSpectrumChart.jpg in Resources */,
@@ -932,7 +932,7 @@
 				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,
 				336BE112173321580069C92C /* AUEffectViewController.m in Sources */,
 				336BE114173321580069C92C /* AULightColorView.m in Sources */,
-				336BE11E173323CA0069C92C /* AUPerformanceEditViewController.m in Sources */,
+				336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */,
 				336BE1291733244E0069C92C /* AUStrobe.m in Sources */,
 				336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */,
 				336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */,
