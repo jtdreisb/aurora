@@ -7,10 +7,8 @@
 //
 
 #import "AUSongEditorViewController.h"
-#import "DBG_DPHueBridge.h"
 
 @interface AUSongEditorViewController ()
-@property (strong, nonatomic) DPHueBridge *bridge;
 
 @property (strong, nonatomic) NSMutableArray *lightArray;
 
