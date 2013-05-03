@@ -12,6 +12,10 @@
 #import "AUSpotifyViewController.h"
 
 @implementation AUAppDelegate
+{
+    AUSpotifyLoginPanelController *_spotifyLoginPanelController;
+    BFNavigationController *_navController;
+}
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
@@ -31,9 +35,15 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     
-    _navController = [[BFNavigationController alloc] initWithFrame:[self.window.contentView frame] rootViewController:nil];
+    NSInteger musicTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
+    NSTabViewItem *musicTabItem = [self.tabView tabViewItemAtIndex:musicTabIndex];
+    _navController = [[BFNavigationController alloc] initWithFrame:[musicTabItem.view frame] rootViewController:nil];
+    musicTabItem.view = _navController.view;
     
-    self.window.contentView = _navController.view;
+    
+//    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
+//    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
+//    hueTabItem.view = _navController.view;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"spotify_username"];
@@ -121,10 +131,10 @@
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
 }
 
-- (void)sessionDidChangeMetadata:(SPSession *)aSession
-{
-    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aSession);
-}
+//- (void)sessionDidChangeMetadata:(SPSession *)aSession
+//{
+//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aSession);
+//}
 
 - (void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
     

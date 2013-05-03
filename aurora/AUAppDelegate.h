@@ -16,13 +16,12 @@
 @class BFNavigationController;
 
 @interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate>
-{
-    AUSpotifyLoginPanelController *_spotifyLoginPanelController;
-    BFNavigationController *_navController;
-}
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTabView *tabView;
+@property NSInteger tabSelectionIndex;
 
 
 - (IBAction)showLoginSheet:(id)sender;
+
 @end
