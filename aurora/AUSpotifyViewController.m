@@ -7,9 +7,7 @@
 //
 
 #import "AUSpotifyViewController.h"
-#import <DPHue/DPHueBridge.h>
-#import <DPHue/DPHueLight.h>
-
+#import "AUSongEditorViewController.h"
 
 @interface AUSpotifyViewController ()
 {
@@ -64,20 +62,15 @@
         self.playbackManager.delegate = self;
         
         [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+            NSLog(@"%@", [SPSession sharedSession].userPlaylists);
             
             [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
                 
                 NSMutableArray *playlists = [NSMutableArray array];
                 [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
                 NSLog(@"Loaded %ld playlists", [playlists count]);
-                
-                [SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
-                    [_playlistArrayController setContent:loadedPlaylists];
-                    [self tableView:_playlistTableView shouldSelectRow:0];
-                    //                    SPPlaylist *playlist = [loadedPlaylists lastObject];
-                    //                    NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
-                    //                    [self startPlaybackOfTrack:[tracks objectAtIndex:0]];
-                }];
+                [_playlistArrayController setContent:playlists];
+                [self tableView:_playlistTableView shouldSelectRow:0];
                 
             }];
         }];
@@ -102,6 +95,10 @@
 - (void)editSong:(id)sender
 {
     NSLog(@"%@", sender);
+    
+    AUSongEditorViewController *songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
+    songEditorViewController.track = [sender lastObject];
+    [self pushViewController:songEditorViewController animated:YES];
 }
 
 - (IBAction)nextSong:(id)sender

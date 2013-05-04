@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include <CocoaLibSpotify/CocoaLibSpotify.h>
 
 @interface AUSongEditorViewController : NSViewController <NSTableViewDataSource>
+
+@property (strong) SPTrack *track;
 
 @end
