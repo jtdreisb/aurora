@@ -10,11 +10,13 @@
 #import "AUSpotifyLoginPanelController.h"
 #import "BFNavigationController.h"
 #import "AUSpotifyViewController.h"
+#import "AUEffectTestViewController.h"
 
 @implementation AUAppDelegate
 {
     AUSpotifyLoginPanelController *_spotifyLoginPanelController;
     BFNavigationController *_navController;
+    AUEffectTestViewController *_effectTestViewController;
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -41,9 +43,11 @@
     musicTabItem.view = _navController.view;
     
     
-//    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
-//    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
-//    hueTabItem.view = _navController.view;
+    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"hue"];
+    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
+    _effectTestViewController = [[AUEffectTestViewController alloc] initWithNibName:@"AUEffectTestView" bundle:nil];
+    
+    hueTabItem.view = _effectTestViewController.view;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"spotify_username"];
@@ -93,10 +97,9 @@
 {
     if ([_spotifyLoginPanelController.window isModalPanel])
         [NSApp endSheet:_spotifyLoginPanelController.window returnCode:NSOKButton];
-    
+
     AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-    [_navController pushViewController:spotifyViewController animated:NO];
-    
+    [_navController pushViewController:spotifyViewController animated:NO];    
 }
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
@@ -113,6 +116,7 @@
 {
 	// Invoked by SPSession after a failed login.
     NSLog(@"%@", error);
+    [_spotifyLoginPanelController reset];
     
 }
 
@@ -126,14 +130,9 @@
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
 }
 
-- (void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage
-{
-    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
-}
-
-//- (void)sessionDidChangeMetadata:(SPSession *)aSession
+//- (void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage
 //{
-//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aSession);
+//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
 //}
 
 - (void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
