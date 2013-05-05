@@ -85,7 +85,7 @@
 											<object class="NSTableColumn" id="648146550">
 												<double key="NSWidth">495</double>
 												<double key="NSMinWidth">40</double>
-												<double key="NSMaxWidth">1000</double>
+												<double key="NSMaxWidth">2000</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
 													<int key="NSCellFlags">75497536</int>
 													<int key="NSCellFlags2">2048</int>
@@ -123,12 +123,12 @@
 														<int key="NSColorSpace">6</int>
 														<string key="NSCatalogName">System</string>
 														<string key="NSColorName">controlBackgroundColor</string>
-														<object class="NSColor" key="NSColor" id="804809667">
+														<object class="NSColor" key="NSColor" id="68326145">
 															<int key="NSColorSpace">3</int>
 															<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 														</object>
 													</object>
-													<object class="NSColor" key="NSTextColor" id="643979709">
+													<object class="NSColor" key="NSTextColor" id="588455086">
 														<int key="NSColorSpace">6</int>
 														<string key="NSCatalogName">System</string>
 														<string key="NSColorName">controlTextColor</string>
@@ -233,7 +233,6 @@
 								<string key="NSFrame">{{14, -2}, {82, 32}}</string>
 								<reference key="NSSuperview" ref="230885447"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="39481185">
@@ -330,7 +329,7 @@
 									<reference key="NSNextResponder" ref="709013755"/>
 									<int key="NSvFlags">276</int>
 									<array class="NSMutableArray" key="NSSubviews">
-										<object class="NSTextField" id="888561260">
+										<object class="NSTextField" id="235113898">
 											<reference key="NSNextResponder" ref="354102066"/>
 											<int key="NSvFlags">260</int>
 											<string key="NSFrame">{{5, 21}, {26, 18}}</string>
@@ -338,7 +337,7 @@
 											<reference key="NSNextKeyView" ref="222305990"/>
 											<string key="NSReuseIdentifierKey">_NS:1535</string>
 											<bool key="NSEnabled">YES</bool>
-											<object class="NSTextFieldCell" key="NSCell" id="442243457">
+											<object class="NSTextFieldCell" key="NSCell" id="931609988">
 												<int key="NSCellFlags">68157504</int>
 												<int key="NSCellFlags2">4195328</int>
 												<string key="NSContents">10:</string>
@@ -348,21 +347,21 @@
 													<int key="NSfFlags">16</int>
 												</object>
 												<string key="NSCellIdentifier">_NS:1535</string>
-												<reference key="NSControlView" ref="888561260"/>
+												<reference key="NSControlView" ref="235113898"/>
 												<object class="NSColor" key="NSBackgroundColor">
 													<int key="NSColorSpace">6</int>
 													<string key="NSCatalogName">System</string>
 													<string key="NSColorName">controlColor</string>
-													<reference key="NSColor" ref="804809667"/>
+													<reference key="NSColor" ref="68326145"/>
 												</object>
-												<reference key="NSTextColor" ref="643979709"/>
+												<reference key="NSTextColor" ref="588455086"/>
 											</object>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 										</object>
 									</array>
 									<string key="NSFrameSize">{150, 60}</string>
 									<reference key="NSSuperview" ref="709013755"/>
-									<reference key="NSNextKeyView" ref="888561260"/>
+									<reference key="NSNextKeyView" ref="235113898"/>
 									<string key="NSReuseIdentifierKey">_NS:9</string>
 									<string key="NSClassName">AULightCellView</string>
 								</object>
@@ -394,10 +393,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: objectValue</string>
-						<reference key="source" ref="888561260"/>
+						<reference key="source" ref="235113898"/>
 						<reference key="destination" ref="709013755"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="888561260"/>
+							<reference key="NSSource" ref="235113898"/>
 							<reference key="NSDestination" ref="709013755"/>
 							<string key="NSLabel">value: objectValue</string>
 							<string key="NSBinding">value</string>
@@ -529,7 +528,7 @@
 						<int key="objectID">190</int>
 						<reference key="object" ref="354102066"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="888561260"/>
+							<reference ref="235113898"/>
 						</array>
 						<reference key="parent" ref="709013755"/>
 					</object>
@@ -540,16 +539,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">195</int>
-						<reference key="object" ref="888561260"/>
+						<reference key="object" ref="235113898"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="442243457"/>
+							<reference ref="931609988"/>
 						</array>
 						<reference key="parent" ref="354102066"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">196</int>
-						<reference key="object" ref="442243457"/>
-						<reference key="parent" ref="888561260"/>
+						<reference key="object" ref="931609988"/>
+						<reference key="parent" ref="235113898"/>
 					</object>
 				</array>
 			</object>
@@ -630,6 +629,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AUSongEditorViewController</string>
 					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">goBack:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">goBack:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">goBack:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="_scrollView">NSScrollView</string>
 						<string key="_timelineArrayController">NSArrayController</string>

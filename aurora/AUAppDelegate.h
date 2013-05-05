@@ -19,6 +19,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTabView *tabView;
+@property (strong) IBOutlet NSObjectController *playbackObjectController;
+
 @property NSInteger tabSelectionIndex;
 
 

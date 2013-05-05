@@ -18,7 +18,6 @@
 
 - (void)setObjectValue:(id)objectValue
 {
-    NSLog(@"%@ %@", _lightCellView, _timelineCellView);
     [super setObjectValue:objectValue];
 }
 

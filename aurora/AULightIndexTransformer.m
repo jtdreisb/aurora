@@ -8,14 +8,7 @@
 
 #import "AULightIndexTransformer.h"
 
-//NSString * const AULightIndexTransformerName = @"AULightIndexTransformer";
-
 @implementation AULightIndexTransformer
-
-//+ (void)initialize
-//{
-//    [NSValueTransformer setValueTransformer:[[AULightIndexTransformer alloc] init] forName:AULightIndexTransformerName];
-//}
 
 + (Class)transformedValueClass
 {

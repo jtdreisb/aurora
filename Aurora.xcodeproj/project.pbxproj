@@ -18,6 +18,8 @@
 		3349D2221735DB8600648144 /* AUView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2211735DB8600648144 /* AUView.m */; };
 		3349D2251735DD6300648144 /* AULightIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2241735DD6300648144 /* AULightIndexTransformer.m */; };
 		3349D2291735EAF500648144 /* AUEffectTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2281735EAF500648144 /* AUEffectTimeline.m */; };
+		3349D22C1735EE8200648144 /* AUPlaybackCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D22B1735EE6A00648144 /* AUPlaybackCoordinator.m */; };
+		3349D22F1735F58500648144 /* AUArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D22E1735F57300648144 /* AUArrayTransformer.m */; };
 		336BE10A173321580069C92C /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0F9173321580069C92C /* AUColorPulse.m */; };
 		336BE10B173321580069C92C /* AUEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FB173321580069C92C /* AUEffect.m */; };
 		336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */; };
@@ -211,6 +213,10 @@
 		3349D2241735DD6300648144 /* AULightIndexTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightIndexTransformer.m; sourceTree = "<group>"; };
 		3349D2271735EAF400648144 /* AUEffectTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectTimeline.h; sourceTree = "<group>"; };
 		3349D2281735EAF500648144 /* AUEffectTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectTimeline.m; sourceTree = "<group>"; };
+		3349D22A1735EE5F00648144 /* AUPlaybackCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPlaybackCoordinator.h; sourceTree = "<group>"; };
+		3349D22B1735EE6A00648144 /* AUPlaybackCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUPlaybackCoordinator.m; sourceTree = "<group>"; };
+		3349D22D1735F56900648144 /* AUArrayTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUArrayTransformer.h; sourceTree = "<group>"; };
+		3349D22E1735F57300648144 /* AUArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUArrayTransformer.m; sourceTree = "<group>"; };
 		336BE0F8173321580069C92C /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
 		336BE0F9173321580069C92C /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
 		336BE0FA173321580069C92C /* AUEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffect.h; sourceTree = "<group>"; };
@@ -437,6 +443,9 @@
 		332E61D31731D964008C8025 /* Aurora */ = {
 			isa = PBXGroup;
 			children = (
+				3349D22A1735EE5F00648144 /* AUPlaybackCoordinator.h */,
+				3349D22B1735EE6A00648144 /* AUPlaybackCoordinator.m */,
+				3349D2301735FCB800648144 /* Value Transformers */,
 				33CC93551735CE7B00F67A99 /* Special Views */,
 				332E61DF1731D964008C8025 /* AUAppDelegate.h */,
 				332E61E01731D964008C8025 /* AUAppDelegate.m */,
@@ -482,10 +491,19 @@
 			children = (
 				3349D2271735EAF400648144 /* AUEffectTimeline.h */,
 				3349D2281735EAF500648144 /* AUEffectTimeline.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3349D2301735FCB800648144 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				3349D22D1735F56900648144 /* AUArrayTransformer.h */,
+				3349D22E1735F57300648144 /* AUArrayTransformer.m */,
 				3349D2231735DD6200648144 /* AULightIndexTransformer.h */,
 				3349D2241735DD6300648144 /* AULightIndexTransformer.m */,
 			);
-			name = Models;
+			name = "Value Transformers";
 			sourceTree = "<group>";
 		};
 		336BE1161733216D0069C92C /* Effects */ = {
@@ -1017,6 +1035,8 @@
 				3349D2221735DB8600648144 /* AUView.m in Sources */,
 				3349D2251735DD6300648144 /* AULightIndexTransformer.m in Sources */,
 				3349D2291735EAF500648144 /* AUEffectTimeline.m in Sources */,
+				3349D22C1735EE8200648144 /* AUPlaybackCoordinator.m in Sources */,
+				3349D22F1735F58500648144 /* AUArrayTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

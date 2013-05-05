@@ -8,6 +8,7 @@
 
 #import "AUSpotifyViewController.h"
 #import "AUSongEditorViewController.h"
+#import "AUPlaybackCoordinator.h"
 
 @interface AUSpotifyViewController ()
 {
@@ -72,12 +73,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
-        self.playbackManager.delegate = self;
-        
         [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-            NSLog(@"%@", [SPSession sharedSession].userPlaylists);
-            
             [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
                 
                 NSMutableArray *playlists = [NSMutableArray array];
@@ -93,7 +89,17 @@
 
 - (void)editSong:(id)sender
 {
-    NSLog(@"%@", sender);
+    NSLog(@"%@", [sender class]);
+    
+    AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator sharedInstance];
+    
+    [playbackCoordinator playTrack:(SPTrack *)[sender lastObject] callback:^(NSError *error) {
+        if (error != nil)
+            NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
+        else {
+            NSLog(@"playback did end");
+        }
+    }];
     
     AUSongEditorViewController *songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
     songEditorViewController.track = [sender lastObject];
@@ -101,15 +107,6 @@
 }
 
 
-- (IBAction)nextSong:(id)sender
-{
-    
-}
-
-- (IBAction)lastSong:(id)sender
-{
-    
-}
 
 - (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
 	
@@ -127,15 +124,6 @@
 
 #pragma mark -
 #pragma mark Playback
-
-- (void)startPlaybackOfTrack:(SPTrack *)aTrack {
-    
-    [SPAsyncLoading waitUntilLoaded:aTrack timeout:5.0 then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-        [self.playbackManager playTrack:aTrack callback:^(NSError *error) {
-            if (error) [self.view.window presentError:error];
-        }];
-    }];
-}
 
 - (void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager
 {

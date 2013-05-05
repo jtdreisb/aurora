@@ -11,6 +11,7 @@
 #import "BFNavigationController.h"
 #import "AUSpotifyViewController.h"
 #import "AUEffectTestViewController.h"
+#import "AUPlaybackCoordinator.h"
 
 @implementation AUAppDelegate
 {
@@ -98,6 +99,9 @@
     if ([_spotifyLoginPanelController.window isModalPanel])
         [NSApp endSheet:_spotifyLoginPanelController.window returnCode:NSOKButton];
 
+    AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator initializeSharedInstance];
+    [self.playbackObjectController setContent:playbackCoordinator];
+    
     AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
     [_navController pushViewController:spotifyViewController animated:NO];    
 }

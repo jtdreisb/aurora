@@ -11,8 +11,6 @@
 
 @interface AUSpotifyViewController : NSViewController <NSTableViewDelegate, SPSessionDelegate, SPPlaybackManagerDelegate>
 
-@property (strong) SPPlaybackManager *playbackManager;
-
 - (void)editSong:(id)sender;
 
 
