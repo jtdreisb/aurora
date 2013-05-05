@@ -51,6 +51,20 @@
     return YES;
 }
 
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    if (tableView == _playlistTableView) {
+        SPPlaylist *shownPlaylist = [_playlistArrayController.arrangedObjects objectAtIndex:row];
+        [shownPlaylist startLoading];
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [tableView reloadData];
+        });
+        
+    }
+}
+
 #pragma mark - BFViewController additions
 
 - (void)viewWillAppear: (BOOL)animated
@@ -77,21 +91,6 @@
     });
 }
 
-- (void)viewDidAppear: (BOOL)animated
-{
-    //    NSLog(@"%@ - viewDidAppear: %i", self, animated);
-}
-
-- (void)viewWillDisappear: (BOOL)animated
-{
-    //    NSLog(@"%@ - viewWillDisappear: %i", self, animated);
-}
-
-- (void)viewDidDisappear: (BOOL)animated
-{
-    //    NSLog(@"%@ - viewDidDisappear: %i", self, animated);
-}
-
 - (void)editSong:(id)sender
 {
     NSLog(@"%@", sender);
@@ -100,6 +99,7 @@
     songEditorViewController.track = [sender lastObject];
     [self pushViewController:songEditorViewController animated:YES];
 }
+
 
 - (IBAction)nextSong:(id)sender
 {
