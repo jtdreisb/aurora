@@ -89,8 +89,6 @@
 
 - (void)editSong:(id)sender
 {
-    NSLog(@"%@", [sender class]);
-    
     AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator sharedInstance];
     
     [playbackCoordinator playTrack:(SPTrack *)[sender lastObject] callback:^(NSError *error) {
