@@ -11,26 +11,6 @@
 
 @implementation AUTimelineCellView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-//- (void)drawRect:(NSRect)dirtyRect
-//{
-//    [[NSColor purpleColor] setFill];
-//    [[NSColor lightGrayColor] setStroke];
-////    NSRect insetBox = NSInsetRect(self.bounds, 2.0, 2.0);
-//    NSBezierPath *boundingBox = [NSBezierPath bezierPathWithRect:self.bounds];
-//    [boundingBox setLineWidth:2.0];
-//    [boundingBox fill];
-//    [boundingBox stroke];
-//}
 
 - (void)drawRect:(NSRect)dirtyRect
 {
