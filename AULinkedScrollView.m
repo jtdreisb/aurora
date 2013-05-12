@@ -8,10 +8,15 @@
 
 #import "AULinkedScrollView.h"
 
+@interface AUInvisibleScroller : NSScroller @end
+@implementation AUInvisibleScroller
++ (BOOL)isCompatibleWithOverlayScrollers {return self == [AUInvisibleScroller class];}
+- (BOOL)isHidden {return YES;}
+@end
+
 static NSString *const kAULinkedScrollViewFrameChange = @"AULinkedScrollViewFrameChange";
 
 @implementation AULinkedScrollView
-
 
 - (id)initWithFrame:(NSRect)frameRect
 {
@@ -22,22 +27,19 @@ static NSString *const kAULinkedScrollViewFrameChange = @"AULinkedScrollViewFram
             [self.contentView scrollToPoint:[changedView.contentView bounds].origin];
             [self reflectScrolledClipView:self.contentView];
         }];
+        
     }
     return self;
 }
+
 - (void)awakeFromNib
 {
     [self setHasHorizontalScroller:YES];
+    [self setHorizontalScroller:[[AUInvisibleScroller alloc] init]];
     [self setHorizontalScrollElasticity:NSScrollElasticityAutomatic];
     [self setVerticalScrollElasticity:NSScrollElasticityNone];
     [self setBorderType:NSNoBorder];
     [self.contentView setCopiesOnScroll:YES];
-    
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self.horizontalScroller setHidden:YES];
-    });
 }
 
 - (void)dealloc
@@ -48,7 +50,6 @@ static NSString *const kAULinkedScrollViewFrameChange = @"AULinkedScrollViewFram
 - (void)scrollWheel:(NSEvent *)theEvent
 {
     [super scrollWheel:theEvent];
-    [self.horizontalScroller setHidden:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:kAULinkedScrollViewFrameChange object:self];
 }
 

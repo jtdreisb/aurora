@@ -25,7 +25,6 @@
 		336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */; };
 		336BE10D173321580069C92C /* AUEffectCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */; };
 		336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FF173321580069C92C /* AUEffectEditView.xib */; };
-		336BE10F173321580069C92C /* AUEffectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE101173321580069C92C /* AUEffectManager.m */; };
 		336BE110173321580069C92C /* AUEffectTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE102173321580069C92C /* AUEffectTestView.xib */; };
 		336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE104173321580069C92C /* AUEffectTestViewController.m */; };
 		336BE112173321580069C92C /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE106173321580069C92C /* AUEffectViewController.m */; };
@@ -42,11 +41,12 @@
 		336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */; };
 		336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */; };
 		336FBD611735C311008A8C01 /* AULightCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD601735C311008A8C01 /* AULightCellView.m */; };
+		3377DC4C173DF6760080A4EC /* AULinkedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */; };
 		339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F11731F7D200E30409 /* BFNavigationController.m */; };
 		339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F71731F82200E30409 /* NSView+BFUtilities.m */; };
 		339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */; };
 		339DD8FD1731FA5B00E30409 /* AUSpotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8FB1731FA5B00E30409 /* AUSpotifyViewController.m */; };
-		33CC93511735C36800F67A99 /* AUTimelineCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93501735C36800F67A99 /* AUTimelineCellView.m */; };
+		33CC93511735C36800F67A99 /* AUTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93501735C36800F67A99 /* AUTimelineView.m */; };
 		33CC93581735CEAF00F67A99 /* NSView+AUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */; };
 		33CC935B1735D75100F67A99 /* AUScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC935A1735D75100F67A99 /* AUScrollView.m */; };
 		33DA0C611731E74D008C2004 /* AULineQuadTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33DA0BEF1731E74D008C2004 /* AULineQuadTemplate.pdf */; };
@@ -225,8 +225,6 @@
 		336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectCollectionViewItem.m; sourceTree = "<group>"; };
 		336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectCollectionViewItem.xib; sourceTree = "<group>"; };
 		336BE0FF173321580069C92C /* AUEffectEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectEditView.xib; sourceTree = "<group>"; };
-		336BE100173321580069C92C /* AUEffectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectManager.h; sourceTree = "<group>"; };
-		336BE101173321580069C92C /* AUEffectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectManager.m; sourceTree = "<group>"; };
 		336BE102173321580069C92C /* AUEffectTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectTestView.xib; sourceTree = "<group>"; };
 		336BE103173321580069C92C /* AUEffectTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectTestViewController.h; sourceTree = "<group>"; };
 		336BE104173321580069C92C /* AUEffectTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectTestViewController.m; sourceTree = "<group>"; };
@@ -252,6 +250,8 @@
 		336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEditorCellView.m; sourceTree = "<group>"; };
 		336FBD5F1735C311008A8C01 /* AULightCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightCellView.h; sourceTree = "<group>"; };
 		336FBD601735C311008A8C01 /* AULightCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightCellView.m; sourceTree = "<group>"; };
+		3377DC4A173DF6760080A4EC /* AULinkedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AULinkedScrollView.h; path = ../AULinkedScrollView.h; sourceTree = "<group>"; };
+		3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AULinkedScrollView.m; path = ../AULinkedScrollView.m; sourceTree = "<group>"; };
 		339DD8F01731F7D200E30409 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		339DD8F11731F7D200E30409 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		339DD8F21731F7D200E30409 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 		339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyView.xib; sourceTree = "<group>"; };
 		339DD8FA1731FA5B00E30409 /* AUSpotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyViewController.h; sourceTree = "<group>"; };
 		339DD8FB1731FA5B00E30409 /* AUSpotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyViewController.m; sourceTree = "<group>"; };
-		33CC934F1735C36800F67A99 /* AUTimelineCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimelineCellView.h; sourceTree = "<group>"; };
-		33CC93501735C36800F67A99 /* AUTimelineCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTimelineCellView.m; sourceTree = "<group>"; };
+		33CC934F1735C36800F67A99 /* AUTimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimelineView.h; sourceTree = "<group>"; };
+		33CC93501735C36800F67A99 /* AUTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTimelineView.m; sourceTree = "<group>"; };
 		33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+AUAdditions.h"; path = "Aurora/NSView+AUAdditions.h"; sourceTree = "<group>"; };
 		33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+AUAdditions.m"; path = "Aurora/NSView+AUAdditions.m"; sourceTree = "<group>"; };
 		33CC93591735D75100F67A99 /* AUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUScrollView.h; path = Aurora/AUScrollView.h; sourceTree = "<group>"; };
@@ -512,8 +512,6 @@
 				336BE119173321F40069C92C /* Effects Views */,
 				336BE0FA173321580069C92C /* AUEffect.h */,
 				336BE0FB173321580069C92C /* AUEffect.m */,
-				336BE100173321580069C92C /* AUEffectManager.h */,
-				336BE101173321580069C92C /* AUEffectManager.m */,
 				336BE0FF173321580069C92C /* AUEffectEditView.xib */,
 				336BE12B1733245A0069C92C /* Strobe */,
 				336BE117173321750069C92C /* Color Pulse */,
@@ -619,12 +617,14 @@
 		33CC93541735C92D00F67A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3377DC4A173DF6760080A4EC /* AULinkedScrollView.h */,
+				3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */,
 				336FBD5B1735C2F9008A8C01 /* AUEditorCellView.h */,
 				336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */,
 				336FBD5F1735C311008A8C01 /* AULightCellView.h */,
 				336FBD601735C311008A8C01 /* AULightCellView.m */,
-				33CC934F1735C36800F67A99 /* AUTimelineCellView.h */,
-				33CC93501735C36800F67A99 /* AUTimelineCellView.m */,
+				33CC934F1735C36800F67A99 /* AUTimelineView.h */,
+				33CC93501735C36800F67A99 /* AUTimelineView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1019,7 +1019,6 @@
 				336BE10A173321580069C92C /* AUColorPulse.m in Sources */,
 				336BE10B173321580069C92C /* AUEffect.m in Sources */,
 				336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */,
-				336BE10F173321580069C92C /* AUEffectManager.m in Sources */,
 				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,
 				336BE112173321580069C92C /* AUEffectViewController.m in Sources */,
 				336BE114173321580069C92C /* AULightColorView.m in Sources */,
@@ -1029,7 +1028,7 @@
 				336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */,
 				336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */,
 				336FBD611735C311008A8C01 /* AULightCellView.m in Sources */,
-				33CC93511735C36800F67A99 /* AUTimelineCellView.m in Sources */,
+				33CC93511735C36800F67A99 /* AUTimelineView.m in Sources */,
 				33CC93581735CEAF00F67A99 /* NSView+AUAdditions.m in Sources */,
 				33CC935B1735D75100F67A99 /* AUScrollView.m in Sources */,
 				3349D2221735DB8600648144 /* AUView.m in Sources */,
@@ -1037,6 +1036,7 @@
 				3349D2291735EAF500648144 /* AUEffectTimeline.m in Sources */,
 				3349D22C1735EE8200648144 /* AUPlaybackCoordinator.m in Sources */,
 				3349D22F1735F58500648144 /* AUArrayTransformer.m in Sources */,
+				3377DC4C173DF6760080A4EC /* AULinkedScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

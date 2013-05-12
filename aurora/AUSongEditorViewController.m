@@ -25,11 +25,28 @@
 - (void)viewWillAppear: (BOOL)animated
 {
 
-    NSMutableDictionary *timelineDict = @{@"index": @88};
-    [_timelineArrayController addObject:timelineDict];
-    timelineDict = [timelineDict mutableCopy];
-    timelineDict[@"index"] = @2;
-    [_timelineArrayController addObject:timelineDict];
+}
+
+
+- (IBAction)addRemoveLight:(id)sender
+{
+    if ([sender isKindOfClass:[NSSegmentedControl class]]) {
+        NSSegmentedControl *segmentedControl = sender;
+        
+        // Add
+        if (segmentedControl.selectedSegment == 0) {
+            NSMutableDictionary *timelineDict = [NSMutableDictionary dictionary];
+            timelineDict[@"index"] = @([_timelineArrayController.arrangedObjects count]);
+            [_timelineArrayController addObject:timelineDict];
+        }
+        // Remove
+        else {
+            [_timelineArrayController removeObjects:_timelineArrayController.selectedObjects];
+            for (NSMutableDictionary *timelineDict in _timelineArrayController.arrangedObjects) {
+                timelineDict[@"index"] = @([_timelineArrayController.arrangedObjects indexOfObject:timelineDict]);
+            }
+        }
+    }
 }
 
 /**

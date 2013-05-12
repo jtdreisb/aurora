@@ -61,6 +61,11 @@
     }
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
 - (IBAction)showLoginSheet:(id)sender
 {
     // Log out if necessary
@@ -108,8 +113,6 @@
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
 {
-    NSLog(@"%s: %@", __PRETTY_FUNCTION__, userName);
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:userName forKey:@"spotify_username"];
     [defaults setObject:credential forKey:@"spotify_credential"];
@@ -138,6 +141,14 @@
 //{
 //    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
 //}
+
+- (IBAction)seekToPosition:(id)sender
+{
+    if ([sender isKindOfClass:[NSSlider class]]) {
+        NSSlider *slider = sender;
+        [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:slider.doubleValue];
+    }
+}
 
 - (void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
     

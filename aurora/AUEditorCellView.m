@@ -8,17 +8,20 @@
 
 #import "AUEditorCellView.h"
 #import "AULightCellView.h"
-#import "AUTimelineCellView.h"
-
+#import "AUTimelineView.h"
+#import "AULinkedScrollView.h"
 @implementation AUEditorCellView
 {
     IBOutlet AULightCellView *_lightCellView;
-    IBOutlet AUTimelineCellView *_timelineCellView;
+    IBOutlet AULinkedScrollView *_timelineScrollView;
 }
 
 - (void)setObjectValue:(id)objectValue
 {
     [super setObjectValue:objectValue];
+    
+    AUTimelineView *timelineView = [[AUTimelineView alloc] initWithFrame:self.bounds];
+    timelineView.effectTimeline = objectValue[@"timeline"];
 }
 
 @end
