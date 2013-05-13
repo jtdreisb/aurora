@@ -17,6 +17,5 @@
 @property (strong) IBOutlet NSTableView *lightTableView;
 
 
-- (void)addLights:(NSArray *)lights;
 
 @end

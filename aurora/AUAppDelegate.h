@@ -7,15 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import <DPHue.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
-
 #import "appkey.h"
 
 @class AUSpotifyLoginPanelController;
 @class BFNavigationController;
 
-@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate>
+@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, DPHueDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTabView *tabView;

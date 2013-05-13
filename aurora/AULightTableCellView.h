@@ -8,12 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class AULightColorView;
-
 @interface AULightTableCellView : NSTableCellView
-
-@property (weak) IBOutlet NSTextField *lightName;
-
-@property (weak) IBOutlet AULightColorView *colorView;
 
 @end

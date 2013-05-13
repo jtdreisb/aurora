@@ -13,6 +13,7 @@
 #import "AUEffectTestViewController.h"
 #import "AUPlaybackCoordinator.h"
 
+
 @implementation AUAppDelegate
 {
     AUSpotifyLoginPanelController *_spotifyLoginPanelController;
@@ -33,6 +34,9 @@
 	}
     
 	[[SPSession sharedSession] setDelegate:self];
+    
+    [[DPHue sharedInstance] setDelegate:self];
+    [[DPHue sharedInstance] startDiscovery];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
@@ -96,6 +100,33 @@
     }
 }
 
+- (void)alertUserToPressLinkButtonOnBridge:(DPHueBridge *)bridge
+{
+    // TODO: implement a popover or some type of ui to alert the user
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, bridge);
+}
+
+- (IBAction)refreshHueData:(id)sender
+{
+    [[DPHue sharedInstance] reloadBridgeData];
+}
+
+- (IBAction)debugHueData:(id)sender
+{
+    NSUInteger index = 0;
+    for (DPHueBridge *bridge in [[DPHue sharedInstance] bridges]) {
+        NSLog(@"%lu: %@", (unsigned long)index, bridge);
+    }
+}
+
+- (IBAction)testHueChange:(id)sender
+{
+    DPHueBridge *bridge = [[[DPHue sharedInstance] bridges] lastObject];
+    bridge.pendingChanges[@"lights"] = @{ @"1": @{ @"state": @{@"on": @NO}}};
+    NSLog(@"%@", bridge.pendingChanges);
+    [bridge write];
+    
+}
 #pragma mark -
 #pragma mark SPSession Delegates
 

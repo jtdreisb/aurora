@@ -11,17 +11,19 @@
 #import "AUStrobe.h"
 #import "AUColorPulse.h"
 
+#import <DPHue.h>
+
 @implementation AUEffectTestViewController
 
 - (void)awakeFromNib
 {
     // bind our collection view's contents and selection to our array controller
-	[self.effectCollectionView bind:@"content" toObject:self.effectsArrayController withKeyPath:@"arrangedObjects" options:nil];
-	[self.effectCollectionView bind:@"selectionIndexes" toObject:self.effectsArrayController withKeyPath:@"selectionIndexes" options:nil];
+	[_effectCollectionView bind:@"content" toObject:_effectsArrayController withKeyPath:@"arrangedObjects" options:nil];
+	[_effectCollectionView bind:@"selectionIndexes" toObject:_effectsArrayController withKeyPath:@"selectionIndexes" options:nil];
+    [_lightsArrayController bind:@"content" toObject:[DPHue sharedInstance] withKeyPath:@"lights" options:nil];
     
-    
-	[self.effectCollectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
-	[self.effectCollectionView setSelectable:NO]; // not selectable
+	[_effectCollectionView setFocusRingType:NSFocusRingTypeNone];	// we don't want a focus ring
+	[_effectCollectionView setSelectable:NO]; // not selectable
 
     if ([self.effectsArrayController.arrangedObjects count] == 0) {
         AUEffect *effect = [[AUEffect alloc] init];
@@ -31,17 +33,13 @@
         effect = [[AUColorPulse alloc] init];
         [self.effectsArrayController addObject:effect];
     }
+    
 }
 
-
-- (void)addLights:(NSArray *)lights
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    for (id light in lights) {
-        NSMutableDictionary *lightDictionary = [NSMutableDictionary dictionary];
-        [lightDictionary setObject:@NO forKey:@"enabled"];
-        [lightDictionary setObject:light forKey:@"light"];
-        [self.lightsArrayController addObject:lightDictionary];
-    }
+    
+    
 }
 
 #pragma mark - NSTableViewDelegate

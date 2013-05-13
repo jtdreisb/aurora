@@ -12,6 +12,6 @@
 
 @interface AUEffectTimeline : NSObject
 
-- (void)addEffect:(AUEffect *)effect atTime:(NSTimeInterval)trackPosition;
+//- (void)addEffect:(AUEffect *)effect atTime:(NSTimeInterval)trackPosition;
 
 @end

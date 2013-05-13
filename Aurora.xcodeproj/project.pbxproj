@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C0C2F7D8D2A414298DAE3C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E59A15738343AEB60F48BB /* libPods.a */; };
+		3306036B1740A56E00D7BD91 /* AULinkedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */; };
 		332E61CE1731D964008C8025 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61CD1731D964008C8025 /* Cocoa.framework */; };
 		332E61D81731D964008C8025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 332E61D61731D964008C8025 /* InfoPlist.strings */; };
 		332E61DA1731D964008C8025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61D91731D964008C8025 /* main.m */; };
@@ -38,10 +39,8 @@
 		336BE1291733244E0069C92C /* AUStrobe.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE1271733244E0069C92C /* AUStrobe.m */; };
 		336BE12A1733244E0069C92C /* AUSuccess.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE1281733244E0069C92C /* AUSuccess.icns */; };
 		336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12D173324BB0069C92C /* AULightTableCellView.m */; };
-		336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */; };
 		336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */; };
 		336FBD611735C311008A8C01 /* AULightCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD601735C311008A8C01 /* AULightCellView.m */; };
-		3377DC4C173DF6760080A4EC /* AULinkedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */; };
 		339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F11731F7D200E30409 /* BFNavigationController.m */; };
 		339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F71731F82200E30409 /* NSView+BFUtilities.m */; };
 		339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */; };
@@ -192,6 +191,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330603691740A56E00D7BD91 /* AULinkedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULinkedScrollView.h; sourceTree = "<group>"; };
+		3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULinkedScrollView.m; sourceTree = "<group>"; };
 		332E61CA1731D964008C8025 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332E61CD1731D964008C8025 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		332E61D01731D964008C8025 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -244,14 +245,10 @@
 		336BE1281733244E0069C92C /* AUSuccess.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSuccess.icns; sourceTree = "<group>"; };
 		336BE12C173324BB0069C92C /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
 		336BE12D173324BB0069C92C /* AULightTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightTableCellView.m; sourceTree = "<group>"; };
-		336BE12E173324BB0069C92C /* DBG_DPHueBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBG_DPHueBridge.h; sourceTree = "<group>"; };
-		336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBG_DPHueBridge.m; sourceTree = "<group>"; };
 		336FBD5B1735C2F9008A8C01 /* AUEditorCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEditorCellView.h; sourceTree = "<group>"; };
 		336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEditorCellView.m; sourceTree = "<group>"; };
 		336FBD5F1735C311008A8C01 /* AULightCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightCellView.h; sourceTree = "<group>"; };
 		336FBD601735C311008A8C01 /* AULightCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightCellView.m; sourceTree = "<group>"; };
-		3377DC4A173DF6760080A4EC /* AULinkedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AULinkedScrollView.h; path = ../AULinkedScrollView.h; sourceTree = "<group>"; };
-		3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AULinkedScrollView.m; path = ../AULinkedScrollView.m; sourceTree = "<group>"; };
 		339DD8F01731F7D200E30409 /* BFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFNavigationController.h; sourceTree = "<group>"; };
 		339DD8F11731F7D200E30409 /* BFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFNavigationController.m; sourceTree = "<group>"; };
 		339DD8F21731F7D200E30409 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
@@ -453,7 +450,6 @@
 				33DA0CD31731E985008C2004 /* Login Sheet */,
 				339DD8FE1731FA6200E30409 /* Spotify View */,
 				336BE11F173323D30069C92C /* Song Editor */,
-				336BE132173324CA0069C92C /* Hue */,
 				336BE1161733216D0069C92C /* Effects */,
 				336BE118173321A30069C92C /* Effect Test */,
 				339DD8F51731F7D500E30409 /* Navigation Controller */,
@@ -531,6 +527,10 @@
 		336BE118173321A30069C92C /* Effect Test */ = {
 			isa = PBXGroup;
 			children = (
+				336BE108173321580069C92C /* AULightColorView.h */,
+				336BE109173321580069C92C /* AULightColorView.m */,
+				336BE12C173324BB0069C92C /* AULightTableCellView.h */,
+				336BE12D173324BB0069C92C /* AULightTableCellView.m */,
 				336BE103173321580069C92C /* AUEffectTestViewController.h */,
 				336BE104173321580069C92C /* AUEffectTestViewController.m */,
 				336BE102173321580069C92C /* AUEffectTestView.xib */,
@@ -546,8 +546,6 @@
 			children = (
 				336BE105173321580069C92C /* AUEffectViewController.h */,
 				336BE106173321580069C92C /* AUEffectViewController.m */,
-				336BE108173321580069C92C /* AULightColorView.h */,
-				336BE109173321580069C92C /* AULightColorView.m */,
 			);
 			name = "Effects Views";
 			sourceTree = "<group>";
@@ -569,17 +567,6 @@
 				336BE1271733244E0069C92C /* AUStrobe.m */,
 			);
 			name = Strobe;
-			sourceTree = "<group>";
-		};
-		336BE132173324CA0069C92C /* Hue */ = {
-			isa = PBXGroup;
-			children = (
-				336BE12E173324BB0069C92C /* DBG_DPHueBridge.h */,
-				336BE12F173324BB0069C92C /* DBG_DPHueBridge.m */,
-				336BE12C173324BB0069C92C /* AULightTableCellView.h */,
-				336BE12D173324BB0069C92C /* AULightTableCellView.m */,
-			);
-			name = Hue;
 			sourceTree = "<group>";
 		};
 		339DD8F51731F7D500E30409 /* Navigation Controller */ = {
@@ -617,8 +604,8 @@
 		33CC93541735C92D00F67A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3377DC4A173DF6760080A4EC /* AULinkedScrollView.h */,
-				3377DC4B173DF6760080A4EC /* AULinkedScrollView.m */,
+				330603691740A56E00D7BD91 /* AULinkedScrollView.h */,
+				3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */,
 				336FBD5B1735C2F9008A8C01 /* AUEditorCellView.h */,
 				336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */,
 				336FBD5F1735C311008A8C01 /* AULightCellView.h */,
@@ -1025,7 +1012,6 @@
 				336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */,
 				336BE1291733244E0069C92C /* AUStrobe.m in Sources */,
 				336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */,
-				336BE131173324BB0069C92C /* DBG_DPHueBridge.m in Sources */,
 				336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */,
 				336FBD611735C311008A8C01 /* AULightCellView.m in Sources */,
 				33CC93511735C36800F67A99 /* AUTimelineView.m in Sources */,
@@ -1036,7 +1022,7 @@
 				3349D2291735EAF500648144 /* AUEffectTimeline.m in Sources */,
 				3349D22C1735EE8200648144 /* AUPlaybackCoordinator.m in Sources */,
 				3349D22F1735F58500648144 /* AUArrayTransformer.m in Sources */,
-				3377DC4C173DF6760080A4EC /* AULinkedScrollView.m in Sources */,
+				3306036B1740A56E00D7BD91 /* AULinkedScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
