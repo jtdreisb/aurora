@@ -9,6 +9,9 @@
 #import "AUPlaybackCoordinator.h"
 
 @implementation AUPlaybackCoordinator
+{
+    dispatch_queue_t _lightEffectQueue;
+}
 
 static AUPlaybackCoordinator *sharedInstance = nil;
 
@@ -26,5 +29,20 @@ static AUPlaybackCoordinator *sharedInstance = nil;
     });
     return sharedInstance;
 }
+
+- (id)initWithPlaybackSession:(SPSession *)aSession
+{
+    self = [super initWithPlaybackSession:aSession];
+    if (self != nil) {
+        _lightEffectQueue = dispatch_queue_create("com.apple.aurora.lights.q", DISPATCH_QUEUE_CONCURRENT);
+    }
+    return self;
+}
+
+- (void)sessionDidEndPlayback:(SPSession *)aSession
+{
+    [super sessionDidEndPlayback:aSession];
+}
+
 
 @end

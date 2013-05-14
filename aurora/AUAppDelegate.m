@@ -122,10 +122,86 @@
 - (IBAction)testHueChange:(id)sender
 {
     DPHueBridge *bridge = [[[DPHue sharedInstance] bridges] lastObject];
-    bridge.pendingChanges[@"lights"] = @{ @"1": @{ @"state": @{@"on": @NO}}};
-    NSLog(@"%@", bridge.pendingChanges);
-    [bridge write];
+    [bridge allLightsOff];
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:1.0];
     
+    NSMutableArray *scheduleArray = [NSMutableArray array];
+    
+//    for (DPHueLight *light in bridge.lights) {
+    
+    DPHueLight *light = [bridge.lights objectAtIndex:0];
+    for (int i = 0; i < 5; i++) {
+        
+        DPHueSchedule *schedule = [[DPHueSchedule alloc] initWithBridge:bridge];
+        schedule.command = @{
+                             @"address" : light.state.address,
+                             @"method" : @"PUT",
+                             @"body" : @{
+                                     @"on": @YES,
+                                     @"bri": @100,
+                                     @"transitiontime": @0
+                                     }
+                             };
+        schedule.date = date;
+        [schedule write];
+        [scheduleArray addObject:schedule];
+        
+        date = [date dateByAddingTimeInterval:0.5];
+        
+        schedule = [[DPHueSchedule alloc] initWithBridge:bridge];
+        schedule.command = @{
+                             @"address" : light.state.address,
+                             @"method" : @"PUT",
+                             @"body" : @{
+                                     @"on": @NO,
+                                     @"bri": @0,
+                                     @"transitiontime": @0
+                                     }
+                             };
+        schedule.date = date;
+        [schedule write];
+        [scheduleArray addObject:schedule];
+        
+        date = [date dateByAddingTimeInterval:0.5];
+        }
+//    }
+}
+
+- (IBAction)testHueChangeDispatch:(id)sender
+{
+    DPHueBridge *bridge = [[[DPHue sharedInstance] bridges] lastObject];
+    static dispatch_queue_t lightQueue = NULL;
+    if (lightQueue == NULL)
+        lightQueue = dispatch_queue_create("com.apple.aurora.light.q", DISPATCH_QUEUE_CONCURRENT);
+    
+    double delayInSeconds = 0.02;
+    
+//    for (DPHueLight *light in bridge.lights) {
+        DPHueLight *light = [bridge.lights objectAtIndex:0];
+        dispatch_time_t popTime = DISPATCH_TIME_NOW;
+        for (int i = 0; i < 10; i++) {
+            popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges addEntriesFromDictionary:@{
+                 @"on": @NO,
+                 @"bri": @0
+                 }];
+                light.transitionTime = @0;
+                [light write];
+            });
+            popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges addEntriesFromDictionary:@{
+                 @"on": @YES,
+                 @"bri": @255,
+                 @"hue" : @400,
+                 @"sat" : @200
+                 }];
+                light.transitionTime = @0;
+                [light write];
+            });
+//        }
+    }
 }
 #pragma mark -
 #pragma mark SPSession Delegates
@@ -134,12 +210,12 @@
 {
     if ([_spotifyLoginPanelController.window isModalPanel])
         [NSApp endSheet:_spotifyLoginPanelController.window returnCode:NSOKButton];
-
+    
     AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator initializeSharedInstance];
     [self.playbackObjectController setContent:playbackCoordinator];
     
     AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-    [_navController pushViewController:spotifyViewController animated:NO];    
+    [_navController pushViewController:spotifyViewController animated:NO];
 }
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
@@ -153,9 +229,8 @@
 - (void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error
 {
 	// Invoked by SPSession after a failed login.
-    NSLog(@"%@", error);
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
     [_spotifyLoginPanelController reset];
-    
 }
 
 - (void)sessionDidLogOut:(SPSession *)aSession
@@ -167,11 +242,6 @@
 {
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
 }
-
-//- (void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage
-//{
-//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, aMessage);
-//}
 
 - (IBAction)seekToPosition:(id)sender
 {

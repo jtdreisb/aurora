@@ -40,7 +40,6 @@
             [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylist, NSArray *notLoadedPlaylist) {
                 NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
                 [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
-                    NSLog(@"Playlist %@ has %ld tracks", playlist, [tracks count]);
                     [_trackArrayController setContent:loadedTracks];
                     if ([notLoadedTracks count] > 0) {
                         NSLog(@"Unloaded tracks from playlist: %@", notLoadedTracks);
@@ -72,16 +71,12 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
             [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
-                
                 NSMutableArray *playlists = [NSMutableArray array];
                 [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
-                NSLog(@"Loaded %ld playlists", [playlists count]);
                 [_playlistArrayController setContent:playlists];
                 [self tableView:_playlistTableView shouldSelectRow:0];
-                
             }];
         }];
     });
@@ -103,8 +98,6 @@
     songEditorViewController.track = [sender lastObject];
     [self pushViewController:songEditorViewController animated:YES];
 }
-
-
 
 - (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
 	

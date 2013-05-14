@@ -11,9 +11,8 @@
 @interface AUSongEditorViewController ()
 {
     IBOutlet NSArrayController *_timelineArrayController;
-    IBOutlet NSScrollView *_scrollView;
+    IBOutlet NSArrayController *_lightArrayController;
 }
-
 @end
 
 @implementation AUSongEditorViewController
@@ -27,7 +26,6 @@
 
 }
 
-
 - (IBAction)addRemoveLight:(id)sender
 {
     if ([sender isKindOfClass:[NSSegmentedControl class]]) {
@@ -35,6 +33,7 @@
         
         // Add
         if (segmentedControl.selectedSegment == 0) {
+//            SPTrack
             NSMutableDictionary *timelineDict = [NSMutableDictionary dictionary];
             timelineDict[@"index"] = @([_timelineArrayController.arrangedObjects count]);
             [_timelineArrayController addObject:timelineDict];
@@ -75,6 +74,7 @@
 
 - (IBAction)goBack:(id)sender
 {
+    // save the state
     [self popViewControllerAnimated:YES];
 }
 
