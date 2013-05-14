@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUEffectTimeline.h"
+#import "AUSongTimeline.h"
 
-@implementation AUEffectTimeline
+@implementation AUSongTimeline
 
 @end

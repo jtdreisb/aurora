@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class AUEffect;
+@interface AUSongTimeline : NSObject
 
-@interface AUEffectTimeline : NSObject
 
-//- (void)addEffect:(AUEffect *)effect atTime:(NSTimeInterval)trackPosition;
 
 @end
