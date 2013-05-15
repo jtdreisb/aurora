@@ -127,7 +127,7 @@
     
     NSMutableArray *scheduleArray = [NSMutableArray array];
     
-//    for (DPHueLight *light in bridge.lights) {
+    //    for (DPHueLight *light in bridge.lights) {
     
     DPHueLight *light = [bridge.lights objectAtIndex:0];
     for (int i = 0; i < 5; i++) {
@@ -163,8 +163,8 @@
         [scheduleArray addObject:schedule];
         
         date = [date dateByAddingTimeInterval:0.5];
-        }
-//    }
+    }
+    //    }
 }
 
 - (IBAction)testHueChangeDispatch:(id)sender
@@ -176,31 +176,31 @@
     
     double delayInSeconds = 0.02;
     
-//    for (DPHueLight *light in bridge.lights) {
-        DPHueLight *light = [bridge.lights objectAtIndex:0];
-        dispatch_time_t popTime = DISPATCH_TIME_NOW;
-        for (int i = 0; i < 10; i++) {
-            popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, lightQueue, ^(void){
-                [light.state.pendingChanges addEntriesFromDictionary:@{
-                 @"on": @NO,
-                 @"bri": @0
-                 }];
-                light.transitionTime = @0;
-                [light write];
-            });
-            popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, lightQueue, ^(void){
-                [light.state.pendingChanges addEntriesFromDictionary:@{
-                 @"on": @YES,
-                 @"bri": @255,
-                 @"hue" : @400,
-                 @"sat" : @200
-                 }];
-                light.transitionTime = @0;
-                [light write];
-            });
-//        }
+    //    for (DPHueLight *light in bridge.lights) {
+    DPHueLight *light = [bridge.lights objectAtIndex:0];
+    dispatch_time_t popTime = DISPATCH_TIME_NOW;
+    for (int i = 0; i < 10; i++) {
+        popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, lightQueue, ^(void){
+            [light.state.pendingChanges addEntriesFromDictionary:@{
+             @"on": @NO,
+             @"bri": @0
+             }];
+            light.transitionTime = @0;
+            [light write];
+        });
+        popTime = dispatch_time(popTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, lightQueue, ^(void){
+            [light.state.pendingChanges addEntriesFromDictionary:@{
+             @"on": @YES,
+             @"bri": @255,
+             @"hue" : @400,
+             @"sat" : @200
+             }];
+            light.transitionTime = @0;
+            [light write];
+        });
+        //        }
     }
 }
 #pragma mark -
@@ -253,26 +253,22 @@
 }
 
 
-- (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
-	
-	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
-	
-	for (SPPlaylistItem *anItem in items) {
-		if (anItem.itemClass == [SPTrack class]) {
-			[tracks addObject:anItem.item];
-		}
-	}
-	
-	return [NSArray arrayWithArray:tracks];
-}
-
-
 #pragma mark -
 #pragma Playback Coordinator Actions
 
 - (IBAction)playPause:(id)sender
 {
     // l
+}
+
+- (IBAction)nextTrack:(id)sender
+{
+    [[AUPlaybackCoordinator sharedInstance] nextTrack];
+}
+
+- (IBAction)previousTrack:(id)sender
+{
+    [[AUPlaybackCoordinator sharedInstance] previousTrack];
 }
 
 - (IBAction)seekToPosition:(id)sender

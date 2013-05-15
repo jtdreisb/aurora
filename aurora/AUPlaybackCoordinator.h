@@ -14,7 +14,10 @@
 + (id)sharedInstance;
 + (id)initializeSharedInstance;
 
-@property (strong) SPPlaylist *currentPlaylist;
+@property (nonatomic, strong) SPPlaylist *currentPlaylist;
+
+- (void)previousTrack;
+- (void)nextTrack;
 
 @property (readonly) NSString *trackPositionString;
 
