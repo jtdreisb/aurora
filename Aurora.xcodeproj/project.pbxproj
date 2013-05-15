@@ -166,6 +166,10 @@
 		33DA0CD21731E74D008C2004 /* AUInfoRoundDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 33DA0C601731E74D008C2004 /* AUInfoRoundDown.tiff */; };
 		33DA0CD51731E994008C2004 /* AUSpotifyLoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DA0CD41731E994008C2004 /* AUSpotifyLoginPanel.xib */; };
 		33DA0CD81731E9A6008C2004 /* AUSpotifyLoginPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DA0CD71731E9A6008C2004 /* AUSpotifyLoginPanelController.m */; };
+		33EA05A51742AE7500747A37 /* AULastSong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EA05A11742AE2200747A37 /* AULastSong@2x.png */; };
+		33EA05A61742AE7500747A37 /* AUNextSong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EA05A21742AE3300747A37 /* AUNextSong@2x.png */; };
+		33EA05A71742AE7500747A37 /* AUPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EA05A31742AE4300747A37 /* AUPause@2x.png */; };
+		33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EA05A41742AE5B00747A37 /* AUPlay@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,6 +389,10 @@
 		33DA0CD41731E994008C2004 /* AUSpotifyLoginPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyLoginPanel.xib; sourceTree = "<group>"; };
 		33DA0CD61731E9A6008C2004 /* AUSpotifyLoginPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyLoginPanelController.h; sourceTree = "<group>"; };
 		33DA0CD71731E9A6008C2004 /* AUSpotifyLoginPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyLoginPanelController.m; sourceTree = "<group>"; };
+		33EA05A11742AE2200747A37 /* AULastSong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AULastSong@2x.png"; sourceTree = "<group>"; };
+		33EA05A21742AE3300747A37 /* AUNextSong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUNextSong@2x.png"; sourceTree = "<group>"; };
+		33EA05A31742AE4300747A37 /* AUPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUPause@2x.png"; sourceTree = "<group>"; };
+		33EA05A41742AE5B00747A37 /* AUPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUPlay@2x.png"; sourceTree = "<group>"; };
 		3A3FEE7661E84839AA6DBCFA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		46E59A15738343AEB60F48BB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -667,6 +675,10 @@
 				33B14120174208BA007CC2E4 /* AULastSong.png */,
 				33B14122174208C7007CC2E4 /* AUNextSong.png */,
 				33DA0C601731E74D008C2004 /* AUInfoRoundDown.tiff */,
+				33EA05A11742AE2200747A37 /* AULastSong@2x.png */,
+				33EA05A21742AE3300747A37 /* AUNextSong@2x.png */,
+				33EA05A31742AE4300747A37 /* AUPause@2x.png */,
+				33EA05A41742AE5B00747A37 /* AUPlay@2x.png */,
 				33DA0C0D1731E74D008C2004 /* AULighterGreenStatusBead.png */,
 				33DA0C0E1731E74D008C2004 /* AULighterGreenStatusBead@2x.png */,
 				33DA0C0F1731E74D008C2004 /* AULightGreenStatusBead.png */,
@@ -979,6 +991,10 @@
 				33B1411F174206E5007CC2E4 /* AUPause.png in Resources */,
 				33B14121174208BA007CC2E4 /* AULastSong.png in Resources */,
 				33B14123174208C7007CC2E4 /* AUNextSong.png in Resources */,
+				33EA05A51742AE7500747A37 /* AULastSong@2x.png in Resources */,
+				33EA05A61742AE7500747A37 /* AUNextSong@2x.png in Resources */,
+				33EA05A71742AE7500747A37 /* AUPause@2x.png in Resources */,
+				33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

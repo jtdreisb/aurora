@@ -16,4 +16,6 @@
 
 @property (strong) SPPlaylist *currentPlaylist;
 
+@property (readonly) NSString *trackPositionString;
+
 @end

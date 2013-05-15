@@ -44,5 +44,19 @@ static AUPlaybackCoordinator *sharedInstance = nil;
     [super sessionDidEndPlayback:aSession];
 }
 
++ (NSSet *)keyPathsForValuesAffectingTrackPositionString
+{
+    return [NSSet setWithArray:@[@"trackPosition"]];
+}
+
+- (NSString *)trackPositionString
+{
+    if (self.currentTrack == nil)
+        return @"";
+    int min = self.trackPosition/60;
+    int sec = self.trackPosition - (min * 60);
+    return [NSString stringWithFormat:@"%02d:%02d", min, sec];
+}
+
 
 @end

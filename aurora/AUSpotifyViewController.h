@@ -13,5 +13,6 @@
 
 - (void)editSong:(id)sender;
 
+- (SPSession *)spotifySession;
 
 @end

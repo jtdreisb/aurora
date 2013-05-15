@@ -243,14 +243,6 @@
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
 }
 
-- (IBAction)seekToPosition:(id)sender
-{
-    if ([sender isKindOfClass:[NSSlider class]]) {
-        NSSlider *slider = sender;
-        [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:slider.doubleValue];
-    }
-}
-
 - (void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
     
 	[[NSAlert alertWithMessageText:aMessage
@@ -274,6 +266,22 @@
 	return [NSArray arrayWithArray:tracks];
 }
 
+
+#pragma mark -
+#pragma Playback Coordinator Actions
+
+- (IBAction)playPause:(id)sender
+{
+    // l
+}
+
+- (IBAction)seekToPosition:(id)sender
+{
+    if ([sender isKindOfClass:[NSSlider class]]) {
+        NSSlider *slider = sender;
+        [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:slider.doubleValue];
+    }
+}
 
 
 @end

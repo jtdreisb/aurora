@@ -21,6 +21,11 @@
 
 @implementation AUSpotifyViewController
 
+- (SPSession *)spotifySession
+{
+    return [SPSession sharedSession];
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -37,6 +42,7 @@
     if (tableView == _playlistTableView) {
         if ([_playlistArrayController.arrangedObjects count] > 0) {
             SPPlaylist *playlist = [_playlistArrayController.arrangedObjects objectAtIndex:row];
+            NSLog(@"%@", playlist);
             [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylist, NSArray *notLoadedPlaylist) {
                 NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
                 [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
@@ -56,12 +62,6 @@
     if (tableView == _playlistTableView) {
         SPPlaylist *shownPlaylist = [_playlistArrayController.arrangedObjects objectAtIndex:row];
         [shownPlaylist startLoading];
-        double delayInSeconds = 1.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [tableView reloadData];
-        });
-        
     }
 }
 
@@ -69,17 +69,30 @@
 
 - (void)viewWillAppear: (BOOL)animated
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-            [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
-                NSMutableArray *playlists = [NSMutableArray array];
-                [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
-                [_playlistArrayController setContent:playlists];
-                [self tableView:_playlistTableView shouldSelectRow:0];
-            }];
+    [self willChangeValueForKey:@"spotifySession"];
+    
+    [SPAsyncLoading waitUntilLoaded:self.spotifySession timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+        
+        [SPAsyncLoading waitUntilLoaded:self.spotifySession.userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
+        
+            [self tableView:_playlistTableView shouldSelectRow:0];
         }];
-    });
+    }];
+    [self didChangeValueForKey:@"spotifySession"];
+    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+//            [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
+//                NSLog(@"%@", loadedContainers);
+//                NSMutableArray *playlists = [NSMutableArray array];
+//                [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
+//
+//                [_playlistArrayController setContent:playlists];
+//                [self tableView:_playlistTableView shouldSelectRow:0];
+//            }];
+//        }];
+//    });
 }
 
 - (void)editSong:(id)sender
