@@ -7,12 +7,24 @@
 //
 
 #import "AUStrobe.h"
+#import <DPHueLight.h>
+
+#define kDefaultChangeTimeInterval 0.1
+
 
 @implementation AUStrobe
 
-- (id)initWithFrequency:(NSNumber *)frequency
+- (id)init
 {
     self = [super init];
+    if (self != nil) {
+    }
+    return self;
+}
+
+- (id)initWithFrequency:(NSTimeInterval)frequency
+{
+    self = [self init];
     if (self != nil) {
         _frequency = frequency;
     }
@@ -43,5 +55,46 @@
     return @"AUEffectEditView";
 }
 
+- (NSDictionary *)payloads
+{
+    NSMutableDictionary *payloads = [NSMutableDictionary dictionary];
+    NSNumber *dispatchTime = [NSNumber numberWithDouble:self.startTime];
+    NSNumber *endTime = [NSNumber numberWithDouble:(self.startTime + self.duration)];
+    
+    NSTimeInterval intervalStep = kDefaultChangeTimeInterval;
+    if (self.frequency > 0) {
+        intervalStep = 1.0 / self.frequency;
+    }
+    
+    DPHueLight *light = [[DPHueLight alloc] initWithBridge:nil];
+    while ([dispatchTime isLessThan:endTime]) {
+        NSMutableDictionary *payload = nil;
+        // ON
+        if (self.color != nil) {
+            light.color = self.color;
+        }
+        else {
+            light.color = [NSColor whiteColor];
+        }
+        payload = [light.state.pendingChanges mutableCopy];
+        [payload setObject:@YES forKey:@"on"];
+        [payload setObject:@(self.transitionTime) forKey:@"transitiontime"];
+        
+        [payloads setObject:payload forKey:dispatchTime];
+        dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
+        
+        [light.pendingChanges removeAllObjects];
+        
+        [payloads setObject:@{
+         @"on" : @NO,
+         @"bri": @0,
+         @"transitiontime" : @(self.transitionTime)
+         } forKey:dispatchTime];
+        
+        dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
+    }
+    
+    return payloads;
+}
 
 @end

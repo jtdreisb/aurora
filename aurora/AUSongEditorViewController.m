@@ -7,6 +7,7 @@
 //
 
 #import "AUSongEditorViewController.h"
+#import "AUPlaybackCoordinator.h"
 
 @interface AUSongEditorViewController ()
 {
@@ -16,6 +17,26 @@
 @end
 
 @implementation AUSongEditorViewController
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self != nil) {
+        [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"currentTrack" options:0 context:nil];
+    }
+    return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)dealloc
+{
+    [[AUPlaybackCoordinator sharedInstance] removeObserver:self forKeyPath:@"currentTrack"];
+}
 
 #pragma mark - BFViewController Additions
 /**

@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
 
-@interface AUSpotifyViewController : NSViewController <NSTableViewDelegate, SPSessionDelegate, SPPlaybackManagerDelegate>
+@interface AUSpotifyViewController : NSViewController <NSTableViewDelegate, SPSessionDelegate>
 
 - (void)editSong:(id)sender;
 

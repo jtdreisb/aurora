@@ -7,9 +7,9 @@
 //
 
 #import "AUPlaybackCoordinator.h"
+#import "SPPlaylist+AUAdditions.h"
 
 @interface AUPlaybackCoordinator ()
-- (NSArray *)playlistTracks;
 @end
 
 @implementation AUPlaybackCoordinator
@@ -71,7 +71,7 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 - (void)playTrack:(SPTrack *)aTrack callback:(SPErrorableOperationCallback)block
 {
     if (self.currentPlaylist != nil) {
-        NSUInteger trackIndex = [self.playlistTracks indexOfObject:aTrack];
+        NSUInteger trackIndex = [self.currentPlaylist.tracks indexOfObject:aTrack];
         if (trackIndex != NSNotFound) {
             _currentTrackIndex = trackIndex;
         }
@@ -87,7 +87,7 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 {
     if (_currentPlaylist != currentPlaylist) {
         _currentPlaylist = currentPlaylist;
-        [self playTrack:self.playlistTracks[0] callback:^(NSError *error) {
+        [self playTrack:self.currentPlaylist.tracks[0] callback:^(NSError *error) {
             self.isPlaying = NO;
         }];
     }
@@ -98,12 +98,12 @@ static AUPlaybackCoordinator *sharedInstance = nil;
     if (self.currentPlaylist != nil) {
         NSInteger nextTrackIndex;
         if (_currentTrackIndex == 0) {
-            nextTrackIndex = self.playlistTracks.count - 1;
+            nextTrackIndex = self.currentPlaylist.tracks.count - 1;
         }
         else {
             nextTrackIndex = _currentTrackIndex - 1;
         }
-        [self playTrack:self.playlistTracks[nextTrackIndex] callback:^(NSError *error) {
+        [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
             if (error != nil) {
                 NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
             }
@@ -115,29 +115,15 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 {
     if (self.currentPlaylist != nil) {
         NSUInteger nextTrackIndex = _currentTrackIndex + 1;
-        if (nextTrackIndex >= self.playlistTracks.count) {
+        if (nextTrackIndex >= self.currentPlaylist.tracks.count) {
             nextTrackIndex = 0;
         }
-        [self playTrack:self.playlistTracks[nextTrackIndex] callback:^(NSError *error) {
+        [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
             if (error != nil) {
                 NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
             }
         }];
     }
-}
-
-- (NSArray *)playlistTracks
-{
-	if (self.currentPlaylist != nil) {
-        NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:self.currentPlaylist.items.count];
-        for (SPPlaylistItem *anItem in self.currentPlaylist.items) {
-            if (anItem.itemClass == [SPTrack class]) {
-                [tracks addObject:anItem.item];
-            }
-        }
-        return [NSArray arrayWithArray:tracks];
-    }
-    return nil;
 }
 
 @end

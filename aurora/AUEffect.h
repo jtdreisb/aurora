@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AUEffect : NSObject
+@interface AUEffect : NSObject <NSCoding>
 
 #pragma mark - Readonly properties
 
@@ -19,11 +19,12 @@
 
 #pragma mark - Settable Properties
 
-@property (strong) NSNumber *duration;
+@property NSTimeInterval startTime;
+@property NSTimeInterval duration;
 
-#pragma mark - Actions
+#pragma mark - Delegate
 
-- (void)start;
-- (void)stop;
+// Returns an NSDictionary of json payoloads keyed by their start time
+- (NSDictionary *)payloads;
 
 @end

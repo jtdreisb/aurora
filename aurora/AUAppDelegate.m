@@ -13,6 +13,8 @@
 #import "AUEffectTestViewController.h"
 #import "AUPlaybackCoordinator.h"
 
+#import "AUStrobe.h"
+
 
 @implementation AUAppDelegate
 {
@@ -115,6 +117,8 @@
 {
     NSUInteger index = 0;
     for (DPHueBridge *bridge in [[DPHue sharedInstance] bridges]) {
+        [bridge readWithCompletion:^(id object, NSError *err) {
+        }];
         NSLog(@"%lu: %@", (unsigned long)index, bridge);
     }
 }
@@ -167,13 +171,180 @@
     //    }
 }
 
+- (IBAction)testEffect:(id)sender
+{
+    static dispatch_queue_t lightQueue = NULL;
+    if (lightQueue == NULL)
+        lightQueue = dispatch_queue_create("com.apple.aurora.light.q2", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_time_t startTime = DISPATCH_TIME_NOW;
+    {
+        DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:3];
+        AUStrobe *strobeEffect = [[AUStrobe alloc] init];
+        strobeEffect.color = [NSColor blueColor];
+
+        strobeEffect.startTime = 0;
+        strobeEffect.duration = 20.0;
+        strobeEffect.frequency = 1.05263;
+        NSDictionary *payloads = strobeEffect.payloads;
+
+        for (NSNumber *dispatchTime in payloads.allKeys)
+        {
+            double delayInSeconds = [dispatchTime doubleValue];
+            dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                [light.state.pendingChanges addEntriesFromDictionary:payloads[dispatchTime]];
+                [light write];
+            });
+        }
+    }
+    {
+        DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:4];
+        AUStrobe *strobeEffect = [[AUStrobe alloc] init];
+        strobeEffect.color = [NSColor redColor];
+        strobeEffect.startTime = .475;
+        strobeEffect.duration = 20.0;
+        strobeEffect.frequency = 1.05263;
+        NSDictionary *payloads = strobeEffect.payloads;
+        for (NSNumber *dispatchTime in payloads.allKeys)
+        {
+            double delayInSeconds = [dispatchTime doubleValue];
+            dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                [light.state.pendingChanges addEntriesFromDictionary:payloads[dispatchTime]];
+                [light write];
+            });
+        }
+    }
+    {
+        DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:0];
+        double interval = 3.8;
+        double gotime = 0.9;
+        
+        NSMutableDictionary *payloads = [NSMutableDictionary dictionary];
+
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor greenColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor purpleColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor redColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor orangeColor]} forKey:@(gotime)];
+        gotime += interval;
+        for (NSNumber *dispatchTime in payloads.allKeys)
+        {
+            double delayInSeconds = [dispatchTime doubleValue];
+            dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.on = YES;
+                light.color = payloads[dispatchTime][@"color"];
+                light.brightness = @255;
+                light.transitionTime = @4;
+                [light write];
+            });
+            dispatch_after(dispatch_time(popTime, (int64_t)(0.2 * NSEC_PER_SEC)), lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.brightness = @50;
+                light.transitionTime =  @20;
+                [light write];
+            });
+        }
+    }
+    {
+        DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:1];
+        double interval = 3.8;
+        double gotime = 0.9;
+        
+        NSMutableDictionary *payloads = [NSMutableDictionary dictionary];
+        
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor greenColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor purpleColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor redColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor orangeColor]} forKey:@(gotime)];
+        gotime += interval;
+        for (NSNumber *dispatchTime in payloads.allKeys)
+        {
+            double delayInSeconds = [dispatchTime doubleValue];
+            dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.on = YES;
+                light.color = payloads[dispatchTime][@"color"];
+                light.brightness = @255;
+                light.transitionTime = @4;
+                [light write];
+            });
+            dispatch_after(dispatch_time(popTime, (int64_t)(0.2 * NSEC_PER_SEC)), lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.brightness = @50;
+                light.transitionTime =  @20;
+                [light write];
+            });
+        }
+    }
+    {
+        DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:2];
+        double interval = 3.8;
+        double gotime = 0.9;
+        
+        NSMutableDictionary *payloads = [NSMutableDictionary dictionary];
+        
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor greenColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor purpleColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor redColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
+        gotime += interval;
+        [payloads setObject:@{@"color": [NSColor orangeColor]} forKey:@(gotime)];
+        gotime += interval;
+        for (NSNumber *dispatchTime in payloads.allKeys)
+        {
+            double delayInSeconds = [dispatchTime doubleValue];
+            dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.on = YES;
+                light.color = payloads[dispatchTime][@"color"];
+                light.brightness = @255;
+                light.transitionTime = @4;
+                [light write];
+            });
+            dispatch_after(dispatch_time(popTime, (int64_t)(0.2 * NSEC_PER_SEC)), lightQueue, ^(void){
+                [light.state.pendingChanges removeAllObjects];
+                light.brightness = @50;
+                light.transitionTime =  @20;
+                [light write];
+            });
+        }
+    }
+    
+}
+
 - (IBAction)testHueChangeDispatch:(id)sender
 {
     DPHueBridge *bridge = [[[DPHue sharedInstance] bridges] lastObject];
+    
     static dispatch_queue_t lightQueue = NULL;
     if (lightQueue == NULL)
         lightQueue = dispatch_queue_create("com.apple.aurora.light.q", DISPATCH_QUEUE_CONCURRENT);
-    
     double delayInSeconds = 0.02;
     
     //    for (DPHueLight *light in bridge.lights) {

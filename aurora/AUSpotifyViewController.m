@@ -9,6 +9,9 @@
 #import "AUSpotifyViewController.h"
 #import "AUSongEditorViewController.h"
 #import "AUPlaybackCoordinator.h"
+#import "SPPlaylist+AUAdditions.m"
+#import <CocoaLibSpotify/CocoaLibSpotify.h>
+#import "SPTrack+AUAdditions.h"
 
 @interface AUSpotifyViewController ()
 {
@@ -43,8 +46,7 @@
         if ([_playlistArrayController.arrangedObjects count] > 0) {
             SPPlaylist *playlist = [_playlistArrayController.arrangedObjects objectAtIndex:row];
             [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylist, NSArray *notLoadedPlaylist) {
-                NSArray *tracks = [self tracksFromPlaylistItems:playlist.items];
-                [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+                [SPAsyncLoading waitUntilLoaded:playlist.tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
                     [_trackArrayController setContent:loadedTracks];
                     if ([notLoadedTracks count] > 0) {
                         NSLog(@"Unloaded tracks from playlist: %@", notLoadedTracks);
@@ -102,22 +104,9 @@
             NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
         }
     }];
+    
     AUSongEditorViewController *songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
-    songEditorViewController.track = [sender lastObject];
     [self pushViewController:songEditorViewController animated:YES];
-}
-
-- (NSArray *)tracksFromPlaylistItems:(NSArray *)items {
-	
-	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
-	
-	for (SPPlaylistItem *anItem in items) {
-		if (anItem.itemClass == [SPTrack class]) {
-			[tracks addObject:anItem.item];
-		}
-	}
-	
-	return [NSArray arrayWithArray:tracks];
 }
 
 @end

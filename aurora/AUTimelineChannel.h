@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AUTimelineChannel : NSObject
+@class AUTimeline;
+@class AUEffect;
+
+@interface AUTimelineChannel : NSObject <NSCoding>
+
+@property (weak) AUTimeline *timeline;
+
+- (void)addEffect:(AUEffect *)effect;
+
+- (NSArray *)allEffects;
+
+- (NSArray *)effectsFrom:(NSTimeInterval)begin to:(NSTimeInterval)end;
 
 @end

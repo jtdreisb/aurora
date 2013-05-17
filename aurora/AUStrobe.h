@@ -10,8 +10,11 @@
 
 @interface AUStrobe : AUEffect
 
-@property (strong) NSNumber *frequency;
+@property (strong) NSColor *color;
 
-- (id)initWithFrequency:(NSNumber *)frequency;
+@property NSTimeInterval frequency;
+@property NSTimeInterval transitionTime;
+
+- (id)initWithFrequency:(NSTimeInterval)frequency;
 
 @end
