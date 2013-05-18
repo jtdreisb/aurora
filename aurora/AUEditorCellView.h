@@ -2,7 +2,7 @@
 //  AUEditorCellView.h
 //  Aurora
 //
-//  Created by Jason Dreisbach on 5/4/13.
+//  Created by Jason Dreisbach on 5/17/13.
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 

@@ -20,14 +20,27 @@
     return propertyDictionary;
 }
 
-- (NSString *)backgroundPatternImageName
+- (NSMutableDictionary *)au_properties
 {
     return [[[self class] au_propertyDictionary] objectForKey:[NSValue valueWithPointer:(__bridge const void *)(self)]];
 }
 
+- (void)au_saveProperties:(NSMutableDictionary *)objectProperties
+{
+    [[[self class] au_propertyDictionary] setObject:objectProperties forKey:[NSValue valueWithPointer:(__bridge const void *)(self)]];
+}
+
+- (NSString *)backgroundPatternImageName
+{
+    NSMutableDictionary *objectProperties = [self au_properties];
+    return objectProperties[@"backgroundPatternImageName"];
+}
+
 - (void)setBackgroundPatternImageName:(NSString *)backgroundPatternImageName
 {
-    [[[self class] au_propertyDictionary] setObject:backgroundPatternImageName forKey:[NSValue valueWithPointer:(__bridge const void *)(self)]];
+    NSMutableDictionary *objectProperties = [self au_properties] ?: [NSMutableDictionary dictionary];
+    objectProperties[@"backgroundPatternImageName"] = backgroundPatternImageName;
+    [self au_saveProperties:objectProperties];
 }
 
 + (CGPathRef)clippingPathWithRect:(NSRect)rect andRadius:(CGFloat)radius

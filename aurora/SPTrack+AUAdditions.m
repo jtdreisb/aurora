@@ -31,7 +31,7 @@
 
 - (void)saveTimeline
 {
-
+    [self.timeline writeToFile:self.timelineFilePath];
 }
 
 @end

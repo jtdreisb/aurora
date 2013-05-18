@@ -19,6 +19,7 @@
     IBOutlet NSArrayController *_playlistArrayController;
     IBOutlet NSTableView *_trackTableView;
     IBOutlet NSArrayController *_trackArrayController;
+    AUSongEditorViewController *_songEditorViewController; 
 }
 @end
 
@@ -105,9 +106,10 @@
             NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
         }
     }];
-    
-    AUSongEditorViewController *songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
-    [self pushViewController:songEditorViewController animated:YES];
+    if (_songEditorViewController == nil) {
+        _songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
+    }
+    [self pushViewController:_songEditorViewController animated:YES];
 }
 
 @end

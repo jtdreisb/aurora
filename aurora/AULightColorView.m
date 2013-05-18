@@ -33,10 +33,11 @@
     [self removeObserver:self forKeyPath:@"color"];
 }
 
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    [self setNeedsDisplay:YES];
+    if (object == self && [keyPath isEqualToString:@"color"]) {
+        [self setNeedsDisplay:YES];
+    }
 }
 
 

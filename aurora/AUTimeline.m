@@ -14,19 +14,13 @@
 
 @implementation AUTimeline
 {
-    NSMutableArray *_channels;
+    NSArrayController *_channelArrayController;
 }
-
-@synthesize channels = _channels;
 
 - (id)initWithContentsOfPath:(NSString *)filePath
 {
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    if (data != nil) {
-        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        self = [self initWithCoder:unarchiver];
-    }
-    else {
+    self = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    if (self == nil) {
         self = [self init];
     }
     return self;
@@ -36,7 +30,7 @@
 {
     self = [super init];
     if (self != nil) {
-        _channels = [NSMutableArray array];
+        _channelArrayController = [[NSArrayController alloc] init];
     }
     return self;
 }
@@ -45,14 +39,14 @@
 {
     self = [self init];
     if (self != nil) {
-        _channels = [aDecoder decodeObjectForKey:kChannelsKey];
+        [_channelArrayController addObjects:[aDecoder decodeObjectForKey:kChannelsKey]];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:_channels forKey:kChannelsKey];
+    [aCoder encodeObject:_channelArrayController.arrangedObjects forKey:kChannelsKey];
 }
 
 - (void)writeToFile:(NSString *)filePath
@@ -67,21 +61,20 @@
     }
 }
 
-#pragma mark - Channel Management
-
-- (void)addNewChannel
+- (NSArray *)channels
 {
-    [self willChangeValueForKey:@"channels"];
-    [_channels addObject:[[AUTimelineChannel alloc] init]];
-    [self didChangeValueForKey:@"channels"];
+    return _channelArrayController.arrangedObjects;
 }
 
-- (void)removeChannel:(AUTimelineChannel *)channelToRemove
+- (void)addChannel:(AUTimelineChannel *)channel
 {
-    [self willChangeValueForKey:@"channels"];
-    [_channels removeObject:channelToRemove];
-    [self didChangeValueForKey:@"channels"];
+    channel.timeline = self;
+    [_channelArrayController addObject:channel];
 }
 
+- (void)removeChannel:(AUTimelineChannel *)channel
+{
+    [_channelArrayController remove:channel];
+}
 
 @end

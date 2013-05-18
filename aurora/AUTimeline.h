@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @class AUTimelineChannel;
-@class AUEffect;
 
 @interface AUTimeline : NSObject <NSCoding>
 
 - (id)initWithContentsOfPath:(NSString *)filePath;
 - (void)writeToFile:(NSString *)filePath;
 
-@property (readonly) NSArray *channels;
-
-- (void)addNewChannel;
-- (void)removeChannel:(AUTimelineChannel *)channelToRemove;
+- (NSArray *)channels;
+- (void)addChannel:(AUTimelineChannel *)channel;
+- (void)removeChannel:(AUTimelineChannel *)channel;
 
 @end

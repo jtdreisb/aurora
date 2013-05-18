@@ -10,12 +10,16 @@
 
 @class AUTimeline;
 @class AUEffect;
+@class DPHueLight;
 
 @interface AUTimelineChannel : NSObject <NSCoding>
 
 @property (weak) AUTimeline *timeline;
 
+@property (strong) DPHueLight *light;
+
 - (void)addEffect:(AUEffect *)effect;
+- (void)removeEffect:(AUEffect *)effect;
 
 - (NSArray *)allEffects;
 

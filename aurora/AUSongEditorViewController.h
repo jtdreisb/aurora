@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#include <CocoaLibSpotify/CocoaLibSpotify.h>
 
-@interface AUSongEditorViewController : NSViewController <NSTableViewDataSource>
+@class AUTimeline;
 
-@property (strong) SPTrack *track;
+@interface AUSongEditorViewController : NSViewController <NSTableViewDelegate,NSTableViewDataSource>
+
+@property (readonly) AUTimeline *timeline;
 
 @end

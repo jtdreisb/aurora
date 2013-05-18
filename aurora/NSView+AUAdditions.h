@@ -10,6 +10,9 @@
 
 @interface NSView (AUAdditions)
 
+- (NSMutableDictionary *)au_properties;
+- (void)au_saveProperties:(NSMutableDictionary *)objectProperties;
+
 @property (strong) NSString *backgroundPatternImageName;
 
 + (CGPathRef)clippingPathWithRect:(NSRect)rect andRadius:(CGFloat)radius;

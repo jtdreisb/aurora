@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import "AUTimelineView.h"
+#import "AUChannelView.h"
 #import "NSView+AUAdditions.h"
 
-@implementation AUTimelineView
+@implementation AUChannelView
 
 - (void)drawRect:(NSRect)dirtyRect
 {

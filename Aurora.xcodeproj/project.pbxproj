@@ -14,6 +14,9 @@
 		331A811E174701B500A8E5D5 /* SPMediaKeyTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		331A8121174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		331A81231747051800A8E5D5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331A81221747051700A8E5D5 /* Carbon.framework */; };
+		331A812E17472B7B00A8E5D5 /* AUEditorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */; };
+		331A8132174755C300A8E5D5 /* AUDummyLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A8131174755C300A8E5D5 /* AUDummyLight.m */; };
+		331A81341747644300A8E5D5 /* scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = 331A81331747644200A8E5D5 /* scroll.png */; };
 		332E61CE1731D964008C8025 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61CD1731D964008C8025 /* Cocoa.framework */; };
 		332E61D81731D964008C8025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 332E61D61731D964008C8025 /* InfoPlist.strings */; };
 		332E61DA1731D964008C8025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61D91731D964008C8025 /* main.m */; };
@@ -43,7 +46,6 @@
 		336BE1291733244E0069C92C /* AUStrobe.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE1271733244E0069C92C /* AUStrobe.m */; };
 		336BE12A1733244E0069C92C /* AUSuccess.icns in Resources */ = {isa = PBXBuildFile; fileRef = 336BE1281733244E0069C92C /* AUSuccess.icns */; };
 		336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE12D173324BB0069C92C /* AULightTableCellView.m */; };
-		336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */; };
 		336FBD611735C311008A8C01 /* AULightCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FBD601735C311008A8C01 /* AULightCellView.m */; };
 		3385365E17434CEC00238D97 /* AUHueLight.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3385365D17434CEC00238D97 /* AUHueLight.icns */; };
 		338536621745B8DD00238D97 /* SPPlaylist+AUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 338536611745B8DD00238D97 /* SPPlaylist+AUAdditions.m */; };
@@ -58,7 +60,7 @@
 		33B1411F174206E5007CC2E4 /* AUPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1411E174206E5007CC2E4 /* AUPause.png */; };
 		33B14121174208BA007CC2E4 /* AULastSong.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B14120174208BA007CC2E4 /* AULastSong.png */; };
 		33B14123174208C7007CC2E4 /* AUNextSong.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B14122174208C7007CC2E4 /* AUNextSong.png */; };
-		33CC93511735C36800F67A99 /* AUTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93501735C36800F67A99 /* AUTimelineView.m */; };
+		33CC93511735C36800F67A99 /* AUChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93501735C36800F67A99 /* AUChannelView.m */; };
 		33CC93581735CEAF00F67A99 /* NSView+AUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */; };
 		33CC935B1735D75100F67A99 /* AUScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC935A1735D75100F67A99 /* AUScrollView.m */; };
 		33DA0C611731E74D008C2004 /* AULineQuadTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33DA0BEF1731E74D008C2004 /* AULineQuadTemplate.pdf */; };
@@ -216,6 +218,11 @@
 		331A811F174702F700A8E5D5 /* NSObject+SPInvocationGrabbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPInvocationGrabbing.h"; sourceTree = "<group>"; };
 		331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPInvocationGrabbing.m"; sourceTree = "<group>"; };
 		331A81221747051700A8E5D5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		331A812C17472B7B00A8E5D5 /* AUEditorCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEditorCellView.h; sourceTree = "<group>"; };
+		331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEditorCellView.m; sourceTree = "<group>"; };
+		331A8130174755C300A8E5D5 /* AUDummyLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDummyLight.h; sourceTree = "<group>"; };
+		331A8131174755C300A8E5D5 /* AUDummyLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDummyLight.m; sourceTree = "<group>"; };
+		331A81331747644200A8E5D5 /* scroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scroll.png; path = ../../../Desktop/scroll.png; sourceTree = "<group>"; };
 		332E61CA1731D964008C8025 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332E61CD1731D964008C8025 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		332E61D01731D964008C8025 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -231,8 +238,8 @@
 		332E61E31731D964008C8025 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		332E61F51731DACD008C8025 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "submodule/cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
 		332E62011731DB2C008C8025 /* appkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appkey.h; sourceTree = "<group>"; };
-		3349D2201735DB8600648144 /* AUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUView.h; path = Aurora/AUView.h; sourceTree = "<group>"; };
-		3349D2211735DB8600648144 /* AUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AUView.m; path = Aurora/AUView.m; sourceTree = "<group>"; };
+		3349D2201735DB8600648144 /* AUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUView.h; sourceTree = "<group>"; };
+		3349D2211735DB8600648144 /* AUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUView.m; sourceTree = "<group>"; };
 		3349D2231735DD6200648144 /* AULightIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightIndexTransformer.h; sourceTree = "<group>"; };
 		3349D2241735DD6300648144 /* AULightIndexTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightIndexTransformer.m; sourceTree = "<group>"; };
 		3349D2271735EAF400648144 /* AUTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimeline.h; sourceTree = "<group>"; };
@@ -267,8 +274,6 @@
 		336BE1281733244E0069C92C /* AUSuccess.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AUSuccess.icns; sourceTree = "<group>"; };
 		336BE12C173324BB0069C92C /* AULightTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightTableCellView.h; sourceTree = "<group>"; };
 		336BE12D173324BB0069C92C /* AULightTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightTableCellView.m; sourceTree = "<group>"; };
-		336FBD5B1735C2F9008A8C01 /* AUEditorCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEditorCellView.h; sourceTree = "<group>"; };
-		336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEditorCellView.m; sourceTree = "<group>"; };
 		336FBD5F1735C311008A8C01 /* AULightCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightCellView.h; sourceTree = "<group>"; };
 		336FBD601735C311008A8C01 /* AULightCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightCellView.m; sourceTree = "<group>"; };
 		3385365D17434CEC00238D97 /* AUHueLight.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AUHueLight.icns; path = ../AUHueLight.icns; sourceTree = "<group>"; };
@@ -292,12 +297,12 @@
 		33B1411E174206E5007CC2E4 /* AUPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUPause.png; sourceTree = "<group>"; };
 		33B14120174208BA007CC2E4 /* AULastSong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULastSong.png; sourceTree = "<group>"; };
 		33B14122174208C7007CC2E4 /* AUNextSong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUNextSong.png; sourceTree = "<group>"; };
-		33CC934F1735C36800F67A99 /* AUTimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimelineView.h; sourceTree = "<group>"; };
-		33CC93501735C36800F67A99 /* AUTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTimelineView.m; sourceTree = "<group>"; };
-		33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+AUAdditions.h"; path = "Aurora/NSView+AUAdditions.h"; sourceTree = "<group>"; };
-		33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+AUAdditions.m"; path = "Aurora/NSView+AUAdditions.m"; sourceTree = "<group>"; };
-		33CC93591735D75100F67A99 /* AUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUScrollView.h; path = Aurora/AUScrollView.h; sourceTree = "<group>"; };
-		33CC935A1735D75100F67A99 /* AUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AUScrollView.m; path = Aurora/AUScrollView.m; sourceTree = "<group>"; };
+		33CC934F1735C36800F67A99 /* AUChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUChannelView.h; sourceTree = "<group>"; };
+		33CC93501735C36800F67A99 /* AUChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUChannelView.m; sourceTree = "<group>"; };
+		33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+AUAdditions.h"; sourceTree = "<group>"; };
+		33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AUAdditions.m"; sourceTree = "<group>"; };
+		33CC93591735D75100F67A99 /* AUScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUScrollView.h; sourceTree = "<group>"; };
+		33CC935A1735D75100F67A99 /* AUScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUScrollView.m; sourceTree = "<group>"; };
 		33DA0BEF1731E74D008C2004 /* AULineQuadTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AULineQuadTemplate.pdf; sourceTree = "<group>"; };
 		33DA0BF01731E74D008C2004 /* AULineTripleTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AULineTripleTemplate.pdf; sourceTree = "<group>"; };
 		33DA0BF41731E74D008C2004 /* AUResume.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AUResume.pdf; sourceTree = "<group>"; };
@@ -435,6 +440,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331A81241747060B00A8E5D5 /* Global Media Keys */ = {
+			isa = PBXGroup;
+			children = (
+				331A811C174701B400A8E5D5 /* SPMediaKeyTap.h */,
+				331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */,
+				331A811F174702F700A8E5D5 /* NSObject+SPInvocationGrabbing.h */,
+				331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */,
+			);
+			name = "Global Media Keys";
+			sourceTree = "<group>";
+		};
+		331A81251747061F00A8E5D5 /* External Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				339DD8F51731F7D500E30409 /* Navigation Controller */,
+				331A81241747060B00A8E5D5 /* Global Media Keys */,
+			);
+			name = "External Extensions";
+			sourceTree = "<group>";
+		};
+		331A81261747096000A8E5D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */,
+				33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */,
+				3349D2201735DB8600648144 /* AUView.h */,
+				3349D2211735DB8600648144 /* AUView.m */,
+				33CC93591735D75100F67A99 /* AUScrollView.h */,
+				33CC935A1735D75100F67A99 /* AUScrollView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		331A81271747096800A8E5D5 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				338536661745C66300238D97 /* NSFileManager+DirectoryLocations.h */,
+				338536671745C66400238D97 /* NSFileManager+DirectoryLocations.m */,
+			);
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
+		331A81281747097100A8E5D5 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				338536601745B8DD00238D97 /* SPPlaylist+AUAdditions.h */,
+				338536611745B8DD00238D97 /* SPPlaylist+AUAdditions.m */,
+				338536631745B8E900238D97 /* SPTrack+AUAdditions.h */,
+				338536641745B8E900238D97 /* SPTrack+AUAdditions.m */,
+			);
+			name = Spotify;
+			sourceTree = "<group>";
+		};
+		331A8129174709B000A8E5D5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				331A81181746FEA800A8E5D5 /* AUApplication.h */,
+				331A81191746FEA800A8E5D5 /* AUApplication.m */,
+				332E61DF1731D964008C8025 /* AUAppDelegate.h */,
+				332E61E01731D964008C8025 /* AUAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		331A812A174711C100A8E5D5 /* Light Cell */ = {
+			isa = PBXGroup;
+			children = (
+				336FBD5F1735C311008A8C01 /* AULightCellView.h */,
+				336FBD601735C311008A8C01 /* AULightCellView.m */,
+				336BE108173321580069C92C /* AULightColorView.h */,
+				336BE109173321580069C92C /* AULightColorView.m */,
+			);
+			name = "Light Cell";
+			sourceTree = "<group>";
+		};
+		331A812B174711CE00A8E5D5 /* Timeline Cell */ = {
+			isa = PBXGroup;
+			children = (
+				331A812C17472B7B00A8E5D5 /* AUEditorCellView.h */,
+				331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */,
+				331A81331747644200A8E5D5 /* scroll.png */,
+				330603691740A56E00D7BD91 /* AULinkedScrollView.h */,
+				3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */,
+				33CC934F1735C36800F67A99 /* AUChannelView.h */,
+				33CC93501735C36800F67A99 /* AUChannelView.m */,
+			);
+			name = "Timeline Cell";
+			sourceTree = "<group>";
+		};
+		331A812F174755A600A8E5D5 /* Hue */ = {
+			isa = PBXGroup;
+			children = (
+				331A8130174755C300A8E5D5 /* AUDummyLight.h */,
+				331A8131174755C300A8E5D5 /* AUDummyLight.m */,
+			);
+			name = Hue;
+			sourceTree = "<group>";
+		};
 		332E61C11731D964008C8025 = {
 			isa = PBXGroup;
 			children = (
@@ -478,25 +581,16 @@
 		332E61D31731D964008C8025 /* Aurora */ = {
 			isa = PBXGroup;
 			children = (
-				3385365F1745B88A00238D97 /* Category Extensions */,
-				331A81181746FEA800A8E5D5 /* AUApplication.h */,
-				331A81191746FEA800A8E5D5 /* AUApplication.m */,
-				331A811C174701B400A8E5D5 /* SPMediaKeyTap.h */,
-				331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */,
-				331A811F174702F700A8E5D5 /* NSObject+SPInvocationGrabbing.h */,
-				331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */,
-				332E61DF1731D964008C8025 /* AUAppDelegate.h */,
-				332E61E01731D964008C8025 /* AUAppDelegate.m */,
 				332E61E21731D964008C8025 /* MainMenu.xib */,
+				331A8129174709B000A8E5D5 /* Application */,
 				3385365C1743252300238D97 /* Audio Player */,
 				33DA0CD31731E985008C2004 /* Login Sheet */,
 				339DD8FE1731FA6200E30409 /* Spotify View */,
 				336BE11F173323D30069C92C /* Song Editor */,
 				336BE1161733216D0069C92C /* Effects */,
-				3349D2301735FCB800648144 /* Value Transformers */,
-				33CC93551735CE7B00F67A99 /* Special Views */,
+				3385365F1745B88A00238D97 /* Aurora Extensions */,
 				336BE118173321A30069C92C /* Effect Test */,
-				339DD8F51731F7D500E30409 /* Navigation Controller */,
+				331A81251747061F00A8E5D5 /* External Extensions */,
 				332E61D41731D964008C8025 /* Supporting Files */,
 			);
 			path = Aurora;
@@ -575,8 +669,6 @@
 		336BE118173321A30069C92C /* Effect Test */ = {
 			isa = PBXGroup;
 			children = (
-				336BE108173321580069C92C /* AULightColorView.h */,
-				336BE109173321580069C92C /* AULightColorView.m */,
 				336BE12C173324BB0069C92C /* AULightTableCellView.h */,
 				336BE12D173324BB0069C92C /* AULightTableCellView.m */,
 				336BE103173321580069C92C /* AUEffectTestViewController.h */,
@@ -626,17 +718,16 @@
 			name = "Audio Player";
 			sourceTree = "<group>";
 		};
-		3385365F1745B88A00238D97 /* Category Extensions */ = {
+		3385365F1745B88A00238D97 /* Aurora Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				338536661745C66300238D97 /* NSFileManager+DirectoryLocations.h */,
-				338536671745C66400238D97 /* NSFileManager+DirectoryLocations.m */,
-				338536601745B8DD00238D97 /* SPPlaylist+AUAdditions.h */,
-				338536611745B8DD00238D97 /* SPPlaylist+AUAdditions.m */,
-				338536631745B8E900238D97 /* SPTrack+AUAdditions.h */,
-				338536641745B8E900238D97 /* SPTrack+AUAdditions.m */,
+				331A812F174755A600A8E5D5 /* Hue */,
+				3349D2301735FCB800648144 /* Value Transformers */,
+				331A81261747096000A8E5D5 /* Views */,
+				331A81271747096800A8E5D5 /* Cocoa */,
+				331A81281747097100A8E5D5 /* Spotify */,
 			);
-			name = "Category Extensions";
+			name = "Aurora Extensions";
 			sourceTree = "<group>";
 		};
 		339DD8F51731F7D500E30409 /* Navigation Controller */ = {
@@ -674,30 +765,10 @@
 		33CC93541735C92D00F67A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				330603691740A56E00D7BD91 /* AULinkedScrollView.h */,
-				3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */,
-				336FBD5B1735C2F9008A8C01 /* AUEditorCellView.h */,
-				336FBD5C1735C2F9008A8C01 /* AUEditorCellView.m */,
-				336FBD5F1735C311008A8C01 /* AULightCellView.h */,
-				336FBD601735C311008A8C01 /* AULightCellView.m */,
-				33CC934F1735C36800F67A99 /* AUTimelineView.h */,
-				33CC93501735C36800F67A99 /* AUTimelineView.m */,
+				331A812A174711C100A8E5D5 /* Light Cell */,
+				331A812B174711CE00A8E5D5 /* Timeline Cell */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		33CC93551735CE7B00F67A99 /* Special Views */ = {
-			isa = PBXGroup;
-			children = (
-				33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */,
-				33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */,
-				33CC93591735D75100F67A99 /* AUScrollView.h */,
-				33CC935A1735D75100F67A99 /* AUScrollView.m */,
-				3349D2201735DB8600648144 /* AUView.h */,
-				3349D2211735DB8600648144 /* AUView.m */,
-			);
-			name = "Special Views";
-			path = ..;
 			sourceTree = "<group>";
 		};
 		33DA0BED1731E716008C2004 /* Images */ = {
@@ -1050,6 +1121,7 @@
 				33EA05A71742AE7500747A37 /* AUPause@2x.png in Resources */,
 				33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */,
 				3385365E17434CEC00238D97 /* AUHueLight.icns in Resources */,
+				331A81341747644300A8E5D5 /* scroll.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,9 +1164,8 @@
 				336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */,
 				336BE1291733244E0069C92C /* AUStrobe.m in Sources */,
 				336BE130173324BB0069C92C /* AULightTableCellView.m in Sources */,
-				336FBD5D1735C2F9008A8C01 /* AUEditorCellView.m in Sources */,
 				336FBD611735C311008A8C01 /* AULightCellView.m in Sources */,
-				33CC93511735C36800F67A99 /* AUTimelineView.m in Sources */,
+				33CC93511735C36800F67A99 /* AUChannelView.m in Sources */,
 				33CC93581735CEAF00F67A99 /* NSView+AUAdditions.m in Sources */,
 				33CC935B1735D75100F67A99 /* AUScrollView.m in Sources */,
 				3349D2221735DB8600648144 /* AUView.m in Sources */,
@@ -1111,6 +1182,8 @@
 				331A811A1746FEA900A8E5D5 /* AUApplication.m in Sources */,
 				331A811E174701B500A8E5D5 /* SPMediaKeyTap.m in Sources */,
 				331A8121174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m in Sources */,
+				331A812E17472B7B00A8E5D5 /* AUEditorCellView.m in Sources */,
+				331A8132174755C300A8E5D5 /* AUDummyLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

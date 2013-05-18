@@ -11,16 +11,6 @@
 
 @implementation AULightCellView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (void)drawRect:(NSRect)dirtyRect
 {
     NSRect drawingRect = [self bounds];
@@ -62,6 +52,7 @@
     NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect:NSInsetRect(self.bounds, 1.0, 1.0)];
     [borderPath setLineWidth:2.0];
     [borderPath stroke];
+    [super drawRect:dirtyRect];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @class AUTimelineChannel;
 
-@interface AUTimelineView : NSView
+@interface AUChannelView : NSView
 
 @property (strong) AUTimelineChannel *effectChannel;
 

@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AULightCellView : NSView
+@interface AULightCellView : NSTableCellView
 
 
 @end

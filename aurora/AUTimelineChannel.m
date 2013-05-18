@@ -8,6 +8,7 @@
 
 #import "AUTimelineChannel.h"
 #import "AUEffect.h"
+#import <DPHueLight.h>
 
 #define kEffectsArrayKey @"effectsArrayController"
 
@@ -23,6 +24,8 @@
         _effectArrayController = [[NSArrayController alloc] init];
         NSSortDescriptor *sortdescriptor = [[NSSortDescriptor alloc] initWithKey:@"startTime" ascending:YES];
         [_effectArrayController setSortDescriptors:@[sortdescriptor]];
+        // Stuff with a fake bridge
+        _light = [[DPHueLight alloc] initWithBridge:nil];
     }
     return self;
 }

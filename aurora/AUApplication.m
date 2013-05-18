@@ -55,7 +55,6 @@
 	int keyFlags = ([event data1] & 0x0000FFFF);
 	int keyState = (((keyFlags & 0xFF00) >> 8)) == 0xA;
 	int keyRepeat = (keyFlags & 0x1);
-    NSLog(@"isRepeat: %@", keyRepeat ? @"YES":@"NO");
     
 	if (keyState == 1 && keyRepeat == 0) {
 		switch (keyCode) {
