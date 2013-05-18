@@ -8,6 +8,8 @@
 
 #import "AUSongEditorViewController.h"
 #import "AUPlaybackCoordinator.h"
+#import "SPTrack+AUAdditions.h"
+#import "AUTimeline.h"
 
 @interface AUSongEditorViewController ()
 {
@@ -30,7 +32,10 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if (object == [AUPlaybackCoordinator sharedInstance] && [keyPath isEqualToString:@"currentTrack"]) {
+        [self popViewControllerAnimated:YES];
+        [self pushViewController:self animated:YES];
+    }
 }
 
 - (void)dealloc
@@ -38,14 +43,8 @@
     [[AUPlaybackCoordinator sharedInstance] removeObserver:self forKeyPath:@"currentTrack"];
 }
 
-#pragma mark - BFViewController Additions
-/**
- *  Notifies the view controller that its view is about to be added to a view hierarchy.
- */
-- (void)viewWillAppear: (BOOL)animated
-{
 
-}
+#pragma mark - Actions
 
 - (IBAction)addRemoveLight:(id)sender
 {
@@ -54,7 +53,7 @@
         
         // Add
         if (segmentedControl.selectedSegment == 0) {
-//            SPTrack
+            //            SPTrack
             NSMutableDictionary *timelineDict = [NSMutableDictionary dictionary];
             timelineDict[@"index"] = @([_timelineArrayController.arrangedObjects count]);
             [_timelineArrayController addObject:timelineDict];
@@ -67,6 +66,16 @@
             }
         }
     }
+}
+
+#pragma mark - BFViewController Additions
+/**
+ *  Notifies the view controller that its view is about to be added to a view hierarchy.
+ */
+- (void)viewWillAppear: (BOOL)animated
+{
+    SPTrack *currentTrack = [[AUPlaybackCoordinator sharedInstance] currentTrack];
+    AUTimeline *timeline = currentTrack.timeline;
 }
 
 /**
@@ -82,7 +91,7 @@
  */
 - (void)viewWillDisappear: (BOOL)animated;
 {
-    
+//    _timeline
 }
 
 /**

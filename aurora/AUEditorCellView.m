@@ -20,8 +20,8 @@
 {
     [super setObjectValue:objectValue];
     
-    AUTimelineView *timelineView = [[AUTimelineView alloc] initWithFrame:self.bounds];
-    timelineView.effectTimeline = objectValue[@"timeline"];
+//    AUTimelineView *timelineView = [[AUTimelineView alloc] initWithFrame:self.bounds];
+//    timelineView.effectTimeline = objectValue[@"channel"];
 }
 
 @end

@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class AUTimeline;
+@class AUTimelineChannel;
 
 @interface AUTimelineView : NSView
 
-@property (strong) AUTimeline *effectTimeline;
+@property (strong) AUTimelineChannel *effectChannel;
 
 @end

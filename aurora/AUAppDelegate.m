@@ -12,6 +12,7 @@
 #import "AUSpotifyViewController.h"
 #import "AUEffectTestViewController.h"
 #import "AUPlaybackCoordinator.h"
+#import "appkey.h"
 
 #import "AUStrobe.h"
 
@@ -429,7 +430,8 @@
 
 - (IBAction)playPause:(id)sender
 {
-    // l
+    AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator sharedInstance];
+    playbackCoordinator.isPlaying = !playbackCoordinator.isPlaying;
 }
 
 - (IBAction)nextTrack:(id)sender
@@ -447,6 +449,9 @@
     if ([sender isKindOfClass:[NSSlider class]]) {
         NSSlider *slider = sender;
         [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:slider.doubleValue];
+    }
+    else if ([sender isKindOfClass:[NSNumber class]]) {
+        [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:[sender doubleValue]];
     }
 }
 

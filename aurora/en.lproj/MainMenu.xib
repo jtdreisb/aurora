@@ -405,6 +405,7 @@
 									<object class="NSView" key="NSView" id="845084749">
 										<reference key="NSNextResponder" ref="195218060"/>
 										<int key="NSvFlags">256</int>
+										<array class="NSMutableArray" key="NSSubviews"/>
 										<string key="NSFrameSize">{600, 450}</string>
 										<reference key="NSSuperview" ref="195218060"/>
 										<reference key="NSWindow"/>
@@ -1450,6 +1451,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">547</int>
 						<reference key="object" ref="845084749"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="126953424"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1538,19 +1540,6 @@
 						<reference key="parent" ref="847867788"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">624</int>
-						<reference key="object" ref="387293095"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="741527764"/>
-						</array>
-						<reference key="parent" ref="587922142"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">625</int>
-						<reference key="object" ref="741527764"/>
-						<reference key="parent" ref="387293095"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">626</int>
 						<reference key="object" ref="871092950"/>
 						<array class="NSMutableArray" key="children">
@@ -1606,6 +1595,19 @@
 						<int key="objectID">651</int>
 						<reference key="object" ref="161789529"/>
 						<reference key="parent" ref="847867788"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">624</int>
+						<reference key="object" ref="387293095"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="741527764"/>
+						</array>
+						<reference key="parent" ref="587922142"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">625</int>
+						<reference key="object" ref="741527764"/>
+						<reference key="parent" ref="387293095"/>
 					</object>
 				</array>
 			</object>

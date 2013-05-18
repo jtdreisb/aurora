@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import <DPHue.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
-#import "appkey.h"
 
 @class AUSpotifyLoginPanelController;
 @class BFNavigationController;
@@ -22,7 +21,10 @@
 
 @property NSInteger tabSelectionIndex;
 
-
 - (IBAction)showLoginSheet:(id)sender;
+
+- (IBAction)playPause:(id)sender;
+- (IBAction)nextTrack:(id)sender;
+- (IBAction)previousTrack:(id)sender;
 
 @end

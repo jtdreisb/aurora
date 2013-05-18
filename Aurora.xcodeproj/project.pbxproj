@@ -10,6 +10,10 @@
 		1C0C2F7D8D2A414298DAE3C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E59A15738343AEB60F48BB /* libPods.a */; };
 		3306036B1740A56E00D7BD91 /* AULinkedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */; };
 		330603991741FDDE00D7BD91 /* AUTimelineChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330603981741FDDE00D7BD91 /* AUTimelineChannel.m */; };
+		331A811A1746FEA900A8E5D5 /* AUApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A81191746FEA800A8E5D5 /* AUApplication.m */; };
+		331A811E174701B500A8E5D5 /* SPMediaKeyTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		331A8121174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		331A81231747051800A8E5D5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331A81221747051700A8E5D5 /* Carbon.framework */; };
 		332E61CE1731D964008C8025 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61CD1731D964008C8025 /* Cocoa.framework */; };
 		332E61D81731D964008C8025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 332E61D61731D964008C8025 /* InfoPlist.strings */; };
 		332E61DA1731D964008C8025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61D91731D964008C8025 /* main.m */; };
@@ -205,6 +209,13 @@
 		3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULinkedScrollView.m; sourceTree = "<group>"; };
 		330603971741FDDE00D7BD91 /* AUTimelineChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimelineChannel.h; sourceTree = "<group>"; };
 		330603981741FDDE00D7BD91 /* AUTimelineChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTimelineChannel.m; sourceTree = "<group>"; };
+		331A81181746FEA800A8E5D5 /* AUApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUApplication.h; sourceTree = "<group>"; };
+		331A81191746FEA800A8E5D5 /* AUApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUApplication.m; sourceTree = "<group>"; };
+		331A811C174701B400A8E5D5 /* SPMediaKeyTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMediaKeyTap.h; sourceTree = "<group>"; };
+		331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMediaKeyTap.m; sourceTree = "<group>"; };
+		331A811F174702F700A8E5D5 /* NSObject+SPInvocationGrabbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPInvocationGrabbing.h"; sourceTree = "<group>"; };
+		331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPInvocationGrabbing.m"; sourceTree = "<group>"; };
+		331A81221747051700A8E5D5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		332E61CA1731D964008C8025 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332E61CD1731D964008C8025 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		332E61D01731D964008C8025 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -416,6 +427,7 @@
 			files = (
 				332E62001731DADB008C8025 /* CocoaLibSpotify.framework in Frameworks */,
 				332E61CE1731D964008C8025 /* Cocoa.framework in Frameworks */,
+				331A81231747051800A8E5D5 /* Carbon.framework in Frameworks */,
 				1C0C2F7D8D2A414298DAE3C8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +458,7 @@
 			children = (
 				332E61F51731DACD008C8025 /* CocoaLibSpotify Mac Framework.xcodeproj */,
 				332E61CD1731D964008C8025 /* Cocoa.framework */,
+				331A81221747051700A8E5D5 /* Carbon.framework */,
 				332E61CF1731D964008C8025 /* Other Frameworks */,
 				46E59A15738343AEB60F48BB /* libPods.a */,
 			);
@@ -466,6 +479,12 @@
 			isa = PBXGroup;
 			children = (
 				3385365F1745B88A00238D97 /* Category Extensions */,
+				331A81181746FEA800A8E5D5 /* AUApplication.h */,
+				331A81191746FEA800A8E5D5 /* AUApplication.m */,
+				331A811C174701B400A8E5D5 /* SPMediaKeyTap.h */,
+				331A811D174701B400A8E5D5 /* SPMediaKeyTap.m */,
+				331A811F174702F700A8E5D5 /* NSObject+SPInvocationGrabbing.h */,
+				331A8120174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m */,
 				332E61DF1731D964008C8025 /* AUAppDelegate.h */,
 				332E61E01731D964008C8025 /* AUAppDelegate.m */,
 				332E61E21731D964008C8025 /* MainMenu.xib */,
@@ -1089,6 +1108,9 @@
 				338536651745B8E900238D97 /* SPTrack+AUAdditions.m in Sources */,
 				338536681745C66400238D97 /* NSFileManager+DirectoryLocations.m in Sources */,
 				3385366B1745C7BD00238D97 /* AUTimeIntervalTransformer.m in Sources */,
+				331A811A1746FEA900A8E5D5 /* AUApplication.m in Sources */,
+				331A811E174701B500A8E5D5 /* SPMediaKeyTap.m in Sources */,
+				331A8121174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

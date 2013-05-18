@@ -103,10 +103,12 @@ static AUPlaybackCoordinator *sharedInstance = nil;
         else {
             nextTrackIndex = _currentTrackIndex - 1;
         }
+        BOOL shouldPlay = self.isPlaying;
         [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
             if (error != nil) {
                 NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
             }
+            self.isPlaying = shouldPlay;
         }];
     }
 }
@@ -118,10 +120,12 @@ static AUPlaybackCoordinator *sharedInstance = nil;
         if (nextTrackIndex >= self.currentPlaylist.tracks.count) {
             nextTrackIndex = 0;
         }
+        BOOL shouldPlay = self.isPlaying;
         [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
             if (error != nil) {
                 NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
             }
+            self.isPlaying = shouldPlay;
         }];
     }
 }

@@ -24,7 +24,7 @@
     static AUTimeline *timeline = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
+        timeline = [[AUTimeline alloc] initWithContentsOfPath:self.timelineFilePath];
     });
     return timeline;
 }

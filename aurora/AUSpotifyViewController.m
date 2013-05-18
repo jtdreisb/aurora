@@ -100,6 +100,7 @@
     AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator sharedInstance];
     playbackCoordinator.currentPlaylist = [_playlistArrayController.selectedObjects lastObject];
     [playbackCoordinator playTrack:[sender lastObject] callback:^(NSError *error) {
+        playbackCoordinator.isPlaying = NO;
         if (error != nil) {
             NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
         }

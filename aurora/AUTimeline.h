@@ -13,6 +13,9 @@
 
 @interface AUTimeline : NSObject <NSCoding>
 
+- (id)initWithContentsOfPath:(NSString *)filePath;
+- (void)writeToFile:(NSString *)filePath;
+
 @property (readonly) NSArray *channels;
 
 - (void)addNewChannel;
