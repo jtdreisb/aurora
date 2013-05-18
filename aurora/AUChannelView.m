@@ -8,8 +8,40 @@
 
 #import "AUChannelView.h"
 #import "NSView+AUAdditions.h"
+#import "AUTimeline.h"
+#import "AUTimelineChannel.h"
 
 @implementation AUChannelView
+
+- (id)initWithFrame:(NSRect)frameRect channel:(AUTimelineChannel *)channel
+{
+    self = [super initWithFrame:frameRect];
+    if (self != nil) {
+        _channel = channel;
+        [_channel.timeline addObserver:self forKeyPath:@"zoomLevel" options:0 context:NULL];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [_channel.timeline removeObserver:self forKeyPath:@"zoomLevel"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (object == self.channel.timeline && [keyPath isEqualToString:@"zoomLevel"]) {
+        [self calculateFrame];
+    }
+}
+
+- (void)calculateFrame
+{
+    AUTimeline *timeline = self.channel.timeline;
+    CGFloat width = timeline.duration * timeline.zoomLevel;
+    [self setFrame:NSMakeRect(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height)];
+    [self setNeedsDisplay:YES];
+}
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -32,8 +64,8 @@
         NSColor *endColor = [NSColor colorWithDeviceWhite:0.55 alpha:1.0];
     CGGradientRef gradient = [NSView gradientFromColor:startColor toColor:endColor];
     
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(NSMidX(drawingRect), NSMinY(drawingRect)),
-                                CGPointMake(NSMidX(drawingRect), NSMaxY(drawingRect)), 0);
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(NSMinX(drawingRect), NSMidY(drawingRect)),
+                                CGPointMake(NSMaxX(drawingRect), NSMidY(drawingRect)), 0);
     CGGradientRelease(gradient);
     
     

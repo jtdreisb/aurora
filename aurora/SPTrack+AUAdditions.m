@@ -25,6 +25,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         timeline = [[AUTimeline alloc] initWithContentsOfPath:self.timelineFilePath];
+        timeline.duration = self.duration;
     });
     return timeline;
 }

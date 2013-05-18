@@ -12,6 +12,8 @@
 
 @interface AUChannelView : NSView
 
-@property (strong) AUTimelineChannel *effectChannel;
+- (id)initWithFrame:(NSRect)frameRect channel:(AUTimelineChannel *)channel;
+
+@property (strong) AUTimelineChannel *channel;
 
 @end

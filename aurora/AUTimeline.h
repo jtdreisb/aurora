@@ -12,6 +12,9 @@
 
 @interface AUTimeline : NSObject <NSCoding>
 
+@property NSTimeInterval duration;
+@property double zoomLevel;
+
 - (id)initWithContentsOfPath:(NSString *)filePath;
 - (void)writeToFile:(NSString *)filePath;
 

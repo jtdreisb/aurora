@@ -16,7 +16,6 @@
 		331A81231747051800A8E5D5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331A81221747051700A8E5D5 /* Carbon.framework */; };
 		331A812E17472B7B00A8E5D5 /* AUEditorCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */; };
 		331A8132174755C300A8E5D5 /* AUDummyLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A8131174755C300A8E5D5 /* AUDummyLight.m */; };
-		331A81341747644300A8E5D5 /* scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = 331A81331747644200A8E5D5 /* scroll.png */; };
 		332E61CE1731D964008C8025 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61CD1731D964008C8025 /* Cocoa.framework */; };
 		332E61D81731D964008C8025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 332E61D61731D964008C8025 /* InfoPlist.strings */; };
 		332E61DA1731D964008C8025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61D91731D964008C8025 /* main.m */; };
@@ -222,7 +221,6 @@
 		331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEditorCellView.m; sourceTree = "<group>"; };
 		331A8130174755C300A8E5D5 /* AUDummyLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDummyLight.h; sourceTree = "<group>"; };
 		331A8131174755C300A8E5D5 /* AUDummyLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUDummyLight.m; sourceTree = "<group>"; };
-		331A81331747644200A8E5D5 /* scroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scroll.png; path = ../../../Desktop/scroll.png; sourceTree = "<group>"; };
 		332E61CA1731D964008C8025 /* Aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332E61CD1731D964008C8025 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		332E61D01731D964008C8025 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -520,7 +518,6 @@
 			children = (
 				331A812C17472B7B00A8E5D5 /* AUEditorCellView.h */,
 				331A812D17472B7B00A8E5D5 /* AUEditorCellView.m */,
-				331A81331747644200A8E5D5 /* scroll.png */,
 				330603691740A56E00D7BD91 /* AULinkedScrollView.h */,
 				3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */,
 				33CC934F1735C36800F67A99 /* AUChannelView.h */,
@@ -1121,7 +1118,6 @@
 				33EA05A71742AE7500747A37 /* AUPause@2x.png in Resources */,
 				33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */,
 				3385365E17434CEC00238D97 /* AUHueLight.icns in Resources */,
-				331A81341747644300A8E5D5 /* scroll.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

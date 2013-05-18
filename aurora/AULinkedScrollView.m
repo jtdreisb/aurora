@@ -27,10 +27,10 @@ static NSString *const kAULinkedScrollViewFrameChange = @"AULinkedScrollViewFram
             [self.contentView scrollToPoint:[changedView.contentView bounds].origin];
             [self reflectScrolledClipView:self.contentView];
         }];
-        NSImageView *imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 633, self.frame.size.height)];
-        imageView.image = [NSImage imageNamed:@"scroll"];
-        
-        self.documentView = imageView;
+//        NSImageView *imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 633, self.frame.size.height)];
+//        imageView.image = [NSImage imageNamed:@"scroll"];
+//        
+//        self.documentView = imageView;
     }
     return self;
 }
