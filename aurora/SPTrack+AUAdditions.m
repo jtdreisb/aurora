@@ -22,11 +22,12 @@
 - (AUTimeline *)timeline
 {
     static AUTimeline *timeline = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        timeline = [[AUTimeline alloc] initWithContentsOfPath:self.timelineFilePath];
-        timeline.duration = self.duration;
-    });
+    @synchronized(self) {
+        if (timeline == nil) {
+            timeline = [[AUTimeline alloc] initWithContentsOfPath:self.timelineFilePath];
+            timeline.duration = self.duration;
+        }
+    }
     return timeline;
 }
 

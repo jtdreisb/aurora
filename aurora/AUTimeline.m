@@ -19,15 +19,6 @@
     NSArrayController *_channelArrayController;
 }
 
-- (id)initWithContentsOfPath:(NSString *)filePath
-{
-    self = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-    if (self == nil) {
-        self = [self init];
-    }
-    return self;
-}
-
 - (id)init
 {
     self = [super init];
@@ -37,6 +28,15 @@
     }
     return self;
 }
+
+- (id)initWithContentsOfPath:(NSString *)filePath
+{
+    id archivedObject = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    self = archivedObject == nil ? [self init] : archivedObject;
+    return self;
+}
+
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

@@ -127,6 +127,7 @@
  */
 - (void)viewDidAppear:(BOOL)animated;
 {
+    [self timeline];
     [self getLights];
 }
 

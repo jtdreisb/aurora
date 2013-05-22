@@ -82,4 +82,12 @@
     CGContextRestoreGState(context);
 }
 
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"%@", theEvent);
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    NSLog(@"%@", NSStringFromPoint(point));
+}
+
 @end

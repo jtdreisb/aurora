@@ -124,6 +124,20 @@
     }
 }
 
+- (IBAction)allLightsOff:(id)sender
+{
+    for (DPHueBridge *bridge in [[DPHue sharedInstance] bridges]) {
+        [bridge allLightsOff];
+    }
+}
+
+- (IBAction)allLightsOn:(id)sender
+{
+    for (DPHueBridge *bridge in [[DPHue sharedInstance] bridges]) {
+        [bridge allLightsOn];
+    }
+}
+
 - (IBAction)testHueChange:(id)sender
 {
     DPHueBridge *bridge = [[[DPHue sharedInstance] bridges] lastObject];
@@ -177,6 +191,7 @@
     static dispatch_queue_t lightQueue = NULL;
     if (lightQueue == NULL)
         lightQueue = dispatch_queue_create("com.apple.aurora.light.q2", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"%@", [[[DPHue sharedInstance] lights] objectAtIndex:3]);
     
     dispatch_time_t startTime = DISPATCH_TIME_NOW;
     {
