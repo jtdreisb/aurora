@@ -10,7 +10,7 @@
 #import "AUEffect.h"
 #import <DPHueLight.h>
 
-#define kEffectsArrayKey @"effectsArrayController"
+#define kEffectsArrayKey @"effectsArray"
 
 @implementation AUTimelineChannel
 {
@@ -34,29 +34,33 @@
 {
     self = [self init];
     if (self != nil) {
-        _effectArrayController = [aDecoder decodeObjectForKey:kEffectsArrayKey];
+        [_effectArrayController addObjects:[aDecoder decodeObjectForKey:kEffectsArrayKey]];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:_effectArrayController forKey:kEffectsArrayKey];
+    [aCoder encodeObject:_effectArrayController.arrangedObjects forKey:kEffectsArrayKey];
 }
 
 #pragma mark - Effect Management
 
 - (void)addEffect:(AUEffect *)effect
 {
+    [self willChangeValueForKey:@"effects"];
     [_effectArrayController addObject:effect];
+    [self didChangeValueForKey:@"effects"];
 }
 
 - (void)removeEffect:(AUEffect *)effect
 {
+    [self willChangeValueForKey:@"effects"];
     [_effectArrayController removeObject:effect];
+    [self didChangeValueForKey:@"effects"];
 }
 
-- (NSArray *)allEffects
+- (NSArray *)effects
 {
     return _effectArrayController.arrangedObjects;
 }

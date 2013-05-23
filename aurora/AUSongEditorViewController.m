@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self != nil) {
-        [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"currentTrack" options:NSKeyValueObservingOptionOld context:NULL];
+        [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"currentTrack" options:0 context:NULL];
         [[DPHue sharedInstance] addObserver:self forKeyPath:@"lights" options:0 context:NULL];
     }
     return self;
@@ -40,8 +40,6 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (object == [AUPlaybackCoordinator sharedInstance] && [keyPath isEqualToString:@"currentTrack"]) {
-        SPTrack *oldTrack = change[NSKeyValueChangeOldKey];
-        [oldTrack saveTimeline];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self == self.navigationController.visibleViewController) {
                 [self popViewControllerAnimated:YES];
@@ -57,18 +55,20 @@
 
 - (void)getLights
 {
-    NSMutableArray *lightArray = [NSMutableArray array];
+
     if ([[DPHue sharedInstance] isSearching]) {
         [self performSelector:_cmd withObject:nil afterDelay:1.0];
         return;
     }
-    _lights = [[DPHue sharedInstance] lights]; 
+    _lights = [[DPHue sharedInstance] lights];
     _maxLightNumber = -1;
     for (DPHueLight *light in _lights) {
         if ([light.number integerValue] > _maxLightNumber) {
             _maxLightNumber = [light.number integerValue];
         }
     }
+    
+    NSMutableArray *lightArray = [NSMutableArray array];
     
     for (DPHueLight *light in _lights) {
         for (NSInteger i = lightArray.count; i < ([light.number integerValue] - 1); i++) {
@@ -84,6 +84,7 @@
     for (int i = 0; i < newChannelCount; i++) {
         [self.timeline addChannel:[[AUTimelineChannel alloc] init]];
     }
+    NSLog(@"%@", _lights);
     [_tableView reloadData];
 }
 
@@ -96,6 +97,7 @@
 
 - (IBAction)back:(id)sender
 {
+    NSLog(@"%@", [self.timeline.channels[0] effects]);
     [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
     [super back:sender];
 }
@@ -123,7 +125,7 @@
 
 #pragma mark - BFViewController Additions
 
-- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillAppear:(BOOL)animated
 {
     [self timeline];
     [self getLights];

@@ -23,6 +23,7 @@
 		332E61E11731D964008C8025 /* AUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 332E61E01731D964008C8025 /* AUAppDelegate.m */; };
 		332E61E41731D964008C8025 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E61E21731D964008C8025 /* MainMenu.xib */; };
 		332E62001731DADB008C8025 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61FB1731DACE008C8025 /* CocoaLibSpotify.framework */; };
+		333FA64B174DA8B300134363 /* AUEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA64A174DA8B300134363 /* AUEffectView.m */; };
 		3349D2221735DB8600648144 /* AUView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2211735DB8600648144 /* AUView.m */; };
 		3349D2251735DD6300648144 /* AULightIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2241735DD6300648144 /* AULightIndexTransformer.m */; };
 		3349D2291735EAF500648144 /* AUTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2281735EAF500648144 /* AUTimeline.m */; };
@@ -242,6 +243,8 @@
 		332E61E31731D964008C8025 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		332E61F51731DACD008C8025 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "submodule/cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
 		332E62011731DB2C008C8025 /* appkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appkey.h; sourceTree = "<group>"; };
+		333FA649174DA8B300134363 /* AUEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectView.h; sourceTree = "<group>"; };
+		333FA64A174DA8B300134363 /* AUEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectView.m; sourceTree = "<group>"; };
 		3349D2201735DB8600648144 /* AUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUView.h; sourceTree = "<group>"; };
 		3349D2211735DB8600648144 /* AUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUView.m; sourceTree = "<group>"; };
 		3349D2231735DD6200648144 /* AULightIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightIndexTransformer.h; sourceTree = "<group>"; };
@@ -543,6 +546,8 @@
 				3306036A1740A56E00D7BD91 /* AULinkedScrollView.m */,
 				33CC934F1735C36800F67A99 /* AUChannelView.h */,
 				33CC93501735C36800F67A99 /* AUChannelView.m */,
+				333FA649174DA8B300134363 /* AUEffectView.h */,
+				333FA64A174DA8B300134363 /* AUEffectView.m */,
 			);
 			name = "Timeline Cell";
 			sourceTree = "<group>";
@@ -1230,6 +1235,7 @@
 				33ABB75E174D729D00C6841A /* AUNavigationController.m in Sources */,
 				33ABB762174D72C900C6841A /* AUViewController.m in Sources */,
 				33ABB767174D763100C6841A /* AURootViewController.m in Sources */,
+				333FA64B174DA8B300134363 /* AUEffectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

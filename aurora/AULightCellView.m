@@ -37,7 +37,6 @@
     CGGradientRelease(gradient);
     
     
-    
     CGRect noiseRect = NSInsetRect(drawingRect, 1.0, 1.0);
     
     CGPathRef noiseClippingPath = [NSView clippingPathWithRect:noiseRect andRadius:0.0];
@@ -47,11 +46,15 @@
     
     [self drawNoiseWithOpacity:0.01];
     
-    CGContextRestoreGState(context);
     [[NSColor lightGrayColor] setStroke];
     NSBezierPath *borderPath = [NSBezierPath bezierPathWithRect:NSInsetRect(self.bounds, 1.0, 1.0)];
     [borderPath setLineWidth:2.0];
     [borderPath stroke];
+    
+    CGContextRestoreGState(context);
+    
+    
+    
     [super drawRect:dirtyRect];
 }
 

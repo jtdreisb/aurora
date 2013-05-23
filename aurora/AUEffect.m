@@ -19,7 +19,7 @@
     self = [super init];
     if (self != nil) {
         _startTime = 0.0;
-        _duration = 0.0;
+        _duration = 10.0;
     }
     return self;
 }

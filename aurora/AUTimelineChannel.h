@@ -21,7 +21,7 @@
 - (void)addEffect:(AUEffect *)effect;
 - (void)removeEffect:(AUEffect *)effect;
 
-- (NSArray *)allEffects;
+- (NSArray *)effects;
 
 - (NSArray *)effectsFrom:(NSTimeInterval)begin to:(NSTimeInterval)end;
 
