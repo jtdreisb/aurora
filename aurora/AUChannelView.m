@@ -60,8 +60,8 @@
     CGContextClip(context);
     CGPathRelease(clippingPath);
     
-        NSColor *startColor = [NSColor colorWithDeviceWhite:0.4 alpha:1.0];
-        NSColor *endColor = [NSColor colorWithDeviceWhite:0.55 alpha:1.0];
+    NSColor *startColor = [NSColor colorWithDeviceWhite:0.4 alpha:1.0];
+    NSColor *endColor = [NSColor colorWithDeviceWhite:0.55 alpha:1.0];
     CGGradientRef gradient = [NSView gradientFromColor:startColor toColor:endColor];
     
     CGContextDrawLinearGradient(context, gradient, CGPointMake(NSMinX(drawingRect), NSMidY(drawingRect)),

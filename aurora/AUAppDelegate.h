@@ -9,14 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import <DPHue.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
+#import "BFNavigationController.h"
 
-@class AUSpotifyLoginPanelController;
-@class BFNavigationController;
+@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, DPHueDelegate, BFNavigationControllerDelegate>
 
-@interface AUAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, DPHueDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSTabView *tabView;
 @property (strong) IBOutlet NSObjectController *playbackObjectController;
 
 @property NSInteger tabSelectionIndex;

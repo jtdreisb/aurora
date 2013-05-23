@@ -8,20 +8,18 @@
 
 #import "AUAppDelegate.h"
 #import "AUSpotifyLoginPanelController.h"
-#import "BFNavigationController.h"
-#import "AUSpotifyViewController.h"
-#import "AUEffectTestViewController.h"
+#import "AUNavigationController.h"
+#import "AURootViewController.h"
 #import "AUPlaybackCoordinator.h"
 #import "appkey.h"
 
 #import "AUStrobe.h"
 
-
 @implementation AUAppDelegate
 {
     AUSpotifyLoginPanelController *_spotifyLoginPanelController;
-    BFNavigationController *_navController;
-    AUEffectTestViewController *_effectTestViewController;
+    IBOutlet AUNavigationController *_navController;
+    IBOutlet NSWindow *_window;
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -40,22 +38,26 @@
     
     [[DPHue sharedInstance] setDelegate:self];
     [[DPHue sharedInstance] startDiscovery];
+    
+    [_navController setDelegate:self];
+    
+    AURootViewController *rootViewController = [[AURootViewController alloc] initWithNibName:@"AURootView" bundle:nil];
+    [_navController setViewControllers:@[rootViewController]];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    
-    NSInteger musicTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
-    NSTabViewItem *musicTabItem = [self.tabView tabViewItemAtIndex:musicTabIndex];
-    _navController = [[BFNavigationController alloc] initWithFrame:[musicTabItem.view frame] rootViewController:nil];
-    musicTabItem.view = _navController.view;
-    
-    
-    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"hue"];
-    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
-    _effectTestViewController = [[AUEffectTestViewController alloc] initWithNibName:@"AUEffectTestView" bundle:nil];
-    
-    hueTabItem.view = _effectTestViewController.view;
+    //    NSInteger musicTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
+    //    NSTabViewItem *musicTabItem = [self.tabView tabViewItemAtIndex:musicTabIndex];
+    //    _navController = [[BFNavigationController alloc] initWithFrame:[musicTabItem.view frame] rootViewController:nil];
+    //    musicTabItem.view = _navController.view;
+    //
+    //
+    //    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"hue"];
+    //    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
+    //    _effectTestViewController = [[AUEffectTestViewController alloc] initWithNibName:@"AUEffectTestView" bundle:nil];
+    //
+    //    hueTabItem.view = _effectTestViewController.view;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"spotify_username"];
@@ -83,7 +85,7 @@
     
     if([_spotifyLoginPanelController.window isModalPanel] == NO) {
         [NSApp beginSheet:_spotifyLoginPanelController.window
-           modalForWindow:self.window
+           modalForWindow:_window
             modalDelegate:self
            didEndSelector:@selector(loginSheetDidEnd:returnCode:contextInfo:)
               contextInfo:nil];
@@ -198,12 +200,12 @@
         DPHueLight *light = [[[DPHue sharedInstance] lights] objectAtIndex:3];
         AUStrobe *strobeEffect = [[AUStrobe alloc] init];
         strobeEffect.color = [NSColor blueColor];
-
+        
         strobeEffect.startTime = 0;
         strobeEffect.duration = 20.0;
         strobeEffect.frequency = 1.05263;
         NSDictionary *payloads = strobeEffect.payloads;
-
+        
         for (NSNumber *dispatchTime in payloads.allKeys)
         {
             double delayInSeconds = [dispatchTime doubleValue];
@@ -240,7 +242,7 @@
         double gotime = 0.9;
         
         NSMutableDictionary *payloads = [NSMutableDictionary dictionary];
-
+        
         [payloads setObject:@{@"color": [NSColor blueColor]} forKey:@(gotime)];
         gotime += interval;
         [payloads setObject:@{@"color": [NSColor greenColor]} forKey:@(gotime)];
@@ -401,8 +403,8 @@
     AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator initializeSharedInstance];
     [self.playbackObjectController setContent:playbackCoordinator];
     
-    AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-    [_navController pushViewController:spotifyViewController animated:NO];
+    //    AURootViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
+    //    [_navController pushViewController:spotifyViewController animated:NO];
 }
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
@@ -439,6 +441,17 @@
 		 informativeTextWithFormat:@"This message was sent to you from the Spotify service."] runModal];
 }
 
+#pragma mark - BFNavigationControllerDelegate
+
+-(void)navigationController: (BFNavigationController *)navigationController willShowViewController:(NSViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
+}
+
+-(void)navigationController:(BFNavigationController *)navigationController didShowViewController:(NSViewController *)viewController animated: (BOOL)animated;
+{
+    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
+}
 
 #pragma mark -
 #pragma Playback Coordinator Actions

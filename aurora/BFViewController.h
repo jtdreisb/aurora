@@ -7,14 +7,6 @@
 
 #import "BFNavigationController.h"
 
-@interface NSViewController (BFViewController)
-@property (weak) BFNavigationController *navigationController;
--(void)pushViewController: (NSViewController *)viewController animated: (BOOL)animated;
--(NSViewController *)popViewControllerAnimated: (BOOL)animated;
--(NSArray *)popToRootViewControllerAnimated: (BOOL)animated;
--(NSArray *)popToViewController: (NSViewController *)viewController animated: (BOOL)animated;
-@end
-
 @protocol BFViewController <NSObject>
 
 ///---------------------------------------------------------------------------------------

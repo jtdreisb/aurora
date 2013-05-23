@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "AUViewController.h"
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
 
-@interface AUSpotifyViewController : NSViewController <NSTableViewDelegate, SPSessionDelegate>
+@interface AUSpotifyViewController : AUViewController <NSTableViewDelegate, SPSessionDelegate>
 
 - (void)editSong:(id)sender;
 

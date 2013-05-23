@@ -48,6 +48,7 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 {
     if (self.currentPlaylist != nil) {
         [self nextTrack];
+        self.isPlaying = YES;
     }
     else {
         [super sessionDidEndPlayback:aSession];

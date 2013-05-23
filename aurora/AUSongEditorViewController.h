@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "AUViewController.h"
 
 @class AUTimeline;
 
-@interface AUSongEditorViewController : NSViewController <NSTableViewDelegate,NSTableViewDataSource>
+@interface AUSongEditorViewController : AUViewController <NSTableViewDelegate,NSTableViewDataSource>
 
 @property (readonly) AUTimeline *timeline;
 

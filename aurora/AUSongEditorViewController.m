@@ -43,8 +43,10 @@
         SPTrack *oldTrack = change[NSKeyValueChangeOldKey];
         [oldTrack saveTimeline];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self popViewControllerAnimated:YES];
-            [self pushViewController:self animated:YES];
+            if (self == self.navigationController.visibleViewController) {
+                [self popViewControllerAnimated:YES];
+                [self pushViewController:self animated:YES];
+            }
         });
         
     }

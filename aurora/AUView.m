@@ -17,6 +17,9 @@
     if (patternImage != nil) {
         self.customBackgroundColor = [NSColor colorWithPatternImage:patternImage];
     }
+    else {
+        self.customBackgroundColor = [NSColor whiteColor];
+    }
 }
 
 - (void)drawRect:(NSRect)dirtyRect

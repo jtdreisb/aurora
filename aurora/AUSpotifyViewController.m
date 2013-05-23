@@ -112,4 +112,9 @@
     [self pushViewController:_songEditorViewController animated:YES];
 }
 
+- (IBAction)backButton:(id)sender
+{
+    [self popViewControllerAnimated:YES];
+}
+
 @end

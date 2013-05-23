@@ -55,6 +55,12 @@
 		339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8F71731F82200E30409 /* NSView+BFUtilities.m */; };
 		339DD8FC1731FA5B00E30409 /* AUSpotifyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */; };
 		339DD8FD1731FA5B00E30409 /* AUSpotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339DD8FB1731FA5B00E30409 /* AUSpotifyViewController.m */; };
+		33ABB757174D6ADF00C6841A /* AUTitlebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB756174D6ADF00C6841A /* AUTitlebarView.m */; };
+		33ABB75B174D6F2700C6841A /* AUBottomBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB75A174D6F2700C6841A /* AUBottomBarView.m */; };
+		33ABB75E174D729D00C6841A /* AUNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB75D174D729D00C6841A /* AUNavigationController.m */; };
+		33ABB762174D72C900C6841A /* AUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB761174D72C900C6841A /* AUViewController.m */; };
+		33ABB767174D763100C6841A /* AURootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB765174D763100C6841A /* AURootViewController.m */; };
+		33ABB768174D763100C6841A /* AURootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ABB766174D763100C6841A /* AURootView.xib */; };
 		33B1411D17420599007CC2E4 /* AUPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1411C17420599007CC2E4 /* AUPlay.png */; };
 		33B1411F174206E5007CC2E4 /* AUPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1411E174206E5007CC2E4 /* AUPause.png */; };
 		33B14121174208BA007CC2E4 /* AULastSong.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B14120174208BA007CC2E4 /* AULastSong.png */; };
@@ -291,6 +297,17 @@
 		339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSpotifyView.xib; sourceTree = "<group>"; };
 		339DD8FA1731FA5B00E30409 /* AUSpotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSpotifyViewController.h; sourceTree = "<group>"; };
 		339DD8FB1731FA5B00E30409 /* AUSpotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUSpotifyViewController.m; sourceTree = "<group>"; };
+		33ABB755174D6ADF00C6841A /* AUTitlebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTitlebarView.h; sourceTree = "<group>"; };
+		33ABB756174D6ADF00C6841A /* AUTitlebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTitlebarView.m; sourceTree = "<group>"; };
+		33ABB759174D6F2700C6841A /* AUBottomBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUBottomBarView.h; sourceTree = "<group>"; };
+		33ABB75A174D6F2700C6841A /* AUBottomBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUBottomBarView.m; sourceTree = "<group>"; };
+		33ABB75C174D729D00C6841A /* AUNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUNavigationController.h; sourceTree = "<group>"; };
+		33ABB75D174D729D00C6841A /* AUNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUNavigationController.m; sourceTree = "<group>"; };
+		33ABB760174D72C900C6841A /* AUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUViewController.h; sourceTree = "<group>"; };
+		33ABB761174D72C900C6841A /* AUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUViewController.m; sourceTree = "<group>"; };
+		33ABB764174D763100C6841A /* AURootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AURootViewController.h; sourceTree = "<group>"; };
+		33ABB765174D763100C6841A /* AURootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AURootViewController.m; sourceTree = "<group>"; };
+		33ABB766174D763100C6841A /* AURootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AURootView.xib; sourceTree = "<group>"; };
 		33B1411C17420599007CC2E4 /* AUPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUPlay.png; sourceTree = "<group>"; };
 		33B1411E174206E5007CC2E4 /* AUPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUPause.png; sourceTree = "<group>"; };
 		33B14120174208BA007CC2E4 /* AULastSong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AULastSong.png; sourceTree = "<group>"; };
@@ -438,6 +455,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33134E2D174D7989007D2CBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33ABB755174D6ADF00C6841A /* AUTitlebarView.h */,
+				33ABB756174D6ADF00C6841A /* AUTitlebarView.m */,
+				33ABB759174D6F2700C6841A /* AUBottomBarView.h */,
+				33ABB75A174D6F2700C6841A /* AUBottomBarView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		331A81241747060B00A8E5D5 /* Global Media Keys */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,18 +477,10 @@
 			name = "Global Media Keys";
 			sourceTree = "<group>";
 		};
-		331A81251747061F00A8E5D5 /* External Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				339DD8F51731F7D500E30409 /* Navigation Controller */,
-				331A81241747060B00A8E5D5 /* Global Media Keys */,
-			);
-			name = "External Extensions";
-			sourceTree = "<group>";
-		};
 		331A81261747096000A8E5D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				339DD8F51731F7D500E30409 /* Navigation Controller */,
 				33CC93561735CEAF00F67A99 /* NSView+AUAdditions.h */,
 				33CC93571735CEAF00F67A99 /* NSView+AUAdditions.m */,
 				3349D2201735DB8600648144 /* AUView.h */,
@@ -474,6 +494,7 @@
 		331A81271747096800A8E5D5 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				331A81241747060B00A8E5D5 /* Global Media Keys */,
 				338536661745C66300238D97 /* NSFileManager+DirectoryLocations.h */,
 				338536671745C66400238D97 /* NSFileManager+DirectoryLocations.m */,
 			);
@@ -580,14 +601,14 @@
 			children = (
 				332E61E21731D964008C8025 /* MainMenu.xib */,
 				331A8129174709B000A8E5D5 /* Application */,
+				33ABB763174D75E800C6841A /* Root View Controller */,
 				3385365C1743252300238D97 /* Audio Player */,
 				33DA0CD31731E985008C2004 /* Login Sheet */,
 				339DD8FE1731FA6200E30409 /* Spotify View */,
 				336BE11F173323D30069C92C /* Song Editor */,
 				336BE1161733216D0069C92C /* Effects */,
-				3385365F1745B88A00238D97 /* Aurora Extensions */,
 				336BE118173321A30069C92C /* Effect Test */,
-				331A81251747061F00A8E5D5 /* External Extensions */,
+				3385365F1745B88A00238D97 /* Aurora Extensions */,
 				332E61D41731D964008C8025 /* Supporting Files */,
 			);
 			path = Aurora;
@@ -730,11 +751,12 @@
 		339DD8F51731F7D500E30409 /* Navigation Controller */ = {
 			isa = PBXGroup;
 			children = (
-				339DD8F21731F7D200E30409 /* BFViewController.h */,
-				339DD8F01731F7D200E30409 /* BFNavigationController.h */,
-				339DD8F11731F7D200E30409 /* BFNavigationController.m */,
-				339DD8F61731F82200E30409 /* NSView+BFUtilities.h */,
-				339DD8F71731F82200E30409 /* NSView+BFUtilities.m */,
+				33ABB760174D72C900C6841A /* AUViewController.h */,
+				33ABB761174D72C900C6841A /* AUViewController.m */,
+				33ABB75C174D729D00C6841A /* AUNavigationController.h */,
+				33ABB75D174D729D00C6841A /* AUNavigationController.m */,
+				33134E2D174D7989007D2CBE /* Views */,
+				33ABB75F174D72AB00C6841A /* BFNavigationController */,
 			);
 			name = "Navigation Controller";
 			sourceTree = "<group>";
@@ -747,6 +769,28 @@
 				339DD8F91731FA5B00E30409 /* AUSpotifyView.xib */,
 			);
 			name = "Spotify View";
+			sourceTree = "<group>";
+		};
+		33ABB75F174D72AB00C6841A /* BFNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				339DD8F21731F7D200E30409 /* BFViewController.h */,
+				339DD8F01731F7D200E30409 /* BFNavigationController.h */,
+				339DD8F11731F7D200E30409 /* BFNavigationController.m */,
+				339DD8F61731F82200E30409 /* NSView+BFUtilities.h */,
+				339DD8F71731F82200E30409 /* NSView+BFUtilities.m */,
+			);
+			name = BFNavigationController;
+			sourceTree = "<group>";
+		};
+		33ABB763174D75E800C6841A /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33ABB764174D763100C6841A /* AURootViewController.h */,
+				33ABB765174D763100C6841A /* AURootViewController.m */,
+				33ABB766174D763100C6841A /* AURootView.xib */,
+			);
+			name = "Root View Controller";
 			sourceTree = "<group>";
 		};
 		33CC93531735C92400F67A99 /* View Controller */ = {
@@ -1118,6 +1162,7 @@
 				33EA05A71742AE7500747A37 /* AUPause@2x.png in Resources */,
 				33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */,
 				3385365E17434CEC00238D97 /* AUHueLight.icns in Resources */,
+				33ABB768174D763100C6841A /* AURootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,6 +1225,11 @@
 				331A8121174702F800A8E5D5 /* NSObject+SPInvocationGrabbing.m in Sources */,
 				331A812E17472B7B00A8E5D5 /* AUEditorCellView.m in Sources */,
 				331A8132174755C300A8E5D5 /* AUDummyLight.m in Sources */,
+				33ABB757174D6ADF00C6841A /* AUTitlebarView.m in Sources */,
+				33ABB75B174D6F2700C6841A /* AUBottomBarView.m in Sources */,
+				33ABB75E174D729D00C6841A /* AUNavigationController.m in Sources */,
+				33ABB762174D72C900C6841A /* AUViewController.m in Sources */,
+				33ABB767174D763100C6841A /* AURootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

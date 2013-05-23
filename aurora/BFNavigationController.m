@@ -58,7 +58,6 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
             controller = [[NSViewController alloc] init];
             controller.view = [[NSView alloc] initWithFrame: aFrame];
         }
-        controller.navigationController = self;
         
         _viewControllers = [NSMutableArray array];
         [_viewControllers addObject: controller];
@@ -182,6 +181,7 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
         // Remove last controller from superview
         [lastController.view removeFromSuperview];
         
+        // TODO: if the view is layer backed use core animation
         // We use NSImageViews to cache animating views. Of course we could animate using Core Animation layers - Do it if you like that.
         NSImageView *lastControllerImageView = [[NSImageView alloc] initWithFrame: self.view.bounds];
         NSImageView *newControllerImageView = [[NSImageView alloc] initWithFrame: newControllerStartFrame];
@@ -227,7 +227,6 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
 {
     NSViewController *visibleController = self.visibleViewController;
     [_viewControllers addObject: viewController];
-    viewController.navigationController = self;
     
     // Navigate
     [self _navigateFromViewController: visibleController toViewController: [_viewControllers lastObject] animated: animated push: YES];
@@ -294,47 +293,4 @@ static const CGFloat kPushPopAnimationDuration = 0.2;
     return dispControllers;
 }
 
-@end
-
-@implementation NSViewController (BFViewController)
-
-+ (NSMutableDictionary *)bf_propertyDictionary
-{
-    static NSMutableDictionary *propertyDictionary = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        propertyDictionary = [NSMutableDictionary dictionary];
-    });
-    return propertyDictionary;
-}
-
--(BFNavigationController *)navigationController
-{
-    return [[[self class] bf_propertyDictionary] objectForKey:[NSValue valueWithPointer:(__bridge const void *)(self)]];
-}
-
--(void)setNavigationController:(BFNavigationController *)navigationController
-{
-    [[[self class] bf_propertyDictionary] setObject:navigationController forKey:[NSValue valueWithPointer:(__bridge const void *)(self)]];
-}
-
--(void)pushViewController: (NSViewController *)viewController animated: (BOOL)animated
-{
-    [self.navigationController pushViewController:viewController animated:animated];
-}
-
--(NSViewController *)popViewControllerAnimated: (BOOL)animated
-{
-    return [self.navigationController popViewControllerAnimated:animated];
-}
-
--(NSArray *)popToRootViewControllerAnimated: (BOOL)animated
-{
-    return [self.navigationController popToRootViewControllerAnimated:animated];
-}
-
--(NSArray *)popToViewController: (NSViewController *)viewController animated: (BOOL)animated
-{
-    return [self.navigationController popToViewController:viewController animated:animated];
-}
 @end
