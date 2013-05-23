@@ -92,7 +92,9 @@
 {
     SPPlaylist *playlist = [sender lastObject];
     if (playlist != nil) {
-        [[AUPlaybackCoordinator sharedInstance] setCurrentPlaylist:playlist];
+        [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+            [[AUPlaybackCoordinator sharedInstance] setCurrentPlaylist:playlist];
+        }];
     }
 }
 
@@ -110,11 +112,6 @@
         _songEditorViewController = [[AUSongEditorViewController alloc] initWithNibName:@"AUSongEditorView" bundle:nil];
     }
     [self pushViewController:_songEditorViewController animated:YES];
-}
-
-- (IBAction)backButton:(id)sender
-{
-    [self popViewControllerAnimated:YES];
 }
 
 @end

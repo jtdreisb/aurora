@@ -19,12 +19,11 @@
 
 @property (readonly) AUView *au_view;
 
+- (IBAction)back:(id)sender;
+
 - (void)pushViewController:(NSViewController *)viewController animated:(BOOL)animated;
-
 - (NSViewController *)popViewControllerAnimated:(BOOL)animated;
-
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated;
-
 - (NSArray *)popToViewController:(NSViewController *)viewController animated:(BOOL)animated;
 
 @end

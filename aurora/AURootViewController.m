@@ -28,7 +28,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.au_view.customBackgroundColor = [NSColor greenColor];
+    
 }
 
 - (IBAction)showMyPlaylists:(id)sender
@@ -39,8 +39,6 @@
 - (IBAction)showSpotifyViewController:(id)sender
 {
     AUSpotifyViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-//    spotifyViewController.view.frame = self.view.bounds;
-//    vc.au_view.customBackgroundColor = [NSColor blueColor];
     [self pushViewController:spotifyViewController animated:YES];
 }
 

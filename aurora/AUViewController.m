@@ -20,6 +20,11 @@
     return [self.view isKindOfClass:[AUView class]] ? (AUView *)self.view : nil;
 }
 
+- (IBAction)back:(id)sender
+{
+    [self popViewControllerAnimated:YES];
+}
+
 - (void)pushViewController: (NSViewController *)viewController animated: (BOOL)animated
 {
     [self.navigationController pushViewController:viewController animated:animated];

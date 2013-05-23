@@ -94,6 +94,12 @@
 
 #pragma mark - Actions
 
+- (IBAction)back:(id)sender
+{
+    [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
+    [super back:sender];
+}
+
 - (IBAction)addRemoveLight:(id)sender
 {
     if ([sender isKindOfClass:[NSSegmentedControl class]]) {
@@ -116,43 +122,11 @@
 }
 
 #pragma mark - BFViewController Additions
-/**
- *  Notifies the view controller that its view is about to be added to a view hierarchy.
- */
-- (void)viewWillAppear:(BOOL)animated
-{
 
-}
-
-/**
- *  Notifies the view controller that its view was added to a view hierarchy.
- */
 - (void)viewDidAppear:(BOOL)animated;
 {
     [self timeline];
     [self getLights];
-}
-
-/**
- *  Notifies the view controller that its view is about to be removed from a view hierarchy.
- */
-- (void)viewWillDisappear:(BOOL)animated;
-{
-}
-
-/**
- *  Notifies the view controller that its view was removed from a view hierarchy.
- */
-- (void)viewDidDisappear:(BOOL)animated;
-{
-    
-}
-
-- (IBAction)goBack:(id)sender
-{
-    // save the state
-    [self popViewControllerAnimated:YES];
-    [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
 }
 
 

@@ -443,15 +443,15 @@
 
 #pragma mark - BFNavigationControllerDelegate
 
--(void)navigationController: (BFNavigationController *)navigationController willShowViewController:(NSViewController *)viewController animated:(BOOL)animated
-{
-    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
-}
-
--(void)navigationController:(BFNavigationController *)navigationController didShowViewController:(NSViewController *)viewController animated: (BOOL)animated;
-{
-    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
-}
+//-(void)navigationController: (BFNavigationController *)navigationController willShowViewController:(NSViewController *)viewController animated:(BOOL)animated
+//{
+//    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
+//}
+//
+//-(void)navigationController:(BFNavigationController *)navigationController didShowViewController:(NSViewController *)viewController animated: (BOOL)animated;
+//{
+//    NSLog(@"%s: %@ %@", __PRETTY_FUNCTION__, viewController, animated ? @"YES" : @"NO");
+//}
 
 #pragma mark -
 #pragma Playback Coordinator Actions
