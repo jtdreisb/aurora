@@ -96,7 +96,6 @@
 
 - (IBAction)back:(id)sender
 {
-    NSLog(@"%@", [self.timeline.channels[0] effects]);
     [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
     [super back:sender];
 }

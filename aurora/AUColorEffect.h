@@ -11,6 +11,5 @@
 @interface AUColorEffect : AUEffect
 
 @property (strong) NSColor *color;
-@property NSTimeInterval transitionTime;
 
 @end

@@ -13,20 +13,22 @@
 #import "AUEffect.h"
 #import "AUColorEffect.h"
 #import "AUEffectView.h"
+#import "AUPlaybackCoordinator.h"
 
 @implementation AUChannelView
 {
-    BOOL _isSelected;
+    NSTimeInterval _trackPosition;
 }
 
 - (id)initWithFrame:(NSRect)frameRect channel:(AUTimelineChannel *)channel
 {
     self = [super initWithFrame:frameRect];
     if (self != nil) {
-        _isSelected = NO;
         _channel = channel;
         [_channel.timeline addObserver:self forKeyPath:@"zoomLevel" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
         [_channel addObserver:self forKeyPath:@"effects" options:0 context:NULL];
+        
+        [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"trackPosition" options:0 context:NULL];
         
         [self layoutViews];
     }
@@ -37,6 +39,7 @@
 {
     [_channel.timeline removeObserver:self forKeyPath:@"zoomLevel"];
     [_channel removeObserver:self forKeyPath:@"effects"];
+    [[AUPlaybackCoordinator sharedInstance] removeObserver:self forKeyPath:@"trackPosition"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -46,6 +49,10 @@
     }
     else if (object == _channel && [keyPath isEqualToString:@"effects"]) {
         [self layoutViews];
+    }
+    else if (object == [AUPlaybackCoordinator sharedInstance] && [keyPath isEqualToString:@"trackPosition"]) {
+        _trackPosition = [[AUPlaybackCoordinator sharedInstance] trackPosition];
+        [self setNeedsDisplay:YES];
     }
 }
 
@@ -112,6 +119,17 @@
     CGContextRestoreGState(context);
     
     [super drawRect:dirtyRect];
+    
+    CGContextSaveGState(context);
+
+    CGContextSetShadowWithColor(context, CGSizeMake(1.0, 1.0), 2.0, [[NSColor colorWithCalibratedRed:.8 green:.8 blue:1.0 alpha:0.8] CGColor]);
+    
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, _trackPosition * _channel.timeline.zoomLevel , NSMaxY(drawingRect));
+    CGContextAddLineToPoint(context, _trackPosition * _channel.timeline.zoomLevel, NSMinY(drawingRect));
+    CGContextSetStrokeColorWithColor(context, [[NSColor blueColor] CGColor]);
+    CGContextStrokePath(context);
+    CGContextRestoreGState(context);
 }
 
 - (void)addEffect:(NSMenuItem *)sender

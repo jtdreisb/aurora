@@ -74,6 +74,7 @@
         [_editPopover close];
         _editPopover = nil;
     }
+    NSLog(@"%s: %@",__PRETTY_FUNCTION__, [(AUEffect *)sender payloads]);
     [(AUChannelView *)self.superview layoutViews];
 }
 
