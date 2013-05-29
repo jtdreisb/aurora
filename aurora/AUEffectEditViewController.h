@@ -8,6 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AUEffectEditViewController : NSViewController
+@protocol AUEffectEditViewControllerDelegate <NSObject>
+
+- (void)saveEffect:(id)sender;
+- (void)deleteEffect:(id)sender;
 
 @end
+
+@interface AUEffectEditViewController : NSViewController
+
+- (IBAction)saveEffect:(id)sender;
+- (IBAction)deleteEffect:(id)sender;
+
+@property (weak) id<AUEffectEditViewControllerDelegate> delegate;
+
+@end
+

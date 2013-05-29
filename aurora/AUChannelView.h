@@ -13,6 +13,7 @@
 @interface AUChannelView : NSView
 
 - (id)initWithFrame:(NSRect)frameRect channel:(AUTimelineChannel *)channel;
+- (void)layoutViews;
 
 @property (strong) AUTimelineChannel *channel;
 

@@ -8,10 +8,16 @@
 
 #import "AUEffectView.h"
 #import "NSView+AUAdditions.h"
+#import "AUEffect.h"
+#import "AUChannelView.h"
+#import "AUTimelineChannel.h"
 
 #define AURectCenter(rect) CGPointMake(NSMidX(rect),NSMidY(rect))
 
 @implementation AUEffectView
+{
+    NSPopover *_editPopover;
+}
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -21,9 +27,6 @@
     CGContextSaveGState(context);
     
     CGContextSetAlpha(context, 0.9);
-    
-//    NSRect clippingRect = drawingRect;
-//    clippingRect.size.height -= 1;
     
     CGPathRef clippingPath = [NSView clippingPathWithRect:drawingRect andRadius:2.0];
     CGContextAddPath(context, clippingPath);
@@ -44,6 +47,46 @@
     CGContextRestoreGState(context);
     
     [super drawRect:dirtyRect];
+}
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    if (_editPopover == nil) {
+        _editPopover = [[NSPopover alloc] init];
+    }
+    if ([_editPopover isShown]) {
+        [_editPopover close];
+        _editPopover = nil;
+    }
+    else {
+        AUEffectEditViewController *popoverViewController = [self.effect editViewController];
+        popoverViewController.delegate = self;
+        _editPopover.contentViewController = popoverViewController;
+        [_editPopover showRelativeToRect:[self bounds]
+                                  ofView:self
+                           preferredEdge:NSMinYEdge];
+    }
+}
+
+- (void)saveEffect:(id)sender
+{
+    if ([_editPopover isShown]) {
+        [_editPopover close];
+        _editPopover = nil;
+    }
+    [(AUChannelView *)self.superview layoutViews];
+}
+
+- (void)deleteEffect:(id)sender
+{
+    if ([_editPopover isShown]) {
+        [_editPopover close];
+        _editPopover = nil;
+    }
+    
+    AUChannelView *channelView = (AUChannelView *)self.superview;
+    [channelView.channel removeEffect:sender];
+    [channelView layoutViews];
 }
 
 @end

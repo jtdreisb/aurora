@@ -11,17 +11,23 @@
 #import "AUTimeline.h"
 #import "AUTimelineChannel.h"
 #import "AUEffect.h"
+#import "AUColorEffect.h"
 #import "AUEffectView.h"
 
 @implementation AUChannelView
+{
+    BOOL _isSelected;
+}
 
 - (id)initWithFrame:(NSRect)frameRect channel:(AUTimelineChannel *)channel
 {
     self = [super initWithFrame:frameRect];
     if (self != nil) {
+        _isSelected = NO;
         _channel = channel;
         [_channel.timeline addObserver:self forKeyPath:@"zoomLevel" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
         [_channel addObserver:self forKeyPath:@"effects" options:0 context:NULL];
+        
         [self layoutViews];
     }
     return self;
@@ -72,9 +78,6 @@
     
     CGContextSetAlpha(context, 0.9);
     
-    NSRect clippingRect = drawingRect;
-    clippingRect.size.height -= 1;
-    
     CGPathRef clippingPath = [NSView clippingPathWithRect:drawingRect andRadius:0.0];
     CGContextAddPath(context, clippingPath);
     CGContextClip(context);
@@ -84,12 +87,21 @@
     NSColor *endColor = [NSColor colorWithDeviceWhite:0.55 alpha:1.0];
     CGGradientRef gradient = [NSView gradientFromColor:startColor toColor:endColor];
     
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(NSMinX(drawingRect), NSMidY(drawingRect)),
-                                CGPointMake(NSMaxX(drawingRect), NSMidY(drawingRect)), 0);
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(NSMidX(drawingRect), NSMinY(drawingRect)),
+                                CGPointMake(NSMidX(drawingRect), NSMaxY(drawingRect)), 0);
     CGGradientRelease(gradient);
     
-    CGRect noiseRect = NSInsetRect(drawingRect, 1.0, 1.0);
+    CGContextBeginPath(context);
+    for (CGFloat i = 0; i < drawingRect.size.width; i += _channel.timeline.zoomLevel) {
+        CGContextMoveToPoint(context, i , NSMaxY(drawingRect));
+        CGContextAddLineToPoint(context, i, NSMinY(drawingRect));
+    }
+    CGContextSetStrokeColorWithColor(context, [[NSColor darkGrayColor] CGColor]);
+    CGContextStrokePath(context);
     
+    
+    CGContextBeginPath(context);
+    CGRect noiseRect = NSInsetRect(drawingRect, 1.0, 1.0);
     CGPathRef noiseClippingPath = [NSView clippingPathWithRect:noiseRect andRadius:0.0];
     CGContextAddPath(context, noiseClippingPath);
     CGContextClip(context);
@@ -102,19 +114,55 @@
     [super drawRect:dirtyRect];
 }
 
+- (void)addEffect:(NSMenuItem *)sender
+{
+    AUEffect *newEffect = [[sender.representedObject[@"class"] alloc] init];
+    
+    NSPoint point = [self convertPoint:[sender.representedObject[@"event"] locationInWindow] fromView:nil];
+    newEffect.startTime = point.x / _channel.timeline.zoomLevel;
+    [_channel addEffect:newEffect];
+    
+}
+
+- (void)rightMouseDown:(NSEvent *)theEvent
+{
+    NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Channel Menu"];
+    
+    NSMenu *addMenu = [[NSMenu alloc] initWithTitle:@"Insert"];
+    NSMenuItem *colorEffect = [[NSMenuItem alloc] init];
+    colorEffect.title = [[AUColorEffect class] name];
+    colorEffect.representedObject = @{@"class":[AUColorEffect class],@"event": theEvent};
+    colorEffect.target = self;
+    colorEffect.action = @selector(addEffect:);
+    [addMenu insertItem:colorEffect atIndex:0];
+    
+    NSMenuItem *addMenuItem = [[NSMenuItem alloc] init];
+    addMenuItem.title = @"Add";
+    addMenuItem.submenu = addMenu;
+    
+    [menu insertItem:addMenuItem atIndex:0];
+    [NSMenu popUpContextMenu:menu withEvent:theEvent forView:self];
+}
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    NSLog(@"%@", theEvent);
-    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-    
-    AUEffect *newEffect = [[AUEffect alloc] init];
-    
-    newEffect.startTime = point.x / _channel.timeline.zoomLevel;
-    newEffect.duration = 10;
-    
-    [_channel addEffect:newEffect];
-    NSLog(@"%@", NSStringFromPoint(point));
+//    if (_isSelected == NO) {
+//        _isSelected = YES;
+//        [self.window makeFirstResponder:self];
+//        [self setNeedsDisplay:YES];
+//    }
+//    else {
+//        NSLog(@"%@", theEvent);
+//        
+//
+//        
+//        AUEffect *newEffect = [[AUEffect alloc] init];
+//        
+//        
+//        
+//        
+//        [_channel addEffect:newEffect];
+//    }
 }
 
 @end

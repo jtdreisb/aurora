@@ -84,7 +84,6 @@
     for (int i = 0; i < newChannelCount; i++) {
         [self.timeline addChannel:[[AUTimelineChannel alloc] init]];
     }
-    NSLog(@"%@", _lights);
     [_tableView reloadData];
 }
 

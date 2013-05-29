@@ -7,7 +7,7 @@
 //
 
 #import "AUEffectCollectionViewItem.h"
-#import "AUEffectViewController.h"
+
 #import "AUEffect.h"
 
 @implementation AUEffectCollectionViewItem
@@ -15,7 +15,7 @@
 - (IBAction)startStopButton:(id)sender
 {
         NSLog(@"%@", self.effectViewController);
-        NSLog(@"%@", [self.effectViewController valueForKey:@"editPopover"]);
+//        NSLog(@"%@", [self.effectViewController valueForKey:@"editPopover"]);
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -27,7 +27,7 @@
     [self view];
     
     if ([representedObject isKindOfClass:[AUEffect class]]) {
-        self.effectViewController.effect = (AUEffect *)representedObject;
+//        self.effectViewController.effect = (AUEffect *)representedObject;
     }
 }
 

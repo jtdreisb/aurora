@@ -24,6 +24,9 @@
 		332E61E41731D964008C8025 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E61E21731D964008C8025 /* MainMenu.xib */; };
 		332E62001731DADB008C8025 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E61FB1731DACE008C8025 /* CocoaLibSpotify.framework */; };
 		333FA64B174DA8B300134363 /* AUEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA64A174DA8B300134363 /* AUEffectView.m */; };
+		333FA650174DF29A00134363 /* AUColorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA64F174DF29A00134363 /* AUColorEffect.m */; };
+		333FA652174DFB1400134363 /* AUColorEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333FA651174DFB1400134363 /* AUColorEffectEditView.xib */; };
+		333FA655174DFEF400134363 /* AUEffectEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA654174DFEF400134363 /* AUEffectEditViewController.m */; };
 		3349D2221735DB8600648144 /* AUView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2211735DB8600648144 /* AUView.m */; };
 		3349D2251735DD6300648144 /* AULightIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2241735DD6300648144 /* AULightIndexTransformer.m */; };
 		3349D2291735EAF500648144 /* AUTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2281735EAF500648144 /* AUTimeline.m */; };
@@ -36,7 +39,6 @@
 		336BE10E173321580069C92C /* AUEffectEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FF173321580069C92C /* AUEffectEditView.xib */; };
 		336BE110173321580069C92C /* AUEffectTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE102173321580069C92C /* AUEffectTestView.xib */; };
 		336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE104173321580069C92C /* AUEffectTestViewController.m */; };
-		336BE112173321580069C92C /* AUEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE106173321580069C92C /* AUEffectViewController.m */; };
 		336BE114173321580069C92C /* AULightColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE109173321580069C92C /* AULightColorView.m */; };
 		336BE11D173323CA0069C92C /* AUSongEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE11A173323CA0069C92C /* AUSongEditorView.xib */; };
 		336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE11C173323CA0069C92C /* AUSongEditorViewController.m */; };
@@ -245,6 +247,11 @@
 		332E62011731DB2C008C8025 /* appkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appkey.h; sourceTree = "<group>"; };
 		333FA649174DA8B300134363 /* AUEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectView.h; sourceTree = "<group>"; };
 		333FA64A174DA8B300134363 /* AUEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectView.m; sourceTree = "<group>"; };
+		333FA64E174DF29A00134363 /* AUColorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorEffect.h; sourceTree = "<group>"; };
+		333FA64F174DF29A00134363 /* AUColorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorEffect.m; sourceTree = "<group>"; };
+		333FA651174DFB1400134363 /* AUColorEffectEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUColorEffectEditView.xib; sourceTree = "<group>"; };
+		333FA653174DFEF400134363 /* AUEffectEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectEditViewController.h; sourceTree = "<group>"; };
+		333FA654174DFEF400134363 /* AUEffectEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectEditViewController.m; sourceTree = "<group>"; };
 		3349D2201735DB8600648144 /* AUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUView.h; sourceTree = "<group>"; };
 		3349D2211735DB8600648144 /* AUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUView.m; sourceTree = "<group>"; };
 		3349D2231735DD6200648144 /* AULightIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightIndexTransformer.h; sourceTree = "<group>"; };
@@ -266,8 +273,6 @@
 		336BE102173321580069C92C /* AUEffectTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUEffectTestView.xib; sourceTree = "<group>"; };
 		336BE103173321580069C92C /* AUEffectTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectTestViewController.h; sourceTree = "<group>"; };
 		336BE104173321580069C92C /* AUEffectTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectTestViewController.m; sourceTree = "<group>"; };
-		336BE105173321580069C92C /* AUEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectViewController.h; sourceTree = "<group>"; };
-		336BE106173321580069C92C /* AUEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffectViewController.m; sourceTree = "<group>"; };
 		336BE108173321580069C92C /* AULightColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AULightColorView.h; sourceTree = "<group>"; };
 		336BE109173321580069C92C /* AULightColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AULightColorView.m; sourceTree = "<group>"; };
 		336BE11A173323CA0069C92C /* AUSongEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AUSongEditorView.xib; sourceTree = "<group>"; };
@@ -643,6 +648,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		333FA64D174DF27B00134363 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				333FA64E174DF29A00134363 /* AUColorEffect.h */,
+				333FA64F174DF29A00134363 /* AUColorEffect.m */,
+				333FA651174DFB1400134363 /* AUColorEffectEditView.xib */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
 		3349D2261735DD7200648144 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,10 +685,12 @@
 		336BE1161733216D0069C92C /* Effects */ = {
 			isa = PBXGroup;
 			children = (
-				336BE119173321F40069C92C /* Effects Views */,
 				336BE0FA173321580069C92C /* AUEffect.h */,
 				336BE0FB173321580069C92C /* AUEffect.m */,
+				333FA653174DFEF400134363 /* AUEffectEditViewController.h */,
+				333FA654174DFEF400134363 /* AUEffectEditViewController.m */,
 				336BE0FF173321580069C92C /* AUEffectEditView.xib */,
+				333FA64D174DF27B00134363 /* Color */,
 				336BE12B1733245A0069C92C /* Strobe */,
 				336BE117173321750069C92C /* Color Pulse */,
 			);
@@ -702,15 +719,6 @@
 				336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */,
 			);
 			name = "Effect Test";
-			sourceTree = "<group>";
-		};
-		336BE119173321F40069C92C /* Effects Views */ = {
-			isa = PBXGroup;
-			children = (
-				336BE105173321580069C92C /* AUEffectViewController.h */,
-				336BE106173321580069C92C /* AUEffectViewController.m */,
-			);
-			name = "Effects Views";
 			sourceTree = "<group>";
 		};
 		336BE11F173323D30069C92C /* Song Editor */ = {
@@ -1168,6 +1176,7 @@
 				33EA05A81742AE7500747A37 /* AUPlay@2x.png in Resources */,
 				3385365E17434CEC00238D97 /* AUHueLight.icns in Resources */,
 				33ABB768174D763100C6841A /* AURootView.xib in Resources */,
+				333FA652174DFB1400134363 /* AUColorEffectEditView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,7 +1214,6 @@
 				336BE10B173321580069C92C /* AUEffect.m in Sources */,
 				336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */,
 				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,
-				336BE112173321580069C92C /* AUEffectViewController.m in Sources */,
 				336BE114173321580069C92C /* AULightColorView.m in Sources */,
 				336BE11E173323CA0069C92C /* AUSongEditorViewController.m in Sources */,
 				336BE1291733244E0069C92C /* AUStrobe.m in Sources */,
@@ -1236,6 +1244,8 @@
 				33ABB762174D72C900C6841A /* AUViewController.m in Sources */,
 				33ABB767174D763100C6841A /* AURootViewController.m in Sources */,
 				333FA64B174DA8B300134363 /* AUEffectView.m in Sources */,
+				333FA650174DF29A00134363 /* AUColorEffect.m in Sources */,
+				333FA655174DFEF400134363 /* AUEffectEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

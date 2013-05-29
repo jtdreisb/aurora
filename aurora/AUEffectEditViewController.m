@@ -14,14 +14,14 @@
 
 @implementation AUEffectEditViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (IBAction)saveEffect:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+    [self.delegate saveEffect:self.representedObject];
+}
+
+- (IBAction)deleteEffect:(id)sender
+{
+    [self.delegate deleteEffect:self.representedObject];
 }
 
 @end

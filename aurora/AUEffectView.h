@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AUEffectEditViewController.h"
 
 @class AUEffect;
 
-@interface AUEffectView : NSView
+@interface AUEffectView : NSView <AUEffectEditViewControllerDelegate>
 
 @property (strong) AUEffect *effect;
 

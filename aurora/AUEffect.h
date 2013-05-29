@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Jason Dreisbach. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "AUEffectEditViewController.h"
 
 @interface AUEffect : NSObject <NSCoding>
 
 #pragma mark - Readonly properties
 
-@property (readonly) NSString *name;
-@property (readonly) NSString *toolTip;
-@property (readonly) NSImage *image;
-@property (readonly) NSString *editViewNibName;
++ (NSString *)name;
++ (NSString *)toolTip;
++ (NSImage *)image;
++ (NSString *)editViewNibName;
+- (AUEffectEditViewController *)editViewController;
 
 #pragma mark - Settable Properties
 

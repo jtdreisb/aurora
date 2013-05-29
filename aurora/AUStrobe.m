@@ -11,7 +11,6 @@
 
 #define kDefaultChangeTimeInterval 0.1
 
-
 @implementation AUStrobe
 
 - (id)init
