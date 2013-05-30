@@ -63,9 +63,12 @@
 {
     NSNumber *dispatchTime = [NSNumber numberWithDouble:self.startTime];
     NSMutableDictionary *payload = [NSMutableDictionary dictionary];
-    payload[@"color"] = self.color;
+    NSColor *color = [self.color colorUsingColorSpace:[NSColorSpace genericRGBColorSpace]];
+    payload[@"hue"] = @([[NSNumber numberWithDouble:[color hueComponent] * 65535] integerValue]);
+    payload[@"sat"] = @([[NSNumber numberWithDouble:[color saturationComponent] * 255] integerValue]);
+    payload[@"bri"] = @([[NSNumber numberWithDouble:[color brightnessComponent] * 255] integerValue]);
     payload[@"on"] = @YES;
-    payload[@"transitionTime"] = @(self.duration*10.0);
+    payload[@"transitiontime"] = @(self.duration*10.0);
 
     return @{dispatchTime: payload};
 }

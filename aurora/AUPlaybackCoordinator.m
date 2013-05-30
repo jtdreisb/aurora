@@ -15,7 +15,7 @@
 #import <sys/time.h>
 #import <DPHue.h>
 
-#define kEffectQueueLength 0.5;
+#define kEffectQueueLength 0.3;
 
 @interface AUPlaybackCoordinator ()
 @end
@@ -49,7 +49,7 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 {
     self = [super initWithPlaybackSession:aSession];
     if (self != nil) {
-        _lightEffectQueue = dispatch_queue_create("com.apple.aurora.lights.q", DISPATCH_QUEUE_CONCURRENT);
+        _lightEffectQueue = dispatch_queue_create("com.apple.aurora.lights.q", DISPATCH_QUEUE_SERIAL);
         [self addObserver:self forKeyPath:@"isPlaying" options:0 context:NULL];
     }
     return self;
@@ -90,13 +90,12 @@ static AUPlaybackCoordinator *sharedInstance = nil;
             for (AUEffect *effect in effects) {
                 NSDictionary *payloads = effect.payloads;
                 for (NSNumber *dispatchTime in payloads.allKeys) {
-                    NSDictionary *payload = [payloads[dispatchTime] copy];
+                    NSDictionary *payload = payloads[dispatchTime];
                     double delayInSeconds = [dispatchTime doubleValue];
                     dispatch_time_t popTime = dispatch_time(_startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                     dispatch_after(popTime, _lightEffectQueue, ^(void){
                         if (self.isPlaying) {
-                            [light setValuesForKeysWithDictionary:payload];
-                            [light write];
+                            [light.state writeChanges:payload];
                         }
                     });
                 }
@@ -165,20 +164,25 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 - (void)previousTrack
 {
     if (self.currentPlaylist != nil) {
-        NSInteger nextTrackIndex;
-        if (_currentTrackIndex == 0) {
-            nextTrackIndex = self.currentPlaylist.tracks.count - 1;
+        if (self.trackPosition > 0.5) {
+            [self seekToTrackPosition:0.0];
         }
         else {
-            nextTrackIndex = _currentTrackIndex - 1;
-        }
-        BOOL shouldPlay = self.isPlaying;
-        [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
-            if (error != nil) {
-                NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
+            NSInteger nextTrackIndex;
+            if (_currentTrackIndex == 0) {
+                nextTrackIndex = self.currentPlaylist.tracks.count - 1;
             }
-            self.isPlaying = shouldPlay;
-        }];
+            else {
+                nextTrackIndex = _currentTrackIndex - 1;
+            }
+            BOOL shouldPlay = self.isPlaying;
+            [self playTrack:self.currentPlaylist.tracks[nextTrackIndex] callback:^(NSError *error) {
+                if (error != nil) {
+                    NSLog(@"%s:playTrack:%@", __PRETTY_FUNCTION__, error);
+                }
+                self.isPlaying = shouldPlay;
+            }];
+        }
     }
 }
 

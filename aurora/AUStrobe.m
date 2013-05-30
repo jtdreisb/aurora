@@ -90,17 +90,21 @@
     while ([dispatchTime isLessThan:endTime]) {
         NSMutableDictionary *payload = [NSMutableDictionary dictionary];
 
-        payload[@"color"] = self.color;
+        NSColor *color = [self.color colorUsingColorSpace:[NSColorSpace genericRGBColorSpace]];
+        payload[@"hue"] = @([[NSNumber numberWithDouble:[color hueComponent] * 65535] integerValue]);
+        payload[@"sat"] = @([[NSNumber numberWithDouble:[color saturationComponent] * 255] integerValue]);
+        payload[@"bri"] = @([[NSNumber numberWithDouble:[color brightnessComponent] * 255] integerValue]);
+        
         payload[@"on"] = @YES;
-        payload[@"transitionTime"] = @(self.transitionTime);
+        payload[@"transitiontime"] = @(self.transitionTime);
         
         [payloads setObject:payload forKey:dispatchTime];
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
         
         [payloads setObject:@{
          @"on" : @NO,
-         @"brightness": @0,
-         @"transitionTime" : @(self.transitionTime)
+         @"bri": @0,
+         @"transitiontime" : @(self.transitionTime)
          } forKey:dispatchTime];
         
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
