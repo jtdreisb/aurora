@@ -16,6 +16,7 @@
 + (NSString *)toolTip;
 + (NSImage *)image;
 + (NSString *)editViewNibName;
+- (NSColor *)backgroundColor;
 - (AUEffectEditViewController *)editViewController;
 
 #pragma mark - Settable Properties

@@ -59,6 +59,11 @@
     return image;
 }
 
+- (NSColor *)backgroundColor
+{
+    return [NSColor colorWithCalibratedRed:1.0 green:0.5 blue:0.2 alpha:0.9];
+}
+
 + (NSString *)editViewNibName
 {
     return @"AUEffectEditView";

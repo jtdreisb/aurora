@@ -12,9 +12,10 @@
 #import "AUTimeline.h"
 #import "AUTimelineChannel.h"
 #import "AUEffect.h"
+#import <sys/time.h>
 #import <DPHue.h>
 
-#define kEffectQueueLength 2.0;
+#define kEffectQueueLength 0.5;
 
 @interface AUPlaybackCoordinator ()
 @end
@@ -24,6 +25,7 @@
     dispatch_queue_t _lightEffectQueue;
     NSInteger _currentTrackIndex;
     NSTimeInterval _lightQueueIndex;
+    dispatch_time_t _startTime;
 }
 
 static AUPlaybackCoordinator *sharedInstance = nil;
@@ -63,39 +65,45 @@ static AUPlaybackCoordinator *sharedInstance = nil;
     if (object == self && [keyPath isEqualToString:@"isPlaying"]) {
         _lightQueueIndex = self.trackPosition;
         if (self.isPlaying == YES) {
+            _startTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (-1.0 * self.trackPosition * NSEC_PER_SEC));
             [self queueEffects];
         }
     }
 }
 
+- (void)seekToTrackPosition:(NSTimeInterval)newPosition
+{
+    [super seekToTrackPosition:newPosition];
+    _lightQueueIndex = self.trackPosition;
+    _startTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (-1.0 * self.trackPosition * NSEC_PER_SEC));
+}
 
 - (void)queueEffects
 {
     NSArray *allLights = [[DPHue sharedInstance] lights];
     NSArray *channels = self.currentTrack.timeline.channels;
     NSTimeInterval newTrackIndex = self.trackPosition + kEffectQueueLength;
-    dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(-self.trackPosition * NSEC_PER_SEC));
     for (DPHueLight *light in allLights) {
         if (channels.count >= [light.number integerValue]) {
             AUTimelineChannel *channel = [channels objectAtIndex:[light.number integerValue] - 1];
-            NSArray *effects = [channel effectsFrom:_currentTrackIndex to:newTrackIndex];
+            NSArray *effects = [channel effectsFrom:_lightQueueIndex to:newTrackIndex];
             for (AUEffect *effect in effects) {
                 NSDictionary *payloads = effect.payloads;
-                for (NSNumber *dispatchTime in payloads.allKeys)
-                {
+                for (NSNumber *dispatchTime in payloads.allKeys) {
+                    NSDictionary *payload = [payloads[dispatchTime] copy];
                     double delayInSeconds = [dispatchTime doubleValue];
-                    dispatch_time_t popTime = dispatch_time(startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                    dispatch_time_t popTime = dispatch_time(_startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                     dispatch_after(popTime, _lightEffectQueue, ^(void){
-                        [light.state.pendingChanges removeAllObjects];
-                        [light.state.pendingChanges addEntriesFromDictionary:payloads[dispatchTime]];
-                        NSLog(@"%@", payloads[dispatchTime]);
-                        [light write];
+                        if (self.isPlaying) {
+                            [light setValuesForKeysWithDictionary:payload];
+                            [light write];
+                        }
                     });
                 }
             }
         }
     }
-    _currentTrackIndex = newTrackIndex;
+    _lightQueueIndex = newTrackIndex;
 }
 
 -(void)coreAudioController:(SPCoreAudioController *)controller didOutputAudioOfDuration:(NSTimeInterval)audioDuration

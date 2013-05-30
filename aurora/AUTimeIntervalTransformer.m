@@ -24,9 +24,10 @@
 {
     NSString *transformedString = nil;
     if ([value isKindOfClass:[NSValue class]]) {
-        int min = [value doubleValue]/60;
-        int sec = [value doubleValue] - (min * 60);
-        transformedString =  [NSString stringWithFormat:@"%02d:%02d", min, sec];
+        int msec = (int)([value doubleValue] * 1000.0) % 1000;
+        int sec = (int)([value doubleValue]) % 60;
+        int min = (int)([value doubleValue]/60) % (60);
+        transformedString =  [NSString stringWithFormat:@"%02d:%02d:%03d", min, sec, msec];
     }
     return transformedString;
 }

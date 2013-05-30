@@ -260,13 +260,38 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
+					<object class="NSButton" id="186505181">
+						<reference key="NSNextResponder" ref="230885447"/>
+						<int key="NSvFlags">265</int>
+						<string key="NSFrame">{{417, -2}, {69, 32}}</string>
+						<reference key="NSSuperview" ref="230885447"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSButtonCell" key="NSCell" id="499935696">
+							<int key="NSCellFlags">67108864</int>
+							<int key="NSCellFlags2">134217728</int>
+							<string key="NSContents">Save</string>
+							<reference key="NSSupport" ref="186496760"/>
+							<string key="NSCellIdentifier">_NS:9</string>
+							<reference key="NSControlView" ref="186505181"/>
+							<int key="NSButtonFlags">-2038284288</int>
+							<int key="NSButtonFlags2">129</int>
+							<string key="NSAlternateContents"/>
+							<string key="NSKeyEquivalent"/>
+							<int key="NSPeriodicDelay">200</int>
+							<int key="NSPeriodicInterval">25</int>
+						</object>
+						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+					</object>
 					<object class="NSButton" id="516030299">
 						<reference key="NSNextResponder" ref="230885447"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{14, -2}, {69, 32}}</string>
 						<reference key="NSSuperview" ref="230885447"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="186505181"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="536351393">
@@ -470,6 +495,14 @@
 						<reference key="destination" ref="811503857"/>
 					</object>
 					<int key="connectionID">287</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">saveTimeline:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="186505181"/>
+					</object>
+					<int key="connectionID">291</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -725,6 +758,7 @@
 						<reference key="object" ref="230885447"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="516030299"/>
+							<reference ref="186505181"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Title bar</string>
@@ -806,6 +840,19 @@
 						<reference key="object" ref="536351393"/>
 						<reference key="parent" ref="516030299"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">288</int>
+						<reference key="object" ref="186505181"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="499935696"/>
+						</array>
+						<reference key="parent" ref="230885447"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">289</int>
+						<reference key="object" ref="499935696"/>
+						<reference key="parent" ref="186505181"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -865,12 +912,14 @@
 				<string key="275.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="284.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="285.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="288.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="289.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">287</int>
+			<int key="maxID">291</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

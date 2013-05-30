@@ -55,7 +55,6 @@
 
 - (void)getLights
 {
-
     if ([[DPHue sharedInstance] isSearching]) {
         [self performSelector:_cmd withObject:nil afterDelay:1.0];
         return;
@@ -96,8 +95,12 @@
 
 - (IBAction)back:(id)sender
 {
-    [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
     [super back:sender];
+}
+
+- (IBAction)saveTimeline:(id)sender
+{
+    [[[AUPlaybackCoordinator sharedInstance] currentTrack] saveTimeline];
 }
 
 - (IBAction)addRemoveLight:(id)sender

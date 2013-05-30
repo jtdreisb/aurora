@@ -12,6 +12,7 @@
 #import "AUTimelineChannel.h"
 #import "AUEffect.h"
 #import "AUColorEffect.h"
+#import "AUStrobe.h"
 #import "AUEffectView.h"
 #import "AUPlaybackCoordinator.h"
 
@@ -144,9 +145,8 @@
 
 - (void)rightMouseDown:(NSEvent *)theEvent
 {
-    NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Channel Menu"];
-    
     NSMenu *addMenu = [[NSMenu alloc] initWithTitle:@"Insert"];
+    
     NSMenuItem *colorEffect = [[NSMenuItem alloc] init];
     colorEffect.title = [[AUColorEffect class] name];
     colorEffect.representedObject = @{@"class":[AUColorEffect class],@"event": theEvent};
@@ -154,33 +154,22 @@
     colorEffect.action = @selector(addEffect:);
     [addMenu insertItem:colorEffect atIndex:0];
     
-    NSMenuItem *addMenuItem = [[NSMenuItem alloc] init];
-    addMenuItem.title = @"Add";
-    addMenuItem.submenu = addMenu;
+    NSMenuItem *strobeEffect = [[NSMenuItem alloc] init];
+    strobeEffect.title = [[AUStrobe class] name];
+    strobeEffect.representedObject = @{@"class":[AUStrobe class],@"event": theEvent};
+    strobeEffect.target = self;
+    strobeEffect.action = @selector(addEffect:);
+    [addMenu insertItem:strobeEffect atIndex:1];
     
-    [menu insertItem:addMenuItem atIndex:0];
-    [NSMenu popUpContextMenu:menu withEvent:theEvent forView:self];
+    [NSMenu popUpContextMenu:addMenu withEvent:theEvent forView:self];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-//    if (_isSelected == NO) {
-//        _isSelected = YES;
-//        [self.window makeFirstResponder:self];
-//        [self setNeedsDisplay:YES];
-//    }
-//    else {
-//        NSLog(@"%@", theEvent);
-//        
-//
-//        
-//        AUEffect *newEffect = [[AUEffect alloc] init];
-//        
-//        
-//        
-//        
-//        [_channel addEffect:newEffect];
-//    }
+    
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    
+    [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:(point.x / _channel.timeline.zoomLevel)];
 }
 
 @end

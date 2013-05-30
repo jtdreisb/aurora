@@ -26,24 +26,16 @@
     
     CGContextSaveGState(context);
     
-    CGContextSetAlpha(context, 0.9);
+    CGContextSetAlpha(context, 0.7);
     
-    CGPathRef clippingPath = [NSView clippingPathWithRect:drawingRect andRadius:2.0];
-    CGContextAddPath(context, clippingPath);
-    CGContextClip(context);
-    CGPathRelease(clippingPath);
+    CGPathRef fillPath = [NSView clippingPathWithRect:drawingRect andRadius:4.0];
+    CGContextBeginPath(context);
+    CGContextAddPath(context, fillPath);
     
-    NSColor *startColor = [NSColor colorWithCalibratedRed:0.1 green:0.9 blue:0.1 alpha:0.5];
-    NSColor *endColor = [NSColor colorWithCalibratedRed:0.3 green:0.9 blue:0.3 alpha:0.5];
-    CGGradientRef gradient = [NSView gradientFromColor:startColor toColor:endColor];
+    CGContextSetFillColorWithColor(context, [self.effect.backgroundColor CGColor]);
+    CGContextFillPath(context);
     
-
-    CGContextDrawRadialGradient(context, gradient, AURectCenter(drawingRect), 0.0, AURectCenter(drawingRect), drawingRect.size.height/2.0, kCGGradientDrawsBeforeStartLocation|kCGGradientDrawsAfterEndLocation);
-    
-    CGGradientRelease(gradient);
-    
-//    CGRect strokeRect = NSInsetRect(drawingRect, 1.0, 1.0);
-    
+    CGPathRelease(fillPath);
     CGContextRestoreGState(context);
     
     [super drawRect:dirtyRect];
@@ -74,7 +66,6 @@
         [_editPopover close];
         _editPopover = nil;
     }
-    NSLog(@"%s: %@",__PRETTY_FUNCTION__, [(AUEffect *)sender payloads]);
     [(AUChannelView *)self.superview layoutViews];
 }
 

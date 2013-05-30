@@ -15,6 +15,4 @@
 @property NSTimeInterval frequency;
 @property NSTimeInterval transitionTime;
 
-- (id)initWithFrequency:(NSTimeInterval)frequency;
-
 @end

@@ -15,9 +15,13 @@
 
 #import "AUStrobe.h"
 
+#define kLastHueIPKey @"lasthueIP"
+
 @implementation AUAppDelegate
 {
     AUSpotifyLoginPanelController *_spotifyLoginPanelController;
+    IBOutlet NSPanel *_hueIPPanel;
+    IBOutlet NSTextField *_hueIPTextField;
     IBOutlet AUNavigationController *_navController;
     IBOutlet NSWindow *_window;
 }
@@ -47,17 +51,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    //    NSInteger musicTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"music"];
-    //    NSTabViewItem *musicTabItem = [self.tabView tabViewItemAtIndex:musicTabIndex];
-    //    _navController = [[BFNavigationController alloc] initWithFrame:[musicTabItem.view frame] rootViewController:nil];
-    //    musicTabItem.view = _navController.view;
-    //
-    //
-    //    NSInteger hueTabIndex = [self.tabView indexOfTabViewItemWithIdentifier:@"hue"];
-    //    NSTabViewItem *hueTabItem = [self.tabView tabViewItemAtIndex:hueTabIndex];
-    //    _effectTestViewController = [[AUEffectTestViewController alloc] initWithNibName:@"AUEffectTestView" bundle:nil];
-    //
-    //    hueTabItem.view = _effectTestViewController.view;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"spotify_username"];
@@ -90,6 +83,36 @@
            didEndSelector:@selector(loginSheetDidEnd:returnCode:contextInfo:)
               contextInfo:nil];
     }
+}
+
+- (IBAction)showHueIPSheet:(id)sender
+{
+    NSString *lastHost = [[NSUserDefaults standardUserDefaults] objectForKey:kLastHueIPKey];
+    if (lastHost.length > 0) {
+        _hueIPTextField.stringValue = lastHost;
+    }
+    [NSApp beginSheet:_hueIPPanel modalForWindow:_window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+- (IBAction)hueIPConnect:(id)sender
+{
+    if ([[_hueIPTextField.stringValue componentsSeparatedByString:@"."] count] == 4) {
+        [_hueIPPanel orderOut:self];
+        [[DPHue sharedInstance] attemptToConnectToHue:_hueIPTextField.stringValue withCompletion:^(DPHueBridge *bridge, NSError *err) {
+            NSLog(@"%@: %@", bridge, err);
+            if (err == nil) {
+                [[NSUserDefaults standardUserDefaults] setObject:bridge.host forKey:kLastHueIPKey];
+            }
+        }];
+    }
+    else {
+        NSBeep();
+    }
+}
+
+- (IBAction)hueIPCancel:(id)sender
+{
+    [_hueIPPanel orderOut:self];
 }
 
 - (void)loginSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
@@ -402,9 +425,6 @@
     
     AUPlaybackCoordinator *playbackCoordinator = [AUPlaybackCoordinator initializeSharedInstance];
     [self.playbackObjectController setContent:playbackCoordinator];
-    
-    //    AURootViewController *spotifyViewController = [[AUSpotifyViewController alloc] initWithNibName:@"AUSpotifyView" bundle:nil];
-    //    [_navController pushViewController:spotifyViewController animated:NO];
 }
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName

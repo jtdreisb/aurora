@@ -7,7 +7,10 @@
 //
 
 #import "AUStrobe.h"
-#import <DPHueLight.h>
+
+#define kColorKey @"color"
+#define kFrequencyKey @"frequency"
+#define ktransitionTimeKey @"transitiontime"
 
 #define kDefaultChangeTimeInterval 0.1
 
@@ -17,41 +20,60 @@
 {
     self = [super init];
     if (self != nil) {
+        _color = [NSColor whiteColor];
+        _frequency = 2.0;
+        _transitionTime = 0.0;
     }
     return self;
 }
 
-- (id)initWithFrequency:(NSTimeInterval)frequency
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [self init];
+    self = [super initWithCoder:aDecoder];
     if (self != nil) {
-        _frequency = frequency;
+        _color = [aDecoder decodeObjectForKey:kColorKey];
+        _frequency = [aDecoder decodeDoubleForKey:kFrequencyKey];
+        _transitionTime = [aDecoder decodeDoubleForKey:ktransitionTimeKey];
     }
     return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    [aCoder encodeObject:_color forKey:kColorKey];
+    [aCoder encodeDouble:_frequency forKey:kFrequencyKey];
+    [aCoder encodeDouble:_transitionTime forKey:ktransitionTimeKey];
 }
 
 #pragma mark - Readonly
 
 // For subclasses to override
-- (NSString *)name
++ (NSString *)name
 {
     return @"Strobe";
 }
-- (NSString *)toolTip
++ (NSString *)toolTip
 {
-    return @"Description of the effect";
+    return @"Flashing lights at a certain frequency";
 }
 
-- (NSImage *)image;
++ (NSImage *)image;
 {
     NSImage *image = [NSImage imageNamed:@"editing-done"];
     [image setTemplate:YES];
     return image;
 }
 
-- (NSString *)editViewNibName
++ (NSString *)editViewNibName
 {
-    return @"AUEffectEditView";
+    return @"AUStrobeEffectEditView";
+}
+
+- (NSColor *)backgroundColor
+{
+    return [NSColor colorWithCalibratedRed:0.2 green:0.7 blue:0.2 alpha:0.9];
 }
 
 - (NSDictionary *)payloads
@@ -65,29 +87,20 @@
         intervalStep = 1.0 / self.frequency;
     }
     
-    DPHueLight *light = [[DPHueLight alloc] initWithBridge:nil];
     while ([dispatchTime isLessThan:endTime]) {
-        NSMutableDictionary *payload = nil;
-        // ON
-        if (self.color != nil) {
-            light.color = self.color;
-        }
-        else {
-            light.color = [NSColor whiteColor];
-        }
-        payload = [light.state.pendingChanges mutableCopy];
-        [payload setObject:@YES forKey:@"on"];
-        [payload setObject:@(self.transitionTime) forKey:@"transitiontime"];
+        NSMutableDictionary *payload = [NSMutableDictionary dictionary];
+
+        payload[@"color"] = self.color;
+        payload[@"on"] = @YES;
+        payload[@"transitionTime"] = @(self.transitionTime);
         
         [payloads setObject:payload forKey:dispatchTime];
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
         
-        [light.pendingChanges removeAllObjects];
-        
         [payloads setObject:@{
          @"on" : @NO,
-         @"bri": @0,
-         @"transitiontime" : @(self.transitionTime)
+         @"brightness": @0,
+         @"transitionTime" : @(self.transitionTime)
          } forKey:dispatchTime];
         
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];

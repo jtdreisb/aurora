@@ -54,16 +54,18 @@
     return @"AUColorEffectEditView";
 }
 
+- (NSColor *)backgroundColor
+{
+    return [self.color colorWithAlphaComponent:0.9];
+}
+
 - (NSDictionary *)payloads
 {
     NSNumber *dispatchTime = [NSNumber numberWithDouble:self.startTime];
-    
-    DPHueLight *light = [[DPHueLight alloc] initWithBridge:nil];
-    light.color = self.color;
-    
-    NSMutableDictionary *payload = [light.state.pendingChanges mutableCopy];
+    NSMutableDictionary *payload = [NSMutableDictionary dictionary];
+    payload[@"color"] = self.color;
     payload[@"on"] = @YES;
-    payload[@"transitiontime"] = @(self.duration*10.0);
+    payload[@"transitionTime"] = @(self.duration*10.0);
 
     return @{dispatchTime: payload};
 }
