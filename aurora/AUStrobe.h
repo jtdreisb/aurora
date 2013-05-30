@@ -14,5 +14,6 @@
 
 @property NSTimeInterval frequency;
 @property NSTimeInterval transitionTime;
+@property BOOL fullOff;
 
 @end

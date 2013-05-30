@@ -11,6 +11,7 @@
 #define kColorKey @"color"
 #define kFrequencyKey @"frequency"
 #define ktransitionTimeKey @"transitiontime"
+#define kfullOffKey @"fullOff"
 
 #define kDefaultChangeTimeInterval 0.1
 
@@ -35,6 +36,7 @@
         _color = [aDecoder decodeObjectForKey:kColorKey];
         _frequency = [aDecoder decodeDoubleForKey:kFrequencyKey];
         _transitionTime = [aDecoder decodeDoubleForKey:ktransitionTimeKey];
+        _fullOff = [aDecoder decodeBoolForKey:kfullOffKey];
     }
     return self;
 }
@@ -45,6 +47,7 @@
     [aCoder encodeObject:_color forKey:kColorKey];
     [aCoder encodeDouble:_frequency forKey:kFrequencyKey];
     [aCoder encodeDouble:_transitionTime forKey:ktransitionTimeKey];
+    [aCoder encodeBool:_fullOff forKey:kfullOffKey];
 }
 
 #pragma mark - Readonly
@@ -101,11 +104,20 @@
         [payloads setObject:payload forKey:dispatchTime];
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
         
-        [payloads setObject:@{
-         @"on" : @NO,
-         @"bri": @0,
-         @"transitiontime" : @(self.transitionTime)
-         } forKey:dispatchTime];
+        if (_fullOff) {
+            [payloads setObject:@{
+             @"on" : @NO,
+             @"bri": @0,
+             @"transitiontime" : @(self.transitionTime)
+             } forKey:dispatchTime];
+        }
+        else {
+            [payloads setObject:@{
+             @"on" : @YES,
+             @"bri": @0,
+             @"transitiontime" : @(self.transitionTime)
+             } forKey:dispatchTime];
+        }
         
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
     }
