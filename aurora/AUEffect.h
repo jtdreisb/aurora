@@ -8,7 +8,7 @@
 
 #import "AUEffectEditViewController.h"
 
-@interface AUEffect : NSObject <NSCoding>
+@interface AUEffect : NSObject <NSCoding, NSCopying>
 
 #pragma mark - Readonly properties
 

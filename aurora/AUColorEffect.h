@@ -11,5 +11,6 @@
 @interface AUColorEffect : AUEffect
 
 @property (strong) NSColor *color;
+@property BOOL onOFF;
 
 @end

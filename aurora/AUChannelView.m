@@ -31,7 +31,7 @@
         
         [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"trackPosition" options:0 context:NULL];
         
-        [self layoutViews];
+        [self layoutView];
     }
     return self;
 }
@@ -46,10 +46,10 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (object == _channel.timeline && [keyPath isEqualToString:@"zoomLevel"]) {
-        [self layoutViews];
+        [self layoutView];
     }
     else if (object == _channel && [keyPath isEqualToString:@"effects"]) {
-        [self layoutViews];
+        [self layoutView];
     }
     else if (object == [AUPlaybackCoordinator sharedInstance] && [keyPath isEqualToString:@"trackPosition"]) {
         _trackPosition = [[AUPlaybackCoordinator sharedInstance] trackPosition];
@@ -57,23 +57,35 @@
     }
 }
 
-- (void)layoutViews
+- (void)layoutView
 {
     AUTimeline *timeline = self.channel.timeline;
     CGFloat width = timeline.duration * timeline.zoomLevel;
     [self setFrame:NSMakeRect(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height)];
-    NSMutableArray *newSubViews = [NSMutableArray array];
-    for (AUEffect *effect in _channel.effects) {
-        AUEffectView *effectView = [[AUEffectView alloc] init];
-        effectView.effect = effect;
-        CGFloat x = effectView.effect.startTime * timeline.zoomLevel;
-        CGFloat y = 2.0;
-        CGFloat width = effectView.effect.duration * timeline.zoomLevel;
-        CGFloat height = self.frame.size.height - 4.0;
-        effectView.frame = NSMakeRect(x, y, width, height);
-        [newSubViews addObject:effectView];
+    
+    NSMutableArray *mEffects = [_channel.effects mutableCopy];
+    
+    NSMutableArray *subViewsToRemove = [NSMutableArray array];
+    NSArray *oldSubviews = self.subviews;
+    for (AUEffectView *subview in oldSubviews) {
+        if ([mEffects containsObject:subview.effect]) {
+            [mEffects removeObject:subview.effect];
+        }
+        else {
+            [subViewsToRemove addObject:subview];
+        }
     }
-    self.subviews = newSubViews;
+    
+    for (AUEffect *effect in mEffects) {
+        AUEffectView *effectView = [[AUEffectView alloc] initWithFrame:NSZeroRect];
+        effectView.effect = effect;
+        [self addSubview:effectView];
+    }
+    
+    for (AUEffectView *subview in self.subviews) {
+        [subview layoutView];
+    }
+    
     [self setNeedsDisplay:YES];
 }
 
@@ -117,13 +129,26 @@
     
     [self drawNoiseWithOpacity:0.01];
     
+    CGContextBeginPath(context);
+    CGContextAddRect(context, NSInsetRect(self.superview.bounds, 4.0, 2.0));
+    CGContextSetLineWidth(context, 3.0);
+    
+    if (self.window.firstResponder == self) {
+        CGContextSetStrokeColorWithColor(context, [[NSColor blueColor] CGColor]);
+    }
+    else {
+        CGContextSetStrokeColorWithColor(context, [[NSColor clearColor] CGColor]);
+    }
+    CGContextStrokePath(context);
+    
     CGContextRestoreGState(context);
     
     [super drawRect:dirtyRect];
     
     CGContextSaveGState(context);
-
+    
     CGContextSetShadowWithColor(context, CGSizeMake(1.0, 1.0), 2.0, [[NSColor colorWithCalibratedRed:.8 green:.8 blue:1.0 alpha:0.8] CGColor]);
+    
     
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, _trackPosition * _channel.timeline.zoomLevel , NSMaxY(drawingRect));
@@ -140,7 +165,6 @@
     NSPoint point = [self convertPoint:[sender.representedObject[@"event"] locationInWindow] fromView:nil];
     newEffect.startTime = point.x / _channel.timeline.zoomLevel;
     [_channel addEffect:newEffect];
-    
 }
 
 - (void)rightMouseDown:(NSEvent *)theEvent
@@ -156,7 +180,7 @@
     
     NSMenuItem *strobeEffect = [[NSMenuItem alloc] init];
     strobeEffect.title = [[AUStrobe class] name];
-    strobeEffect.representedObject = @{@"class":[AUStrobe class],@"event": theEvent};
+    strobeEffect.representedObject = @{@"class":[AUStrobe class], @"event": theEvent};
     strobeEffect.target = self;
     strobeEffect.action = @selector(addEffect:);
     [addMenu insertItem:strobeEffect atIndex:1];
@@ -164,12 +188,36 @@
     [NSMenu popUpContextMenu:addMenu withEvent:theEvent forView:self];
 }
 
+- (void)keyDown:(NSEvent *)theEvent
+{
+    if (theEvent.modifierFlags & NSCommandKeyMask) {
+        // Copy
+        if (theEvent.keyCode == 8) {
+            NSLog(@"Copy not implemented");
+        }
+        // Paste
+        else if (theEvent.keyCode == 9) {
+            NSPasteboard *pb = [NSPasteboard generalPasteboard];
+            NSData *data = [pb dataForType:@"AUEffect"];
+            AUEffect *newEffect = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            [_channel addEffect:newEffect];
+        }
+    }
+}
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    
-    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-    
-    [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:(point.x / _channel.timeline.zoomLevel)];
+    if (self.window.firstResponder != self) {
+        [self.window makeFirstResponder:self];
+        [(AUChannelView *)self layoutView];
+        // Hack to get the views to redraw
+        [[AUPlaybackCoordinator sharedInstance] willChangeValueForKey:@"trackPosition"];
+        [[AUPlaybackCoordinator sharedInstance] didChangeValueForKey:@"trackPosition"];
+    }
+    else {
+        NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+        [[AUPlaybackCoordinator sharedInstance] seekToTrackPosition:(point.x / _channel.timeline.zoomLevel)];
+    }
 }
 
 @end

@@ -7,18 +7,27 @@
 //
 
 #import "AUColorEffect.h"
-#import <DPHueLight.h>
 
 #define kColorKey @"color"
-#define kTransitionTimeKey @"transitiontime"
+#define kOnOffKey @"onoff"
 
 @implementation AUColorEffect
+
+- (id)init
+{
+    self = [super init];
+    if (self != nil) {
+        _onOFF = YES;
+    }
+    return self;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self != nil) {
         _color = [aDecoder decodeObjectForKey:kColorKey];
+        _onOFF = [aDecoder decodeBoolForKey:kOnOffKey];
     }
     return self;
 }
@@ -27,6 +36,15 @@
 {
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:_color forKey:kColorKey];
+    [aCoder encodeBool:_onOFF forKey:kOnOffKey];
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    AUColorEffect *effect = [super copyWithZone:zone];
+    effect.color = [self.color copy];
+    effect.onOFF = self.onOFF;
+    return effect;
 }
 
 #pragma mark - Readonly
@@ -39,7 +57,7 @@
 
 + (NSString *)toolTip
 {
-    return @"Description of the effect";
+    return @"Make the bulb turn a certain color";
 }
 
 + (NSImage *)image;
@@ -67,7 +85,7 @@
     payload[@"hue"] = @([[NSNumber numberWithDouble:[color hueComponent] * 65535] integerValue]);
     payload[@"sat"] = @([[NSNumber numberWithDouble:[color saturationComponent] * 255] integerValue]);
     payload[@"bri"] = @([[NSNumber numberWithDouble:[color brightnessComponent] * 255] integerValue]);
-    payload[@"on"] = @YES;
+    payload[@"on"] = @(_onOFF);
     payload[@"transitiontime"] = @(self.duration*10.0);
 
     return @{dispatchTime: payload};

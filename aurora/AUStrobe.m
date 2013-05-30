@@ -50,6 +50,16 @@
     [aCoder encodeBool:_fullOff forKey:kfullOffKey];
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    AUStrobe *effect = [super copyWithZone:zone];
+    effect.color = [self.color copy];
+    effect.frequency = self.frequency;
+    effect.transitionTime = self.transitionTime;
+    effect.fullOff = self.fullOff;
+    return effect;
+}
+
 #pragma mark - Readonly
 
 // For subclasses to override
@@ -92,7 +102,7 @@
     
     while ([dispatchTime isLessThan:endTime]) {
         NSMutableDictionary *payload = [NSMutableDictionary dictionary];
-
+        
         NSColor *color = [self.color colorUsingColorSpace:[NSColorSpace genericRGBColorSpace]];
         payload[@"hue"] = @([[NSNumber numberWithDouble:[color hueComponent] * 65535] integerValue]);
         payload[@"sat"] = @([[NSNumber numberWithDouble:[color saturationComponent] * 255] integerValue]);
@@ -104,20 +114,11 @@
         [payloads setObject:payload forKey:dispatchTime];
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
         
-        if (_fullOff) {
-            [payloads setObject:@{
-             @"on" : @NO,
-             @"bri": @0,
-             @"transitiontime" : @(self.transitionTime)
-             } forKey:dispatchTime];
-        }
-        else {
-            [payloads setObject:@{
-             @"on" : @YES,
-             @"bri": @0,
-             @"transitiontime" : @(self.transitionTime)
-             } forKey:dispatchTime];
-        }
+        [payloads setObject:@{
+         @"on" : @(_fullOff),
+         @"bri": @0,
+         @"transitiontime" : @(self.transitionTime)
+         } forKey:dispatchTime];
         
         dispatchTime = [NSNumber numberWithDouble:[dispatchTime doubleValue] + intervalStep/2.0];
     }

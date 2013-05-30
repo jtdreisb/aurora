@@ -15,4 +15,6 @@
 
 @property (strong) AUEffect *effect;
 
+- (void)layoutView;
+
 @end

@@ -82,11 +82,13 @@ static AUPlaybackCoordinator *sharedInstance = nil;
 {
     NSArray *allLights = [[DPHue sharedInstance] lights];
     NSArray *channels = self.currentTrack.timeline.channels;
+    NSTimeInterval oldTrackIndex = _lightQueueIndex;
     NSTimeInterval newTrackIndex = self.trackPosition + kEffectQueueLength;
+    _lightQueueIndex = newTrackIndex;
     for (DPHueLight *light in allLights) {
         if (channels.count >= [light.number integerValue]) {
             AUTimelineChannel *channel = [channels objectAtIndex:[light.number integerValue] - 1];
-            NSArray *effects = [channel effectsFrom:_lightQueueIndex to:newTrackIndex];
+            NSArray *effects = [channel effectsFrom:oldTrackIndex to:newTrackIndex];
             for (AUEffect *effect in effects) {
                 NSDictionary *payloads = effect.payloads;
                 for (NSNumber *dispatchTime in payloads.allKeys) {
@@ -102,7 +104,6 @@ static AUPlaybackCoordinator *sharedInstance = nil;
             }
         }
     }
-    _lightQueueIndex = newTrackIndex;
 }
 
 -(void)coreAudioController:(SPCoreAudioController *)controller didOutputAudioOfDuration:(NSTimeInterval)audioDuration

@@ -33,7 +33,6 @@
 		3349D2291735EAF500648144 /* AUTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D2281735EAF500648144 /* AUTimeline.m */; };
 		3349D22C1735EE8200648144 /* AUPlaybackCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D22B1735EE6A00648144 /* AUPlaybackCoordinator.m */; };
 		3349D22F1735F58500648144 /* AUArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349D22E1735F57300648144 /* AUArrayTransformer.m */; };
-		336BE10A173321580069C92C /* AUColorPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0F9173321580069C92C /* AUColorPulse.m */; };
 		336BE10B173321580069C92C /* AUEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FB173321580069C92C /* AUEffect.m */; };
 		336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BE0FD173321580069C92C /* AUEffectCollectionViewItem.m */; };
 		336BE10D173321580069C92C /* AUEffectCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336BE0FE173321580069C92C /* AUEffectCollectionViewItem.xib */; };
@@ -264,8 +263,6 @@
 		3349D22B1735EE6A00648144 /* AUPlaybackCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUPlaybackCoordinator.m; sourceTree = "<group>"; };
 		3349D22D1735F56900648144 /* AUArrayTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUArrayTransformer.h; sourceTree = "<group>"; };
 		3349D22E1735F57300648144 /* AUArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUArrayTransformer.m; sourceTree = "<group>"; };
-		336BE0F8173321580069C92C /* AUColorPulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUColorPulse.h; sourceTree = "<group>"; };
-		336BE0F9173321580069C92C /* AUColorPulse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUColorPulse.m; sourceTree = "<group>"; };
 		336BE0FA173321580069C92C /* AUEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffect.h; sourceTree = "<group>"; };
 		336BE0FB173321580069C92C /* AUEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUEffect.m; sourceTree = "<group>"; };
 		336BE0FC173321580069C92C /* AUEffectCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUEffectCollectionViewItem.h; sourceTree = "<group>"; };
@@ -694,18 +691,8 @@
 				336BE0FF173321580069C92C /* AUEffectEditView.xib */,
 				333FA64D174DF27B00134363 /* Color */,
 				336BE12B1733245A0069C92C /* Strobe */,
-				336BE117173321750069C92C /* Color Pulse */,
 			);
 			name = Effects;
-			sourceTree = "<group>";
-		};
-		336BE117173321750069C92C /* Color Pulse */ = {
-			isa = PBXGroup;
-			children = (
-				336BE0F8173321580069C92C /* AUColorPulse.h */,
-				336BE0F9173321580069C92C /* AUColorPulse.m */,
-			);
-			name = "Color Pulse";
 			sourceTree = "<group>";
 		};
 		336BE118173321A30069C92C /* Effect Test */ = {
@@ -1214,7 +1201,6 @@
 				339DD8F31731F7D200E30409 /* BFNavigationController.m in Sources */,
 				339DD8F81731F82200E30409 /* NSView+BFUtilities.m in Sources */,
 				339DD8FD1731FA5B00E30409 /* AUSpotifyViewController.m in Sources */,
-				336BE10A173321580069C92C /* AUColorPulse.m in Sources */,
 				336BE10B173321580069C92C /* AUEffect.m in Sources */,
 				336BE10C173321580069C92C /* AUEffectCollectionViewItem.m in Sources */,
 				336BE111173321580069C92C /* AUEffectTestViewController.m in Sources */,

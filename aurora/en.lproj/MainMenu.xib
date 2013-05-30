@@ -277,7 +277,7 @@
 								<object class="NSMenuItem" id="779737407">
 									<reference key="NSMenu" ref="276324573"/>
 									<string key="NSTitle">Connect</string>
-									<string key="NSKeyEquiv">c</string>
+									<string key="NSKeyEquiv">h</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>

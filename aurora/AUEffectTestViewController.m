@@ -9,7 +9,6 @@
 #import "AUEffectTestViewController.h"
 #import "AUEffect.h"
 #import "AUStrobe.h"
-#import "AUColorPulse.h"
 
 #import <DPHue.h>
 
@@ -29,8 +28,6 @@
         AUEffect *effect = [[AUEffect alloc] init];
         [self.effectsArrayController addObject:effect];
         effect = [[AUStrobe alloc] init];
-        [self.effectsArrayController addObject:effect];
-        effect = [[AUColorPulse alloc] init];
         [self.effectsArrayController addObject:effect];
     }
     

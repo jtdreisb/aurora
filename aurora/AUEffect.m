@@ -39,6 +39,14 @@
     [aCoder encodeDouble:_duration forKey:kDurationKey];
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    AUEffect *effect = [[[self class] alloc] init];
+    effect.startTime = self.startTime;
+    effect.duration = self.duration;
+    return effect;
+}
+
 #pragma mark - Readonly
 
 // For subclasses to override
@@ -74,6 +82,15 @@
     AUEffectEditViewController *editController = [[AUEffectEditViewController alloc] initWithNibName:[[self class] editViewNibName] bundle:nil];
     editController.representedObject = self;
     return editController;
+}
+
+- (NSArray *)writableTypesForPasteboard:(NSPasteboard *)pasteboard {
+    static NSArray *writableTypes = nil;
+    
+    if (!writableTypes) {
+//        writableTypes = @[<#objects, ...#>];
+    }
+    return writableTypes;
 }
 
 #pragma mark - Actions
