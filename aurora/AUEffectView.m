@@ -25,21 +25,19 @@
 {
     self = [super initWithFrame:frameRect];
     if (self != nil) {
-        [self.window addObserver:self forKeyPath:@"firstResponder" options:0 context:NULL];
+        [[AUPlaybackCoordinator sharedInstance] addObserver:self forKeyPath:@"trackPosition" options:0 context:NULL];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [self.window removeObserver:self forKeyPath:@"firstResponder"];
+    [[AUPlaybackCoordinator sharedInstance] removeObserver:self forKeyPath:@"trackPosition"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (object == self.window && [keyPath isEqualToString:@"firstResponder"]) {
-        [self layoutView];
-    }
+    [self layoutView];
 }
 
 
@@ -93,6 +91,7 @@
         if (theEvent.keyCode == 8) {
             NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.effect];
             NSPasteboard *pb = [NSPasteboard generalPasteboard];
+            [pb clearContents];
             [pb declareTypes:@[@"AUEffect"] owner:nil];
             
             if ([pb setData:data forType:@"AUEffect"] == NO) {
@@ -108,6 +107,33 @@
             [[(AUChannelView *)self.superview channel] addEffect:newEffect];
             [[(AUChannelView *)self.superview channel] removeEffect:self.effect];
             [(AUChannelView *)self.superview layoutView];
+        }
+    }
+    else {
+        // Delete
+        if (theEvent.keyCode == 51) {
+            [self deleteEffect:self.effect];
+        }
+        // Right
+        if (theEvent.keyCode == 124) {
+            if (theEvent.modifierFlags & NSShiftKeyMask) {
+                self.effect.startTime += 0.2;
+            }
+            else {
+                self.effect.startTime += 0.05;
+            }
+            
+            [self layoutView];
+        }
+        // Left
+        if (theEvent.keyCode == 123) {
+            if (theEvent.modifierFlags & NSShiftKeyMask) {
+                self.effect.startTime -= 0.2;
+            }
+            else {
+                self.effect.startTime -= 0.05;
+            }
+            [self layoutView];
         }
     }
 }

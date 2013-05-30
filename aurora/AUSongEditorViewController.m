@@ -55,7 +55,7 @@
 
 - (void)getLights
 {
-    if ([[DPHue sharedInstance] isSearching]) {
+    if ([[[DPHue sharedInstance] lights] count] == 0) {
         [self performSelector:_cmd withObject:nil afterDelay:1.0];
         return;
     }

@@ -277,7 +277,7 @@
 								<object class="NSMenuItem" id="779737407">
 									<reference key="NSMenu" ref="276324573"/>
 									<string key="NSTitle">Connect</string>
-									<string key="NSKeyEquiv">h</string>
+									<string key="NSKeyEquiv">l</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -697,7 +697,7 @@
 								<string key="NSResourceName">AUPause</string>
 							</object>
 							<string key="NSAlternateContents">Pause</string>
-							<string key="NSKeyEquivalent"/>
+							<string type="base64-UTF8" key="NSKeyEquivalent">IA</string>
 							<int key="NSPeriodicDelay">200</int>
 							<int key="NSPeriodicInterval">25</int>
 						</object>

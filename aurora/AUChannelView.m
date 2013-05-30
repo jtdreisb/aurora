@@ -76,6 +76,10 @@
         }
     }
     
+    for (AUEffectView *subView in subViewsToRemove) {
+        [subView removeFromSuperview];
+    }
+    
     for (AUEffect *effect in mEffects) {
         AUEffectView *effectView = [[AUEffectView alloc] initWithFrame:NSZeroRect];
         effectView.effect = effect;
@@ -193,7 +197,11 @@
     if (theEvent.modifierFlags & NSCommandKeyMask) {
         // Copy
         if (theEvent.keyCode == 8) {
-            NSLog(@"Copy not implemented");
+            [[NSPasteboard generalPasteboard] clearContents];
+            [self.window makeFirstResponder:self.nextResponder];
+            // Hack to get the views to redraw
+            [[AUPlaybackCoordinator sharedInstance] willChangeValueForKey:@"trackPosition"];
+            [[AUPlaybackCoordinator sharedInstance] didChangeValueForKey:@"trackPosition"];
         }
         // Paste
         else if (theEvent.keyCode == 9) {
@@ -207,7 +215,7 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    if (self.window.firstResponder != self) {
+    if (self.window.firstResponder != self && [[[NSPasteboard generalPasteboard] types] containsObject:@"AUEffect"]) {
         [self.window makeFirstResponder:self];
         [(AUChannelView *)self layoutView];
         // Hack to get the views to redraw
