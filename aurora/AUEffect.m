@@ -93,6 +93,11 @@
     return writableTypes;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@: %f", self.className, self.startTime];
+}
+
 #pragma mark - Actions
 
 - (NSDictionary *)payloads

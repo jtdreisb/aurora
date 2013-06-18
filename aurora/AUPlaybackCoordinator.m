@@ -89,17 +89,19 @@ static AUPlaybackCoordinator *sharedInstance = nil;
         if (channels.count >= [light.number integerValue]) {
             AUTimelineChannel *channel = [channels objectAtIndex:[light.number integerValue] - 1];
             NSArray *effects = [channel effectsFrom:oldTrackIndex to:newTrackIndex];
-            for (AUEffect *effect in effects) {
-                NSDictionary *payloads = effect.payloads;
-                for (NSNumber *dispatchTime in payloads.allKeys) {
-                    NSDictionary *payload = payloads[dispatchTime];
-                    double delayInSeconds = [dispatchTime doubleValue];
-                    dispatch_time_t popTime = dispatch_time(_startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                    dispatch_after(popTime, _lightEffectQueue, ^(void){
-                        if (self.isPlaying) {
-                            [light.state writeChanges:payload];
-                        }
-                    });
+            if (effects.count > 0) {
+                for (AUEffect *effect in effects) {
+                    NSDictionary *payloads = effect.payloads;
+                    for (NSNumber *dispatchTime in payloads.allKeys) {
+                        NSDictionary *payload = payloads[dispatchTime];
+                        double delayInSeconds = [dispatchTime doubleValue];
+                        dispatch_time_t popTime = dispatch_time(_startTime, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                        dispatch_after(popTime, _lightEffectQueue, ^(void){
+                            if (self.isPlaying) {
+                                [light.state writeChanges:payload];
+                            }
+                        });
+                    }
                 }
             }
         }

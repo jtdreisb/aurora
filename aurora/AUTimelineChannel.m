@@ -67,15 +67,12 @@
 
 - (NSArray *)effectsFrom:(NSTimeInterval)begin to:(NSTimeInterval)end
 {
-    NSMutableArray *effects  = [NSMutableArray array];
-    for (AUEffect *effect in _effectArrayController.arrangedObjects) {
-        if (effect.startTime > end)
-            break;
-        if (effect.startTime >= begin) {
-            [effects addObject:effect];
+    return [[_effectArrayController.arrangedObjects objectsPassingTest:^BOOL(AUEffect *effect, BOOL *stop) {
+        if (effect.startTime >= begin && effect.startTime < end) {
+            return YES;
         }
-    }
-    return effects;
+        return NO;
+    }] allObjects];
 }
 
 @end
