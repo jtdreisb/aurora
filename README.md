@@ -8,23 +8,23 @@ Building
 sudo gem install cocoapods; pod setup
 ```
 
-2. Check out the git submodules
+2. Clone the Aurora repository
 
 ```
+git clone https://github.com/jtdreisb/aurora; cd aurora
+```
+
+3. Check out the git submodules
+
+``
 git submodule update --init --recursive
 git submodule update --recursive
-```
-
-3. Clone the Aurora repository
-
-```
-git clone https://github.com/jtdreisb/Aurora
 ```
 
 4. Resolve Aurora's CocoaPod dependencies
 
 ```
-cd Aurora; pod install
+pod install
 ```
 
 5. Open the Xcode Workspace document (NOT the Xcode project)
